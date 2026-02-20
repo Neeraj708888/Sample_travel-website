@@ -8,93 +8,110 @@ export default function Navbar() {
 
     return (
         <>
-            {/* Navbar */}
-            <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+            {/* ===== Navbar (Premium Glass Style) ===== */}
+            <nav className="w-full fixed top-0 left-0 z-50 backdrop-blur-md bg-white/70 border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
                     {/* Logo */}
-                    <Link href="/" className="text-2xl font-bold text-blue-600">
+                    <Link
+                        href="/"
+                        className="text-2xl font-bold tracking-wide text-black"
+                    >
                         Ananta Group
                     </Link>
 
-                    {/* Desktop Menu */}
+                    {/* Desktop Menu (Same Links) */}
                     <div className="hidden md:flex gap-8 text-gray-700 font-medium">
-                        <Link href="/destinations" className="hover:text-blue-600 transition">
+                        <Link href="/destinations" className="relative group">
                             Destinations
+                            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                         </Link>
-                        <Link href="/packages" className="hover:text-blue-600 transition">
+
+                        <Link href="/packages" className="relative group">
                             Packages
+                            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                         </Link>
-                        <Link href="/event-services" className="hover:text-blue-600 transition">
+
+                        <Link href="/event-services" className="relative group">
                             Event Services
+                            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                         </Link>
-                        <Link href="/support" className="hover:text-blue-600 transition">
+
+                        <Link href="/support" className="relative group">
                             Support
+                            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                         </Link>
                     </div>
 
-                    {/* Hamburger */}
+                    {/* Hamburger (Same Functionality) */}
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="text-gray-700 hover:text-blue-600"
+                        className="text-black hover:scale-110 transition"
                     >
                         <Menu size={28} />
                     </button>
                 </div>
             </nav>
 
-            {/* Overlay */}
+            {/* ===== Overlay (Same Functionality) ===== */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black/40 z-40"
+                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
                     onClick={() => setIsOpen(false)}
                 ></div>
             )}
 
-            {/* Right Sidebar */}
+            {/* ===== Right Sidebar (Same Structure, Premium Styling) ===== */}
             <div
-                className={`fixed top-0 right-0 h-full w-80 bg-gray-800 shadow-lg z-50 transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 h-full w-80 bg-black text-white shadow-2xl z-50 transform transition-transform duration-500 ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
-                <div className="flex justify-between items-center p-6 border-b">
-                    <h2 className="text-lg font-semibold">Menu</h2>
+                <div className="flex justify-between items-center p-6 border-b border-gray-800">
+                    <h2 className="text-lg font-semibold tracking-wide">Menu</h2>
                     <button onClick={() => setIsOpen(false)}>
                         <X />
                     </button>
                 </div>
 
-                <div className="p-6 flex flex-col gap-4 text-gray-50 font-medium">
+                <div className="p-6 flex flex-col gap-5 text-gray-300 font-medium">
 
-                    {/* Mobile Main Links */}
-                    <div className="md:hidden flex flex-col gap-4 border-b pb-4">
-                        <Link href="/destinations" onClick={() => setIsOpen(false)}>
+                    {/* Mobile Main Links (UNCHANGED) */}
+                    <div className="md:hidden flex flex-col gap-5 border-b border-gray-800 pb-5">
+                        <Link href="/destinations" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                             Destinations
                         </Link>
-                        <Link href="/packages" onClick={() => setIsOpen(false)}>
+
+                        <Link href="/packages" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                             Packages
                         </Link>
-                        <Link href="/event-services" onClick={() => setIsOpen(false)}>
+
+                        <Link href="/event-services" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                             Event Services
                         </Link>
-                        <Link href="/support" onClick={() => setIsOpen(false)}>
+
+                        <Link href="/support" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                             Support
                         </Link>
                     </div>
 
-                    {/* Sidebar Extra Links */}
-                    <Link href="/about" onClick={() => setIsOpen(false)}>
+                    {/* Sidebar Extra Links (UNCHANGED) */}
+                    <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                         About Us
                     </Link>
-                    <Link href="/blog" onClick={() => setIsOpen(false)}>
+
+                    <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                         Blog
                     </Link>
-                    <Link href="/locations" onClick={() => setIsOpen(false)}>
+
+                    <Link href="/locations" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                         Locations
                     </Link>
-                    <Link href="/vision" onClick={() => setIsOpen(false)}>
+
+                    <Link href="/vision" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                         Our Vision
                     </Link>
-                    <Link href="/success-story" onClick={() => setIsOpen(false)}>
+
+                    <Link href="/success-story" onClick={() => setIsOpen(false)} className="hover:text-white transition">
                         Success Story
                     </Link>
                 </div>

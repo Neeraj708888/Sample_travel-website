@@ -45,7 +45,7 @@ export default function EventServicesPage() {
 
                 <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
 
-                <div className="relative z-10 text-center text-white px-6">
+                <div className="relative z-10 text-center text-white px-6 mt-20">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-wide">
                         Luxury Event Services
                     </h1>
