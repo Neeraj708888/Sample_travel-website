@@ -1,28 +1,18 @@
-import Link from "next/link";
+import DestinationSlider from "../components/Destination/DestinationSlider";
+// import NearbyPlaces from "../components/Destination/NearbyPlaces";
+import RelatedSearch from "../components/Destination/RelatedSearch";
+import TravelGuides from "../components/Destination/TravelGuide";
+import TrendingPlaces from "../components/Destination/TrendingPlaces";
 
-const destinations = [
-    { slug: "delhi", name: "Delhi" },
-    { slug: "mumbai", name: "Mumbai" },
-    { slug: "jaipur", name: "Jaipur" },
-];
 
 export default function DestinationsPage() {
     return (
-        <main className="p-10">
-            <h1 className="text-3xl font-bold mb-6">All Destinations</h1>
-
-            <ul className="space-y-3">
-                {destinations.map((item) => (
-                    <li key={item.slug}>
-                        <Link
-                            href={`/destinations/${item.slug}`}
-                            className="text-blue-600 hover:underline"
-                        >
-                            {item.name}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+        <main>
+            <DestinationSlider />
+            <RelatedSearch />
+            <TrendingPlaces />
+            {/* <NearbyPlaces /> */}
+            <TravelGuides />
         </main>
     );
 }

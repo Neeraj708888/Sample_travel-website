@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* :root {
+  --background: linear-gradient(
+    to bottom,
+    #ffc0cb 0%,        
+    #2b2b2b 30%,       
+    #3b82f6 65%,       
+    #fff176 100%       
+  );
+  --foreground: #ffffff;
+} */
 
 @theme inline {
   --color-background: var(--background);
@@ -12,15 +18,44 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+
+@import "tailwindcss";
+
+:root {
+  --foreground: #ffffff;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    #ffd6e8,
+    #444444,
+    #60a5fa,
+    #fff9c4
+  );
+  background-size: 100% 300%;
+  animation: gradientMove 12s ease infinite;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
