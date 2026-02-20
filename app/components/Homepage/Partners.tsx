@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Our Travel Partners | Trusted Airlines, Hotels & Tour Operators",
+    title: "Our Global Travel Partners | Luxury Airline & Hotel Collaborations",
     description:
-        "We proudly collaborate with leading airlines, hotels and global travel partners to deliver premium travel experiences.",
+        "Discover our trusted airline, hotel and global travel partnerships delivering seamless premium travel experiences worldwide.",
 };
 
 const partners = [
@@ -43,82 +43,97 @@ const partners = [
 
 export default function Partners() {
     return (
-        <section className="bg-gray-50 min-h-screen py-20 px-6">
+        <section className="relative bg-black text-white py-28 px-6 overflow-hidden">
 
-            {/* Hero Section */}
-            <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                    Our Travel Partners
-                </h1>
-                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                    We collaborate with trusted global brands to ensure comfort, luxury and reliability for every journey.
-                </p>
-            </div>
+            {/* Subtle Luxury Glow Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/10 via-black to-yellow-900/10 pointer-events-none" />
 
-            {/* Partners Grid */}
-            <div className="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-20">
-                {partners.map((partner, index) => (
-                    <div
-                        key={index}
-                        className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 text-center group"
-                    >
-                        <div className="relative h-20 mb-6 grayscale group-hover:grayscale-0 transition duration-300">
-                            <Image
-                                src={partner.logo}
-                                alt={partner.name}
-                                fill
-                                className="object-contain"
-                            />
+            <div className="relative max-w-7xl mx-auto">
+
+                {/* Hero Section */}
+                <div className="text-center mb-20">
+                    <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent mb-6">
+                        Our Trusted Global Partners
+                    </h1>
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                        Collaborating with world-class airlines, luxury hotels and global
+                        travel brands to deliver seamless elite experiences.
+                    </p>
+                </div>
+
+                {/* Partners Grid */}
+                <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-28">
+                    {partners.map((partner, index) => (
+                        <div
+                            key={index}
+                            className="group relative p-[1px] rounded-3xl bg-gradient-to-r from-yellow-500/40 via-amber-300/20 to-yellow-500/40 hover:from-yellow-400 hover:to-yellow-600 transition duration-500"
+                        >
+                            <div className="bg-zinc-900 rounded-3xl p-10 text-center backdrop-blur-xl border border-white/10 group-hover:border-yellow-500 transition duration-500">
+
+                                <div className="relative h-20 mb-6 grayscale group-hover:grayscale-0 transition duration-500">
+                                    <Image
+                                        src={partner.logo}
+                                        alt={partner.name}
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+
+                                <h2 className="text-lg font-semibold mb-2 group-hover:text-yellow-400 transition">
+                                    {partner.name}
+                                </h2>
+
+                                <p className="text-sm text-gray-400">
+                                    {partner.category}
+                                </p>
+
+                            </div>
                         </div>
+                    ))}
+                </div>
 
-                        <h2 className="text-lg font-semibold mb-2">
-                            {partner.name}
-                        </h2>
-                        <p className="text-sm text-gray-500">
-                            {partner.category}
-                        </p>
-                    </div>
-                ))}
+                {/* Premium CTA Section */}
+                <div className="bg-gradient-to-r from-yellow-500/20 via-amber-400/10 to-yellow-500/20 border border-yellow-500/30 rounded-3xl max-w-6xl mx-auto py-20 px-12 text-center shadow-2xl mb-28 backdrop-blur-xl">
+
+                    <h2 className="text-4xl font-bold mb-6 text-yellow-400">
+                        Strong Partnerships. Seamless Luxury Travel.
+                    </h2>
+
+                    <p className="max-w-3xl mx-auto mb-10 text-gray-300">
+                        Our strategic alliances ensure priority bookings, exclusive
+                        upgrades, and personalized premium services for every traveler.
+                    </p>
+
+                    <Link
+                        href="/contact"
+                        className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-amber-400 text-black font-semibold rounded-full hover:scale-105 transition duration-300 shadow-xl"
+                    >
+                        Become A Partner
+                    </Link>
+                </div>
+
+                {/* Premium Stats Section */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+
+                    {[
+                        { value: "50+", label: "Global Partners" },
+                        { value: "30+", label: "Airline Tie-Ups" },
+                        { value: "100+", label: "Hotel Collaborations" },
+                        { value: "24/7", label: "Elite Support" },
+                    ].map((stat, index) => (
+                        <div key={index} className="group">
+                            <h3 className="text-4xl font-extrabold text-yellow-400 group-hover:scale-110 transition duration-300">
+                                {stat.value}
+                            </h3>
+                            <p className="text-gray-400 text-sm mt-3 tracking-wide">
+                                {stat.label}
+                            </p>
+                        </div>
+                    ))}
+
+                </div>
+
             </div>
-
-            {/* Trust Section */}
-            <div className="bg-blue-600 text-white rounded-3xl max-w-6xl mx-auto py-16 px-10 text-center shadow-xl mb-20">
-                <h2 className="text-3xl font-bold mb-6">
-                    Strong Partnerships. Seamless Travel.
-                </h2>
-                <p className="max-w-3xl mx-auto mb-8 text-sm md:text-base opacity-90">
-                    Our strategic alliances with airlines, hotels and travel service providers
-                    allow us to offer exclusive deals, priority bookings and premium services
-                    to our customers.
-                </p>
-                <Link
-                    href="/contact"
-                    className="px-8 py-3 bg-white text-blue-600 rounded-full font-semibold hover:bg-gray-100 transition"
-                >
-                    Partner With Us
-                </Link>
-            </div>
-
-            {/* Stats Section */}
-            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-8">
-                <div>
-                    <h3 className="text-3xl font-bold text-blue-600">50+</h3>
-                    <p className="text-gray-600 text-sm mt-2">Global Partners</p>
-                </div>
-                <div>
-                    <h3 className="text-3xl font-bold text-blue-600">30+</h3>
-                    <p className="text-gray-600 text-sm mt-2">Airline Tie-Ups</p>
-                </div>
-                <div>
-                    <h3 className="text-3xl font-bold text-blue-600">100+</h3>
-                    <p className="text-gray-600 text-sm mt-2">Hotel Collaborations</p>
-                </div>
-                <div>
-                    <h3 className="text-3xl font-bold text-blue-600">24/7</h3>
-                    <p className="text-gray-600 text-sm mt-2">Service Support</p>
-                </div>
-            </div>
-
         </section>
     );
 }

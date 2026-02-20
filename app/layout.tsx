@@ -31,8 +31,8 @@ export default function RootLayout({
       >
         {/* ✅ Navbar Added */}
         <Navbar />
-        {/* ✅ Padding because navbar is fixed */}
-        <main className="pt-20">
+        {/* ✅ Padding because navbar is fixed  remove class- className="pt-20"*/}
+        <main>
           {children}
         </main>
         {/* Footer Added */}

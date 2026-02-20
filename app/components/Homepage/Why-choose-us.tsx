@@ -48,31 +48,35 @@ const features = [
 
 export default function WhyChooseUs() {
     return (
-        <section className="bg-gray-50 min-h-screen py-20 px-6">
+        <section className="min-h-screen py-24 px-6">
 
             {/* Hero */}
-            <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <div className="text-center mb-20 max-w-3xl mx-auto">
+                <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
                     Why Choose Us
                 </h1>
-                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                <p className="text-gray-600 text-lg leading-relaxed">
                     We are committed to delivering unforgettable travel experiences
-                    with exceptional service and unbeatable value.
+                    with exceptional service, personalized planning and unmatched value.
                 </p>
             </div>
 
             {/* Features Grid */}
-            <div className="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3 mb-20">
+            <div className="max-w-7xl mx-auto grid gap-12 sm:grid-cols-2 lg:grid-cols-3 mb-28">
                 {features.map((feature, index) => (
                     <div
                         key={index}
-                        className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300"
+                        className="group p-10 rounded-3xl border border-gray-200 hover:border-blue-500 hover:shadow-xl transition duration-300"
                     >
-                        <div className="text-4xl mb-4">{feature.icon}</div>
-                        <h2 className="text-2xl font-semibold mb-3">
+                        <div className="text-5xl mb-6 group-hover:scale-110 transition duration-300">
+                            {feature.icon}
+                        </div>
+
+                        <h2 className="text-2xl font-bold mb-4 text-gray-900">
                             {feature.title}
                         </h2>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+
+                        <p className="text-gray-600 leading-relaxed text-sm">
                             {feature.description}
                         </p>
                     </div>
@@ -80,61 +84,79 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Stats Section */}
-            <div className="bg-blue-600 text-white rounded-3xl max-w-6xl mx-auto py-14 px-8 grid grid-cols-2 md:grid-cols-4 text-center mb-20 shadow-xl">
-                <div>
-                    <h3 className="text-3xl font-bold">10K+</h3>
-                    <p className="text-sm mt-2">Happy Travelers</p>
-                </div>
-                <div>
-                    <h3 className="text-3xl font-bold">50+</h3>
-                    <p className="text-sm mt-2">Destinations</p>
-                </div>
-                <div>
-                    <h3 className="text-3xl font-bold">8+</h3>
-                    <p className="text-sm mt-2">Years Experience</p>
-                </div>
-                <div>
-                    <h3 className="text-3xl font-bold">24/7</h3>
-                    <p className="text-sm mt-2">Support</p>
-                </div>
+            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center mb-28">
+
+                {[
+                    { value: "10K+", label: "Happy Travelers" },
+                    { value: "50+", label: "Destinations" },
+                    { value: "8+", label: "Years Experience" },
+                    { value: "24/7", label: "Support" },
+                ].map((stat, index) => (
+                    <div
+                        key={index}
+                        className="p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition duration-300"
+                    >
+                        <h3 className="text-4xl font-extrabold text-blue-600">
+                            {stat.value}
+                        </h3>
+                        <p className="text-gray-600 text-sm mt-3 tracking-wide">
+                            {stat.label}
+                        </p>
+                    </div>
+                ))}
+
             </div>
 
             {/* Process Section */}
-            <div className="max-w-5xl mx-auto text-center mb-20">
-                <h2 className="text-3xl font-bold mb-10 text-gray-800">
+            <div className="max-w-5xl mx-auto text-center mb-28">
+                <h2 className="text-4xl font-bold mb-16 text-gray-900">
                     How We Make Your Trip Perfect
                 </h2>
 
-                <div className="grid md:grid-cols-3 gap-10">
-                    <div>
-                        <h3 className="text-xl font-semibold mb-2 text-gray-500">1. Plan</h3>
-                        <p className="text-gray-600 text-sm">
-                            Share your travel ideas and preferences with us.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 className="text-xl font-semibold mb-2 text-gray-500">2. Customize</h3>
-                        <p className="text-gray-600 text-sm">
-                            We create a personalized itinerary tailored to you.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 className="text-xl font-semibold mb-2 text-gray-500">3. Enjoy</h3>
-                        <p className="text-gray-600 text-sm">
-                            Travel stress-free while we handle everything.
-                        </p>
-                    </div>
+                <div className="grid md:grid-cols-3 gap-12">
+
+                    {[
+                        {
+                            step: "01",
+                            title: "Plan",
+                            desc: "Share your travel ideas and preferences with our experts.",
+                        },
+                        {
+                            step: "02",
+                            title: "Customize",
+                            desc: "We craft a personalized itinerary tailored to your needs.",
+                        },
+                        {
+                            step: "03",
+                            title: "Enjoy",
+                            desc: "Travel stress-free while we manage everything for you.",
+                        },
+                    ].map((item, index) => (
+                        <div key={index} className="relative">
+                            <div className="text-6xl font-extrabold text-gray-100 mb-6">
+                                {item.step}
+                            </div>
+                            <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                                {item.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm">
+                                {item.desc}
+                            </p>
+                        </div>
+                    ))}
+
                 </div>
             </div>
 
             {/* CTA */}
             <div className="text-center">
-                <h3 className="text-3xl font-bold text-gray-800 mb-6">
+                <h3 className="text-4xl font-bold text-gray-900 mb-8">
                     Ready To Start Your Journey?
                 </h3>
+
                 <Link
                     href="/packages"
-                    className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition"
+                    className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:scale-105 transition duration-300 font-semibold"
                 >
                     Explore Packages
                 </Link>

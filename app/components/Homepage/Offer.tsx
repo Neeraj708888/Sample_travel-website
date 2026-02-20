@@ -21,7 +21,7 @@ const offers = [
 export default function Offers() {
     return (
         <>
-            {/* ✅ Homepage Featured Offers Schema */}
+            {/* ✅ Enhanced SEO Schema */}
             <Script
                 id="homepage-featured-offers"
                 type="application/ld+json"
@@ -46,55 +46,71 @@ export default function Offers() {
                 }}
             />
 
-            <section className="bg-gradient-to-b from-gray-950 to-black text-white py-24 px-6">
-                <div className="max-w-7xl mx-auto">
+            <section className="relative bg-black text-white py-28 px-6 overflow-hidden">
+
+                {/* Background Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/10 via-black to-yellow-900/10 pointer-events-none" />
+
+                <div className="relative max-w-7xl mx-auto">
 
                     {/* Section Header */}
-                    <div className="flex justify-between items-center mb-16">
+                    <div className="flex flex-col md:flex-row justify-between md:items-center mb-20 gap-6">
+
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-bold">
-                                🔥 Exclusive Travel Offers
+                            <h2 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-300 bg-clip-text text-transparent">
+                                Exclusive Luxury Offers
                             </h2>
-                            <p className="text-gray-400 mt-3">
-                                Limited-time luxury deals crafted for premium travelers.
+
+                            <p className="text-gray-400 mt-4 max-w-xl text-lg">
+                                Limited-time curated travel experiences designed for elite travelers.
                             </p>
                         </div>
 
                         <Link
                             href="/offers"
-                            className="hidden md:inline-block text-yellow-400 hover:underline font-medium"
+                            className="hidden md:inline-block px-6 py-3 border border-yellow-500 text-yellow-400 rounded-full hover:bg-yellow-500 hover:text-black transition duration-300"
                         >
-                            View All →
+                            View All Offers →
                         </Link>
+
                     </div>
 
                     {/* Offers Grid */}
-                    <div className="grid md:grid-cols-2 gap-10">
+                    <div className="grid md:grid-cols-2 gap-12">
+
                         {offers.map((offer) => (
                             <div
                                 key={offer.slug}
-                                className="group relative bg-white/5 backdrop-blur-xl p-10 rounded-2xl border border-white/10 hover:border-yellow-500 transition-all duration-500 shadow-lg hover:shadow-yellow-500/20"
+                                className="group relative p-[1px] rounded-3xl bg-gradient-to-r from-yellow-500/50 via-amber-400/30 to-yellow-500/50 hover:from-yellow-400 hover:to-yellow-600 transition duration-500"
                             >
-                                <h3 className="text-2xl font-semibold mb-4 group-hover:text-yellow-400 transition">
-                                    {offer.name}
-                                </h3>
+                                <div className="bg-zinc-900 rounded-3xl p-12 backdrop-blur-xl border border-white/10 group-hover:border-yellow-500 transition duration-500 relative overflow-hidden">
 
-                                <p className="text-3xl font-bold text-yellow-400 mb-6">
-                                    ₹{offer.price}
-                                </p>
+                                    {/* Shine Effect */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-tr from-white/30 to-transparent transition duration-700" />
 
-                                <Link
-                                    href={`/offers/${offer.slug}`}
-                                    className="inline-block px-6 py-3 bg-yellow-500 text-black rounded-lg font-semibold hover:bg-yellow-400 transition"
-                                >
-                                    View Deal
-                                </Link>
+                                    <h3 className="text-3xl font-bold mb-6 group-hover:text-yellow-400 transition">
+                                        {offer.name}
+                                    </h3>
+
+                                    <p className="text-4xl font-extrabold text-yellow-400 mb-8 tracking-wide">
+                                        ₹{offer.price}
+                                    </p>
+
+                                    <Link
+                                        href={`/offers/${offer.slug}`}
+                                        className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-400 text-black font-semibold rounded-full hover:scale-105 transition duration-300 shadow-xl"
+                                    >
+                                        Explore Offer
+                                    </Link>
+
+                                </div>
                             </div>
                         ))}
+
                     </div>
 
                     {/* Mobile View All */}
-                    <div className="mt-12 text-center md:hidden">
+                    <div className="mt-16 text-center md:hidden">
                         <Link
                             href="/offers"
                             className="text-yellow-400 hover:underline"
@@ -102,6 +118,7 @@ export default function Offers() {
                             View All Offers →
                         </Link>
                     </div>
+
                 </div>
             </section>
         </>

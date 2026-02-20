@@ -21,26 +21,46 @@ export default function TravelGuides() {
     const router = useRouter();
 
     return (
-        <section className="px-10 py-8">
-            <h2 className="text-2xl font-bold mb-6">
-                Meet Our Travel Guides
-            </h2>
+        <section className="relative py-24 px-6 bg-gradient-to-b from-gray-950 to-black text-white">
+            <div className="max-w-7xl mx-auto">
 
-            <div className="grid md:grid-cols-3 gap-6">
-                {guides.map((guide) => (
-                    <div
-                        key={guide.slug}
-                        onClick={() => router.push(`/destinations/${guide.slug}`)}
-                        className="border p-6 rounded shadow hover:shadow-lg cursor-pointer"
-                    >
-                        <h3 className="font-semibold">
-                            {guide.title}
-                        </h3>
-                        <p className="text-sm text-gray-500 mt-2">
-                            Complete AI-generated travel insights.
-                        </p>
-                    </div>
-                ))}
+                {/* Heading */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                        Expert Travel Guides & Insights
+                    </h2>
+
+                    <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+                        Discover in-depth travel guides crafted to help you plan the
+                        perfect journey. From seasonal tips to hidden experiences,
+                        explore curated insights for smarter travel decisions.
+                    </p>
+                </div>
+
+                {/* Guide Cards */}
+                <div className="grid md:grid-cols-3 gap-8">
+                    {guides.map((guide) => (
+                        <div
+                            key={guide.slug}
+                            onClick={() => router.push(`/destinations/${guide.slug}`)}
+                            className="group cursor-pointer relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-yellow-500 transition-all duration-500 shadow-lg hover:shadow-yellow-500/20 hover:-translate-y-2"
+                        >
+                            <h3 className="text-xl font-semibold group-hover:text-yellow-400 transition">
+                                {guide.title}
+                            </h3>
+
+                            <p className="text-gray-400 mt-4 text-sm leading-relaxed">
+                                Complete premium travel insights including best time to visit,
+                                attractions, itinerary suggestions, and expert travel tips.
+                            </p>
+
+                            <div className="mt-6 text-yellow-400 font-medium text-sm opacity-0 group-hover:opacity-100 transition duration-300">
+                                Read Full Guide →
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
             </div>
         </section>
     );

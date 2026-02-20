@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Featured Travel Packages | Best Tour Deals",
+    title: "Featured Luxury Travel Packages | Ananta Group",
     description:
-        "Explore our featured travel packages with best price guarantee. Discover Goa, Manali, Dubai, Bali and more with customized travel plans.",
+        "Explore our premium handpicked travel packages. Discover Goa, Manali, Dubai, Bali and more with luxury experiences and best price guarantee.",
 };
 
 const packages = [
@@ -49,75 +49,83 @@ const packages = [
 
 export default function FeaturedPackages() {
     return (
-        <section className="bg-gray-50 min-h-screen py-20 px-6">
+        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white min-h-screen py-24 px-6">
 
             {/* Hero */}
-            <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                    Featured Travel Packages
+            <div className="text-center mb-20">
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    Featured Travel Experiences
                 </h1>
-                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                    Handpicked travel packages designed for unforgettable experiences at the best prices.
+                <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+                    Curated luxury travel packages crafted for unforgettable journeys.
                 </p>
             </div>
 
             {/* Packages Grid */}
-            <div className="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="max-w-7xl mx-auto grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+
                 {packages.map((pkg) => (
                     <div
                         key={pkg.slug}
-                        className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
+                        className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-500 hover:-translate-y-3"
                     >
                         {/* Image */}
-                        <div className="relative h-64">
+                        <div className="relative h-72 overflow-hidden">
                             <Image
                                 src={pkg.image}
                                 alt={pkg.title}
                                 fill
-                                className="object-cover group-hover:scale-110 transition duration-500"
+                                className="object-cover group-hover:scale-110 transition duration-700"
                             />
 
+                            {/* Dark Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+
                             {/* Price Badge */}
-                            <div className="absolute top-4 left-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm shadow-md">
+                            <div className="absolute top-5 left-5 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-1 rounded-full text-sm font-semibold shadow-lg">
                                 {pkg.price}
                             </div>
                         </div>
 
                         {/* Content */}
-                        <div className="p-6">
-                            <h2 className="text-2xl font-semibold mb-2">
+                        <div className="p-8">
+                            <h2 className="text-2xl font-bold mb-3">
                                 {pkg.title}
                             </h2>
 
-                            <p className="text-gray-500 text-sm mb-2">
+                            <p className="text-gray-400 text-sm mb-2">
                                 📍 {pkg.location}
                             </p>
 
-                            <p className="text-gray-600 text-sm mb-6">
+                            <p className="text-gray-400 text-sm mb-6">
                                 🗓 {pkg.duration}
                             </p>
 
                             <Link
                                 href={`/packages/${pkg.slug}`}
-                                className="inline-block px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+                                className="inline-block w-full text-center py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition font-semibold shadow-lg"
                             >
-                                View Details
+                                View Package
                             </Link>
                         </div>
                     </div>
                 ))}
             </div>
 
-            {/* CTA */}
-            <div className="mt-20 text-center">
-                <h3 className="text-3xl font-bold text-gray-800 mb-6">
-                    Ready to Start Your Journey?
+            {/* Premium CTA Section */}
+            <div className="mt-28 text-center">
+                <h3 className="text-4xl font-bold mb-6">
+                    Begin Your Luxury Journey Today
                 </h3>
+                <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+                    Let our travel experts craft a personalized experience tailored just for you.
+                </p>
+
                 <Link
                     href="/contact"
-                    className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition"
+                    className="px-10 py-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 hover:scale-105 transition font-semibold shadow-2xl"
                 >
-                    Contact Us
+                    Plan My Trip
                 </Link>
             </div>
 
