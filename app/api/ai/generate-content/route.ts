@@ -67,7 +67,7 @@ export async function POST(req: Request) {
                 },
             ])
             .select()
-            .single();
+            .maybeSingle();
 
         if (error) throw error;
 

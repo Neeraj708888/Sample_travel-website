@@ -46,7 +46,7 @@ export default function Offers() {
                 }}
             />
 
-            <section className="relative bg-black text-white py-28 px-6 overflow-hidden">
+            <section className="relative bg-black text-white py-24 px-6 overflow-hidden">
 
                 {/* Background Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/10 via-black to-yellow-900/10 pointer-events-none" />

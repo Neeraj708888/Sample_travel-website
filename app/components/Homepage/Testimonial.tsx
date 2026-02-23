@@ -2,7 +2,7 @@ export default function Testimonial() {
     return (
         // <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-6">
 
-        <section className="py-20 px-6">
+        <section className="py-24 px-6">
 
             {/* Heading */}
             <div className="text-center mb-16">

@@ -48,7 +48,7 @@ const destinations = [
 
 export default function PopularDestination() {
     return (
-        <section className="min-h-screen py-20 px-6">
+        <section className="min-h-screen py-24 px-6">
 
             {/* Hero */}
             <div className="text-center mb-16">
