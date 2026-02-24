@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Mic, Search } from "lucide-react";
+import Breadcrumb from "../Common/Breadcum";
 
 const services = [
     "Wedding Planner",
@@ -100,9 +101,14 @@ export default function EventSearch() {
     }, []);
 
     return (
-        <section className="relative py-32 px-6 text-white overflow-hidden bg-black">
+        <section className="relative py-18 text-white overflow-hidden">
             <div className="max-w-6xl mx-auto text-center">
-
+                <Breadcrumb
+                    items={[
+                        { label: "Home", href: "/" },
+                        { label: "Events", href: "/events" },
+                    ]}
+                />
                 {/* H1 */}
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                     Premium Event Management Company in India

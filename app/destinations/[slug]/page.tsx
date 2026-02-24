@@ -237,3 +237,43 @@ export default async function Page(
     </main>
   )
 }
+
+
+// import { createDestination, getDestination } from "@/app/liv/destinationService"
+// import { notFound } from "next/navigation"
+// import Hero from "./components/Hero"
+
+// export const revalidate = 86400
+
+// export default async function Page({ params }: { params: { slug: string } }) {
+//   const slug = params.slug
+
+//   let destination = await getDestination(slug)
+
+//   if (!destination) {
+//     destination = await createDestination(slug)
+//   }
+
+//   if (!destination) return notFound()
+
+//   return (
+//     <main className="bg-white text-gray-800 mt-16">
+//       <Hero destination={destination} />
+//       <Highlights destination={destination} />
+//       <Content destination={destination} />
+//       <Packages destination={destination} />
+//       <FAQ destination={destination} />
+//       <CTA destination={destination} />
+
+//       {/* JSON LD */}
+//       {destination.schema_json && (
+//         <script
+//           type="application/ld+json"
+//           dangerouslySetInnerHTML={{
+//             __html: JSON.stringify(destination.schema_json),
+//           }}
+//         />
+//       )}
+//     </main>
+//   )
+// }
