@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
     return generateSeo({
         title: `${formattedEvent} Event Management in India`,
         description: `Luxury ${formattedEvent} event planners in India. Professional planning, premium execution and unforgettable experiences.`,
-        url: `${baseUrl}/events/${event}`,
+        url: `${baseUrl}/event-services/${event}`,
     })
 }
 
@@ -33,7 +33,7 @@ export default async function EventPage({ params }: PageProps) {
     if (!events.includes(event)) notFound()
 
     const formattedEvent = format(event)
-    const pageUrl = `${baseUrl}/events/${event}`
+    const pageUrl = `${baseUrl}/event-services/${event}`
 
     const schemaData = [
         {

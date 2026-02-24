@@ -12,7 +12,7 @@ type PageProps = {
 }
 
 const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://localhost:3000"
 
 const format = (str: string) =>
     str.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
     const formattedCategory = format(category)
     const formattedService = format(service)
 
-    const url = `${baseUrl}/events/${event}/${category}/${service}`
+    const url = `${baseUrl}/event-services/${event}/${category}/${service}`
 
     return generateSeo({
         title: `${formattedService} | ${formattedCategory} ${formattedEvent} Services in India`,
@@ -40,7 +40,7 @@ export default async function ServicePage({ params }: PageProps) {
     const formattedCategory = format(category)
     const formattedService = format(service)
 
-    const pageUrl = `${baseUrl}/events/${event}/${category}/${service}`
+    const pageUrl = `${baseUrl}/event-services/${event}/${category}/${service}`
 
     const schemaData = [
         serviceSchema({
@@ -51,11 +51,11 @@ export default async function ServicePage({ params }: PageProps) {
         }),
         breadcrumbSchema([
             { name: "Home", url: baseUrl },
-            { name: "Events", url: `${baseUrl}/events` },
-            { name: formattedEvent, url: `${baseUrl}/events/${event}` },
+            { name: "Events", url: `${baseUrl}/event-services` },
+            { name: formattedEvent, url: `${baseUrl}/event-services/${event}` },
             {
                 name: formattedCategory,
-                url: `${baseUrl}/events/${event}/${category}`,
+                url: `${baseUrl}/event-services/${event}/${category}`,
             },
             { name: formattedService, url: pageUrl },
         ]),

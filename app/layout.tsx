@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import EnquiryPopup from "./components/EnquiryFormPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Premium event management company specializing in luxury weddings, corporate events, brand launches, and destination celebrations. Bespoke planning, flawless execution, unforgettable experiences.",
   alternates: {
-    canonical: "https://yourdomain.com/",
+    canonical: "https://localhost:3000/",
   },
 };
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         {/* ✅ Padding because navbar is fixed  remove class- className="pt-20"*/}
         <main>
           {children}
+          <EnquiryPopup />
         </main>
         {/* Footer Added */}
         <Footer />

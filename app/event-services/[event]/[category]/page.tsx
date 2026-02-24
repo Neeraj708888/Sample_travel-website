@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps) {
     const baseUrl =
         process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
-    const url = `${baseUrl}/events/${event}/${category}`
+    const url = `${baseUrl}/event-services/${event}/${category}`
 
     return generateSeo({
         title: `${format(category)} ${format(event)} Services in India`,
@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: PageProps) {
     const baseUrl =
         process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
-    const url = `${baseUrl}/events/${event}/${category}`
+    const url = `${baseUrl}/event-services/${event}/${category}`
 
     const formattedEvent = format(event)
     const formattedCategory = format(category)
@@ -47,8 +47,8 @@ export default async function CategoryPage({ params }: PageProps) {
         }),
         breadcrumbSchema([
             { name: "Home", url: baseUrl },
-            { name: "Events", url: `${baseUrl}/events` },
-            { name: formattedEvent, url: `${baseUrl}/events/${event}` },
+            { name: "Events", url: `${baseUrl}/event-services` },
+            { name: formattedEvent, url: `${baseUrl}/event-services/${event}` },
             { name: formattedCategory, url },
         ]),
     ]

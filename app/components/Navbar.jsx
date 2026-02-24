@@ -24,7 +24,7 @@ export default function Navbar() {
 
 
                     {/* Desktop Menu (Same Links) */}
-                    <div className="hidden md:flex gap-8 text-gray-700 font-medium">
+                    <div className="hidden md:flex gap-8 text-gray-700 font-medium item-center">
                         <Link href="/" className="relative group">
                             Home
                             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
@@ -35,10 +35,91 @@ export default function Navbar() {
                             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
                         </Link>
 
-                        <Link href="/event-services" className="relative group">
-                            Our Services
-                            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
-                        </Link>
+                        <div className="relative group">
+                            <button className="relative">
+                                Our Services
+                                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
+                            </button>
+
+                            {/* Centered Full Width Mega Menu */}
+                            <div className="fixed top-[65px] left-1/2 -translate-x-1/2 w-screen z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+
+                                <div className="max-w-6xl mx-auto px-8 py-10 bg-gray-200 rounded-lg shadow-lg">
+
+                                    {/* Horizontal Categories */}
+                                    <div className="flex gap-6 overflow-x-auto pb-6 border-b">
+                                        {[
+                                            "Corporate Event",
+                                            "Artist Management",
+                                            "Wedding Planning",
+                                            "Exhibition",
+                                            "Conference Planning",
+                                            "Brand Promotion",
+                                            "Birthday Party",
+                                            "Product Launch",
+                                            "Team Building",
+                                            "Conference",
+                                            "Award Night",
+                                            "Celebrity Booking",
+                                            "DJ Night",
+                                        ].map((category) => (
+                                            <button
+                                                key={category}
+                                                className="whitespace-nowrap px-5 py-2 bg-gray-100 hover:bg-amber-300 hover:text-black rounded-lg transition"
+                                            >
+                                                {category}
+                                            </button>
+                                        ))}
+                                    </div>
+
+                                    {/* Column Layout */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-8 bg-amber-100 px-5 py-8 rounded-lg">
+                                        <div>
+                                            <h4 className="font-semibold mb-4 text-lg">Wedding Planning</h4>
+                                            <ul className="space-y-3 text-gray-600">
+                                                <li>Destination Wedding</li>
+                                                <li>Theme Decor</li>
+                                                <li>Catering</li>
+                                                <li>Photography</li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h4 className="font-semibold mb-4 text-lg">Corporate Event</h4>
+                                            <ul className="space-y-3 text-gray-600">
+                                                <li>Conference</li>
+                                                <li>Product Launch</li>
+                                                <li>Team Building</li>
+                                                <li>Award Night</li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h4 className="font-semibold mb-4 text-lg">Artist Management</h4>
+                                            <ul className="space-y-3 text-gray-600">
+                                                <li>Celebrity Booking</li>
+                                                <li>DJ Night</li>
+                                                <li>Live Band</li>
+                                                <li>Influencer Event</li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h4 className="font-semibold mb-4 text-lg">Exhibition</h4>
+                                            <ul className="space-y-3 text-gray-600">
+                                                <li>Trade Show</li>
+                                                <li>Booth Design</li>
+                                                <li>Brand Promotion</li>
+                                                <li>Stall Fabrication</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
 
                         <Link href="/gallery" className="relative group">
                             Gallery

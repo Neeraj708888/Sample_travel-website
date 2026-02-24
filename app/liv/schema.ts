@@ -1,8 +1,9 @@
 // lib/schema.ts
 
 const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://localhost:3000"
 
+// Organization Schema
 export function organizationSchema() {
     return {
         "@context": "https://schema.org",
@@ -23,6 +24,7 @@ export function organizationSchema() {
     }
 }
 
+// Service Schema
 export function serviceSchema({
     name,
     description,
@@ -75,6 +77,7 @@ export function breadcrumbSchema(
     }
 }
 
+// FAQ Schema Generator
 export function faqSchema(
     faqs: { question: string; answer: string }[]
 ) {
@@ -90,5 +93,35 @@ export function faqSchema(
                 text: faq.answer,
             },
         })),
+    }
+}
+
+// Local Business Schema (Professional Service)
+export function localBusinessSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": `${baseUrl}#localbusiness`,
+        name: "Your Company Name",
+        image: `${baseUrl}/logo.png`,
+        url: baseUrl,
+        telephone: "+91-9999999999",
+        priceRange: "₹₹₹",
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: "Your Street Address",
+            addressLocality: "Delhi",
+            addressRegion: "DL",
+            postalCode: "110001",
+            addressCountry: "IN",
+        },
+        areaServed: {
+            "@type": "Country",
+            name: "India",
+        },
+        sameAs: [
+            "https://instagram.com/yourprofile",
+            "https://facebook.com/yourprofile",
+        ],
     }
 }

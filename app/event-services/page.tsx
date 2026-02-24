@@ -5,18 +5,18 @@ import Schema from "../liv/components/Schema"
 
 
 const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://localhost:3000"
 
 export const metadata = generateSeo({
     title:
         "Best Event Management Company in India | Luxury Wedding & Corporate Planners",
     description:
         "Hire the best event management company in India for weddings, corporate events, birthdays and luxury celebrations. Professional planning with premium execution.",
-    url: `${baseUrl}/events`,
+    url: `${baseUrl}/event-services`,
 })
 
 export default function EventServicesPage() {
-    const pageUrl = `${baseUrl}/events`
+    const pageUrl = `${baseUrl}/event-services`
 
     const schemaData = [
         organizationSchema(),
