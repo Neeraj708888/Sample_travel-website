@@ -3,60 +3,69 @@
 import { useState } from "react";
 import Link from "next/link";
 import { X, ChevronDown } from "lucide-react";
+import { ServiceNode, services } from "@/app/data/services";
 
 interface MobileSidebarProps {
     isOpen: boolean;
     setIsOpen: (value: boolean) => void;
 }
 
-/* ================= SERVICES DATA ================= */
-const services = [
-    {
-        title: "Wedding Planning",
-        slug: "wedding",
-        children: [
-            {
-                title: "Destination Wedding",
-                slug: "destination",
-            },
-            {
-                title: "Theme Decor",
-                slug: "decor",
-            },
-            {
-                title: "Catering",
-                slug: "catering",
-            },
-        ],
-    },
-    {
-        title: "Corporate Event",
-        slug: "corporate",
-        children: [
-            {
-                title: "Conference",
-                slug: "conference",
-            },
-            {
-                title: "Product Launch",
-                slug: "product-launch",
-            },
-            {
-                title: "Award Night",
-                slug: "award-night",
-            },
-        ],
-    },
-];
-
 export default function MobileSidebar({
     isOpen,
     setIsOpen,
-}: MobileSidebarProps): JSX.Element {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-    const [openChildIndex, setOpenChildIndex] = useState<number | null>(null);
-    const [serviceOpen, setServiceOpen] = useState<boolean>(false);
+}: MobileSidebarProps) {
+    const [serviceOpen, setServiceOpen] = useState(false);
+    const [activePath, setActivePath] = useState<string[]>([]);
 
+    /* ================= Recursive Renderer ================= */
+    const renderNodes = (
+        nodes: ServiceNode[],
+        parentSlugs: string[] = []
+    ) => {
+        return nodes.map((node) => {
+            const currentPath = [...parentSlugs, node.slug];
+            const hasChildren = node.children && node.children.length > 0;
+
+            // 🔥 FIXED LOGIC
+            const isOpen = activePath
+                .slice(0, currentPath.length)
+                .join("/") === currentPath.join("/");
+
+            return (
+                <div key={node.id}>
+                    {hasChildren ? (
+                        <>
+                            <button
+                                onClick={() => setActivePath(currentPath)}
+                                className="flex justify-between items-center w-full"
+                            >
+                                {node.title}
+                                <ChevronDown
+                                    size={16}
+                                    className={`transition-transform ${isOpen ? "rotate-180" : ""
+                                        }`}
+                                />
+                            </button>
+
+                            {isOpen && (
+                                <div className="ml-4 mt-3 flex flex-col gap-2 text-gray-400">
+                                    {renderNodes(node.children!, currentPath)}
+                                </div>
+                            )}
+                        </>
+                    ) : (
+                        <Link
+                            href={`/event-services/${currentPath.join("/")}`}
+                            onClick={() => setIsOpen(false)}
+                            className="block"
+                        >
+                            {node.title}
+                        </Link>
+                    )}
+                </div>
+            );
+        });
+    };
     return (
         <>
             {/* Overlay */}
@@ -81,7 +90,6 @@ export default function MobileSidebar({
                 </div>
 
                 <div className="p-6 flex flex-col gap-5 text-gray-300 font-medium overflow-y-auto">
-
                     <Link href="/" onClick={() => setIsOpen(false)}>
                         Home
                     </Link>
@@ -90,7 +98,7 @@ export default function MobileSidebar({
                         About Us
                     </Link>
 
-                    {/* ================= OUR SERVICES ================= */}
+                    {/* OUR SERVICES */}
                     <div>
                         <button
                             onClick={() => setServiceOpen(!serviceOpen)}
@@ -106,41 +114,7 @@ export default function MobileSidebar({
 
                         {serviceOpen && (
                             <div className="ml-4 mt-4 flex flex-col gap-4 text-sm">
-
-                                {services.map((service, index) => (
-                                    <div key={service.slug}>
-                                        {/* Parent Service */}
-                                        <button
-                                            onClick={() =>
-                                                setOpenIndex(openIndex === index ? null : index)
-                                            }
-                                            className="flex justify-between items-center w-full"
-                                        >
-                                            {service.title}
-                                            <ChevronDown
-                                                size={16}
-                                                className={`transition-transform ${openIndex === index ? "rotate-180" : ""
-                                                    }`}
-                                            />
-                                        </button>
-
-                                        {/* Children */}
-                                        {openIndex === index && (
-                                            <div className="ml-4 mt-3 flex flex-col gap-2 text-gray-400">
-                                                {service.children.map((child) => (
-                                                    <Link
-                                                        key={child.slug}
-                                                        href={`/event-services/${service.slug}/${child.slug}`}
-                                                        onClick={() => setIsOpen(false)}
-                                                    >
-                                                        {child.title}
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-
+                                {renderNodes(services)}
                             </div>
                         )}
                     </div>
