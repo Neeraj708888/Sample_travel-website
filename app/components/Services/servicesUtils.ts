@@ -1,4 +1,5 @@
-import { ServiceNode } from "./servicesData";
+import { ServiceNode } from "@/app/data/services";
+
 
 export function getFirstFullPath(nodes: ServiceNode[]): string[] {
     if (!nodes.length) return [];
