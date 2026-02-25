@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { services } from "@/app/data/services";
+import { services, ServiceNode } from "@/app/data/services";
 import { findNodeByPath, getFirstFullPath } from "./servicesUtils";
 
 export default function ServicesMegaContent() {
@@ -15,19 +15,22 @@ export default function ServicesMegaContent() {
 
     if (!activePath.length) return null;
 
-    const parentNode = services.find(
+    const parentNode: ServiceNode | undefined = services.find(
         (s) => s.slug === activePath[0]
     );
 
-    const childNode = findNodeByPath(services, activePath.slice(0, 2));
+    const childNode: ServiceNode | null = findNodeByPath(
+        services,
+        activePath.slice(0, 2)
+    );
 
-    const rightOptions = childNode?.children || [];
+    const rightOptions: ServiceNode[] = childNode?.children || [];
 
     return (
         <>
             {/* Horizontal Categories */}
             <div className="flex gap-2 overflow-x-auto pb-5 border-b">
-                {services.map((category) => (
+                {services.map((category: ServiceNode) => (
                     <button
                         key={category.slug}
                         onClick={() =>
@@ -47,7 +50,7 @@ export default function ServicesMegaContent() {
 
                 {/* LEFT SIDE */}
                 <div className="flex flex-col gap-3 overflow-y-auto pr-3 border-r">
-                    {parentNode?.children?.map((child) => (
+                    {parentNode?.children?.map((child: ServiceNode) => (
                         <button
                             key={child.slug}
                             onClick={() =>
@@ -67,7 +70,7 @@ export default function ServicesMegaContent() {
                 <div className="overflow-y-auto pl-3">
                     {rightOptions.length > 0 ? (
                         <div className="grid grid-cols-2 gap-4">
-                            {rightOptions.map((item) => (
+                            {rightOptions.map((item: ServiceNode) => (
                                 <Link
                                     key={item.slug}
                                     href={`/services/${parentNode?.slug}/${childNode?.slug}/${item.slug}`}
