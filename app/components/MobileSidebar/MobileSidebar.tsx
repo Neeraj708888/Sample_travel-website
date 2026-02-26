@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, Factory } from "lucide-react";
 import { ServiceNode, services } from "@/app/data/services";
 
 interface MobileSidebarProps {
@@ -16,6 +16,16 @@ export default function MobileSidebar({
 }: MobileSidebarProps) {
     const [serviceOpen, setServiceOpen] = useState(false);
     const [activePath, setActivePath] = useState<string[]>([]);
+    const activeRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (activeRef.current) {
+            activeRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+            });
+        }
+    }, [activePath]);
 
     /* ================= Recursive Renderer ================= */
     const renderNodes = (
@@ -27,19 +37,34 @@ export default function MobileSidebar({
             const hasChildren = node.children && node.children.length > 0;
 
             // 🔥 FIXED LOGIC
-            const isOpen = activePath
-                .slice(0, currentPath.length)
-                .join("/") === currentPath.join("/");
+            // const isOpen = activePath
+            //     .slice(0, currentPath.length)
+            //     .join("/") === currentPath.join("/");
+
+            const isOpen = currentPath.every(
+                (slug, index) => activePath[index] === slug
+            );
 
             return (
-                <div key={node.id}>
+                <div key={node.id} ref={activePath.join("/") === currentPath.join("/")
+                    ? activeRef
+                    : null}>
                     {hasChildren ? (
                         <>
                             <button
-                                onClick={() => setActivePath(currentPath)}
+                                // onClick={() => setActivePath(currentPath)}
+                                onClick={() =>
+                                    setActivePath((prev) =>
+                                        isOpen ? parentSlugs : currentPath
+                                    )
+                                }
                                 className="flex justify-between items-center w-full"
                             >
-                                {node.title}
+                                <span className="flex gap-2">
+                                    <Factory size={20} />
+                                    {node.title}
+                                </span>
+
                                 <ChevronDown
                                     size={16}
                                     className={`transition-transform ${isOpen ? "rotate-180" : ""
@@ -47,11 +72,15 @@ export default function MobileSidebar({
                                 />
                             </button>
 
-                            {isOpen && (
-                                <div className="ml-4 mt-3 flex flex-col gap-2 text-gray-400">
-                                    {renderNodes(node.children!, currentPath)}
-                                </div>
-                            )}
+                            <div
+                                className={`ml-4 mt-3 flex flex-col gap-2 text-gray-400 transition-all duration-300 ease-in-out ${isOpen ? "opacity-100" : "opacity-0 max-h-0 overflow-hidden"
+                                    } ${node.children && node.children.length > 4
+                                        ? "max-h-[200px] overflow-y-auto pr-2"
+                                        : "max-h-[500px]"
+                                    }`}
+                            >
+                                {isOpen && renderNodes(node.children!, currentPath)}
+                            </div>
                         </>
                     ) : (
                         <Link
@@ -78,8 +107,8 @@ export default function MobileSidebar({
 
             {/* Sidebar */}
             <div
-                className={`fixed top-0 right-0 h-full w-72 bg-black text-white shadow-2xl z-50 transform transition-transform duration-500 md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
-                    }`}
+                className={`fixed top-0 right-0 h-screen w-72 bg-purple-900 text-white shadow-2xl z-50 transform transition-transform duration-500 md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
+                    } flex flex-col`}
             >
                 {/* Header */}
                 <div className="flex justify-between items-center p-5 border-b border-gray-800">
@@ -89,7 +118,7 @@ export default function MobileSidebar({
                     </button>
                 </div>
 
-                <div className="p-6 flex flex-col gap-5 text-gray-300 font-medium overflow-y-auto">
+                <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-5 bg-amber-950 text-gray-300 font-medium">
                     <Link href="/" onClick={() => setIsOpen(false)}>
                         Home
                     </Link>
@@ -113,10 +142,11 @@ export default function MobileSidebar({
                         </button>
 
                         {serviceOpen && (
-                            <div className="ml-4 mt-4 flex flex-col gap-4 text-sm">
+                            <div className="ml-2 mt-4 flex flex-col gap-4 text-sm max-h-[70vh] overflow-y-auto pr-2">
                                 {renderNodes(services)}
                             </div>
                         )}
+
                     </div>
 
                     <Link href="/gallery" onClick={() => setIsOpen(false)}>

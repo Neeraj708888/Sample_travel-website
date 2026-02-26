@@ -22,7 +22,7 @@ export default function Footer() {
                     {/* Logo + Description */}
                     <div>
                         <h2 className="text-2xl font-bold text-white tracking-wide">
-                            Ananta Group
+                            Ananta Group - Event Management Company
                         </h2>
                         <p className="mt-4 text-sm max-w-sm text-gray-400 leading-relaxed">
                             Discover the world with our exclusive travel packages,
