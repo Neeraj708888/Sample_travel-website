@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { X, ChevronDown, Factory } from "lucide-react";
+import { X, ChevronDown, Factory, ArrowBigRight } from "lucide-react";
 import { ServiceNode, services } from "@/app/data/services";
+import GlobalServiceSearch from "../GlobalServiceSearch";
 
 interface MobileSidebarProps {
     isOpen: boolean;
@@ -36,11 +37,6 @@ export default function MobileSidebar({
             const currentPath = [...parentSlugs, node.slug];
             const hasChildren = node.children && node.children.length > 0;
 
-            // 🔥 FIXED LOGIC
-            // const isOpen = activePath
-            //     .slice(0, currentPath.length)
-            //     .join("/") === currentPath.join("/");
-
             const isOpen = currentPath.every(
                 (slug, index) => activePath[index] === slug
             );
@@ -60,7 +56,7 @@ export default function MobileSidebar({
                                 }
                                 className="flex justify-between items-center w-full"
                             >
-                                <span className="flex gap-2">
+                                <span className="flex gap-2 text-start">
                                     <Factory size={20} />
                                     {node.title}
                                 </span>
@@ -100,64 +96,72 @@ export default function MobileSidebar({
             {/* Overlay */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
                     onClick={() => setIsOpen(false)}
                 />
             )}
 
             {/* Sidebar */}
             <div
-                className={`fixed top-0 right-0 h-screen w-72 bg-purple-900 text-white shadow-2xl z-50 transform transition-transform duration-500 md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0 h-screen w-80 bg-purple-900 text-white shadow-2xl z-50 transform transition-transform duration-500 ${isOpen ? "translate-x-0" : "translate-x-full"
                     } flex flex-col`}
             >
                 {/* Header */}
-                <div className="flex justify-between items-center p-5 border-b border-gray-800">
-                    <h2 className="text-lg font-semibold">Company</h2>
-                    <button onClick={() => setIsOpen(false)}>
-                        <X />
-                    </button>
+                <div className="flex items-center py-5 border-b border-gray-800">
+
+                    {/* 📱 Mobile → Only Search */}
+                    <div className="w-full md:hidden px-4">
+                        <GlobalServiceSearch />
+                    </div>
+
+                    {/* 💻 Desktop → Only Title */}
+                    <h4 className="hidden md:block mx-auto text-lg sm:text-xl font-semibold tracking-wide">
+                        Event Management Company
+                    </h4>
+
                 </div>
 
                 <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-5 bg-amber-950 text-gray-300 font-medium">
-                    <Link href="/" onClick={() => setIsOpen(false)}>
-                        Home
-                    </Link>
+                    {/* MOBILE ONLY LINKS */}
+                    <div className="md:hidden flex flex-col gap-5">
+                        <Link href="/" onClick={() => setIsOpen(false)}>
+                            Home
+                        </Link>
 
-                    <Link href="/about-us" onClick={() => setIsOpen(false)}>
-                        About Us
-                    </Link>
+                        <Link href="/about-us" onClick={() => setIsOpen(false)}>
+                            About Us
+                        </Link>
 
-                    {/* OUR SERVICES */}
-                    <div>
-                        <button
-                            onClick={() => setServiceOpen(!serviceOpen)}
-                            className="flex justify-between items-center w-full"
-                        >
-                            Our Services
-                            <ChevronDown
-                                size={18}
-                                className={`transition-transform ${serviceOpen ? "rotate-180" : ""
-                                    }`}
-                            />
-                        </button>
+                        {/* OUR SERVICES */}
+                        <div>
+                            <button
+                                onClick={() => setServiceOpen(!serviceOpen)}
+                                className="flex justify-between items-center w-full"
+                            >
+                                Our Services
+                                <ChevronDown
+                                    size={18}
+                                    className={`transition-transform ${serviceOpen ? "rotate-180" : ""
+                                        }`}
+                                />
+                            </button>
 
-                        {serviceOpen && (
-                            <div className="ml-2 mt-4 flex flex-col gap-4 text-sm max-h-[70vh] overflow-y-auto pr-2">
-                                {renderNodes(services)}
-                            </div>
-                        )}
+                            {serviceOpen && (
+                                <div className="ml-2 mt-4 flex flex-col gap-4 text-sm max-h-[70vh] overflow-y-auto pr-2">
+                                    {renderNodes(services)}
+                                </div>
+                            )}
 
+                        </div>
+
+                        <Link href="/gallery" onClick={() => setIsOpen(false)}>
+                            Gallery
+                        </Link>
+
+                        <Link href="/support" onClick={() => setIsOpen(false)}>
+                            Support
+                        </Link>
                     </div>
-
-                    <Link href="/gallery" onClick={() => setIsOpen(false)}>
-                        Gallery
-                    </Link>
-
-                    <Link href="/support" onClick={() => setIsOpen(false)}>
-                        Support
-                    </Link>
-
-                    <hr className="border-gray-700 my-4" />
 
                     <Link href="/blog" onClick={() => setIsOpen(false)}>
                         Blog
@@ -175,7 +179,12 @@ export default function MobileSidebar({
                         Success Story
                     </Link>
                 </div>
+                <button onClick={() => setIsOpen(false)} className="p-2">
+                    <ArrowBigRight size={30} />
+                </button>
             </div>
+
+
         </>
     );
 }

@@ -9,9 +9,9 @@ const baseUrl =
 
 export const metadata = generateSeo({
     title:
-        "Best Event Management Company in India | Luxury Wedding & Corporate Planners",
+        "Best Event Management Company in Delhi | Luxury Wedding & Corporate Planners",
     description:
-        "Hire the best event management company in India for weddings, corporate events, birthdays and luxury celebrations. Professional planning with premium execution.",
+        "Hire the best event management company in Delhi for weddings, corporate events, birthdays and luxury celebrations. Professional planning with premium execution.",
     url: `${baseUrl}/event-services`,
 })
 

@@ -63,7 +63,7 @@ export default async function ServicePage({ params }: PageProps) {
 
     return (
         <>
-            <section className="py-28 mt-16 bg-black text-white text-center">
+            <section className="py-28 mt-20 text-white text-center">
                 <h1 className="text-5xl font-bold capitalize">
                     {formattedService}
                 </h1>

@@ -44,7 +44,7 @@ export const services: ServiceNode[] = [
             },
             {
                 id: "2",
-                title: "Seminars and Workshops",
+                title: "Seminars & Workshops",
                 slug: "seminars-workshops",
                 children: [
                     {
@@ -222,34 +222,257 @@ export const services: ServiceNode[] = [
             },
             {
                 id: "6",
-                title: "Corporate Social Responsibility (CSR) Events",
+                title: "CSR Events",
                 slug: "corporate-social-responsibility-events",
                 children: [
                     {
                         id: "1",
                         title: "Charity Fundraisers",
                         slug: "charity-fundraisers",
+                        children: [
+                            {
+                                id: "1",
+                                title: "Gala Dinners",
+                                slug: "gala-dinners",
+                            },
+                            {
+                                id: "2",
+                                title: "Charity Walks, Runs, and Marathons",
+                                slug: "charity-walks-runs-and-marathons",
+                            },
+                            {
+                                id: "3",
+                                title: "Charity Auctions",
+                                slug: "charity-auctions",
+                            },
+                            {
+                                id: "4",
+                                title: "Benefit Concerts and Performances",
+                                slug: "benefit-concerts-and-performances",
+                            },
+                            {
+                                id: "5",
+                                title: "Charity Raffles",
+                                slug: "charity-raffles",
+                            },
+                            {
+                                id: "6",
+                                title: "Volunteer Fundraisers",
+                                slug: "volunteer-fundraisers",
+                            },
+                            {
+                                id: "7",
+                                title: "Corporate Social Responsibility (CSR) Challenges",
+                                slug: "corporate-social-responsibility-csr-challenges",
+                            },
+                            {
+                                id: "8",
+                                title: "Charity Dinners or Luncheons",
+                                slug: "charity-dinners-or-luncheons",
+                            },
+                            {
+                                id: "9",
+                                title: "Online Charity Campaigns",
+                                slug: "online-charity-campaigns",
+                            },
+                            {
+                                id: "10",
+                                title: "Corporate Sponsorship Fundraisers",
+                                slug: "corporate-sponsorship-fundraisers",
+                            }
+                        ]
                     },
                     {
                         id: "2",
                         title: "Volunteering Days",
                         slug: "volunteering-days",
+                        children: [
+                            {
+                                id: "1",
+                                title: "Community Service Days",
+                                slug: "community-service-days",
+                            },
+                            {
+                                id: "2",
+                                title: "Skills-Based Volunteering Days",
+                                slug: "skills-based-volunteering-days",
+                            },
+                            {
+                                id: "3",
+                                title: "Charity Event Volunteering",
+                                slug: "charity-event-volunteering",
+                            },
+                            {
+                                id: "4",
+                                title: "Team-Building Volunteering Days",
+                                slug: "team-building-volunteering-days",
+                            },
+                            {
+                                id: "5",
+                                title: "Environmental Volunteering Days",
+                                slug: "environmental-volunteering-days",
+                            },
+                            {
+                                id: "6",
+                                title: "Disaster Relief Volunteering Days",
+                                slug: "disaster-relief-volunteering-days",
+                            },
+                            {
+                                id: "7",
+                                title: "Virtual Volunteering Days",
+                                slug: "virtual-volunteering-days",
+                            },
+                            {
+                                id: "8",
+                                title: "Employee Volunteer Programs (EVPs)",
+                                slug: "employee-volunteer-programs-evps",
+                            },
+                            {
+                                id: "9",
+                                title: "Fundraising Volunteering Days",
+                                slug: "fundraising-volunteering-days",
+                            },
+                            {
+                                id: "10",
+                                title: "Health and Wellness Volunteering Days",
+                                slug: "health-and-wellness-volunteering-days",
+                            }
+                        ]
                     },
                     {
                         id: "3",
                         title: "Sustainability Events",
                         slug: "sustainability-events",
+                        children: [
+                            {
+                                id: "1",
+                                title: "Eco-Friendly Product Launches",
+                                slug: "eco-friendly-product-launches",
+                            },
+                            {
+                                id: "2",
+                                title: "Green Conferences and Seminars",
+                                slug: "green-conferences-and-seminars",
+                            },
+                            {
+                                id: "3",
+                                title: "Eco-Friendly Trade Shows and Expos",
+                                slug: "eco-friendly-trade-shows-and-expos",
+                            },
+                            {
+                                id: "4",
+                                title: "Sustainable Team-Building Events",
+                                slug: "sustainable-team-building-events",
+                            },
+                            {
+                                id: "5",
+                                title: "Sustainable Corporate Retreats",
+                                slug: "sustainable-corporate-retreats",
+                            },
+                            {
+                                id: "6",
+                                title: "Corporate Sustainability Awards",
+                                slug: "corporate-sustainability-awards",
+                            },
+                            {
+                                id: "7",
+                                title: "Sustainability Workshops and Training",
+                                slug: "sustainability-workshops-and-training",
+                            },
+                            {
+                                id: "8",
+                                title: "Sustainability Awareness Campaigns",
+                                slug: "sustainability-awareness-campaigns",
+                            },
+                            {
+                                id: "9",
+                                title: "Sustainability Volunteer Days",
+                                slug: "sustainability-volunteer-days",
+                            },
+                            {
+                                id: "10",
+                                title: "Sustainability Hackathons",
+                                slug: "sustainability-hackathons",
+                            },
+                            {
+                                id: "11",
+                                title: "Sustainable Fashion Events",
+                                slug: "sustainable-fashion-events",
+                            },
+                            {
+                                id: "12",
+                                title: "Sustainability Festivals",
+                                slug: "sustainability-festivals",
+                            }
+                        ]
                     },
                     {
                         id: "4",
                         title: "Community Service Projects",
                         slug: "community-service-projects",
+                        children: [
+                            {
+                                id: "1",
+                                title: "Environmental Conservation Projects",
+                                slug: "environmental-conservation-projects",
+                            },
+                            {
+                                id: "2",
+                                title: "Community Development Projects",
+                                slug: "community-development-projects",
+                            },
+                            {
+                                id: "3",
+                                title: "Educational Support Projects",
+                                slug: "educational-support-projects",
+                            },
+                            {
+                                id: "4",
+                                title: "Health and Wellness Projects",
+                                slug: "health-and-wellness-projects",
+                            },
+                            {
+                                id: "5",
+                                title: "Food and Hunger Relief Projects",
+                                slug: "food-and-hunger-relief-projects",
+                            },
+                            {
+                                id: "6",
+                                title: "Youth Empowerment Projects",
+                                slug: "youth-empowerment-projects",
+                            },
+                            {
+                                id: "7",
+                                title: "Elderly and Senior Support Projects",
+                                slug: "elderly-and-senior-support-projects",
+                            },
+                            {
+                                id: "8",
+                                title: "Disaster Relief and Emergency Response Projects",
+                                slug: "disaster-relief-and-emergency-response-projects",
+                            },
+                            {
+                                id: "9",
+                                title: "Cultural and Arts Projects",
+                                slug: "cultural-and-arts-projects",
+                            },
+                            {
+                                id: "10",
+                                title: "Disability Support Projects",
+                                slug: "disability-support-projects",
+                            },
+                            {
+                                id: "11",
+                                title: "Animal Welfare Projects",
+                                slug: "animal-welfare-projects",
+                            }
+                        ]
                     },
                 ]
             },
             {
                 id: "7",
-                title: "Trade Shows and Exhibitions",
+                title: "Trade Shows Exhibitions",
                 slug: "trade-shows-exhibitions",
                 children: [
                     {
@@ -1276,7 +1499,7 @@ export const services: ServiceNode[] = [
             },
             {
                 id: "10",
-                title: "Corporate Parties and Celebrations",
+                title: "Corporate Parties",
                 slug: "corporate-parties-and-celebrations",
                 children: [
                     {
@@ -1734,7 +1957,7 @@ export const services: ServiceNode[] = [
             },
             {
                 id: "12",
-                title: "Webinars and Virtual Events",
+                title: "Webinars Virtual Events",
                 slug: "webinars-and-virtual-events",
                 children: [
                     {

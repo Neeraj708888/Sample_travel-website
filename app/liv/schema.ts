@@ -9,7 +9,7 @@ export function organizationSchema() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "@id": `${baseUrl}/#organization`,
-        name: "Your Company Name",
+        name: "www.eventmanagement.co.in",
         url: baseUrl,
         logo: `${baseUrl}/logo.png`,
         sameAs: [
@@ -18,8 +18,8 @@ export function organizationSchema() {
             "https://linkedin.com/company/yourprofile",
         ],
         areaServed: {
-            "@type": "Country",
-            name: "India",
+            "@type": "State",
+            name: "Delhi",
         },
     }
 }
