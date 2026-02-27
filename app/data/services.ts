@@ -10,6 +10,7 @@ export interface ServiceNode {
 }
 
 export const services: ServiceNode[] = [
+    // Corporate Event
     {
         id: "1",
         title: "Corporate Event",
@@ -2165,4 +2166,5 @@ export const services: ServiceNode[] = [
             }
         ],
     },
+
 ];

@@ -1,5 +1,6 @@
 import EventsPage from "./components/Homepage/EventPage";
 import Hero from "./components/Homepage/Hero";
+import ConnectPage from "./components/Homepage/LetUsConnect";
 import FeaturedPackages from "./components/Homepage/Packages";
 import Partners from "./components/Homepage/Partners";
 import PopularDestination from "./components/Homepage/PopularDestination";
@@ -23,6 +24,8 @@ export default function Homepage() {
       <Testimonial />
       {/* Partners Section */}
       <Partners />
+      {/* Let Us Connect */}
+      <ConnectPage />
     </div>
   );
 }

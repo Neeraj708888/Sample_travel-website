@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: PageProps) {
     const url = `${baseUrl}/event-services/${event}/${category}/${service}`
 
     return generateSeo({
-        title: `${formattedService} | ${formattedCategory} ${formattedEvent} Services in India`,
-        description: `Premium ${formattedService} services under ${formattedCategory} ${formattedEvent} planning in India. Luxury execution with expert management.`,
+        title: `${formattedService} | ${formattedCategory} ${formattedEvent} Services in Delhi`,
+        description: `Premium ${formattedService} services under ${formattedCategory} ${formattedEvent} planning in Delhi. Luxury execution with expert management.`,
         url,
     })
 }
@@ -71,7 +71,7 @@ export default async function ServicePage({ params }: PageProps) {
                 <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
                     Expert {formattedService} services for {formattedCategory}{" "}
                     {formattedEvent}. Delivering premium event experiences
-                    across India.
+                    across Delhi.
                 </p>
             </section>
 

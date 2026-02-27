@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps) {
     const url = `${baseUrl}/event-services/${event}/${category}`
 
     return generateSeo({
-        title: `${format(category)} ${format(event)} Services in India`,
+        title: `${format(category)} ${format(event)} Services in Delhi`,
         description: `Premium ${format(category)} services for ${format(event)}. Luxury execution with professional event management.`,
         url,
     })

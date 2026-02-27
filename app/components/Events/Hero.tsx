@@ -1,219 +1,102 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Mic, Search } from "lucide-react";
+import Script from "next/script";
 import Breadcrumb from "../Common/Breadcum";
-
-const services = [
-    "Wedding Planner",
-    "Corporate Event",
-    "Birthday Party",
-    "Destination Wedding",
-    "Product Launch Event",
-    "Anniversary Celebration",
-];
+import GlobalServiceSearch from "../GlobalServiceSearch";
+import Link from "next/link";
+import Event3DSlider from "./Event3DSlider";
 
 export default function EventSearch() {
-    const [query, setQuery] = useState("");
-    const [filtered, setFiltered] = useState<string[]>([]);
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [isListening, setIsListening] = useState(false);
-
-    const router = useRouter();
-    const dropdownRef = useRef<HTMLDivElement>(null);
-
-    const handleChange = (value: string) => {
-        setQuery(value);
-
-        if (!value.trim()) {
-            setFiltered([]);
-            setShowDropdown(false);
-            return;
-        }
-
-        const results = services.filter((service) =>
-            service.toLowerCase().includes(value.toLowerCase())
-        );
-
-        setFiltered(results);
-        setShowDropdown(results.length > 0);
-    };
-
-    const handleSelect = (service: string) => {
-        const slug = service.toLowerCase().replace(/\s+/g, "-");
-        router.push(`/events/${slug}`);
-        setQuery(service);
-        setShowDropdown(false);
-    };
-
-    const handleSubmit = () => {
-        const exactMatch = services.find(
-            (service) => service.toLowerCase() === query.toLowerCase()
-        );
-
-        if (!exactMatch) {
-            alert("Service not found!");
-            return;
-        }
-
-        handleSelect(exactMatch);
-    };
-
-    const handleVoiceSearch = () => {
-        const SpeechRecognition =
-            (window as any).SpeechRecognition ||
-            (window as any).webkitSpeechRecognition;
-
-        if (!SpeechRecognition) {
-            alert("Voice search not supported.");
-            return;
-        }
-
-        const recognition = new SpeechRecognition();
-        recognition.lang = "en-IN";
-        recognition.start();
-        setIsListening(true);
-
-        recognition.onresult = (event: any) => {
-            const transcript = event.results[0][0].transcript;
-            setQuery(transcript);
-            handleChange(transcript);
-            setIsListening(false);
-        };
-
-        recognition.onend = () => setIsListening(false);
-    };
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target as Node)
-            ) {
-                setShowDropdown(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () =>
-            document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
     return (
-        <section className="relative py-18 text-white overflow-hidden">
-            <div className="max-w-6xl mx-auto text-center">
-                <Breadcrumb
-                    items={[
-                        { label: "Home", href: "/" },
-                        { label: "Events", href: "/events" },
-                    ]}
-                />
-                {/* H1 */}
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-                    Premium Event Management Company in India
-                </h1>
+        <>
+            {/* ✅ Structured Data for SEO */}
+            <Script
+                id="event-structured-data"
+                type="application/ld+json"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "EventPlanner",
+                        name: "Premium Event Management Company in Delhi",
+                        description:
+                            "Luxury wedding planning, corporate events, and private celebrations in Delhi and across India.",
+                        areaServed: {
+                            "@type": "Place",
+                            name: "Delhi, India",
+                        },
+                        serviceType: [
+                            "Wedding Planning",
+                            "Corporate Events",
+                            "Private Celebrations",
+                        ],
+                    }),
+                }}
+            />
 
-                {/* H2 */}
-                <h2 className="text-xl md:text-2xl font-semibold text-white mb-4">
-                    Weddings, Corporate Events & Luxury Celebrations
-                </h2>
+            <section className="relative py-16 text-white overflow-hidden">
+                {/* Background Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-900 opacity-95"></div>
 
-                {/* SEO Paragraph */}
-                <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-14">
-                    We are a professional event management company in India offering
-                    luxury wedding planning, corporate event organization, birthday party
-                    management, and exclusive private celebrations tailored to your
-                    vision.
-                </p>
+                <div className="relative max-w-6xl mx-auto text-center px-6">
 
-                {/* Search Box */}
-                <div ref={dropdownRef} className="relative max-w-2xl mx-auto">
-                    <div className="flex items-center bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full p-3 shadow-2xl hover:border-yellow-500 transition-all duration-500">
+                    {/* Breadcrumb */}
+                    <Breadcrumb
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Events", href: "/events" },
+                        ]}
+                    />
 
-                        <input
-                            type="text"
-                            placeholder="Search events like Wedding Planner, Corporate Event..."
-                            value={query}
-                            onChange={(e) => handleChange(e.target.value)}
-                            onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-                            className="flex-1 bg-transparent px-6 py-3 text-white placeholder-gray-400 focus:outline-none"
-                        />
+                    {/* H1 - SEO Optimized */}
+                    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+                        Premium Event Management Company in Delhi
+                    </h1>
 
-                        <button
-                            onClick={handleVoiceSearch}
-                            className={`mx-2 p-3 rounded-full transition ${isListening
-                                ? "bg-red-500 animate-pulse"
-                                : "bg-white/10 hover:bg-white/20"
-                                }`}
+                    {/* H2 */}
+                    <h2 className="text-xl md:text-2xl font-semibold text-gray-200 mb-6">
+                        Luxury Wedding Planning, Corporate Events & Exclusive Celebrations
+                    </h2>
+
+                    {/* SEO Paragraph */}
+                    <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-12 leading-relaxed">
+                        We specialize in luxury wedding planning, corporate event
+                        management, destination celebrations, and private premium
+                        experiences across India. Our expert planners create unforgettable
+                        events tailored perfectly to your vision and brand.
+                    </p>
+
+                    {/* Global Search (High Intent Users) */}
+                    <div className="mb-16">
+                        <GlobalServiceSearch />
+                    </div>
+
+                    {/* 3D Card Slide */}
+                    <Event3DSlider />
+
+                    {/* High Conversion CTA */}
+                    <div className="flex flex-col sm:flex-row justify-center gap-6">
+                        <Link
+                            href="/contact"
+                            className="px-10 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-full transition transform hover:scale-105 shadow-xl shadow-yellow-500/20"
                         >
-                            <Mic size={18} />
-                        </button>
+                            Get Free Event Consultation
+                        </Link>
 
-                        <button
-                            onClick={handleSubmit}
-                            className="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-black rounded-full font-semibold transition flex items-center gap-2"
+                        <Link
+                            href="/portfolio"
+                            className="px-10 py-4 border border-white/20 hover:border-yellow-500 text-white font-semibold rounded-full transition"
                         >
-                            <Search size={18} />
-                            Search
-                        </button>
+                            View Our Portfolio
+                        </Link>
                     </div>
 
-                    {showDropdown && (
-                        <ul className="absolute mt-4 w-full bg-black border border-white/10 rounded-2xl shadow-2xl max-h-64 overflow-y-auto">
-                            {filtered.map((service) => (
-                                <li
-                                    key={service}
-                                    onClick={() => handleSelect(service)}
-                                    className="px-6 py-3 text-left hover:bg-yellow-500/10 hover:text-yellow-400 cursor-pointer transition"
-                                >
-                                    {service}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                    {/* Trust Badge */}
+                    <p className="mt-10 text-sm text-gray-500">
+                        Trusted by 500+ clients across India • 5★ Rated Event Planners
+                    </p>
                 </div>
-
-                {/* Service Highlights */}
-                <div className="mt-20 grid md:grid-cols-3 gap-8 text-left">
-                    <div>
-                        <h3 className="text-yellow-400 font-semibold mb-2">
-                            Wedding Planning
-                        </h3>
-                        <p className="text-gray-400 text-sm">
-                            Destination and traditional wedding planners creating luxurious
-                            unforgettable celebrations.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-yellow-400 font-semibold mb-2">
-                            Corporate Events
-                        </h3>
-                        <p className="text-gray-400 text-sm">
-                            Professional event organizers for conferences, seminars, and
-                            product launches.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-yellow-400 font-semibold mb-2">
-                            Private Celebrations
-                        </h3>
-                        <p className="text-gray-400 text-sm">
-                            Birthday parties, anniversaries, and exclusive premium events
-                            tailored perfectly.
-                        </p>
-                    </div>
-                </div>
-
-                {/* CTA */}
-                <div className="mt-14">
-                    <button className="px-10 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-full transition">
-                        Get Free Event Consultation
-                    </button>
-                </div>
-            </div>
-        </section>
+            </section>
+        </>
     );
 }

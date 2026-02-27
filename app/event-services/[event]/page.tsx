@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
     const formattedEvent = format(event)
 
     return generateSeo({
-        title: `${formattedEvent} Event Management in India`,
+        title: `${formattedEvent} Event Management in Delhi`,
         description: `Luxury ${formattedEvent} event planners in India. Professional planning, premium execution and unforgettable experiences.`,
         url: `${baseUrl}/event-services/${event}`,
     })
@@ -41,7 +41,7 @@ export default async function EventPage({ params }: PageProps) {
             "@type": "Event",
             "@id": `${pageUrl}#event`,
             name: `${formattedEvent} Event Management`,
-            description: `Professional ${formattedEvent} event planning services across India.`,
+            description: `Professional ${formattedEvent} event planning services in Delhi.`,
             eventAttendanceMode:
                 "https://schema.org/OfflineEventAttendanceMode",
             eventStatus: "https://schema.org/EventScheduled",
