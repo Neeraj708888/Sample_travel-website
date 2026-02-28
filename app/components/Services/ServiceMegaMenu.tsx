@@ -77,7 +77,7 @@ export default function ServicesMegaContent() {
                             {rightOptions.map((item: ServiceNode) => (
                                 <Link
                                     key={item.slug}
-                                    href={`/services/${parentNode?.slug}/${childNode?.slug}/${item.slug}`}
+                                    href={`/events/${parentNode?.slug}/${childNode?.slug}/${item.slug}`}
                                     className="bg-white hover:bg-amber-400 hover:text-black transition p-2 rounded-lg shadow text-center"
                                 >
                                     {item.title}

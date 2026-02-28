@@ -18,7 +18,7 @@ const services = [
     },
 ];
 
-export default function Event3DSlider() {
+export function Event3DSlider() {
     const [active, setActive] = useState(1);
 
     // ✅ Auto Slide

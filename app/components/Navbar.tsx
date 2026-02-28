@@ -42,7 +42,7 @@ export default function Navbar() {
                         <div className="relative group">
                             <button
                                 className="relative"
-                                onClick={() => router.push("/event-services")}
+                                onClick={() => router.push("/events")}
                             >
                                 Our Services
                                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>

@@ -1,39 +1,13 @@
 "use client";
 
-import Script from "next/script";
 import Breadcrumb from "../Common/Breadcum";
 import GlobalServiceSearch from "../GlobalServiceSearch";
 import Link from "next/link";
-import Event3DSlider from "./Event3DSlider";
+import { Event3DSlider } from "./Event3DSlider";
 
-export default function EventSearch() {
+export function EventSearch() {
     return (
         <>
-            {/* ✅ Structured Data for SEO */}
-            <Script
-                id="event-structured-data"
-                type="application/ld+json"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "EventPlanner",
-                        name: "Premium Event Management Company in Delhi",
-                        description:
-                            "Luxury wedding planning, corporate events, and private celebrations in Delhi and across India.",
-                        areaServed: {
-                            "@type": "Place",
-                            name: "Delhi, India",
-                        },
-                        serviceType: [
-                            "Wedding Planning",
-                            "Corporate Events",
-                            "Private Celebrations",
-                        ],
-                    }),
-                }}
-            />
-
             <section className="relative py-16 text-white overflow-hidden">
                 {/* Background Glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-900 opacity-95"></div>
@@ -41,12 +15,12 @@ export default function EventSearch() {
                 <div className="relative max-w-6xl mx-auto text-center px-6">
 
                     {/* Breadcrumb */}
-                    <Breadcrumb
+                    {/* <Breadcrumb
                         items={[
                             { label: "Home", href: "/" },
                             { label: "Events", href: "/events" },
                         ]}
-                    />
+                    /> */}
 
                     {/* H1 - SEO Optimized */}
                     <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
