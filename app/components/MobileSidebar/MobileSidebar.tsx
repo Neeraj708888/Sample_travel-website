@@ -80,7 +80,7 @@ export default function MobileSidebar({
                         </>
                     ) : (
                         <Link
-                            href={`/event-services/${currentPath.join("/")}`}
+                            href={`/events/${currentPath.join("/")}`}
                             onClick={() => setIsOpen(false)}
                             className="block"
                         >
