@@ -8,7 +8,6 @@ import Schema from "@/app/liv/components/Schema"
 import { Event3DSlider } from "@/app/components/Events/Event3DSlider"
 import { FAQSection } from "@/app/components/Events/FaqSection"
 import { EventSearch } from "@/app/components/Events/Hero"
-import Breadcrumb from "@/app/components/Common/Breadcum"
 
 type PageProps = {
     params: Promise<{
@@ -24,22 +23,6 @@ const baseUrl =
 /* ---------------------------------- */
 
 export const dynamicParams = false
-
-// function getAllPaths(nodes: any[], parent: string[] = []): string[][] {
-//     let paths: string[][] = []
-
-//     for (const node of nodes) {
-//         const current = [...parent, node.slug]
-
-//         if (node.children?.length) {
-//             paths = paths.concat(getAllPaths(node.children, current))
-//         } else {
-//             paths.push(current)
-//         }
-//     }
-
-//     return paths
-// }
 
 function getAllPaths(nodes: any[], parent: string[] = []) {
     let paths: string[][] = []
@@ -122,6 +105,17 @@ export default async function DynamicServicePage({
         ),
     ]
 
+    const breadcrumbItems = [
+        { label: "Home", href: "/" },
+        { label: "Events", href: "/events" },
+
+        ...nodes.map((node, index) => ({
+            label: node.title,
+            href: `/events/${slug.slice(0, index + 1).join("/")}`,
+        })),
+
+    ]
+
     return (
         <>
             <Schema
@@ -129,32 +123,17 @@ export default async function DynamicServicePage({
                 id={`schema-${slug.join("-")}`}
             />
 
-            <section className="py-28 mt-16 bg-black text-white text-center">
-                <h1 className="text-5xl font-bold">
-                    {lastNode.title}
-                </h1>
-
-                {/* <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
-                    {nodes.map(n => n.title).join(" → ")}
-                </p> */}
-
-                <Breadcrumb
-                    items={[
-                        { label: "Home", href: "/" },
-                        { label: "Events", href: "/events" },
-
-                        ...nodes.map((node, index) => ({
-                            label: node.title,
-                            href: `/events/${slug.slice(0, index + 1).join("/")}`,
-                        })),
-                    ]}
-                />
-
-            </section>
-
             {depth === 1 && (
                 <>
-                    <EventSearch />
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <Event3DSlider />
+                    <FAQSection />
+                </>
+            )}
+
+            {depth === 2 && (
+                <>
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
                     <Event3DSlider />
                     <FAQSection />
                 </>
@@ -169,7 +148,7 @@ export default async function DynamicServicePage({
 
             {depth === 3 && (
                 <>
-                    <EventSearch />
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
                     <Event3DSlider />
                     <FAQSection />
                 </>

@@ -41,7 +41,7 @@ export function Event3DSlider() {
     };
 
     return (
-        <section className="text-white overflow-hidden">
+        <section className="text-white overflow-hidden mt-16">
             <div className="max-w-8xl mx-auto px-6 text-center">
 
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">

@@ -1,4 +1,3 @@
-
 import { generateSeo } from "../liv/seo"
 import {
     breadcrumbSchema,
@@ -6,7 +5,9 @@ import {
     organizationSchema,
     faqSchema,
 } from "../liv/schema"
+
 import Schema from "../liv/components/Schema"
+
 import { PortfolioSection } from "../components/Events/PortfolioSection"
 import { TestimonialsSection } from "../components/Events/TestimonialSection"
 import { FAQSection } from "../components/Events/FaqSection"
@@ -16,6 +17,10 @@ import { EventSearch } from "../components/Events/Hero"
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+
+/* ---------------------------------- */
+/* ✅ SEO Metadata */
+/* ---------------------------------- */
 
 export async function generateMetadata() {
     const url = `${baseUrl}/events`
@@ -33,8 +38,13 @@ export async function generateMetadata() {
     })
 }
 
+/* ---------------------------------- */
+/* ✅ Page Component */
+/* ---------------------------------- */
+
 export default function EventServicesPage() {
-    const url = `${baseUrl}/event`
+
+    const url = `${baseUrl}/events`
 
     const pageFaqs = [
         {
@@ -51,26 +61,45 @@ export default function EventServicesPage() {
 
     const schemaData = [
         organizationSchema(),
+
         localBusinessSchema(url),
+
         breadcrumbSchema([
             { name: "Home", url: baseUrl },
             { name: "Events", url },
         ]),
+
         faqSchema(pageFaqs, url),
     ].filter(Boolean)
 
+    const breadcrumbItems = [
+        { label: "Home", href: "/" },
+        { label: "Events", href: "/events" },
+    ]
+
     return (
         <>
+            {/* ✅ Structured Data */}
             <Schema
                 data={schemaData}
                 id="event-services-structured-data"
             />
 
-            <EventSearch />
+            {/* ✅ Hero Section */}
+            <EventSearch
+                title="Event"
+                breadcrumbItems={breadcrumbItems}
+            />
+
+            {/* ✅ Page Sections */}
             <PortfolioSection />
+
             <TestimonialsSection />
+
             <FAQSection />
+
             <LocationSEOSection />
+
             <ContactCTA />
         </>
     )
