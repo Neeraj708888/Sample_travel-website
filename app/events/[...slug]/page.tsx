@@ -139,13 +139,6 @@ export default async function DynamicServicePage({
                 </>
             )}
 
-            {depth === 2 && (
-                <>
-                    <Event3DSlider />
-                    <FAQSection />
-                </>
-            )}
-
             {depth === 3 && (
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />

@@ -41,7 +41,7 @@ export default function Navbar() {
 
                         <div className="relative group">
                             <button
-                                className="relative"
+                                className="relative cursor-pointer"
                                 onClick={() => router.push("/events")}
                             >
                                 Our Services

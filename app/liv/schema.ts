@@ -114,6 +114,7 @@ export function serviceSchema({
     url,
     serviceType,
 }: ServiceSchemaParams): WithContext<Service> {
+
     return {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -123,22 +124,21 @@ export function serviceSchema({
         serviceType,
         url,
 
-        // availableLanguag: ["English", "Hindi"],
-
         areaServed: {
             "@type": "Country",
             name: "India",
         },
 
         provider: {
+            "@type": "Organization",
             "@id": `${baseUrl}/#organization`,
         },
 
         offers: {
             "@type": "Offer",
+            url,
             priceCurrency: "INR",
             availability: "https://schema.org/InStock",
-            url,
         },
     }
 }
@@ -178,12 +178,15 @@ export function faqSchema(
     faqs?: FAQItem[],
     url?: string
 ): WithContext<FAQPage> | null {
+
     if (!faqs || faqs.length === 0) return null
+
+    const pageUrl = url || baseUrl
 
     return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "@id": `${url}#faq`,
+        "@id": `${pageUrl}#faq`,
         mainEntity: faqs.map((faq) => ({
             "@type": "Question",
             name: faq.question,

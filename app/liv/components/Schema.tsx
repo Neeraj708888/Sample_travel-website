@@ -38,7 +38,7 @@ export default function Schema({ data, id }: SchemaProps) {
 
     return (
         <script
-            id={id}
+            id={id ?? "json-ld-schema"}
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: jsonLd }}
         />

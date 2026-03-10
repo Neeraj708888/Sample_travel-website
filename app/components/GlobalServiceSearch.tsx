@@ -41,12 +41,12 @@ export default function GlobalServiceSearch() {
         if (!filtered.length) return;
 
         const path = selectService(filtered[0]);
-        router.push(`/event-services/${path.join("/")}`);
+        router.push(`/events/${path.join("/")}`);
     };
 
     const handleSelect = (service: any) => {
         const path = selectService(service);
-        router.push(`/event-services/${path.join("/")}`);
+        router.push(`/events/${path.join("/")}`);
     };
 
     return (
@@ -54,7 +54,7 @@ export default function GlobalServiceSearch() {
             ref={dropdownRef}
             className="relative w-full px-1 sm:px-6 md:px-0 max-w-2xl mx-auto">
             {/* Search Bar */}
-            <div className="flex items-center mt-2 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full px-3 sm:px-4 py-2 sm:py-3 shadow-2xl transition-all duration-300">
+            <div className="flex items-center mt-2 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-3 shadow-2xl transition-all duration-300">
 
                 {/* Input */}
                 <input
@@ -68,7 +68,7 @@ export default function GlobalServiceSearch() {
                     onKeyDown={(e) =>
                         e.key === "Enter" && handleSubmit()
                     }
-                    className="flex-1 bg-transparent px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none" />
+                    className="flex-1 bg-transparent px-2 sm:px-6 py-2 sm:py-3 text-sm sm:text-base text-gray-800 placeholder-gray-400 focus:outline-none" />
 
                 {/* Search Button */}
                 <button
@@ -87,7 +87,7 @@ export default function GlobalServiceSearch() {
                         <li
                             key={service.fullPath.join("/")}
                             onClick={() => handleSelect(service)}
-                            className="px-4 sm:px-6 py-3 text-sm sm:text-base hover:bg-yellow-500/10 hover:text-yellow-400 cursor-pointer transition">
+                            className="px-4 sm:px-6 py-3 text-sm sm:text-base text-gray-400 hover:bg-yellow-500/10 hover:text-yellow-400 cursor-pointer transition">
                             {service.title}
                         </li>
                     ))}

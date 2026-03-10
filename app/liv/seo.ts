@@ -1,3 +1,5 @@
+import { ServiceNode, services } from "../data/services"
+
 type BreadcrumbItem = {
     name: string
     url: string
@@ -22,6 +24,7 @@ export function generateSeo({
     breadcrumb = [],
     noIndex = false,
 }: SeoProps) {
+
     const baseUrl =
         process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
@@ -75,7 +78,7 @@ export function generateSeo({
     }
 
     // 🟢 Breadcrumb Schema
-    if (breadcrumb.length > 0) {
+    if (breadcrumb.length) {
         schema.push({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -92,7 +95,10 @@ export function generateSeo({
     return {
         title,
         description,
-        alternates: { canonical: url },
+
+        alternates: {
+            canonical: url,
+        },
 
         robots: {
             index: !noIndex,
@@ -114,27 +120,27 @@ export function generateSeo({
             images: [defaultImage],
         },
 
-        other: schema.length
-            ? {
-                "script:ld+json": JSON.stringify(schema),
-            }
-            : undefined,
+        // schema return separately
+        schema,
     }
 }
 
+// FIND SERVICE BY SLUG PATH
 
-// Service.tsx
-// export async function generateMetadata({ params }: PageProps) {
-//     const url = `${baseUrl}/event-services/...`
+export function findServiceBySlugPath(path: string[]): ServiceNode | null {
 
-//     return generateSeo({
-//         title: "Wedding Planning Services",
-//         description: "Premium wedding planning services in Delhi.",
-//         url,
-//         type: "service",
-//         breadcrumb: [
-//             { name: "Home", url: baseUrl },
-//             { name: "Events", url: `${baseUrl}/event-services` },
-//         ],
-//     })
-// }
+    let nodes = services
+    let current: ServiceNode | undefined
+
+    for (const slug of path) {
+        current = nodes.find((n) => n.slug === slug)
+        if (!current) return null
+        nodes = current.children || []
+    }
+
+    return current || null
+}
+
+export function buildTitle(node: ServiceNode) {
+    return `${node.title} | Event Management Company`
+}

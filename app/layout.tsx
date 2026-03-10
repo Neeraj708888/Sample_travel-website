@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luxury Event Management Company in India | Weddings, Corporate & Private Events",
+  title: "Luxury Event Management Company in Delhi | Weddings, Corporate & Private Events",
   description:
     "Premium event management company specializing in luxury weddings, corporate events, brand launches, and destination celebrations. Bespoke planning, flawless execution, unforgettable experiences.",
   alternates: {
