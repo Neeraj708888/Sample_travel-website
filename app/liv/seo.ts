@@ -141,6 +141,6 @@ export function findServiceBySlugPath(path: string[]): ServiceNode | null {
     return current || null
 }
 
-export function buildTitle(node: ServiceNode) {
+export function buildTitle(node: ServiceNode, slug: string[]) {
     return `${node.title} | Event Management Company`
 }

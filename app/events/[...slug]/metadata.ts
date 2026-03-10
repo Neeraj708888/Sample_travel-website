@@ -2,14 +2,16 @@ import { buildTitle, findServiceBySlugPath } from "@/app/liv/seo"
 import { Metadata } from "next"
 
 type Props = {
-    params: { slug: string[] }
+    params: Promise<{ slug: string[] }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
-    const node = findServiceBySlugPath(params.slug)
+    const resolvedParams = await params;
 
-    const title = node ? buildTitle(node, params.slug) : "Event Services"
+    const node = findServiceBySlugPath(resolvedParams.slug)
+
+    const title = node ? buildTitle(node, resolvedParams.slug) : "Event Services"
     // const description = node
     //     ? buildDescription(node)
     //     : "Professional event management services."
