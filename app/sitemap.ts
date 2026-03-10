@@ -1,6 +1,5 @@
 // // app/sitemap.ts
 
-import { services } from "./data/services"
 
 // import { MetadataRoute } from 'next'
 // import { createClient } from '@supabase/supabase-js'
@@ -40,11 +39,14 @@ import { services } from "./data/services"
 // }
 
 
+import { services } from "./data/services"
+import { MetadataRoute } from "next"
 
-const domain = "https://yourdomain.com"
+const domain =
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
-function flattenServices(nodes, path = []) {
-    let urls = []
+function flattenServices(nodes: any[], path: string[] = []) {
+    let urls: MetadataRoute.Sitemap = []
 
     for (const node of nodes) {
 
@@ -53,9 +55,11 @@ function flattenServices(nodes, path = []) {
         urls.push({
             url: `${domain}/events/${currentPath.join("/")}`,
             lastModified: new Date(),
+            changeFrequency: "weekly",  // optional
+            priority: 0.8,   // optional
         })
 
-        if (node.children) {
+        if (node.children?.length) {
             urls = urls.concat(flattenServices(node.children, currentPath))
         }
     }
@@ -63,12 +67,15 @@ function flattenServices(nodes, path = []) {
     return urls
 }
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
+
     return [
         {
             url: domain,
             lastModified: new Date(),
         },
+
         ...flattenServices(services),
+
     ]
 }
