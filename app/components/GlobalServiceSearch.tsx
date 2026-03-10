@@ -68,7 +68,7 @@ export default function GlobalServiceSearch() {
                     onKeyDown={(e) =>
                         e.key === "Enter" && handleSubmit()
                     }
-                    className="flex-1 bg-transparent px-2 sm:px-6 py-2 sm:py-3 text-sm sm:text-base text-gray-800 placeholder-gray-400 focus:outline-none" />
+                    className="flex-1 bg-transparent px-2 sm:px-6 py-2 sm:py-3 text-sm sm:text-base text-gray-300 placeholder-gray-400 focus:outline-none" />
 
                 {/* Search Button */}
                 <button
@@ -82,7 +82,7 @@ export default function GlobalServiceSearch() {
 
             {/* Dropdown */}
             {showDropdown && filtered.length > 0 && (
-                <ul className="absolute left-0 right-0 mt-2 w-full bg-black border border-white/10 rounded-2xl shadow-2xl max-h-60 overflow-y-auto z-50">
+                <ul className="absolute left-0 right-0 mt-2 w-full bg-black border border-white/10 rounded-2xl shadow-2xl max-h-60 overflow-y-auto z-50 text-start">
                     {filtered.map((service) => (
                         <li
                             key={service.fullPath.join("/")}
