@@ -1,6 +1,6 @@
 export function ContactCTA() {
     return (
-        <section className="py-16 text-white text-center">
+        <section className="mt-16 text-white text-center">
             <div className="max-w-3xl mx-auto px-6">
                 <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                     Let's Plan Your Dream Event

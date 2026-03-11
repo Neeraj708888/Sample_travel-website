@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     //     ? buildDescription(node)
     //     : "Professional event management services."
 
-    const url = `http://localhost:3000/events/${resolvedParams.slug.join("/")}`
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL}/${resolvedParams.slug.join("/")}`
 
     return {
         title,

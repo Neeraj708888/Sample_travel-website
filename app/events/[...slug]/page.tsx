@@ -6,8 +6,17 @@ import { breadcrumbSchema, serviceSchema } from "@/app/liv/schema"
 import Schema from "@/app/liv/components/Schema"
 
 import { Event3DSlider } from "@/app/components/Events/Event3DSlider"
-import { FAQSection } from "@/app/components/Events/FaqSection"
 import { EventSearch } from "@/app/components/Events/Hero"
+import EventCategories from "@/app/components/Events/EventCategories"
+import FAQ from "@/app/components/Events/FAQ"
+import CorporateEventServices from "@/app/components/Events/Services/CorporateEventServices"
+import PortfolioCaseStudy from "@/app/components/Events/Services/PortfolioCaseStudy"
+import EventPlanningProcess from "@/app/components/Events/Services/EventPlanningProcess"
+import { ContactCTA } from "@/app/components/Events/ContactCTA"
+import ServiceTypes from "@/app/components/Events/Services/Category/SeriveTypes"
+import ServiceEventTypeSolutions from "@/app/components/Events/Services/Category/ServiceEventTypeSolutions"
+import ServiceTypePortfolioCaseStudy from "@/app/components/Events/Services/Category/ServiceTypePortfolioCaseStudy"
+import ServiceTypeCaseStudy from "@/app/components/Events/Services/Category/Types/ServiceTypesCaseStudy"
 
 type PageProps = {
     params: Promise<{
@@ -126,24 +135,40 @@ export default async function DynamicServicePage({
             {depth === 1 && (
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
-                    <Event3DSlider />
-                    <FAQSection />
+                    <EventCategories />
+                    <CorporateEventServices />
+                    <PortfolioCaseStudy />
+                    <EventPlanningProcess />
+                    {/* <Event3DSlider /> */}
+                    <FAQ />
+                    <ContactCTA />
                 </>
             )}
 
             {depth === 2 && (
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
-                    <Event3DSlider />
-                    <FAQSection />
+                    <EventCategories />
+                    <ServiceTypes />
+                    <ServiceEventTypeSolutions />
+                    <ServiceTypePortfolioCaseStudy />
+                    {/* <Event3DSlider /> */}
+                    <EventPlanningProcess />
+                    <FAQ />
+                    <ContactCTA />
                 </>
             )}
 
             {depth === 3 && (
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
-                    <Event3DSlider />
-                    <FAQSection />
+                    <EventCategories />
+                    {/* <Event3DSlider /> */}
+                    <ServiceTypes />
+                    <ServiceTypeCaseStudy />
+                    <EventPlanningProcess />
+                    <FAQ />
+                    <ContactCTA />
                 </>
             )}
         </>

@@ -8,12 +8,15 @@ import {
 
 import Schema from "../liv/components/Schema"
 
-import { PortfolioSection } from "../components/Events/PortfolioSection"
-import { TestimonialsSection } from "../components/Events/TestimonialSection"
-import { FAQSection } from "../components/Events/FaqSection"
-import { LocationSEOSection } from "../components/Events/LocationSeoSection"
+import { PopularEvent } from "../components/Events/PopularEvent"
+// import { TestimonialsSection } from "../components/Events/TestimonialSection"
+// import { LocationSEOSection } from "../components/Events/LocationSeoSection"
 import { ContactCTA } from "../components/Events/ContactCTA"
 import { EventSearch } from "../components/Events/Hero"
+import EventCategories from "../components/Events/EventCategories"
+import HowWePlanEvents from "../components/Events/HowWePlanEvents"
+import FeaturedEvents from "../components/Events/FeaturedEvents"
+import FAQ from "../components/Events/FAQ"
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
@@ -91,14 +94,23 @@ export default function EventServicesPage() {
                 breadcrumbItems={breadcrumbItems}
             />
 
+            {/* Category Card */}
+            <EventCategories />
+
             {/* ✅ Page Sections */}
-            <PortfolioSection />
+            <PopularEvent />
 
-            <TestimonialsSection />
+            {/* How We plan events */}
+            <HowWePlanEvents />
 
-            <FAQSection />
+            {/* Featured Events */}
+            <FeaturedEvents />
+            {/* FAQ */}
+            <FAQ />
 
-            <LocationSEOSection />
+            {/* <TestimonialsSection /> */}
+
+            {/* <LocationSEOSection /> */}
 
             <ContactCTA />
         </>
