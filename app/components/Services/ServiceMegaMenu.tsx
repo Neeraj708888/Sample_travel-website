@@ -17,11 +17,22 @@ export default function ServicesMegaContent() {
     const parentNode: ServiceNode | undefined =
         services.find((s) => s.slug === activePath[0]);
 
-    /* LEVEL 2 */
-    const childNode: ServiceNode | null =
-        findNodeByPath(services, activePath.slice(0, 2));
+    /* LEVEL 2 NODE */
+
+    let childNode: ServiceNode | null = null;
+
+    /* agar user ne level 2 select kiya hai */
+    if (activePath.length >= 2) {
+        childNode = findNodeByPath(services, activePath.slice(0, 2));
+    }
+
+    /* agar user ne select nahi kiya -> first child ka children show */
+    else if (parentNode?.children?.length) {
+        childNode = parentNode.children[0];
+    }
 
     /* LEVEL 3 */
+
     const rightOptions: ServiceNode[] = childNode?.children || [];
 
     return (

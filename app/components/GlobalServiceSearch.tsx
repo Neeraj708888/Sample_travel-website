@@ -68,7 +68,7 @@ export default function GlobalServiceSearch() {
                     onKeyDown={(e) =>
                         e.key === "Enter" && handleSubmit()
                     }
-                    className="flex-1 bg-transparent px-2 sm:px-6 py-2 sm:py-3 text-sm sm:text-base text-gray-300 placeholder-gray-400 focus:outline-none" />
+                    className="flex-1 bg-transparent px-2 sm:px-6 py-2 sm:py-3 text-sm sm:text-base text-gray-800 placeholder-gray-400 focus:outline-none" />
 
                 {/* Search Button */}
                 <button
