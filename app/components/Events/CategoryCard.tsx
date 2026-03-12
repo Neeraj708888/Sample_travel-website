@@ -17,23 +17,10 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
     return (
         <Link href={href} className="block group">
 
-            <div className="
-      relative overflow-hidden
-      bg-white/5 backdrop-blur-lg
-      border border-white/10
-      rounded-2xl p-6
-      transition-all duration-500
-      hover:-translate-y-3
-      hover:border-primary
-      ">
+            <div className="relative overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-3 hover:border-primary">
 
                 {/* Gradient Glow */}
-                <div className="
-        absolute inset-0 opacity-0
-        group-hover:opacity-100
-        bg-gradient-to-r from-primary/20 via-purple-500/20 to-pink-500/20
-        blur-2xl transition duration-500
-        "/>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/20 via-purple-500/20 to-pink-500/20 blur-2xl transition duration-500" />
 
                 {/* Icon */}
                 {/* {category.icon && (
@@ -54,12 +41,7 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
                 )} */}
 
                 {/* Title */}
-                <h3 className="
-        relative text-lg font-semibold
-        text-white
-        group-hover:text-primary
-        transition
-        ">
+                <h3 className="relative text-lg font-semibold text-white group-hover:text-primary transition">
                     {category.title}
                 </h3>
 
@@ -71,20 +53,11 @@ export default function CategoryCard({ category, basePath }: CategoryCardProps) 
                 )} */}
 
                 {/* Navigation */}
-                <div className="
-        relative flex items-center gap-2
-        mt-5 text-primary font-medium text-sm
-        ">
+                <div className="relative flex items-center gap-2 mt-5 text-primary font-medium text-sm">
 
                     Explore
 
-                    <ArrowRight
-                        size={16}
-                        className="
-            transition-transform duration-300
-            group-hover:translate-x-2
-            "
-                    />
+                    <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-2" />
 
                 </div>
 

@@ -13,7 +13,7 @@ import CorporateEventServices from "@/app/components/Events/Services/CorporateEv
 import PortfolioCaseStudy from "@/app/components/Events/Services/PortfolioCaseStudy"
 import EventPlanningProcess from "@/app/components/Events/Services/EventPlanningProcess"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
-import ServiceTypes from "@/app/components/Events/Services/Category/SeriveTypes"
+import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceTypes"
 import ServiceEventTypeSolutions from "@/app/components/Events/Services/Category/ServiceEventTypeSolutions"
 import ServiceTypePortfolioCaseStudy from "@/app/components/Events/Services/Category/ServiceTypePortfolioCaseStudy"
 import ServiceTypeCaseStudy from "@/app/components/Events/Services/Category/Types/ServiceTypesCaseStudy"

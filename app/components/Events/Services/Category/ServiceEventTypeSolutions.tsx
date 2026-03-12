@@ -70,7 +70,7 @@ const solutions: Solution[] = [
 
 export default function ServiceEventTypeSolutions() {
     return (
-        <section className="py-20 bg-neutral-950 text-white">
+        <section className="py-16 text-white">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Heading */}

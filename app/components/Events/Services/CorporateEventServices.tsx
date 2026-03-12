@@ -47,22 +47,27 @@ const services: Service[] = [
 
 export default function CorporateEventServices() {
   return (
-    <section className="py-20 bg-neutral-950 text-white">
+    <section className="py-16 text-white">
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
 
           <p className="text-yellow-400 text-sm font-semibold uppercase tracking-widest mb-3">
             Our Services
           </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-16 h-[2px] bg-yellow-500"></div>
+            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div className="w-16 h-[2px] bg-yellow-500"></div>
+          </div>
 
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
             Corporate Event Solutions
           </h2>
 
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-100 mt-4 max-w-2xl mx-auto">
             Everything you need to plan, produce, and execute a world-class corporate event.
           </p>
 
@@ -88,7 +93,7 @@ export default function CorporateEventServices() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-100 leading-relaxed">
                 {service.description}
               </p>
 
