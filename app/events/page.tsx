@@ -9,28 +9,30 @@ import {
 import Schema from "../liv/components/Schema"
 
 import { PopularEvent } from "../components/Events/PopularEvent"
-// import { TestimonialsSection } from "../components/Events/TestimonialSection"
-// import { LocationSEOSection } from "../components/Events/LocationSeoSection"
 import { ContactCTA } from "../components/Events/ContactCTA"
 import { EventSearch } from "../components/Events/Hero"
 import EventCategories from "../components/Events/EventCategories"
 import HowWePlanEvents from "../components/Events/HowWePlanEvents"
 import FeaturedEvents from "../components/Events/FeaturedEvents"
 import FAQ from "../components/Events/FAQ"
+import { getPageData } from "../liv/pageData"
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
 /* ---------------------------------- */
-/* ✅ SEO Metadata */
+/* ✅ SEO Metadata                     */
 /* ---------------------------------- */
 
 export async function generateMetadata() {
     const url = `${baseUrl}/events`
 
+    const { page } = await getPageData("events")
+
     return generateSeo({
-        title: "Premium Event Management Company in Delhi",
+        title: page?.meta_title || "Premium Event Management Company in Delhi",
         description:
+            page?.meta_description ||
             "Luxury wedding planning, corporate events, and private celebrations in Delhi.",
         url,
         type: "category",
@@ -42,37 +44,37 @@ export async function generateMetadata() {
 }
 
 /* ---------------------------------- */
-/* ✅ Page Component */
+/* ✅ Page Component                   */
 /* ---------------------------------- */
 
-export default function EventServicesPage() {
+type FAQItem = {
+    question: string
+    answer: string
+}
+
+export default async function EventServicesPage() {
 
     const url = `${baseUrl}/events`
 
-    const pageFaqs = [
-        {
-            question: "What types of events do you manage?",
-            answer:
-                "We manage weddings, corporate events, destination events, and luxury private celebrations across India.",
-        },
-        {
-            question: "Do you provide services outside Delhi?",
-            answer:
-                "Yes, we provide premium event management services across India.",
-        },
-    ]
+    const { faqs: dbFaqs = [] } =
+        (await getPageData("events")) as { faqs: FAQItem[] }
+
+    const faqList =
+        dbFaqs.length > 0
+            ? dbFaqs.map((f: FAQItem) => ({
+                question: f.question,
+                answer: f.answer
+            }))
+            : undefined
 
     const schemaData = [
         organizationSchema(),
-
         localBusinessSchema(url),
-
         breadcrumbSchema([
             { name: "Home", url: baseUrl },
             { name: "Events", url },
         ]),
-
-        faqSchema(pageFaqs, url),
+        faqSchema(faqList, url),
     ].filter(Boolean)
 
     const breadcrumbItems = [
@@ -94,23 +96,20 @@ export default function EventServicesPage() {
                 breadcrumbItems={breadcrumbItems}
             />
 
-            {/* Category Card */}
+            {/* Category Cards */}
             <EventCategories />
 
-            {/* ✅ Page Sections */}
+            {/* Popular Events */}
             <PopularEvent />
 
-            {/* How We plan events */}
+            {/* How We Plan Events */}
             <HowWePlanEvents />
 
             {/* Featured Events */}
             <FeaturedEvents />
+
             {/* FAQ */}
-            <FAQ />
-
-            {/* <TestimonialsSection /> */}
-
-            {/* <LocationSEOSection /> */}
+            <FAQ faqs={faqList} />
 
             <ContactCTA />
         </>

@@ -169,6 +169,7 @@ export function breadcrumbSchema(
 /* =====================================================
    FAQ SCHEMA
 ===================================================== */
+
 interface FAQItem {
     question: string
     answer: string
@@ -181,13 +182,19 @@ export function faqSchema(
 
     if (!faqs || faqs.length === 0) return null
 
-    const pageUrl = url || baseUrl
+    const pageUrl = (url || baseUrl).replace(/\/$/, "")
+
+    const validFaqs = faqs.filter(
+        (f) => f.question?.trim() && f.answer?.trim()
+    )
+
+    if (validFaqs.length === 0) return null
 
     return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,
-        mainEntity: faqs.map((faq) => ({
+        mainEntity: validFaqs.map((faq) => ({
             "@type": "Question",
             name: faq.question,
             acceptedAnswer: {
@@ -197,7 +204,6 @@ export function faqSchema(
         })),
     }
 }
-
 
 interface ArticleSchemaParams {
     title: string

@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title,
             // description,
             url,
+            siteName: "Ananta Group",
             type: "website",
             // images: node?.image
             //     ? [
@@ -47,5 +48,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title,
             // description,
         },
+
+        robots: {
+            index: true,
+            follow: true
+        }
     }
 }

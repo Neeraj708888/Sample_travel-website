@@ -3,40 +3,14 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
-const faqs = [
-    {
-        question: "How early should we start planning an event?",
-        answer:
-            "We recommend starting the planning process at least 3-6 months in advance to ensure venue availability and flawless execution.",
-    },
-    {
-        question: "Do you manage destination weddings?",
-        answer:
-            "Yes, we specialize in luxury destination weddings including venue selection, decor planning and guest experience.",
-    },
-    {
-        question: "Can you handle corporate events and conferences?",
-        answer:
-            "Absolutely. Our team has extensive experience managing corporate events, product launches and conferences.",
-    },
-    {
-        question: "Do you provide customized event themes?",
-        answer:
-            "Yes, we design personalized themes based on your vision including decor, lighting, entertainment and guest experience.",
-    },
-    {
-        question: "Do you arrange vendors and catering?",
-        answer:
-            "Yes, we coordinate trusted vendors including catering, photography, entertainment and decor services.",
-    },
-    {
-        question: "Do you manage last minute changes?",
-        answer:
-            "Our experienced team is trained to handle unexpected changes smoothly so your event remains perfect.",
-    },
-];
 
-export default function FAQ() {
+interface FAQProps {
+    faqs?: { question: string; answer: string }[]
+}
+
+export default function FAQ({ faqs }: FAQProps) {
+
+    const faqList = faqs && faqs.length > 0 ? faqs : []
 
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -62,7 +36,7 @@ export default function FAQ() {
 
                 <div className="grid md:grid-cols-2 gap-6">
 
-                    {faqs.map((faq, index) => {
+                    {faqList.map((faq, index) => {
 
                         const isOpen = hoverIndex === index || activeIndex === index;
 

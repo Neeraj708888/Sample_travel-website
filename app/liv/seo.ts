@@ -30,6 +30,18 @@ export function generateSeo({
 
     const defaultImage = image || `${baseUrl}/og-image.jpg`
 
+    // ✅ SEO Safe Title (max 60 chars)
+    const seoTitle =
+        title.length > 60
+            ? `${title.substring(0, 57)}...`
+            : `${title} | Event Management`
+
+    // ✅ SEO Safe Description (150-160 chars)
+    const seoDescription =
+        description.length > 155
+            ? `${description.substring(0, 152)}...`
+            : description
+
     const schema: any[] = []
 
     // 🟢 Service Schema
@@ -38,8 +50,8 @@ export function generateSeo({
             "@context": "https://schema.org",
             "@type": "Service",
             "@id": `${url}#service`,
-            name: title,
-            description,
+            name: seoTitle,
+            description: seoDescription,
             url,
             areaServed: {
                 "@type": "Country",
@@ -58,8 +70,8 @@ export function generateSeo({
         schema.push({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: title,
-            description,
+            headline: seoTitle,
+            description: seoDescription,
             image: defaultImage,
             author: {
                 "@type": "Organization",
@@ -93,8 +105,8 @@ export function generateSeo({
     }
 
     return {
-        title,
-        description,
+        title: seoTitle,
+        description: seoDescription,
 
         alternates: {
             canonical: url,
@@ -106,8 +118,8 @@ export function generateSeo({
         },
 
         openGraph: {
-            title,
-            description,
+            title: seoTitle,
+            description: seoDescription,
             url,
             type: type === "article" ? "article" : "website",
             images: [{ url: defaultImage }],
@@ -115,18 +127,17 @@ export function generateSeo({
 
         twitter: {
             card: "summary_large_image",
-            title,
-            description,
+            title: seoTitle,
+            description: seoDescription,
             images: [defaultImage],
         },
 
-        // schema return separately
         schema,
     }
 }
 
-// FIND SERVICE BY SLUG PATH
 
+// FIND SERVICE BY SLUG PATH
 export function findServiceBySlugPath(path: string[]): ServiceNode | null {
 
     let nodes = services
@@ -141,6 +152,8 @@ export function findServiceBySlugPath(path: string[]): ServiceNode | null {
     return current || null
 }
 
-export function buildTitle(node: ServiceNode, slug: string[]) {
-    return `${node.title} | Event Management Company`
+
+// SEO Friendly Title Builder
+export function buildTitle(node: ServiceNode) {
+    return `${node.title} Services in India | Event Management Company`
 }

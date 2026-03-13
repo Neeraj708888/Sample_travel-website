@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Exclusive Travel Offers & Deals | Ananta Group",
+    title: "Best Event Management Company | Ananta Group",
     description:
-        "Luxury holiday packages with best price guarantee. Book Maldives, Dubai & Bali travel deals today.",
+        "Professional corporate event management services.",
     keywords: [
         "travel offers",
         "holiday packages India",

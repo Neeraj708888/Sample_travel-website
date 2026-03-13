@@ -2,16 +2,15 @@ import { notFound } from "next/navigation"
 import { services } from "@/app/data/services"
 import { findEventPath } from "@/app/liv/findEventsPath"
 import { generateSeo } from "@/app/liv/seo"
-import { breadcrumbSchema, serviceSchema } from "@/app/liv/schema"
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/app/liv/schema"
 import Schema from "@/app/liv/components/Schema"
+import { getPageData } from "@/app/liv/pageData"
 
-import { Event3DSlider } from "@/app/components/Events/Event3DSlider"
 import { EventSearch } from "@/app/components/Events/Hero"
 import EventCategories from "@/app/components/Events/EventCategories"
 import FAQ from "@/app/components/Events/FAQ"
 import CorporateEventServices from "@/app/components/Events/Services/CorporateEventServices"
 import PortfolioCaseStudy from "@/app/components/Events/Services/PortfolioCaseStudy"
-import EventPlanningProcess from "@/app/components/Events/Services/EventPlanningProcess"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
 import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceTypes"
 import ServiceEventTypeSolutions from "@/app/components/Events/Services/Category/ServiceEventTypeSolutions"
@@ -28,7 +27,7 @@ const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
 /* ---------------------------------- */
-/* ✅ STATIC GENERATION */
+/* ✅ STATIC GENERATION                */
 /* ---------------------------------- */
 
 export const dynamicParams = false
@@ -38,8 +37,6 @@ function getAllPaths(nodes: any[], parent: string[] = []) {
 
     for (const node of nodes) {
         const current = [...parent, node.slug]
-
-        // 🔥 PUSH EVERY LEVEL
         paths.push(current)
 
         if (node.children?.length) {
@@ -56,7 +53,7 @@ export async function generateStaticParams() {
 }
 
 /* ---------------------------------- */
-/* ✅ METADATA */
+/* ✅ METADATA                         */
 /* ---------------------------------- */
 
 export async function generateMetadata({ params }: PageProps) {
@@ -67,19 +64,29 @@ export async function generateMetadata({ params }: PageProps) {
 
     const { nodes } = result
     const lastNode = nodes[nodes.length - 1]
-
     const url = `${baseUrl}/events/${resolvedParams.slug.join("/")}`
 
+    const dbSlug = `events/${resolvedParams.slug.join("/")}`
+    const { page } = await getPageData(dbSlug)
+
     return generateSeo({
-        title: `${lastNode.title} | ${nodes[0].title}`,
-        description: `Premium ${lastNode.title} services`,
+        title: page?.meta_title || `${lastNode.title} | ${nodes[0].title}`,
+        description: page?.meta_description || `Premium ${lastNode.title} services`,
         url,
         type: "service",
+        breadcrumb: [
+            { name: "Home", url: baseUrl },
+            { name: "Events", url: `${baseUrl}/events` },
+            ...nodes.map((node, index) => ({
+                name: node.title,
+                url: `${baseUrl}/events/${resolvedParams.slug.slice(0, index + 1).join("/")}`,
+            })),
+        ],
     })
 }
 
 /* ---------------------------------- */
-/* ✅ PAGE COMPONENT */
+/* ✅ PAGE COMPONENT                   */
 /* ---------------------------------- */
 
 export default async function DynamicServicePage({
@@ -97,6 +104,14 @@ export default async function DynamicServicePage({
 
     const url = `${baseUrl}/events/${slug.join("/")}`
 
+    const dbSlug = `events/${slug.join("/")}`
+    const { faqs: dbFaqs } = await getPageData(dbSlug)
+
+    const faqList =
+        dbFaqs.length > 0
+            ? dbFaqs.map(f => ({ question: f.question, answer: f.answer }))
+            : undefined
+
     const schemaData = [
         serviceSchema({
             name: lastNode.title,
@@ -107,22 +122,19 @@ export default async function DynamicServicePage({
         breadcrumbSchema(
             nodes.map((node, index) => ({
                 name: node.title,
-                url: `${baseUrl}/events/${slug
-                    .slice(0, index + 1)
-                    .join("/")}`,
+                url: `${baseUrl}/events/${slug.slice(0, index + 1).join("/")}`,
             }))
         ),
-    ]
+        faqSchema(faqList, url),
+    ].filter(Boolean)
 
     const breadcrumbItems = [
         { label: "Home", href: "/" },
         { label: "Events", href: "/events" },
-
         ...nodes.map((node, index) => ({
             label: node.title,
             href: `/events/${slug.slice(0, index + 1).join("/")}`,
         })),
-
     ]
 
     return (
@@ -138,9 +150,7 @@ export default async function DynamicServicePage({
                     <EventCategories />
                     <CorporateEventServices />
                     <PortfolioCaseStudy />
-                    <EventPlanningProcess />
-                    {/* <Event3DSlider /> */}
-                    <FAQ />
+                    <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>
             )}
@@ -152,9 +162,7 @@ export default async function DynamicServicePage({
                     <ServiceTypes />
                     <ServiceEventTypeSolutions />
                     <ServiceTypePortfolioCaseStudy />
-                    {/* <Event3DSlider /> */}
-                    <EventPlanningProcess />
-                    <FAQ />
+                    <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>
             )}
@@ -163,11 +171,9 @@ export default async function DynamicServicePage({
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
                     <EventCategories />
-                    {/* <Event3DSlider /> */}
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
-                    <EventPlanningProcess />
-                    <FAQ />
+                    <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>
             )}
