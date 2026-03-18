@@ -14,9 +14,9 @@ import { EventSearch } from "../components/Events/Hero"
 import EventCategories from "../components/Events/EventCategories"
 import HowWePlanEvents from "../components/Events/HowWePlanEvents"
 import FeaturedEvents from "../components/Events/FeaturedEvents"
-import FAQ from "../components/Events/FAQ"
 import { getPageData } from "../liv/pageData"
-import { FAQ } from "../types/page.types"
+import FAQ from "../components/Events/FAQ"
+
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
@@ -48,25 +48,13 @@ export async function generateMetadata() {
 /* ✅ Page Component                   */
 /* ---------------------------------- */
 
-type FAQItem = {
-    question: string
-    answer: string
-}
-
 export default async function EventServicesPage() {
 
     const url = `${baseUrl}/events`
 
-    const { faqs: dbFaqs = [] } =
-        (await getPageData("events")) as { faqs: FAQItem[] }
+    const { faqs: dbFaqs = [] } = await getPageData("events")
 
-    const faqList =
-        dbFaqs.length > 0
-            ? dbFaqs.map((f: FAQ) => ({
-                question: f.question,
-                answer: f.answer
-            }))
-            : undefined;
+    const faqList = dbFaqs.length ? dbFaqs : undefined;
 
     const schemaData = [
         organizationSchema(),
