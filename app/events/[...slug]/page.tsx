@@ -8,7 +8,6 @@ import { getPageData } from "@/app/liv/pageData"
 
 import { EventSearch } from "@/app/components/Events/Hero"
 import EventCategories from "@/app/components/Events/EventCategories"
-import FAQ from "@/app/components/Events/FAQ"
 import CorporateEventServices from "@/app/components/Events/Services/CorporateEventServices"
 import PortfolioCaseStudy from "@/app/components/Events/Services/PortfolioCaseStudy"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
@@ -16,6 +15,7 @@ import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceType
 import ServiceEventTypeSolutions from "@/app/components/Events/Services/Category/ServiceEventTypeSolutions"
 import ServiceTypePortfolioCaseStudy from "@/app/components/Events/Services/Category/ServiceTypePortfolioCaseStudy"
 import ServiceTypeCaseStudy from "@/app/components/Events/Services/Category/Types/ServiceTypesCaseStudy"
+import FAQ from "@/app/components/Events/FAQ"
 
 type PageProps = {
     params: Promise<{
@@ -116,15 +116,10 @@ export default async function DynamicServicePage({
     const url = `${baseUrl}/events/${slug.join("/")}`
 
     const dbSlug = `events/${slug.join("/")}`
-    const { faqs: dbFaqs } = await getPageData(dbSlug)
+    const { faqs: dbFaqs } = await getPageData(dbSlug);
 
-    const faqList =
-        dbFaqs.length > 0
-            ? dbFaqs.map((f: { question: string; answer: string }) => ({
-                question: f.question,
-                answer: f.answer
-            }))
-            : undefined;
+    // ✅ Safe handling (no crash + no type issue)
+    const faqList = dbFaqs && dbFaqs.length > 0 ? dbFaqs : undefined;
 
     const schemaData = [
         serviceSchema({

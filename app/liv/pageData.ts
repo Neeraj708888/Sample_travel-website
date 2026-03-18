@@ -64,6 +64,7 @@
 // }
 
 import { db } from "../backend/src/config/db"
+import { FAQ } from "../types/page.types"
 import { generateDestinationContent } from "./ai"
 
 export async function getPageData(slug: string) {
@@ -84,7 +85,7 @@ export async function getPageData(slug: string) {
         console.log("DB data found")
         return {
             page: data,
-            faqs: data.faqs || []
+            faqs: data.faqs as FAQ[] || []
         }
     }
 
@@ -107,7 +108,7 @@ export async function getPageData(slug: string) {
             meta_description: aiContent.meta_description,
             meta_keywords: aiContent.meta_keywords,
             faqs: aiContent.faqs,
-            content: aiContent.content
+            content: aiContent.content ?? null
         }, {
             onConflict: "slug"
         })
@@ -121,7 +122,11 @@ export async function getPageData(slug: string) {
     console.log("Saved in DB:", inserted)
 
     return {
-        page: inserted || aiContent,
-        faqs: inserted?.faqs || aiContent.faqs || []
+        page: inserted || {
+            meta_title: aiContent.meta_title,
+            meta_description: aiContent.meta_description,
+            meta_keywords: aiContent.meta_keywords
+        },
+        faqs: (inserted?.faqs as FAQ[]) || aiContent.faqs || []
     }
 }

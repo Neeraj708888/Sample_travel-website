@@ -15,8 +15,17 @@ export interface PageSection {
 }
 
 export interface FAQ {
-    id?: number
-    page_id: number
+    // id?: number
+    // page_id: number
     question: string
     answer: string
+}
+
+export interface PageData {
+    page?: {
+        meta_title?: string
+        meta_description?: string
+        meta_keywords?: string
+    }
+    faqs: FAQ[]
 }

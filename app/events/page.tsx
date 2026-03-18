@@ -16,6 +16,7 @@ import HowWePlanEvents from "../components/Events/HowWePlanEvents"
 import FeaturedEvents from "../components/Events/FeaturedEvents"
 import FAQ from "../components/Events/FAQ"
 import { getPageData } from "../liv/pageData"
+import { FAQ } from "../types/page.types"
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
@@ -61,11 +62,11 @@ export default async function EventServicesPage() {
 
     const faqList =
         dbFaqs.length > 0
-            ? dbFaqs.map((f: FAQItem) => ({
+            ? dbFaqs.map((f: FAQ) => ({
                 question: f.question,
                 answer: f.answer
             }))
-            : undefined
+            : undefined;
 
     const schemaData = [
         organizationSchema(),

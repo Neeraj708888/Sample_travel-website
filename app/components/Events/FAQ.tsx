@@ -2,15 +2,17 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { FAQ } from "@/app/types/page.types";
 
 
 interface FAQProps {
-    faqs?: { question: string; answer: string }[]
+    faqs?: FAQ[]
 }
+
 
 export default function FAQ({ faqs }: FAQProps) {
 
-    const faqList = faqs && faqs.length > 0 ? faqs : []
+    const faqList = faqs ?? [];
 
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
