@@ -120,8 +120,11 @@ export default async function DynamicServicePage({
 
     const faqList =
         dbFaqs.length > 0
-            ? dbFaqs.map(f => ({ question: f.question, answer: f.answer }))
-            : undefined
+            ? dbFaqs.map((f: { question: string; answer: string }) => ({
+                question: f.question,
+                answer: f.answer
+            }))
+            : undefined;
 
     const schemaData = [
         serviceSchema({
