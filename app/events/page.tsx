@@ -17,9 +17,7 @@ import FeaturedEvents from "../components/Events/FeaturedEvents"
 import { getPageData } from "../liv/pageData"
 import FAQ from "../components/Events/FAQ"
 
-
-const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
 /* ---------------------------------- */
 /* ✅ SEO Metadata                     */
@@ -27,7 +25,6 @@ const baseUrl =
 
 export async function generateMetadata() {
     const url = `${baseUrl}/events`
-
     const { page } = await getPageData("events")
 
     return generateSeo({
@@ -49,12 +46,12 @@ export async function generateMetadata() {
 /* ---------------------------------- */
 
 export default async function EventServicesPage() {
-
     const url = `${baseUrl}/events`
 
-    const { faqs: dbFaqs = [] } = await getPageData("events")
+    // ✅ Sirf ek baar DB call
+    const { page, faqs: dbFaqs = [] } = await getPageData("events")
 
-    const faqList = dbFaqs.length ? dbFaqs : undefined;
+    const faqList = dbFaqs.length ? dbFaqs : undefined
 
     const schemaData = [
         organizationSchema(),
@@ -73,33 +70,19 @@ export default async function EventServicesPage() {
 
     return (
         <>
-            {/* ✅ Structured Data */}
             <Schema
                 data={schemaData}
                 id="event-services-structured-data"
             />
-
-            {/* ✅ Hero Section */}
             <EventSearch
                 title="Event"
                 breadcrumbItems={breadcrumbItems}
             />
-
-            {/* Category Cards */}
             <EventCategories />
-
-            {/* Popular Events */}
             <PopularEvent />
-
-            {/* How We Plan Events */}
             <HowWePlanEvents />
-
-            {/* Featured Events */}
             <FeaturedEvents />
-
-            {/* FAQ */}
             <FAQ faqs={faqList} />
-
             <ContactCTA />
         </>
     )

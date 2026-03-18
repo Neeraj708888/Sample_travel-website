@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const rawCity = resolvedParams.slug[1];
     const city = formatCity(rawCity);
 
-    const title = node ? buildTitle(node, resolvedParams.slug, city) : "Event Services in Delhi"
+    const title = node ? buildTitle(node, resolvedParams.slug, city) : "Event Manangement Company in Delhi"
     // const description = node
     //     ? buildDescription(node)
     //     : "Professional event management services."

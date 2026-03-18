@@ -7,7 +7,7 @@ export const createPage = async (req: Request, res: Response) => {
 
     try {
 
-        const { slug, meta_title, meta_description, keywords, sections = [], faq = [] } = req.body
+        const { slug, meta_title, meta_description, meta_keywords, sections = [], faq = [] } = req.body
 
         if (!slug) {
             return res.status(400).json({ error: "slug is required" })
@@ -17,7 +17,7 @@ export const createPage = async (req: Request, res: Response) => {
             slug,
             meta_title,
             meta_description,
-            keywords
+            meta_keywords
         })
 
         if (!page?.id) {

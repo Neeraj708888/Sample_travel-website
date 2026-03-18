@@ -30,9 +30,13 @@ type SchemaProps = {
 export default function Schema({ data, id }: SchemaProps) {
     if (!data || (Array.isArray(data) && data.length === 0)) return null
 
+    // const cleanData = Array.isArray(data)
+    //     ? data.filter(Boolean)
+    //     : data
+
     const cleanData = Array.isArray(data)
         ? data.filter(Boolean)
-        : data
+        : [data]
 
     const jsonLd = JSON.stringify(cleanData).replace(/</g, "\\u003c")
 

@@ -20,7 +20,7 @@ export default function EnquiryPopup() {
                 // ✅ Auto close after 10 sec
                 closeTimer = setTimeout(() => {
                     setIsOpen(false);
-                }, 10000);
+                }, 20000);
             }
         }, 3000);
 

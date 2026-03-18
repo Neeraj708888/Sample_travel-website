@@ -25,84 +25,20 @@ export function generateSeo({
     noIndex = false,
 }: SeoProps) {
 
-    const baseUrl =
-        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
     const defaultImage = image || `${baseUrl}/og-image.jpg`
 
     // ✅ SEO Safe Title (max 60 chars)
     const seoTitle =
         title.length > 60
             ? `${title.substring(0, 57)}...`
-            : `${title}`
+            : title
 
-    // ✅ SEO Safe Description (150-160 chars)
+    // ✅ SEO Safe Description (max 155 chars)
     const seoDescription =
         description.length > 155
             ? `${description.substring(0, 152)}...`
             : description
-
-    const schema: any[] = []
-
-    // 🟢 Service Schema
-    if (type === "service") {
-        schema.push({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "@id": `${url}#service`,
-            name: seoTitle,
-            description: seoDescription,
-            url,
-            areaServed: {
-                "@type": "Country",
-                name: "India",
-            },
-            provider: {
-                "@type": "Organization",
-                name: "Event Management Pvt Ltd",
-                url: baseUrl,
-            },
-        })
-    }
-
-    // 🟢 Article Schema
-    if (type === "article") {
-        schema.push({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: seoTitle,
-            description: seoDescription,
-            image: defaultImage,
-            author: {
-                "@type": "Organization",
-                name: "Event Management Pvt Ltd",
-            },
-            publisher: {
-                "@type": "Organization",
-                name: "Event Management Pvt Ltd",
-                logo: {
-                    "@type": "ImageObject",
-                    url: `${baseUrl}/logo.png`,
-                },
-            },
-            mainEntityOfPage: url,
-        })
-    }
-
-    // 🟢 Breadcrumb Schema
-    if (breadcrumb.length) {
-        schema.push({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "@id": `${url}#breadcrumb`,
-            itemListElement: breadcrumb.map((item, index) => ({
-                "@type": "ListItem",
-                position: index + 1,
-                name: item.name,
-                item: item.url,
-            })),
-        })
-    }
 
     return {
         title: seoTitle,
@@ -131,15 +67,15 @@ export function generateSeo({
             description: seoDescription,
             images: [defaultImage],
         },
-
-        schema,
+        // ✅ schema field hataya — page.tsx mein <Schema> component handle karta hai
     }
 }
 
+/* ---------------------------------- */
+/* ✅ Find Service By Slug Path        */
+/* ---------------------------------- */
 
-// FIND SERVICE BY SLUG PATH
 export function findServiceBySlugPath(path: string[]): ServiceNode | null {
-
     let nodes = services
     let current: ServiceNode | undefined
 
@@ -152,37 +88,37 @@ export function findServiceBySlugPath(path: string[]): ServiceNode | null {
     return current || null
 }
 
+/* ---------------------------------- */
+/* ✅ SEO Title Builder                */
+/* ---------------------------------- */
 
-// SEO Friendly Title Builder
-// export function buildTitle(node: ServiceNode) {
-//     return `${node.title} Services in India | Event Management Company`
-// }
 export function buildTitle(
     node: ServiceNode,
     slug?: string[],
     city?: string
 ) {
-    // const brand = "Ananta Group";
-
-    // last slug = most specific keyword
     const keyword = slug?.length
         ? slug[slug.length - 1].replace(/-/g, " ")
-        : "";
+        : ""
 
-    const location = city ? ` in ${city}` : " in Delhi";
+    const location = city ? ` in ${city}` : " in Delhi"
 
+    // ✅ Consistent "Services" use karo
     if (keyword && keyword !== node.title.toLowerCase()) {
-        return `${node.title} Services for ${keyword}${location}`;
+        return `${node.title} Management Company for ${keyword}${location}`
     }
 
-    return `${node.title} Services${location}`;
+    return `${node.title} Management COmpany${location}`
 }
 
-// Format City
+/* ---------------------------------- */
+/* ✅ Format City                      */
+/* ---------------------------------- */
+
 export function formatCity(city?: string) {
-    if (!city) return undefined;
+    if (!city) return undefined
 
     return city
         .replace(/-/g, " ")
-        .replace(/\b\w/g, (c) => c.toUpperCase());
+        .replace(/\b\w/g, (c) => c.toUpperCase())
 }

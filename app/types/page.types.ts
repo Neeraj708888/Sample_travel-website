@@ -3,7 +3,7 @@ export interface Page {
     slug: string
     meta_title?: string
     meta_description?: string
-    keywords?: string[]
+    meta_keywords?: string
 }
 
 export interface PageSection {
