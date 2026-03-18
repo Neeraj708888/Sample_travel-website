@@ -34,7 +34,7 @@ export function generateSeo({
     const seoTitle =
         title.length > 60
             ? `${title.substring(0, 57)}...`
-            : `${title} | Event Management`
+            : `${title}`
 
     // ✅ SEO Safe Description (150-160 chars)
     const seoDescription =
@@ -154,6 +154,35 @@ export function findServiceBySlugPath(path: string[]): ServiceNode | null {
 
 
 // SEO Friendly Title Builder
-export function buildTitle(node: ServiceNode) {
-    return `${node.title} Services in India | Event Management Company`
+// export function buildTitle(node: ServiceNode) {
+//     return `${node.title} Services in India | Event Management Company`
+// }
+export function buildTitle(
+    node: ServiceNode,
+    slug?: string[],
+    city?: string
+) {
+    // const brand = "Ananta Group";
+
+    // last slug = most specific keyword
+    const keyword = slug?.length
+        ? slug[slug.length - 1].replace(/-/g, " ")
+        : "";
+
+    const location = city ? ` in ${city}` : " in Delhi";
+
+    if (keyword && keyword !== node.title.toLowerCase()) {
+        return `${node.title} Services for ${keyword}${location}`;
+    }
+
+    return `${node.title} Services${location}`;
+}
+
+// Format City
+export function formatCity(city?: string) {
+    if (!city) return undefined;
+
+    return city
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
 }

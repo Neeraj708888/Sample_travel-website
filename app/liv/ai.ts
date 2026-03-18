@@ -7,15 +7,22 @@ const openai = new OpenAI({
 export async function generateDestinationContent(slug: string) {
 
     const prompt = `
-Generate SEO optimized content for an EVENT MANAGEMENT COMPANY located in Delhi, India.
+Generate SEO optimized content for an EVENT MANAGEMENT COMPANY in Delhi, India.
 
 Service: ${slug}
 
-Rules:
-- Meta title must be 50-60 characters
-- Meta description must be 140-160 characters
-- Include keyword: event management company in Delhi
-- FAQs should be location specific to Delhi.
+STRICT RULES FOR META TITLE:
+- Length MUST be between 50-60 characters
+- Start with service keyword
+- Include "in Delhi"
+- End with "Ananta Group"
+- DO NOT use words like: Leading, Best, Top
+- DO NOT create sentences, only structured SEO title
+
+STRICT RULES FOR META DESCRIPTION:
+- 140-160 characters
+- Natural and readable
+- Include "event management company in Delhi"
 
 Return STRICT JSON:
 
@@ -31,10 +38,10 @@ Return STRICT JSON:
   ]
 }
 
-Guidelines for FAQs:
-- Focus on event planning in Delhi
-- Mention venues, logistics, vendors, and event management in Delhi
-- Create 6 FAQs
+FAQs:
+- Location specific to Delhi
+- Mention venues, vendors, logistics
+- Generate exactly 6 FAQs
 `
 
     const response = await openai.chat.completions.create({

@@ -23,7 +23,7 @@ export function EventSearch({ breadcrumbItems, title }: EventSearchProps) {
                 <div className="relative max-w-8xl mx-auto text-center px-4">
                     {/* H1 - SEO Optimized */}
                     <h1 className="text-3xl md:text-5xl font-extrabold leading-tight py-5 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
-                        {title} Management Company in Delhi
+                        {title} Services in Delhi
                     </h1>
 
                     {/* H2 */}

@@ -1,4 +1,4 @@
-import { buildTitle, findServiceBySlugPath } from "@/app/liv/seo"
+import { buildTitle, findServiceBySlugPath, formatCity } from "@/app/liv/seo"
 import { Metadata } from "next"
 
 type Props = {
@@ -11,7 +11,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const node = findServiceBySlugPath(resolvedParams.slug)
 
-    const title = node ? buildTitle(node, resolvedParams.slug) : "Event Services"
+    // City
+    const rawCity = resolvedParams.slug[1];
+    const city = formatCity(rawCity);
+
+    const title = node ? buildTitle(node, resolvedParams.slug, city) : "Event Services in Delhi"
     // const description = node
     //     ? buildDescription(node)
     //     : "Professional event management services."
@@ -30,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title,
             // description,
             url,
-            siteName: "Ananta Group",
+            siteName: "Event Management",
             type: "website",
             // images: node?.image
             //     ? [

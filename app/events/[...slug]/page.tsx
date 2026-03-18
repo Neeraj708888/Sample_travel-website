@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import { services } from "@/app/data/services"
 import { findEventPath } from "@/app/liv/findEventsPath"
-import { generateSeo } from "@/app/liv/seo"
+import { buildTitle, generateSeo } from "@/app/liv/seo"
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/app/liv/schema"
 import Schema from "@/app/liv/components/Schema"
 import { getPageData } from "@/app/liv/pageData"
@@ -69,8 +69,19 @@ export async function generateMetadata({ params }: PageProps) {
     const dbSlug = `events/${resolvedParams.slug.join("/")}`
     const { page } = await getPageData(dbSlug)
 
+    console.log("META TITLE FROM DB:", page?.meta_title)
+
+    const dynamictitle = buildTitle(lastNode, resolvedParams.slug);
+
+    // Fallback
+    const dbTitle = page?.meta_title;
+
+    // Final title logic
+    const title = dynamictitle || dbTitle || "Event Services in Delhi";
+
     return generateSeo({
-        title: page?.meta_title || `${lastNode.title} | ${nodes[0].title}`,
+        // title: page?.meta_title || `${lastNode.title} | ${nodes[0].title}`,
+        title,
         description: page?.meta_description || `Premium ${lastNode.title} services`,
         url,
         type: "service",
