@@ -27,11 +27,20 @@ const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
 /* ---------------------------------- */
-/* ✅ STATIC GENERATION                */
+/* ✅ RENDERING STRATEGY (FIXED)       */
 /* ---------------------------------- */
 
-export const dynamicParams = false
+// ✅ FIX 1: force-dynamic रखा ताकि build time DB call fail न करे
+export const dynamic = "force-dynamic";
 
+// ✅ FIX 2: dynamicParams true (false हटाया)
+export const dynamicParams = true
+
+/* ---------------------------------- */
+/* ❌ OPTIONAL: REMOVE if not needed   */
+/* ---------------------------------- */
+
+// ⚠️ NOTE: force-dynamic use कर रहे हो → ये optional है
 function getAllPaths(nodes: any[], parent: string[] = []) {
     let paths: string[][] = []
 
@@ -47,13 +56,14 @@ function getAllPaths(nodes: any[], parent: string[] = []) {
     return paths
 }
 
+// ⚠️ OPTIONAL (remove if not needed)
 export async function generateStaticParams() {
     const allPaths = getAllPaths(services)
     return allPaths.map(slug => ({ slug }))
 }
 
 /* ---------------------------------- */
-/* ✅ METADATA                         */
+/* ✅ METADATA (SAFE VERSION)          */
 /* ---------------------------------- */
 
 export async function generateMetadata({ params }: PageProps) {
@@ -67,22 +77,29 @@ export async function generateMetadata({ params }: PageProps) {
     const url = `${baseUrl}/events/${resolvedParams.slug.join("/")}`
 
     const dbSlug = `events/${resolvedParams.slug.join("/")}`
-    const { page } = await getPageData(dbSlug)
 
-    console.log("META TITLE FROM DB:", page?.meta_title)
+    // ✅ FIX 3: SAFE DB CALL (try-catch)
+    let page: any = null;
 
-    const dynamictitle = buildTitle(lastNode, resolvedParams.slug);
+    try {
+        const data = await getPageData(dbSlug);
+        page = data?.page;
+    } catch (error) {
+        console.error("META FETCH ERROR:", error);
+    }
 
-    // Fallback
+    // ✅ STATIC + DYNAMIC TITLE STRATEGY
+    const dynamicTitle = buildTitle(lastNode, resolvedParams.slug);
     const dbTitle = page?.meta_title;
 
-    // Final title logic
-    const title = dynamictitle || dbTitle || "Event Services in Delhi";
+    const title =
+        dynamicTitle || dbTitle || "Event Services in Delhi";
 
     return generateSeo({
-        // title: page?.meta_title || `${lastNode.title} | ${nodes[0].title}`,
         title,
-        description: page?.meta_description || `Premium ${lastNode.title} services`,
+        description:
+            page?.meta_description ||
+            `Premium ${lastNode.title} services`,
         url,
         type: "service",
         breadcrumb: [
@@ -90,7 +107,9 @@ export async function generateMetadata({ params }: PageProps) {
             { name: "Events", url: `${baseUrl}/events` },
             ...nodes.map((node, index) => ({
                 name: node.title,
-                url: `${baseUrl}/events/${resolvedParams.slug.slice(0, index + 1).join("/")}`,
+                url: `${baseUrl}/events/${resolvedParams.slug
+                    .slice(0, index + 1)
+                    .join("/")}`,
             })),
         ],
     })
@@ -114,12 +133,21 @@ export default async function DynamicServicePage({
     const depth = slug.length
 
     const url = `${baseUrl}/events/${slug.join("/")}`
-
     const dbSlug = `events/${slug.join("/")}`
-    const { faqs: dbFaqs } = await getPageData(dbSlug);
 
-    // ✅ Safe handling (no crash + no type issue)
-    const faqList = dbFaqs && dbFaqs.length > 0 ? dbFaqs : undefined;
+    // ✅ FIX 4: SAFE FAQ FETCH (NO BUILD CRASH)
+    let dbFaqs: any[] = [];
+
+    try {
+        const data = await getPageData(dbSlug);
+        dbFaqs = data?.faqs || [];
+    } catch (error) {
+        console.error("FAQ FETCH ERROR:", error);
+    }
+
+    // ✅ SAFE FALLBACK
+    const faqList =
+        dbFaqs && dbFaqs.length > 0 ? dbFaqs : undefined;
 
     const schemaData = [
         serviceSchema({
@@ -131,9 +159,13 @@ export default async function DynamicServicePage({
         breadcrumbSchema(
             nodes.map((node, index) => ({
                 name: node.title,
-                url: `${baseUrl}/events/${slug.slice(0, index + 1).join("/")}`,
+                url: `${baseUrl}/events/${slug
+                    .slice(0, index + 1)
+                    .join("/")}`,
             }))
         ),
+
+        // ✅ FAQ schema only if exists
         faqSchema(faqList, url),
     ].filter(Boolean)
 
@@ -142,7 +174,9 @@ export default async function DynamicServicePage({
         { label: "Events", href: "/events" },
         ...nodes.map((node, index) => ({
             label: node.title,
-            href: `/events/${slug.slice(0, index + 1).join("/")}`,
+            href: `/events/${slug
+                .slice(0, index + 1)
+                .join("/")}`,
         })),
     ]
 
@@ -155,34 +189,52 @@ export default async function DynamicServicePage({
 
             {depth === 1 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
+                        title={lastNode.title}
+                    />
                     <EventCategories />
                     <CorporateEventServices />
                     <PortfolioCaseStudy />
+
+                    {/* ✅ FAQ SAFE */}
                     <FAQ faqs={faqList} />
+
                     <ContactCTA />
                 </>
             )}
 
             {depth === 2 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
+                        title={lastNode.title}
+                    />
                     <EventCategories />
                     <ServiceTypes />
                     <ServiceEventTypeSolutions />
                     <ServiceTypePortfolioCaseStudy />
+
+                    {/* ✅ FAQ SAFE */}
                     <FAQ faqs={faqList} />
+
                     <ContactCTA />
                 </>
             )}
 
             {depth === 3 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
+                        title={lastNode.title}
+                    />
                     <EventCategories />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
+
+                    {/* ✅ FAQ SAFE */}
                     <FAQ faqs={faqList} />
+
                     <ContactCTA />
                 </>
             )}
