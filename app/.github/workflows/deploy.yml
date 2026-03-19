@@ -17,18 +17,10 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Safe directory fix
+            export PATH="/root/.nvm/versions/node/v22.15.0/bin:$PATH"
+            
             git config --global --add safe.directory /home/anantahospitality/htdocs/www.anantahospitality.com
-
-            # Node version fix
-            export NVM_DIR="/root/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            nvm use 22
-
-            # PM2 path fix
-            export PATH="$PATH:/root/.nvm/versions/node/v22.22.1/bin"
-
-            # Deploy
+            
             cd /home/anantahospitality/htdocs/www.anantahospitality.com
             git pull origin master
             npm install
