@@ -33,7 +33,7 @@ export async function generateMetadata() {
             page?.meta_description ||
             "Luxury wedding planning, corporate events, and private celebrations in Delhi.",
         url,
-        type: "category",
+        type: "event",
         breadcrumb: [
             { name: "Home", url: baseUrl },
             { name: "Events", url },

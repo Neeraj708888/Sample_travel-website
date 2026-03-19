@@ -4,32 +4,40 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY!,
 })
 
-export async function generateDestinationContent(slug: string) {
+export async function generatePageContent(slug: string) {
 
     const prompt = `
-Generate SEO optimized content for an EVENT MANAGEMENT COMPANY in Delhi, India.
+You are an SEO expert for "Ananta Group" - a premium event management company in Delhi, India.
 
-Service: ${slug}
+Generate SEO-optimized page content for this service: "${slug}"
 
-STRICT RULES FOR META TITLE:
-- Length MUST be between 50-60 characters
-- Start with service keyword
-- Include "in Delhi"
-- End with "Ananta Group"
-- DO NOT use words like: Leading, Best, Top
-- DO NOT create sentences, only structured SEO title
+---
 
-STRICT RULES FOR META DESCRIPTION:
-- 140-160 characters
-- Natural and readable
-- Include "event management company in Delhi"
+## OUTPUT RULES:
+- Return ONLY valid JSON, no explanation, no markdown, no backticks
+- All character limits are STRICT
 
-Return STRICT JSON:
+---
+
+## JSON STRUCTURE:
 
 {
   "meta_title": "",
   "meta_description": "",
   "meta_keywords": "",
+  "content": [
+  "hero": {
+    "h1": "",
+    "h2": "",
+    "shortDesc": ""
+  },
+  "eventType": {
+    "shortDesc": ""
+},
+ eventSolution: {
+    "shortDesc": ""
+}
+  ],
   "faqs": [
     {
       "question": "",
@@ -38,10 +46,41 @@ Return STRICT JSON:
   ]
 }
 
-FAQs:
-- Location specific to Delhi
-- Mention venues, vendors, logistics
-- Generate exactly 6 FAQs
+---
+
+## FIELD RULES:
+
+### meta_title (50-60 chars STRICT):
+- Format: [Service Keyword] Management Company in Delhi | Ananta Group
+- NO words: Best, Top, Leading, Premier, #1
+- Must include: "in Delhi" and "Ananta Group"
+- Example: "Corporate Event Management Company in Delhi | Ananta Group"
+
+### meta_description (140-155 chars STRICT):
+- Natural, readable sentence
+- Must include: "event management company in Delhi"
+- Mention: planning, execution, or experience
+- NO keyword stuffing
+
+### meta_keywords (comma separated, max 10):
+- Long-tail keywords only
+- Delhi location specific
+- Example: "corporate event planner delhi, conference management delhi"
+
+### hero.h1 (40-60 chars):
+- Same as meta_title but WITHOUT "| Ananta Group"
+- Example: "Corporate Event Management Company in Delhi"
+
+### hero.tagline (80-100 chars):
+- Same as meta_description but shorter and punchier
+- Use active voice
+- Example: "We plan and execute world-class corporate events across Delhi NCR."
+
+### faqs (exactly 6):
+- Delhi specific (mention venues, areas like Connaught Place, Aerocity, etc.)
+- Mix of: pricing, process, venues, timeline questions
+- Answer length: 40-80 words each
+- Natural conversational tone
 `
 
     const response = await openai.chat.completions.create({

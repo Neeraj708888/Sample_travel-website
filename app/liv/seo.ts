@@ -108,7 +108,7 @@ export function buildTitle(
         return `${node.title} Management Company for ${keyword}${location}`
     }
 
-    return `${node.title} Management COmpany${location}`
+    return `${node.title} Management Company${location}`
 }
 
 /* ---------------------------------- */

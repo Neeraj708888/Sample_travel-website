@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation"
-import { services } from "@/app/data/services"
 import { findEventPath } from "@/app/liv/findEventsPath"
 import { buildTitle, generateSeo } from "@/app/liv/seo"
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/app/liv/schema"
@@ -58,11 +57,11 @@ export async function generateMetadata({ params }: PageProps) {
 
     const title = buildTitle(lastNode, resolvedParams.slug)
         || page?.meta_title
-        || "Event Services in Delhi"
+        || "Event Company in Delhi"
 
     return generateSeo({
         title,
-        description: page?.meta_description || `Premium ${lastNode.title} services`,
+        description: page?.meta_description || `${lastNode.title} Company in Delhi`,
         url,
         type: "service",
         breadcrumb: [
@@ -111,7 +110,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
     const schemaData = [
         serviceSchema({
             name: lastNode.title,
-            description: `Professional ${lastNode.title} services.`,
+            description: `Professional ${lastNode.title} Company in Delhi.`,
             url,
             serviceType: lastNode.title,
         }),
