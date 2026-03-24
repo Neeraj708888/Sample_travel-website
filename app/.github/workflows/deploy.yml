@@ -17,14 +17,14 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # ✅ Load NVM properly (no hardcoding)
-            export NVM_DIR="$HOME/.nvm"
-            source $NVM_DIR/nvm.sh
-            nvm use 22
+            # ✅ Force Node 22 path (NO NVM ISSUE)
+            NODE_PATH="/root/.nvm/versions/node/v22.15.0/bin"
+
+            echo "Using Node from: $NODE_PATH"
 
             # ✅ Verify Node version
-            node -v
-            npm -v
+            $NODE_PATH/node -v
+            $NODE_PATH/npm -v
 
             # ✅ Fix git safe directory issue
             git config --global --add safe.directory /home/anantahospitality/htdocs/www.anantahospitality.com
@@ -35,11 +35,11 @@ jobs:
             # ✅ Pull latest code
             git pull origin master
 
-            # ✅ Install dependencies (clean & fast)
-            npm ci
+            # ✅ Install dependencies
+            $NODE_PATH/npm ci
 
             # ✅ Build Next.js app
-            npm run build
+            $NODE_PATH/npm run build
 
             # ✅ Restart app with PM2 (zero downtime)
-            pm2 reload ananta || pm2 start npm --name "ananta" -- start
+            pm2 reload ananta || pm2 start $NODE_PATH/npm --name "ananta" -- start
