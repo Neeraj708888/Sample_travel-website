@@ -10,25 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to Server
+      - name: Deploy to Server via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # ✅ Direct path use karo
-            export PATH="/root/.nvm/versions/node/v22.15.0/bin:$PATH"
-            export NODE_PATH="/root/.nvm/versions/node/v22.15.0/lib/node_modules"
-            
-            # Verify
-            /root/.nvm/versions/node/v22.15.0/bin/node --version
-            
+            # ✅ Load NVM properly (no hardcoding)
+            export NVM_DIR="$HOME/.nvm"
+            source $NVM_DIR/nvm.sh
+            nvm use 22
+
+            # ✅ Verify Node version
+            node -v
+            npm -v
+
+            # ✅ Fix git safe directory issue
             git config --global --add safe.directory /home/anantahospitality/htdocs/www.anantahospitality.com
-            
+
+            # ✅ Go to project directory
             cd /home/anantahospitality/htdocs/www.anantahospitality.com
+
+            # ✅ Pull latest code
             git pull origin master
-            
-            /root/.nvm/versions/node/v22.15.0/bin/npm install
-            /root/.nvm/versions/node/v22.15.0/bin/npm run build
-            /root/.nvm/versions/node/v22.15.0/bin/pm2 restart ananta
+
+            # ✅ Install dependencies (clean & fast)
+            npm ci
+
+            # ✅ Build Next.js app
+            npm run build
+
+            # ✅ Restart app with PM2 (zero downtime)
+            pm2 reload ananta || pm2 start npm --name "ananta" -- start
