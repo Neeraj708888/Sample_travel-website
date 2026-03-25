@@ -17,14 +17,17 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # ✅ Force Node 22 path (NO NVM ISSUE)
-            NODE_PATH="/root/.nvm/versions/node/v22.15.0/bin"
 
-            echo "Using Node from: $NODE_PATH"
+            echo "🚀 Starting Deployment..."
 
-            # ✅ Verify Node version
-            $NODE_PATH/node -v
-            $NODE_PATH/npm -v
+            # ✅ Load Node (NVM fix)
+            export NVM_DIR="/root/.nvm"
+            source $NVM_DIR/nvm.sh
+            nvm use 22
+
+            # ✅ Verify Node
+            node -v
+            npm -v
 
             # ✅ Fix git safe directory issue
             git config --global --add safe.directory /home/anantahospitality/htdocs/www.anantahospitality.com
@@ -32,14 +35,28 @@ jobs:
             # ✅ Go to project directory
             cd /home/anantahospitality/htdocs/www.anantahospitality.com
 
-            # ✅ Pull latest code
+            # ✅ Pull latest code (force clean)
+            git reset --hard
             git pull origin master
 
-            # ✅ Install dependencies
-            $NODE_PATH/npm ci
+            # ✅ Install dependencies (clean install)
+            npm ci --production=false
+
+            # ✅ Remove old build (IMPORTANT)
+            rm -rf .next
 
             # ✅ Build Next.js app
-            $NODE_PATH/npm run build
+            npm run build
 
-            # ✅ Restart app with PM2 (zero downtime)
-            pm2 reload ananta || pm2 start $NODE_PATH/npm --name "ananta" -- start
+            # ✅ Restart PM2 (zero downtime)
+            pm2 describe anantahospitality > /dev/null
+            if [ $? -eq 0 ]; then
+              pm2 restart anantahospitality
+            else
+              pm2 start npm --name "anantahospitality" -- start
+            fi
+
+            # ✅ Save PM2 process
+            pm2 save
+
+            echo "✅ Deployment Completed!"
