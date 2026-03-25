@@ -16,11 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luxury Event Management Company in Delhi | Weddings, Corporate & Private Events",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com"
+  ),
+  title: "Luxury Event Management Delhi | Weddings & Corporate Events",
   description:
-    "Premium event management company specializing in luxury weddings, corporate events, brand launches, and destination celebrations. Bespoke planning, flawless execution, unforgettable experiences.",
+    "Delhi's premium event management company for luxury weddings, corporate events & brand launches. Bespoke planning, flawless execution, unforgettable experiences.",
   alternates: {
-    canonical: "https://localhost:3000/",
+    canonical: "/",
   },
 };
 
