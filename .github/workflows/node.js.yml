@@ -1,19 +1,18 @@
-name: Node.js CI
+name: CI + Deploy (Next.js + Supabase)
 
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # ✅ Checkout code
       - uses: actions/checkout@v4
 
-      # ✅ Node version fix
+      # ✅ Setup Node.js (IMPORTANT)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -24,10 +23,63 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      # ✅ Build Next.js
+      # ✅ Build project (ENV INJECTION HERE 🔥)
       - name: Build Project
         run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.DB_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.DB_KEY }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
-      # ❌ Optional (skip if no tests)
-      # - name: Run Tests
-      #   run: npm test
+      # ✅ Deploy to VPS via SSH
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+
+            echo "🚀 Deployment Started..."
+
+            # ✅ Load Node via NVM
+            export NVM_DIR="/root/.nvm"
+            source $NVM_DIR/nvm.sh
+            nvm use 22
+
+            # ✅ Go to project directory
+            cd /home/anantahospitality/htdocs/www.anantahospitality.com
+
+            # ✅ Fix git safe directory
+            git config --global --add safe.directory /home/anantahospitality/htdocs/www.anantahospitality.com
+
+            # ✅ Pull latest code
+            git reset --hard
+            git pull origin master
+
+            # ✅ Install dependencies
+            npm ci
+
+            # ✅ Remove old build
+            rm -rf .next
+
+            # ✅ Build again on server (IMPORTANT)
+            NEXT_PUBLIC_SUPABASE_URL=${{ secrets.DB_URL }} \
+            NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.DB_KEY }} \
+            NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }} \
+            OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
+            npm run build
+
+            # ✅ Restart PM2
+            pm2 describe anantahospitality > /dev/null
+            if [ $? -eq 0 ]; then
+              pm2 restart anantahospitality
+            else
+              pm2 start npm --name "anantahospitality" -- start
+            fi
+
+            # ✅ Save PM2
+            pm2 save
+
+            echo "✅ Deployment Done!"
