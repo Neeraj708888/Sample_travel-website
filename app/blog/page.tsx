@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Luxury Travel & Event Blog | Ananta Group",
+    title: "Luxury Travel & Event Blog | Ananta Hospitality",
     description:
-        "Explore luxury travel insights, destination wedding trends, premium event inspirations, and curated experiences by Ananta Group.",
+        "Explore luxury travel insights, destination wedding trends, premium event inspirations, and curated experiences by Ananta Hospitality.",
     keywords: [
         "Luxury Travel Blog",
         "Destination Wedding Blog",
         "Premium Event Planning Tips",
-        "Ananta Group Blog",
+        "Ananta Hospitality Blog",
         "Luxury Experiences",
     ],
 };
@@ -110,7 +110,7 @@ export default function BlogPage() {
                 </h2>
 
                 <p className="max-w-2xl mx-auto text-gray-700 mb-10">
-                    Explore curated insights from Ananta Group and elevate your travel and event experiences.
+                    Explore curated insights from Ananta Hospitality and elevate your travel and event experiences.
                 </p>
 
                 <Link

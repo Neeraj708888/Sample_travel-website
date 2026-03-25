@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Featured Luxury Travel Packages | Ananta Group",
+    title: "Featured Luxury Travel Packages | Ananta Hospitality",
     description:
         "Explore our premium handpicked travel packages. Discover Goa, Manali, Dubai, Bali and more with luxury experiences and best price guarantee.",
 };

@@ -1,13 +1,13 @@
 import OpenAI from "openai"
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY!,
+  apiKey: process.env.OPENAI_API_KEY!,
 })
 
 export async function generatePageContent(slug: string) {
 
-    const prompt = `
-You are an SEO expert for "Ananta Group" - a premium event management company in Delhi, India.
+  const prompt = `
+You are an SEO expert for "Ananta Hospitality" - a premium event management company in Delhi, India.
 
 Generate SEO-optimized page content for this service: "${slug}"
 
@@ -51,10 +51,10 @@ Generate SEO-optimized page content for this service: "${slug}"
 ## FIELD RULES:
 
 ### meta_title (50-60 chars STRICT):
-- Format: [Service Keyword] Management Company in Delhi | Ananta Group
+- Format: [Service Keyword] Management Company in Delhi | Ananta Hospitality
 - NO words: Best, Top, Leading, Premier, #1
-- Must include: "in Delhi" and "Ananta Group"
-- Example: "Corporate Event Management Company in Delhi | Ananta Group"
+- Must include: "in Delhi" and "Ananta Hospitality"
+- Example: "Corporate Event Management Company in Delhi | Ananta Hospitality"
 
 ### meta_description (140-155 chars STRICT):
 - Natural, readable sentence
@@ -68,7 +68,7 @@ Generate SEO-optimized page content for this service: "${slug}"
 - Example: "corporate event planner delhi, conference management delhi"
 
 ### hero.h1 (40-60 chars):
-- Same as meta_title but WITHOUT "| Ananta Group"
+- Same as meta_title but WITHOUT "| Ananta Hospitality"
 - Example: "Corporate Event Management Company in Delhi"
 
 ### hero.tagline (80-100 chars):
@@ -83,16 +83,16 @@ Generate SEO-optimized page content for this service: "${slug}"
 - Natural conversational tone
 `
 
-    const response = await openai.chat.completions.create({
-        model: "gpt-5-nano",
-        messages: [
-            {
-                role: "user",
-                content: prompt
-            }
-        ],
-        response_format: { type: "json_object" }
-    })
+  const response = await openai.chat.completions.create({
+    model: "gpt-5-nano",
+    messages: [
+      {
+        role: "user",
+        content: prompt
+      }
+    ],
+    response_format: { type: "json_object" }
+  })
 
-    return JSON.parse(response.choices[0].message.content || "{}")
+  return JSON.parse(response.choices[0].message.content || "{}")
 }

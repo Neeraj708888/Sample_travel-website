@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Our Location | Ananta Group - Luxury Travel & Event Company",
+    title: "Our Location | Ananta Hospitality - Luxury Travel & Event Company",
     description:
-        "Visit Ananta Group – a premium luxury travel and event management company. Discover our office location, contact details, and personalized consultation services.",
+        "Visit Ananta Hospitality – a premium luxury travel and event management company. Discover our office location, contact details, and personalized consultation services.",
     keywords: [
-        "Ananta Group Location",
+        "Ananta Hospitality Location",
         "Luxury Travel Company Near Me",
         "Event Management Company Office",
         "Destination Wedding Planners Location",
@@ -27,7 +27,7 @@ export default function LocationPage() {
                         Visit Our Office
                     </h1>
                     <p className="text-lg md:text-xl opacity-90">
-                        Experience luxury consultation and personalized service at Ananta Group.
+                        Experience luxury consultation and personalized service at Ananta Hospitality.
                     </p>
                 </div>
             </section>
@@ -41,7 +41,7 @@ export default function LocationPage() {
                     </h2>
 
                     <p className="text-gray-600 leading-relaxed mb-6">
-                        Ananta Group is proudly located in the heart of the city, offering personalized luxury travel consultations and premium event planning services.
+                        Ananta Hospitality is proudly located in the heart of the city, offering personalized luxury travel consultations and premium event planning services.
                     </p>
 
                     <div className="space-y-4 text-gray-700">
@@ -78,7 +78,7 @@ export default function LocationPage() {
             {/* ===== Why Visit Us Section ===== */}
             <section className="py-28 px-6 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                    Why Visit Ananta Group?
+                    Why Visit Ananta Hospitality?
                 </h2>
 
                 <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 mt-12">

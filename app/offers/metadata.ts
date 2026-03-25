@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Best Event Management Company | Ananta Group",
+    title: "Best Event Management Company | Ananta Hospitality",
     description:
         "Professional corporate event management services.",
     keywords: [

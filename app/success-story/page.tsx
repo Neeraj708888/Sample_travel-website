@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Success Stories | Ananta Group Luxury Experiences",
+    title: "Success Stories | Ananta Hospitality Luxury Experiences",
     description:
-        "Explore the success stories of Ananta Group featuring luxury destination weddings, premium travel experiences, and high-end corporate events.",
+        "Explore the success stories of Ananta Hospitality featuring luxury destination weddings, premium travel experiences, and high-end corporate events.",
     keywords: [
-        "Ananta Group Success Stories",
+        "Ananta Hospitality Success Stories",
         "Luxury Wedding Case Study",
         "Premium Travel Experiences",
         "Corporate Event Success Story",
@@ -109,7 +109,7 @@ export default function SuccessStoriesPage() {
                 <div className="max-w-4xl mx-auto space-y-12">
 
                     <blockquote className="text-lg md:text-xl italic text-gray-300">
-                        “Ananta Group turned our dream wedding into a royal reality. Every detail was executed with perfection and elegance.”
+                        “Ananta Hospitality turned our dream wedding into a royal reality. Every detail was executed with perfection and elegance.”
                         <div className="mt-4 font-semibold text-white">
                             — Luxury Wedding Client
                         </div>
@@ -132,7 +132,7 @@ export default function SuccessStoriesPage() {
                 </h2>
 
                 <p className="max-w-2xl mx-auto text-gray-600 mb-10">
-                    Partner with Ananta Group to design a luxury experience that becomes your next milestone achievement.
+                    Partner with Ananta Hospitality to design a luxury experience that becomes your next milestone achievement.
                 </p>
 
                 <Link

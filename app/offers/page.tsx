@@ -2,7 +2,7 @@ import Script from "next/script";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Exclusive Travel Offers & Deals | Ananta Group",
+    title: "Exclusive Travel Offers & Deals | Ananta Hospitality",
     description:
         "Grab premium travel deals on Maldives, Dubai, Bali & more. Limited time luxury travel offers with best price guarantee.",
     keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         description:
             "Explore exclusive luxury travel packages at unbeatable prices.",
         url: "https://www.anantagroup.co.in/offers",
-        siteName: "Ananta Group",
+        siteName: "Ananta Hospitality",
         type: "website",
     },
 };

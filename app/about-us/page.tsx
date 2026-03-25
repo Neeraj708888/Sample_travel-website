@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "About Us | Ananta Group - Luxury Travel & Event Experts",
+    title: "About Us | Ananta Hospitality - Luxury Travel & Event Experts",
     description:
-        "Discover Ananta Group – a premium luxury travel and event management company delivering world-class curated experiences, destination weddings, and exclusive travel services.",
+        "Discover Ananta Hospitality – a premium luxury travel and event management company delivering world-class curated experiences, destination weddings, and exclusive travel services.",
     keywords: [
-        "Ananta Group",
+        "Ananta Hospitality",
         "Luxury Travel Company",
         "Event Management Company",
         "Destination Wedding Planners",
@@ -25,7 +25,7 @@ export default function AboutPage() {
 
                 <div className="relative z-10 text-center text-white px-6 max-w-4xl">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-wide">
-                        About Ananta Group
+                        About Ananta Hospitality
                     </h1>
                     <p className="text-lg md:text-xl opacity-90">
                         Redefining luxury travel and premium event experiences with elegance, precision and excellence.
@@ -42,7 +42,7 @@ export default function AboutPage() {
                     </h2>
 
                     <p className="text-gray-600 leading-relaxed mb-6">
-                        Ananta Group was founded with a vision to deliver premium travel and event experiences crafted with sophistication and detail. We specialize in curated travel packages, destination weddings, corporate events, and exclusive luxury celebrations.
+                        Ananta Hospitality was founded with a vision to deliver premium travel and event experiences crafted with sophistication and detail. We specialize in curated travel packages, destination weddings, corporate events, and exclusive luxury celebrations.
                     </p>
 
                     <p className="text-gray-600 leading-relaxed">
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
                     <Image
                         src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                        alt="Ananta Group Team"
+                        alt="Ananta Hospitality Team"
                         fill
                         className="object-cover"
                         priority
@@ -89,7 +89,7 @@ export default function AboutPage() {
             {/* ===== Why Choose Us ===== */}
             <section className="max-w-6xl mx-auto px-6 py-28 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                    Why Choose Ananta Group?
+                    Why Choose Ananta Hospitality?
                 </h2>
 
                 <div className="grid md:grid-cols-3 gap-10 mt-12">
@@ -125,7 +125,7 @@ export default function AboutPage() {
                 </h2>
 
                 <p className="max-w-2xl mx-auto text-gray-600 mb-10">
-                    Partner with Ananta Group to experience travel and events reimagined with luxury and perfection.
+                    Partner with Ananta Hospitality to experience travel and events reimagined with luxury and perfection.
                 </p>
 
                 <Link

@@ -15,7 +15,7 @@ export default function SupportPage() {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "ContactPage",
-                        name: "Customer Support - Ananta Group",
+                        name: "Customer Support - Ananta Hospitality",
                         url: "https://www.anantagroup.co.in/support",
                         contactPoint: {
                             "@type": "ContactPoint",
