@@ -28,6 +28,7 @@ jobs:
         run: |
           echo "DB_URL=${{ secrets.DB_URL }}" > .env
           echo "DB_KEY=${{ secrets.DB_KEY }}" >> .env
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
 
       # ✅ Debug (optional - remove later)
       - name: Debug ENV
