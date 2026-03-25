@@ -1,38 +1,37 @@
-name: CI + Deploy (Next.js + Supabase)
+name: CI + Deploy (Next.js Production Ready)
 
 on:
   push:
     branches: [ "master" ]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       # ✅ Checkout code
       - uses: actions/checkout@v4
 
-      # ✅ Setup Node.js
+      # ✅ Setup Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
 
-      # ✅ Install dependencies
+      # ✅ Install deps
       - name: Install Dependencies
         run: npm ci
 
-      # ✅ Create .env (MATCHES YOUR CODE 🔥)
-      - name: Create .env file
+      # ✅ Create ENV for build (GitHub side)
+      - name: Create .env
         run: |
-          echo "DB_URL=${{ secrets.DB_URL }}" > .env
-          echo "DB_KEY=${{ secrets.DB_KEY }}" >> .env
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
-
-      # ✅ Debug (optional - remove later)
-      - name: Debug ENV
-        run: cat .env
+          cat > .env <<EOF
+          DB_URL=${{ secrets.DB_URL }}
+          DB_KEY=${{ secrets.DB_KEY }}
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          EOF
 
       # ✅ Build project
       - name: Build Project
@@ -49,40 +48,46 @@ jobs:
 
             echo "🚀 Deployment Started..."
 
+            # Load Node
             export NVM_DIR="/root/.nvm"
             source $NVM_DIR/nvm.sh
             nvm use 22
 
+            # Go to project
             cd /home/anantahospitality/htdocs/www.anantahospitality.com
 
-            # Fix git safe directory
+            # Fix safe directory
             git config --global --add safe.directory /home/anantahospitality/htdocs/www.anantahospitality.com
 
             # Pull latest code
-            git reset --hard
-            git pull origin master
+            git fetch --all
+            git reset --hard origin/master
 
-            # Install dependencies
+            # Install deps
             npm ci
 
             # Clean old build
             rm -rf .next
 
-            # ✅ Create .env on server (MATCHED)
-            echo "DB_URL=${{ secrets.DB_URL }}" > .env
-            echo "DB_KEY=${{ secrets.DB_KEY }}" >> .env
+            # ✅ Create ENV on server (MOST IMPORTANT 🔥)
+            cat > .env <<EOF
+            DB_URL=${{ secrets.DB_URL }}
+            DB_KEY=${{ secrets.DB_KEY }}
+            OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+            NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+            EOF
 
-            # Build
+            # Fix permissions
+            chown -R anantahospitality:anantahospitality /home/anantahospitality/htdocs/www.anantahospitality.com
+
+            # Build again on server
             npm run build
 
-            # Restart PM2
-            pm2 describe anantahospitality > /dev/null
-            if [ $? -eq 0 ]; then
-              pm2 restart anantahospitality
-            else
-              pm2 start npm --name "anantahospitality" -- start
-            fi
+            # Restart PM2 with ENV
+            pm2 delete anantahospitality || true
+            pm2 start npm --name "anantahospitality" -- start
 
+            # Save PM2
             pm2 save
 
-            echo "✅ Deployment Done!"
+            echo "✅ Deployment Completed Successfully!"
