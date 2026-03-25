@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ),
   title: "Luxury Event Management Delhi | Weddings & Corporate Events",
   description:
-    "Delhi's premium event management company for luxury weddings, corporate events & brand launches. Bespoke planning, flawless execution, unforgettable experiences.",
+    "Top event management company in Delhi since 1991. 1000+ luxury weddings, corporate events & brand launches executed. Get a free consultation today!",
   alternates: {
     canonical: "/",
   },
