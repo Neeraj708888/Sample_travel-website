@@ -2,20 +2,23 @@ import Script from "next/script";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata = {
-    title: "Let's Connect With Us | Luxury Travel Planners",
+    title: "Contact Ananta Hospitality | Call or WhatsApp for Luxury Events & Travel",
     description:
-        "Connect with our luxury travel planners for customized tours, destination weddings, corporate retreats and unforgettable travel experiences.",
+        "Get in touch with Ananta Hospitality — Delhi's trusted event & travel planners since 1991. Call or WhatsApp us for luxury weddings, corporate events & customized tours. Quick response guaranteed!",
+
+    // description:
+    // "Delhi's trusted event & travel planners since 1991. Call or WhatsApp Ananta Hospitality for luxury weddings, corporate events & tours. Quick response!",
 };
 
 export default function ConnectPage() {
     const schema = {
         "@context": "https://schema.org",
         "@type": "TravelAgency",
-        name: "Your Travel Company",
-        url: "https://yourdomain.com/connect",
+        name: "Ananta Hospitality - Event Management Company in Delhi",
+        url: "https://www.anantahospitality.com/support",
         contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+91-9999999999",
+            telephone: "+91-9355056666",
             contactType: "customer service",
             areaServed: "IN",
         },
@@ -50,7 +53,7 @@ export default function ConnectPage() {
                                 <Phone className="text-orange-500" />
                                 <div>
                                     <h3 className="font-semibold text-lg">Call Us</h3>
-                                    <p className="text-gray-600">+91 99999 99999</p>
+                                    <p className="text-gray-600">+91 935505 6666</p>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +63,7 @@ export default function ConnectPage() {
                                 <Mail className="text-orange-500" />
                                 <div>
                                     <h3 className="font-semibold text-lg">Email Us</h3>
-                                    <p className="text-gray-600">info@yourdomain.com</p>
+                                    <p className="text-gray-600">info@anantagroup.com</p>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +125,7 @@ export default function ConnectPage() {
                 </p>
 
                 <a
-                    href="https://wa.me/919999999999"
+                    href="https://wa.me/919355056666"
                     target="_blank"
                     className="inline-block mt-6 px-8 py-4 bg-green-500 rounded-full text-white font-semibold hover:scale-110 transition duration-300"
                 >
