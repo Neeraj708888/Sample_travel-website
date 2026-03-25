@@ -9,33 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ✅ Checkout code
       - uses: actions/checkout@v4
 
-      # ✅ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
 
-      # ✅ Install dependencies
       - name: Install Dependencies
         run: npm ci
 
-      # 🔥 IMPORTANT: Create .env file (MAIN FIX)
-      - name: Create .env file
+      # ✅ ENV FILE CREATE (IMPORTANT FIX)
+      - name: Create .env
         run: |
-          echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.DB_URL }}" >> .env
-          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.DB_KEY }}" >> .env
-          echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}" >> .env
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+          echo "DB_URL=${{ secrets.DB_URL }}" >> .env
+          echo "DB_KEY=${{ secrets.DB_KEY }}" >> .env
 
-      # ✅ Build project
       - name: Build Project
         run: npm run build
 
-      # ✅ Deploy to VPS
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
         with:
@@ -58,14 +51,11 @@ jobs:
             git pull origin master
 
             npm ci
-
             rm -rf .next
 
-            # 🔥 Create .env on server also
-            echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.DB_URL }}" > .env
-            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.DB_KEY }}" >> .env
-            echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}" >> .env
-            echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+            # ✅ Server ENV FIX
+            echo "DB_URL=${{ secrets.DB_URL }}" > .env
+            echo "DB_KEY=${{ secrets.DB_KEY }}" >> .env
 
             npm run build
 
