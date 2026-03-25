@@ -16,10 +16,10 @@ export default function SupportPage() {
                         "@context": "https://schema.org",
                         "@type": "ContactPage",
                         name: "Customer Support - Ananta Hospitality",
-                        url: "https://www.anantagroup.co.in/support",
+                        url: "https://www.anantahospitality.com/support",
                         contactPoint: {
                             "@type": "ContactPoint",
-                            telephone: "+91-9876543210",
+                            telephone: "+91-9355056666",
                             contactType: "customer support",
                             availableLanguage: ["English", "Hindi"],
                         },
@@ -49,8 +49,8 @@ export default function SupportPage() {
                             <Phone className="mb-6 text-yellow-400" size={32} />
                             <h3 className="text-xl font-semibold mb-3">Call Us</h3>
                             <p className="text-gray-400 mb-4">Talk to our travel experts instantly.</p>
-                            <a href="tel:+919876543210" className="text-yellow-400 hover:underline">
-                                +91 98765 43210
+                            <a href="tel:+919355056666" className="text-yellow-400 hover:underline">
+                                +91 935505 6666
                             </a>
                         </div>
 
@@ -60,7 +60,7 @@ export default function SupportPage() {
                             <h3 className="text-xl font-semibold mb-3">Email Support</h3>
                             <p className="text-gray-400 mb-4">Send us your queries anytime.</p>
                             <a href="mailto:support@anantagroup.co.in" className="text-yellow-400 hover:underline">
-                                support@anantagroup.co.in
+                                info@anantagroup.com
                             </a>
                         </div>
 
@@ -70,7 +70,7 @@ export default function SupportPage() {
                             <h3 className="text-xl font-semibold mb-3">WhatsApp</h3>
                             <p className="text-gray-400 mb-4">Quick booking & instant chat support.</p>
                             <a
-                                href="https://wa.me/919876543210"
+                                href="https://wa.me/919355056666"
                                 target="_blank"
                                 className="text-yellow-400 hover:underline"
                             >

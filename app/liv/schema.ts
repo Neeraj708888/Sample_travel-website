@@ -32,7 +32,7 @@ export function organizationSchema(
         foundingDate: "2018",
         contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+91-9876543210",
+            telephone: "+91-9355056666",
             contactType: "customer support",
             areaServed: "IN",
             availableLanguage: ["English", "Hindi"],
@@ -62,7 +62,7 @@ export function localBusinessSchema(
         name: "Event Management Pvt Ltd",
         image: `${url}/office.jpg`,
         url,
-        telephone: "+91-9876543210",
+        telephone: "+91-9355056666",
         priceRange: "₹₹₹",
 
         address: {
