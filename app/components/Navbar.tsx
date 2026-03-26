@@ -52,7 +52,7 @@ export default function Navbar() {
                             <div className="fixed top-[65px] left-1/2 -translate-x-1/2 w-screen z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
 
                                 {/* Parent Opetions */}
-                                <div className="max-w-6xl mx-auto px-8 py-5 bg-gray-200 rounded-lg shadow-lg">
+                                <div className="max-w-6xl mx-auto px-4 py-2 bg-gray-200 rounded-lg shadow-lg">
                                     <ServicesMegaContent />
                                 </div>
                             </div>

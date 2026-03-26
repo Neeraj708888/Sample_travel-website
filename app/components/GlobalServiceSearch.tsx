@@ -52,9 +52,9 @@ export default function GlobalServiceSearch() {
     return (
         <div
             ref={dropdownRef}
-            className="relative w-full px-1 sm:px-6 md:px-0 max-w-2xl mx-auto">
+            className="relative w-full sm:px-6 md:px-0 max-w-2xl mx-auto">
             {/* Search Bar */}
-            <div className="flex items-center mt-2 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-3 shadow-2xl transition-all duration-300">
+            <div className="flex items-center mt-1 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full px-1 sm:px-4 sm:py-3 shadow-2xl transition-all duration-300">
 
                 {/* Input */}
                 <input
@@ -68,15 +68,15 @@ export default function GlobalServiceSearch() {
                     onKeyDown={(e) =>
                         e.key === "Enter" && handleSubmit()
                     }
-                    className="flex-1 bg-transparent px-2 sm:px-6 py-2 sm:py-3 text-sm sm:text-base text-green-400  placeholder-gray-400 focus:outline-none" />
+                    className="flex-1 bg-transparent sm:px-6 sm:py-3 text-sm sm:text-base text-green-400  placeholder-gray-400 focus:outline-none" />
 
                 {/* Search Button */}
                 <button
                     onClick={handleSubmit}
-                    className="ml-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-yellow-500 hover:bg-yellow-400 active:scale-95 text-black rounded-full font-medium transition-all duration-200 flex items-center gap-2">
-                    <Search size={18} className="hidden sm:block" />
+                    className="ml-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-yellow-500 hover:bg-yellow-400 active:scale-95 text-black rounded-full font-medium transition-all duration-200 flex items-center gap-2">
+                    <Search size={16} className="hidden sm:block" />
                     <span className="sm:inline hidden">Search</span>
-                    <Search size={18} className="sm:hidden block" />
+                    <Search size={16} className="sm:hidden block" />
                 </button>
             </div>
 
