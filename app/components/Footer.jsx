@@ -106,11 +106,11 @@ export default function Footer() {
                         <ul className="space-y-3">
                             <li className="flex gap-2 items-center">
                                 <MapPin size={16} />
-                                Delhi, India
+                                Burari Delhi, India
                             </li>
                             <li className="flex gap-2 items-center">
                                 <Phone size={16} />
-                                +91 98765 43210
+                                +91 935505 6666
                             </li>
                             <li className="flex gap-2 items-center">
                                 <Mail size={16} />

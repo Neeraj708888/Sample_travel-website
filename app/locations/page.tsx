@@ -46,7 +46,7 @@ export default function LocationPage() {
 
                     <div className="space-y-4 text-gray-700">
                         <p><strong>Address:</strong> Plot No - 2, Street No - 7, 1st Floor, Street No - 7, A-Block, West Sant Nagar Burari, New Delhi, India</p>
-                        <p><strong>Phone:</strong> +91 98765 43210</p>
+                        <p><strong>Phone:</strong> +91 93550 56666</p>
                         <p><strong>Email:</strong> info@anantagroup.com</p>
                         <p><strong>Working Hours:</strong> Monday – Saturday | 10:00 AM – 7:00 PM</p>
                     </div>

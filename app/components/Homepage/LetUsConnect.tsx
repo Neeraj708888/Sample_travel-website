@@ -18,7 +18,7 @@ export default function ConnectPage() {
         url: "https://www.anantahospitality.com/support",
         contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+91-9355056666",
+            telephone: "+91-93550 56666",
             contactType: "customer service",
             areaServed: "IN",
         },
