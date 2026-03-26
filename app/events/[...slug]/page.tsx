@@ -139,7 +139,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {depth === 1 && (
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
-                    <EventCategories />
+                    <EventCategories page={page} />
                     <CorporateEventServices />
                     <PortfolioCaseStudy />
                     <FAQ faqs={faqList} />
@@ -150,7 +150,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {depth === 2 && (
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
-                    <EventCategories />
+                    <EventCategories page={page} />
                     <ServiceTypes />
                     <ServiceEventTypeSolutions />
                     <ServiceTypePortfolioCaseStudy />
@@ -162,7 +162,31 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {depth === 3 && (
                 <>
                     <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
-                    <EventCategories />
+                    <EventCategories page={page} />
+                    <ServiceTypes />
+                    <ServiceTypeCaseStudy />
+                    <FAQ faqs={faqList} />
+                    <ContactCTA />
+                </>
+            )}
+
+            {/* Lated added */}
+            {depth === 4 && (
+                <>
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventCategories page={page} />
+                    <ServiceTypes />
+                    <ServiceTypeCaseStudy />
+                    <FAQ faqs={faqList} />
+                    <ContactCTA />
+                </>
+            )}
+
+            {/* Later Added */}
+            {depth === 5 && (
+                <>
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventCategories page={page} />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
                     <FAQ faqs={faqList} />

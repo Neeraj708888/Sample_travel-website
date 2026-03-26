@@ -4,7 +4,7 @@ export interface ServiceNode {
     slug: string;
     // description?: string;
     // content?: string;
-    // image?: string;
+    image?: string;
 
     children?: ServiceNode[]; // 👈 recursive (unlimited depth)
 }
@@ -25,6 +25,7 @@ export const services: ServiceNode[] = [
                         id: "1",
                         title: "Industry Conference",
                         slug: "industry-conference",
+                        image: "/events/industry-conference.png"
                     },
                     {
                         id: "2",
