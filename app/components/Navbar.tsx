@@ -34,7 +34,7 @@ export default function Navbar() {
                             alt="Ananta Hospitality"
                             width={120}
                             height={60}
-                            className="object-contain absolute"
+                            className="object-contain absolute -top-6"
                             priority
                         />
                         {/* <Link
