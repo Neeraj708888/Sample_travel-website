@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import GlobalServiceSearch from "../GlobalServiceSearch";
 
 export default function Hero() {
     const router = useRouter();
@@ -29,17 +30,22 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.15),_transparent_60%)]" />
 
             {/* Content */}
-            <div className="relative z-10 text-center text-white px-6 max-w-4xl">
+            <div className="relative z-10 text-center text-white px-6 max-w-6xl">
 
-                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-white via-yellow-200 to-amber-400 bg-clip-text text-transparent">
+                <h1 className="text-5xl md:text-5xl sm:text-3xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-white via-yellow-200 to-amber-400 bg-clip-text text-transparent">
                     Crafting Extraordinary Events That Define Elegance
                 </h1>
 
-                <p className="text-lg md:text-xl text-gray-300 mb-10">
+                <p className="text-lg md:text-xl text-gray-300 mb-6">
                     Luxury weddings, corporate galas, destination celebrations,
                     brand launches, and exclusive private events — curated with
                     precision, creativity, and unmatched sophistication.
                 </p>
+
+                {/* Global Search */}
+                <div className="mb-6">
+                    <GlobalServiceSearch />
+                </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
 

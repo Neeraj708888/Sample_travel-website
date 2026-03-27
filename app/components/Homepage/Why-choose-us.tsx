@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
 
             {/* Hero */}
             <div className="text-center mb-20 max-w-3xl mx-auto">
-                <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                <h1 className="text-5xl md:text-5xl font-extrabold text-gray-900 mb-6">
                     Why Choose Us
                 </h1>
                 <p className="text-gray-600 text-lg leading-relaxed">

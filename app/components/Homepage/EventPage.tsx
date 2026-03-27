@@ -50,7 +50,7 @@ export default function EventsPage() {
 
         {/* Hero Section */}
         <div className="text-center mb-24">
-          <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent mb-6">
             Premium Event Experiences
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">

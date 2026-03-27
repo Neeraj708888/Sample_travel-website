@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { CalendarRange, Menu, X } from "lucide-react";
 import MobileSidebar from "./MobileSidebar/MobileSidebar";
 import ServicesMegaContent from "./Services/ServiceMegaMenu";
 import Image from "next/image";
+import { Menu } from "lucide-react";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -18,19 +18,8 @@ export default function Navbar() {
             <nav className="w-full fixed top-0 left-0 z-50 backdrop-blur-md bg-white/70 border-b border-gray-200 overflow-visible">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                     <div className="flex gap-4">
-                        {/* Logo */}
-                        {/* <Link href="/" className="flex items-center">
-                            <Image
-                                src="/logo.webp"
-                                alt="Ananta Hospitality"
-                                width={120}
-                                height={60}
-                                className="object-contain absolute rounded-xl"
-                                priority
-                            />
-                        </Link> */}
                         <Image
-                            src="/logo-transparent.png"  // ✅ Transparent PNG
+                            src="/logo-transparent.png"
                             alt="Ananta Hospitality"
                             width={120}
                             height={60}
@@ -70,7 +59,7 @@ export default function Navbar() {
                             <div className="fixed top-[65px] left-1/2 -translate-x-1/2 w-screen z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
 
                                 {/* Parent Opetions */}
-                                <div className="max-w-6xl mx-auto px-4 py-2 bg-gray-200 rounded-lg shadow-lg">
+                                <div className="max-w-5xl mx-auto px-4 py-2 bg-gray-200 rounded-lg shadow-lg">
                                     <ServicesMegaContent />
                                 </div>
                             </div>

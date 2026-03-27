@@ -53,7 +53,7 @@ export default function FeaturedPackages() {
 
             {/* Hero */}
             <div className="text-center mb-20">
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h1 className="text-5xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                     Featured Travel Experiences
                 </h1>
                 <p className="text-gray-300 max-w-2xl mx-auto text-lg">
