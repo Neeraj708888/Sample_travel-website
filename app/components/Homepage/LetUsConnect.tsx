@@ -27,11 +27,11 @@ export default function ConnectPage() {
     return (
         <>
             {/* HERO SECTION */}
-            <section className="relative py-28 bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
+            <section className="relative py-16 text-white overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]"></div>
 
                 <div className="relative max-w-6xl mx-auto px-6 text-center">
-                    <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+                    <h1 className="text-5xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
                         Let's Connect With Us
                     </h1>
 
@@ -43,7 +43,7 @@ export default function ConnectPage() {
             </section>
 
             {/* CONTACT SECTION */}
-            <section className="py-20">
+            <section className="py-16">
                 <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
 
                     {/* CONTACT INFO */}
@@ -116,7 +116,7 @@ export default function ConnectPage() {
             </section>
 
             {/* WHATSAPP CTA */}
-            <section className="py-16 bg-black text-white text-center">
+            <section className="py-16 text-white text-center">
                 <h2 className="text-3xl font-bold">
                     Prefer Instant Chat?
                 </h2>
@@ -127,7 +127,7 @@ export default function ConnectPage() {
                 <a
                     href="https://wa.me/919355056666"
                     target="_blank"
-                    className="inline-block mt-6 px-8 py-4 bg-green-500 rounded-full text-white font-semibold hover:scale-110 transition duration-300"
+                    className="inline-block mt-10 px-8 py-4 bg-green-500 rounded-full text-white font-semibold hover:scale-110 transition duration-300"
                 >
                     Chat on WhatsApp
                 </a>

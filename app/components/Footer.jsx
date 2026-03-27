@@ -20,15 +20,24 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 border-b border-gray-800 pb-10">
 
                     {/* Logo + Description */}
-                    <div>
-                        <h2 className="text-2xl font-bold text-white tracking-wide">
-                            Ananta Hospitality - Event Management Company
-                        </h2>
+                    <div className="max-w-7xl">
+
+                        {/* Logo */}
+                        <div className="h-[60px] flex items-center">
+                            <img
+                                src="/logo.webp"
+                                alt="Ananta Hospitality Logo"
+                                className="h-full w-auto object-contain rounded-sm"
+                            />
+                        </div>
+
+                        {/* Description */}
                         <p className="mt-4 text-sm max-w-sm text-gray-400 leading-relaxed">
                             Discover the world with our exclusive travel packages,
                             luxury tours, and premium event services.
                             Making every journey unforgettable.
                         </p>
+
                     </div>
 
                     {/* Social Links */}
