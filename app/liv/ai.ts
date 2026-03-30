@@ -4,7 +4,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
 })
 
-export async function generatePageContent(slug: string, children: string[]) {
+export async function generatePageContent(slug: string, children: string[] = []) {
 
   const serviceName = slug
     .split("/")

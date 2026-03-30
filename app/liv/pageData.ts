@@ -26,12 +26,7 @@ export async function getPageData(slug: string) {
 
     console.log("No DB data → calling AI")
 
-    const location =
-        slug.split("/").pop()?.replace(/-/g, " ") || slug
-
-    console.log(location);
-
-    const aiContent = await generatePageContent(location)
+    const aiContent = await generatePageContent(slug, [])
 
     console.log("AI DATA:", aiContent)
 
