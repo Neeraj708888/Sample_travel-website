@@ -160,7 +160,8 @@ export default async function DynamicServicePage({ params }: PageProps) {
 
             {depth === 2 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems}
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
                         title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
                         shortDesc={hero?.shortDesc || ""} />
@@ -175,7 +176,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
 
             {depth === 3 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={hero?.h1 || lastNode.title}
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
+                        title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
                         shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />
@@ -189,7 +192,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {/* Lated added */}
             {depth === 4 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={hero?.h1 || lastNode.title}
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
+                        title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
                         shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />
@@ -203,7 +208,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {/* Later Added */}
             {depth === 5 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={hero?.h1 || lastNode.title}
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
+                        title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
                         shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />

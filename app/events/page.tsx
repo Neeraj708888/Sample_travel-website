@@ -51,6 +51,13 @@ export default async function EventServicesPage() {
     // ✅ Sirf ek baar DB call
     const { page, faqs: dbFaqs = [] } = await getPageData("events")
 
+    const parsedContent =
+        typeof page?.content === "string"
+            ? JSON.parse(page.content)
+            : page?.content;
+
+    const hero = parsedContent?.hero || {};
+
     const faqList = dbFaqs.length ? dbFaqs : undefined
 
     const schemaData = [
@@ -75,8 +82,10 @@ export default async function EventServicesPage() {
                 id="event-services-structured-data"
             />
             <EventSearch
-                title="Event"
                 breadcrumbItems={breadcrumbItems}
+                title={hero?.h1 || "Event Management Company in Delhi"}
+                h2={hero?.h2 || "Professional Event Planning & Execution Services"}
+                shortDesc={hero?.shortDesc || "We provide complete event management solutions including corporate events, weddings, brand promotions, and exhibitions across India."}
             />
             <EventCategories page={page} />
             <PopularEvent />
