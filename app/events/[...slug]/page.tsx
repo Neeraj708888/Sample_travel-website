@@ -83,6 +83,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
     const resolvedParams = await params
     const { slug } = resolvedParams
 
+
     const result = findEventPath(slug)
     if (!result) notFound()
 
@@ -132,13 +133,23 @@ export default async function DynamicServicePage({ params }: PageProps) {
         })),
     ]
 
+    const parsedContent =
+        typeof page?.content === "string"
+            ? JSON.parse(page.content)
+            : page?.content;
+
+    const hero = parsedContent?.hero || {};
     return (
         <>
             <Schema data={schemaData} id={`schema-${slug.join("-")}`} />
 
             {depth === 1 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch
+                        breadcrumbItems={breadcrumbItems}
+                        title={hero?.h1 || lastNode.title}
+                        h2={hero?.h2 || ""}
+                        shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />
                     <CorporateEventServices />
                     <PortfolioCaseStudy />
@@ -149,7 +160,10 @@ export default async function DynamicServicePage({ params }: PageProps) {
 
             {depth === 2 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch breadcrumbItems={breadcrumbItems}
+                        title={hero?.h1 || lastNode.title}
+                        h2={hero?.h2 || ""}
+                        shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />
                     <ServiceTypes />
                     <ServiceEventTypeSolutions />
@@ -161,7 +175,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
 
             {depth === 3 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={hero?.h1 || lastNode.title}
+                        h2={hero?.h2 || ""}
+                        shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
@@ -173,7 +189,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {/* Lated added */}
             {depth === 4 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={hero?.h1 || lastNode.title}
+                        h2={hero?.h2 || ""}
+                        shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
@@ -185,7 +203,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {/* Later Added */}
             {depth === 5 && (
                 <>
-                    <EventSearch breadcrumbItems={breadcrumbItems} title={lastNode.title} />
+                    <EventSearch breadcrumbItems={breadcrumbItems} title={hero?.h1 || lastNode.title}
+                        h2={hero?.h2 || ""}
+                        shortDesc={hero?.shortDesc || ""} />
                     <EventCategories page={page} />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />

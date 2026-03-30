@@ -3,7 +3,6 @@
 import GlobalServiceSearch from "../GlobalServiceSearch";
 import Link from "next/link";
 import Breadcrumb from "../Common/Breadcum";
-import { useState } from "react";
 
 
 type EventSearchProps = {
@@ -12,10 +11,12 @@ type EventSearchProps = {
         href: string
     }[],
     title: string
+    h2: string
+    shortDesc: string
 }
 
 
-export function EventSearch({ breadcrumbItems, title }: EventSearchProps) {
+export function EventSearch({ breadcrumbItems, title, h2, shortDesc }: EventSearchProps) {
     console.log("Title :", title);
 
     return (
@@ -27,20 +28,23 @@ export function EventSearch({ breadcrumbItems, title }: EventSearchProps) {
                 <div className="relative max-w-8xl mx-auto text-center px-4">
                     {/* H1 - SEO Optimized */}
                     <h1 className="text-3xl md:text-5xl font-extrabold leading-tight py-5 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
-                        {title} Management Company in Delhi
+                        {`${title} Company in Delhi` || `${title} Management Company in Delhi`}
                     </h1>
 
                     {/* H2 */}
                     <h2 className="text-xl md:text-2xl font-semibold text-gray-200 py-3">
-                        Luxury Wedding Planning, Corporate Events & Exclusive Celebrations
+                        {/* Luxury Wedding Planning, Corporate Events & Exclusive Celebrations */}
+                        {h2}
+
                     </h2>
 
                     {/* SEO Paragraph */}
                     <p className="text-gray-400 text-lg max-w-3xl mx-auto py-2 leading-relaxed">
-                        We specialize in luxury wedding planning, corporate event
+                        {/* We specialize in luxury wedding planning, corporate event
                         management, destination celebrations, and private premium
                         experiences across India. Our expert planners create unforgettable
-                        events tailored perfectly to your vision and brand.
+                        events tailored perfectly to your vision and brand. */}
+                        {shortDesc}
                     </p>
 
                     {/* Global Search (High Intent Users) */}
