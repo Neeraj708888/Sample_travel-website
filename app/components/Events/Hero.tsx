@@ -12,19 +12,11 @@ type EventSearchProps = {
         href: string
     }[],
     title: string
-    params: {
-        slug: string[]
-    }
 }
 
 
-export function EventSearch({ breadcrumbItems, title, params }: EventSearchProps) {
+export function EventSearch({ breadcrumbItems, title }: EventSearchProps) {
     console.log("Title :", title);
-    const [hero, setHero] = useState({
-        h1: "",
-        h2: "",
-        shortDesc: ""
-    });
 
     return (
         <>
