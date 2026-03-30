@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+
+  verification: {
+    google: "tXvNKQDIWxK9iS3JTUNlhZ1KryKDbylqAmXmXkQqZ98",
+  },
 };
 
 
@@ -35,6 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="tXvNKQDIWxK9iS3JTUNlhZ1KryKDbylqAmXmXkQqZ98" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
