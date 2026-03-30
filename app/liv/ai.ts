@@ -4,12 +4,27 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
 })
 
-export async function generatePageContent(slug: string) {
+export async function generatePageContent(slug: string, children: string[]) {
+
+  const serviceName = slug
+    .split("/")
+    .pop()
+    ?.replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  console.log("Service Name in AI: ", serviceName);
+
+  const childrenList = children.join(", ");
+
+  console.log("AI - Children List: ", childrenList);
 
   const prompt = `
 You are an SEO expert for "Ananta Hospitality" - a premium event management company in Delhi, India.
 
-Generate SEO-optimized page content for this service: "${slug}"
+Generate SEO-optimized page content for this service: "${serviceName}"
+
+Sub-services (must be used for cards):
+${childrenList}
 
 ---
 
@@ -32,7 +47,10 @@ Generate SEO-optimized page content for this service: "${slug}"
     "shortDesc": ""
   },
   "eventType": {
-    "shortDesc": ""
+    "shortDesc": "",
+    "cards": [
+      { "cardType": "", "desc": ""}
+    ]
 },
  eventSolution: {
     "shortDesc": ""
@@ -47,6 +65,13 @@ Generate SEO-optimized page content for this service: "${slug}"
 }
 
 ---
+
+## CARD RULES (VERY IMPORTANT):
+- Create EXACTLY ${children.length} cards
+- Each cardType MUST match the sub-services provided
+- DO NOT create new card types
+- Each desc must be 30-50 words
+- Keep descriptions unique and specific
 
 ## FIELD RULES:
 

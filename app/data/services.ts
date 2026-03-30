@@ -15,6 +15,7 @@ export const services: ServiceNode[] = [
         id: "1",
         title: "Corporate Event",
         slug: "corporate-event",
+        image: "/evenets/corporate-event.jpg",
         children: [
             {
                 id: "1",
@@ -891,11 +892,13 @@ export const services: ServiceNode[] = [
                                         id: "2",
                                         title: "Hotel and Resort Expos",
                                         slug: "hotel-resort-expos",
+                                        image: "/events/hotel-resort-expos.jpg"
                                     },
                                     {
                                         id: "3",
                                         title: "MICE (Meetings, Incentives, Conferences, and Exhibitions) Expos",
                                         slug: "mice-meetings-incentives-conferences-exhibitions-expos",
+                                        image: "/events/mice-meetings-incentives-conferences-exhibitions-expos.webp"
                                     },
                                     {
                                         id: "4",
@@ -952,51 +955,61 @@ export const services: ServiceNode[] = [
                                 id: "1",
                                 title: "Industry-Specific Virtual Trade Shows",
                                 slug: "industry-specific-virtual-trade-shows",
+                                image: "/events/industry-specific-virtual-trade-shows.avif"
                             },
                             {
                                 id: "2",
                                 title: "Product-Specific Virtual Trade Shows",
                                 slug: "product-specific-virtual-trade-shows",
+                                image: "/events/product-specific-virtual-trade-shows.webp"
                             },
                             {
                                 id: "3",
                                 title: "Technology and Innovation Virtual Trade Shows",
                                 slug: "technology-and-innovation-virtual-trade-shows",
+                                image: "/events/technology-and-innovation-virtual-trade-shows.png"
                             },
                             {
                                 id: "4",
                                 title: "Global and Regional Virtual Trade Shows",
                                 slug: "global-and-regional-virtual-trade-shows",
+                                image: "/events/global-and-regional-virtual-trade-shows.webp"
                             },
                             {
                                 id: "5",
                                 title: "Networking-Centric Virtual Trade Shows",
                                 slug: "networking-centric-virtual-trade-shows",
+                                image: "/events/networking-centric-virtual-trade-shows.jpg"
                             },
                             {
                                 id: "6",
                                 title: "Interactive Virtual Trade Shows",
                                 slug: "interactive-virtual-trade-shows",
+                                image: "/events/interactive-virtual-trade-shows.webp"
                             },
                             {
                                 id: "7",
                                 title: "Hybrid Virtual Trade Shows",
                                 slug: "hybrid-virtual-trade-shows",
+                                image: "/events/hybrid-virtual-trade-shows.jpeg"
                             },
                             {
                                 id: "8",
                                 title: "Job Fair and Recruitment Virtual Trade Shows",
                                 slug: "job-fair-and-recruitment-virtual-trade-shows",
+                                image: "/events/job-fair-and-recruitment-virtual-trade-shows.png"
                             },
                             {
                                 id: "9",
                                 title: "Sustainability and Green Virtual Trade Shows",
                                 slug: "sustainability-and-green-virtual-trade-shows",
+                                image: "/events/sustainability-and-green-virtual-trade-shows.jpg"
                             },
                             {
                                 id: "10",
                                 title: "Consumer-Focused Virtual Trade Shows (B2C)",
                                 slug: "consumer-focused-virtual-trade-shows-b2c",
+                                image: "/events/consumer-focused-virtual-trade-shows-b2c.png"
                             }
                         ]
                     },
