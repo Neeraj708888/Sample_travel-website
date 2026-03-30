@@ -3,6 +3,8 @@
 import GlobalServiceSearch from "../GlobalServiceSearch";
 import Link from "next/link";
 import Breadcrumb from "../Common/Breadcum";
+import { useState } from "react";
+
 
 type EventSearchProps = {
     breadcrumbItems: {
@@ -10,10 +12,20 @@ type EventSearchProps = {
         href: string
     }[],
     title: string
+    params: {
+        slug: string[]
+    }
 }
 
-export function EventSearch({ breadcrumbItems, title }: EventSearchProps) {
+
+export function EventSearch({ breadcrumbItems, title, params }: EventSearchProps) {
     console.log("Title :", title);
+    const [hero, setHero] = useState({
+        h1: "",
+        h2: "",
+        shortDesc: ""
+    });
+
     return (
         <>
             <section className="relative py-3 mt-16 text-white overflow-hidden">

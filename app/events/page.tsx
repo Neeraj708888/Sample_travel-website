@@ -78,7 +78,7 @@ export default async function EventServicesPage() {
                 title="Event"
                 breadcrumbItems={breadcrumbItems}
             />
-            <EventCategories />
+            <EventCategories page={page} />
             <PopularEvent />
             <HowWePlanEvents />
             <FeaturedEvents />
