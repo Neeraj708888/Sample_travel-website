@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation"
 import { findEventPath } from "@/app/liv/findEventsPath"
-import { buildTitle, generateSeo } from "@/app/liv/seo"
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/app/liv/schema"
 import Schema from "@/app/liv/components/Schema"
 import { getPageData } from "@/app/liv/pageData"
@@ -15,6 +14,8 @@ import ServiceEventTypeSolutions from "@/app/components/Events/Services/Category
 import ServiceTypePortfolioCaseStudy from "@/app/components/Events/Services/Category/ServiceTypePortfolioCaseStudy"
 import ServiceTypeCaseStudy from "@/app/components/Events/Services/Category/Types/ServiceTypesCaseStudy"
 import FAQ from "@/app/components/Events/FAQ"
+import { buildTitle, findServicePath } from "@/app/liv/serviceSlugFinder"
+import { generateSeo } from "@/app/liv/seo"
 
 type PageProps = {
     params: Promise<{
@@ -24,11 +25,8 @@ type PageProps = {
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
-// ✅ Sirf force-dynamic rakho
 export const dynamic = "force-dynamic"
 export const dynamicParams = true
-
-// ✅ generateStaticParams hatao — force-dynamic ke saath conflict hai
 
 /* ---------------------------------- */
 /* ✅ METADATA                         */
@@ -45,12 +43,10 @@ export async function generateMetadata({ params }: PageProps) {
     const dbSlug = `events/${resolvedParams.slug.join("/")}`
 
     let page: any = null
-    let faqs: any[] = []
 
     try {
-        const data = await getPageData(dbSlug)  // ✅ Sirf ek baar
+        const data = await getPageData(dbSlug)
         page = data?.page
-        faqs = data?.faqs || []
     } catch (error) {
         console.error("META FETCH ERROR:", error)
     }
@@ -83,7 +79,6 @@ export default async function DynamicServicePage({ params }: PageProps) {
     const resolvedParams = await params
     const { slug } = resolvedParams
 
-
     const result = findEventPath(slug)
     if (!result) notFound()
 
@@ -94,7 +89,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
     const url = `${baseUrl}/events/${slug.join("/")}`
     const dbSlug = `events/${slug.join("/")}`
 
-    // ✅ Sirf ek baar DB call
+    // ✅ Current page DB call
     let page: any = null
     let dbFaqs: any[] = []
 
@@ -105,6 +100,30 @@ export default async function DynamicServicePage({ params }: PageProps) {
     } catch (error) {
         console.error("PAGE FETCH ERROR:", error)
     }
+
+    // ✅ Content parse karo
+    const parsedContent =
+        typeof page?.content === "string"
+            ? JSON.parse(page.content)
+            : page?.content
+
+    const hero = parsedContent?.hero || {}
+    const eventCards = parsedContent?.eventType?.cards || []
+
+    // ✅ pagesMap — children ke DB slugs fetch karo
+    const currentNode = findServicePath(slug.filter(s => s !== "events"))
+    const childrenNodes = currentNode?.current?.children || []
+
+    const pagesMap: Record<string, any> = {}
+    await Promise.all(
+        childrenNodes.map(async (child) => {
+            const childSlug = `${dbSlug}/${child.slug}`
+            try {
+                const data = await getPageData(childSlug)
+                if (data?.page) pagesMap[childSlug] = data.page
+            } catch { }
+        })
+    )
 
     const faqList = dbFaqs.length > 0 ? dbFaqs : undefined
 
@@ -133,12 +152,6 @@ export default async function DynamicServicePage({ params }: PageProps) {
         })),
     ]
 
-    const parsedContent =
-        typeof page?.content === "string"
-            ? JSON.parse(page.content)
-            : page?.content;
-
-    const hero = parsedContent?.hero || {};
     return (
         <>
             <Schema data={schemaData} id={`schema-${slug.join("-")}`} />
@@ -149,8 +162,13 @@ export default async function DynamicServicePage({ params }: PageProps) {
                         breadcrumbItems={breadcrumbItems}
                         title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
-                        shortDesc={hero?.shortDesc || ""} />
-                    <EventCategories page={page} />
+                        shortDesc={hero?.shortDesc || ""}
+                    />
+                    <EventCategories
+                        page={page}
+                        pagesMap={pagesMap}
+                        cards={eventCards}
+                    />
                     <CorporateEventServices />
                     <PortfolioCaseStudy />
                     <FAQ faqs={faqList} />
@@ -164,8 +182,13 @@ export default async function DynamicServicePage({ params }: PageProps) {
                         breadcrumbItems={breadcrumbItems}
                         title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
-                        shortDesc={hero?.shortDesc || ""} />
-                    <EventCategories page={page} />
+                        shortDesc={hero?.shortDesc || ""}
+                    />
+                    <EventCategories
+                        page={page}
+                        pagesMap={pagesMap}
+                        cards={eventCards}
+                    />
                     <ServiceTypes />
                     <ServiceEventTypeSolutions />
                     <ServiceTypePortfolioCaseStudy />
@@ -180,8 +203,13 @@ export default async function DynamicServicePage({ params }: PageProps) {
                         breadcrumbItems={breadcrumbItems}
                         title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
-                        shortDesc={hero?.shortDesc || ""} />
-                    <EventCategories page={page} />
+                        shortDesc={hero?.shortDesc || ""}
+                    />
+                    <EventCategories
+                        page={page}
+                        pagesMap={pagesMap}
+                        cards={eventCards}
+                    />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
                     <FAQ faqs={faqList} />
@@ -189,15 +217,19 @@ export default async function DynamicServicePage({ params }: PageProps) {
                 </>
             )}
 
-            {/* Lated added */}
             {depth === 4 && (
                 <>
                     <EventSearch
                         breadcrumbItems={breadcrumbItems}
                         title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
-                        shortDesc={hero?.shortDesc || ""} />
-                    <EventCategories page={page} />
+                        shortDesc={hero?.shortDesc || ""}
+                    />
+                    <EventCategories
+                        page={page}
+                        pagesMap={pagesMap}
+                        cards={eventCards}
+                    />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
                     <FAQ faqs={faqList} />
@@ -205,15 +237,19 @@ export default async function DynamicServicePage({ params }: PageProps) {
                 </>
             )}
 
-            {/* Later Added */}
             {depth === 5 && (
                 <>
                     <EventSearch
                         breadcrumbItems={breadcrumbItems}
                         title={hero?.h1 || lastNode.title}
                         h2={hero?.h2 || ""}
-                        shortDesc={hero?.shortDesc || ""} />
-                    <EventCategories page={page} />
+                        shortDesc={hero?.shortDesc || ""}
+                    />
+                    <EventCategories
+                        page={page}
+                        pagesMap={pagesMap}
+                        cards={eventCards}
+                    />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
                     <FAQ faqs={faqList} />

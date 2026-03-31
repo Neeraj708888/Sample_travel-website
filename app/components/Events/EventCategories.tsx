@@ -14,9 +14,11 @@ interface PageData {
 
 interface Props {
     page?: PageData | null
+    pagesMap?: Record<string, any>
+    cards?: { cardType: string; slug: string; desc?: string }[]
 }
 
-export default function EventCategories({ page }: Props) {
+export default function EventCategories({ page, pagesMap = {}, cards = [] }: Props) {
 
     const params = useParams()
     const slug = (params?.slug ?? []) as string[]
@@ -36,44 +38,40 @@ export default function EventCategories({ page }: Props) {
 
     const basePath = slug.length ? `/events/${slug.join("/")}` : "/events"
 
+    // ✅ Content ek baar parse karo
+    const parsedContent = typeof page?.content === "string"
+        ? JSON.parse(page.content)
+        : page?.content
+
+    const eventTypeShortDesc = parsedContent?.eventType?.shortDesc
+        || "Discover curated experiences and premium event services."
+
     // ✅ Leaf Node UI
     if (isLeaf) {
         return (
             <section className="py-16 bg-neutral-950 text-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row gap-12 items-center">
-
-                        {/* Left — Name + Description */}
                         <div className="flex-1 space-y-6">
                             <h2 className="text-4xl font-bold leading-tight">
                                 {node?.title}
                             </h2>
-
                             {page?.description && (
                                 <p className="text-gray-400 text-lg leading-relaxed">
                                     {page.description}
                                 </p>
                             )}
-
                             {!page?.description && page?.meta_description && (
                                 <p className="text-gray-400 text-lg leading-relaxed">
                                     {page.meta_description}
                                 </p>
                             )}
                         </div>
-
-                        {/* Right — Image */}
                         {node?.image && (
                             <div className="flex-1 w-full aspect-video relative rounded-2xl overflow-hidden">
-                                <Image
-                                    src={node.image}
-                                    alt={node.title}
-                                    fill
-                                    className="object-cover"
-                                />
+                                <Image src={node.image} alt={node.title} fill className="object-cover" />
                             </div>
                         )}
-
                     </div>
                 </div>
             </section>
@@ -86,22 +84,45 @@ export default function EventCategories({ page }: Props) {
             <div className="max-w-7xl mx-auto px-6">
 
                 <div className="mb-12">
-                    <h2 className="text-4xl font-bold">
-                        {node?.title ?? "Explore Event Categories"}
+                    <h2 className="text-4xl text-center md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                        {`${node?.title} Types We Manange`}
                     </h2>
-                    <p className="text-gray-400 mt-2 max-w-xl">
-                        Discover curated experiences and premium event services.
+                    {/* ✅ DB se shortDesc */}
+                    <p className="text-gray-400 mt-2 text-xl max-w-7xl text-center">
+                        {eventTypeShortDesc}
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {categories.map((category: ServiceNode) => (
-                        <CategoryCard
-                            key={category.slug}
-                            category={category}
-                            basePath={basePath}
-                        />
-                    ))}
+                    {cards?.length > 0
+                        ? cards.map((card) => {
+                            const fullNode = categories.find(c => c.slug === card.slug)
+                            return (
+                                <CategoryCard
+                                    key={card.slug}
+                                    category={fullNode ?? {
+                                        id: card.slug,
+                                        slug: card.slug,
+                                        title: card.cardType,
+                                    } as ServiceNode}
+                                    basePath={basePath}
+                                    description={card.desc}
+                                />
+                            )
+                        })
+                        : categories.map((category: ServiceNode) => {
+                            const childDbSlug = `events/${[...slug, category.slug].join("/")}`
+                            const childPage = pagesMap[childDbSlug]
+                            return (
+                                <CategoryCard
+                                    key={category.slug}
+                                    category={category}
+                                    basePath={basePath}
+                                    page={childPage}
+                                />
+                            )
+                        })
+                    }
                 </div>
 
             </div>

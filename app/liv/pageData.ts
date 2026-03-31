@@ -26,14 +26,15 @@ export async function getPageData(slug: string) {
 
     console.log("No DB data → calling AI")
 
-    const location =
-        slug.split("/").pop()?.replace(/-/g, " ") || slug
+    // ✅ "events" prefix hata ke array banao
+    const slugArray = slug.split("/").filter(s => s !== "events")
+    console.log("Slug Array:", slugArray)
 
-    console.log(location);
-
-    const aiContent = await generatePageContent(location)
-
+    const aiContent = await generatePageContent(slugArray)
     console.log("AI DATA:", aiContent)
+
+    // ✅ content ko JSON string mein save karo
+    const contentToSave = aiContent.content ?? null
 
     const { data: inserted, error: insertError } = await db
         .from("pages")
@@ -43,7 +44,7 @@ export async function getPageData(slug: string) {
             meta_description: aiContent.meta_description,
             meta_keywords: aiContent.meta_keywords,
             faqs: aiContent.faqs,
-            content: aiContent.content ?? null
+            content: contentToSave,  // ✅ JSON string save ho raha hai
         }, {
             onConflict: "slug"
         })
@@ -60,7 +61,8 @@ export async function getPageData(slug: string) {
         page: inserted || {
             meta_title: aiContent.meta_title,
             meta_description: aiContent.meta_description,
-            meta_keywords: aiContent.meta_keywords
+            meta_keywords: aiContent.meta_keywords,
+            content: contentToSave,
         },
         faqs: (inserted?.faqs as FAQ[]) || aiContent.faqs || []
     }

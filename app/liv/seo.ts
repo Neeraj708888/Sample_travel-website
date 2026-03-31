@@ -1,4 +1,4 @@
-import { ServiceNode, services } from "../data/services"
+
 
 type BreadcrumbItem = {
     name: string
@@ -21,7 +21,6 @@ export function generateSeo({
     url,
     image,
     type = "category",
-    breadcrumb = [],
     noIndex = false,
 }: SeoProps) {
 
@@ -71,54 +70,3 @@ export function generateSeo({
     }
 }
 
-/* ---------------------------------- */
-/* ✅ Find Service By Slug Path        */
-/* ---------------------------------- */
-
-export function findServiceBySlugPath(path: string[]): ServiceNode | null {
-    let nodes = services
-    let current: ServiceNode | undefined
-
-    for (const slug of path) {
-        current = nodes.find((n) => n.slug === slug)
-        if (!current) return null
-        nodes = current.children || []
-    }
-
-    return current || null
-}
-
-/* ---------------------------------- */
-/* ✅ SEO Title Builder                */
-/* ---------------------------------- */
-
-export function buildTitle(
-    node: ServiceNode,
-    slug?: string[],
-    city?: string
-) {
-    const keyword = slug?.length
-        ? slug[slug.length - 1].replace(/-/g, " ")
-        : ""
-
-    const location = city ? ` in ${city}` : " in Delhi"
-
-    // ✅ Consistent "Services" use karo
-    if (keyword && keyword !== node.title.toLowerCase()) {
-        return `${node.title} Management Company for ${keyword}${location}`
-    }
-
-    return `${node.title} Management Company${location}`
-}
-
-/* ---------------------------------- */
-/* ✅ Format City                      */
-/* ---------------------------------- */
-
-export function formatCity(city?: string) {
-    if (!city) return undefined
-
-    return city
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (c) => c.toUpperCase())
-}
