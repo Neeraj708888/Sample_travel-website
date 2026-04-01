@@ -32,6 +32,44 @@ export const dynamicParams = true
 /* ✅ METADATA                         */
 /* ---------------------------------- */
 
+// export async function generateMetadata({ params }: PageProps) {
+//     const resolvedParams = await params
+//     const result = findEventPath(resolvedParams.slug)
+//     if (!result) return {}
+
+//     const { nodes } = result
+//     const lastNode = nodes[nodes.length - 1]
+//     const url = `${baseUrl}/events/${resolvedParams.slug.join("/")}`
+//     const dbSlug = `events/${resolvedParams.slug.join("/")}`
+
+//     let page: any = null
+
+//     try {
+//         const data = await getPageData(dbSlug)
+//         page = data?.page
+//     } catch (error) {
+//         console.error("META FETCH ERROR:", error)
+//     }
+
+//     const title = buildTitle(lastNode, resolvedParams.slug)
+//         || page?.meta_title
+//         || "Event Company in Delhi"
+
+//     return generateSeo({
+//         title,
+//         description: page?.meta_description || `${lastNode.title} Company in Delhi`,
+//         url,
+//         type: "service",
+//         breadcrumb: [
+//             { name: "Home", url: baseUrl },
+//             { name: "Events", url: `${baseUrl}/events` },
+//             ...nodes.map((node, index) => ({
+//                 name: node.title,
+//                 url: `${baseUrl}/events/${resolvedParams.slug.slice(0, index + 1).join("/")}`,
+//             })),
+//         ],
+//     })
+// }
 export async function generateMetadata({ params }: PageProps) {
     const resolvedParams = await params
     const result = findEventPath(resolvedParams.slug)
@@ -40,24 +78,17 @@ export async function generateMetadata({ params }: PageProps) {
     const { nodes } = result
     const lastNode = nodes[nodes.length - 1]
     const url = `${baseUrl}/events/${resolvedParams.slug.join("/")}`
-    const dbSlug = `events/${resolvedParams.slug.join("/")}`
 
-    let page: any = null
+    // ❌ DB/AI call remove kar diya → race condition khatam
+    // const data = await getPageData(dbSlug)
 
-    try {
-        const data = await getPageData(dbSlug)
-        page = data?.page
-    } catch (error) {
-        console.error("META FETCH ERROR:", error)
-    }
-
-    const title = buildTitle(lastNode, resolvedParams.slug)
-        || page?.meta_title
-        || "Event Company in Delhi"
+    const title =
+        buildTitle(lastNode, resolvedParams.slug)
+        || `${lastNode.title} Management Company in Delhi`
 
     return generateSeo({
         title,
-        description: page?.meta_description || `${lastNode.title} Company in Delhi`,
+        description: `${lastNode.title} Company in Delhi`,
         url,
         type: "service",
         breadcrumb: [
@@ -78,6 +109,7 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function DynamicServicePage({ params }: PageProps) {
     const resolvedParams = await params
     const { slug } = resolvedParams
+    const pagesMap: Record<string, any> = {}
 
     const result = findEventPath(slug)
     if (!result) notFound()
@@ -93,6 +125,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
     let page: any = null
     let dbFaqs: any[] = []
 
+
     try {
         const data = await getPageData(dbSlug)
         page = data?.page
@@ -101,27 +134,76 @@ export default async function DynamicServicePage({ params }: PageProps) {
         console.error("PAGE FETCH ERROR:", error)
     }
 
+    // ✅ FIX: agar page null hai → tabhi notFound
+    if (!page) {
+        console.warn("Page data missing after getPageData:", dbSlug)
+        notFound()
+    }
     // ✅ Content parse karo
-    const parsedContent =
-        typeof page?.content === "string"
-            ? JSON.parse(page.content)
-            : page?.content
+    let parsedContent: any = {}
+
+    try {
+        parsedContent =
+            typeof page?.content === "string"
+                ? JSON.parse(page.content)
+                : page?.content
+    } catch (e) {
+        console.error("JSON PARSE ERROR:", e)
+        parsedContent = {}
+    }
 
     const hero = parsedContent?.hero || {}
     const eventCards = parsedContent?.eventType?.cards || []
+
 
     // ✅ pagesMap — children ke DB slugs fetch karo
     const currentNode = findServicePath(slug.filter(s => s !== "events"))
     const childrenNodes = currentNode?.current?.children || []
 
-    const pagesMap: Record<string, any> = {}
+    // 🔥 NEW: smart cards logic (AI + children hybrid)
+    // 🔥 NOW SAFE (pagesMap ready hai)
+    let finalCards = eventCards
+
+    if (childrenNodes.length > 0) {
+        finalCards = childrenNodes.map((child) => {
+            const childSlug = `${dbSlug}/${child.slug}`
+            const childPage = pagesMap[childSlug] // ✅ अब safe
+
+            const aiCard = eventCards?.find(
+                (card: any) => card.slug === child.slug
+            )
+
+            return {
+                title: child.title,
+                slug: child.slug,
+                description:
+                    aiCard?.desc ||
+                    childPage?.meta_description ||
+                    `${child.title} services in Delhi`,
+            }
+        })
+    }
+    // await Promise.all(
+    //     childrenNodes.map(async (child) => {
+    //         const childSlug = `${dbSlug}/${child.slug}`
+    //         try {
+    //             const data = await getPageData(childSlug)
+    //             if (data?.page) pagesMap[childSlug] = data.page
+    //         } catch {
+    //             if (!page) notFound()
+    //         }
+    //     })
+    // )
     await Promise.all(
         childrenNodes.map(async (child) => {
             const childSlug = `${dbSlug}/${child.slug}`
             try {
                 const data = await getPageData(childSlug)
                 if (data?.page) pagesMap[childSlug] = data.page
-            } catch { }
+            } catch (error) {
+                // ✅ FIX: child fail hone pe parent ko crash mat karo
+                console.warn("Child page fetch failed:", childSlug);
+            }
         })
     )
 
@@ -167,7 +249,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <EventCategories
                         page={page}
                         pagesMap={pagesMap}
-                        cards={eventCards}
+                        cards={finalCards}
                     />
                     <CorporateEventServices />
                     <PortfolioCaseStudy />
@@ -187,7 +269,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <EventCategories
                         page={page}
                         pagesMap={pagesMap}
-                        cards={eventCards}
+                        cards={finalCards}
                     />
                     <ServiceTypes />
                     <ServiceEventTypeSolutions />
@@ -208,7 +290,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <EventCategories
                         page={page}
                         pagesMap={pagesMap}
-                        cards={eventCards}
+                        cards={finalCards}
                     />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
@@ -228,7 +310,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <EventCategories
                         page={page}
                         pagesMap={pagesMap}
-                        cards={eventCards}
+                        cards={finalCards}
                     />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />
@@ -248,7 +330,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <EventCategories
                         page={page}
                         pagesMap={pagesMap}
-                        cards={eventCards}
+                        cards={finalCards}
                     />
                     <ServiceTypes />
                     <ServiceTypeCaseStudy />

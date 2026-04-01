@@ -39,9 +39,16 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
     const basePath = slug.length ? `/events/${slug.join("/")}` : "/events"
 
     // ✅ Content ek baar parse karo
-    const parsedContent = typeof page?.content === "string"
-        ? JSON.parse(page.content)
-        : page?.content
+    let parsedContent: any = {}
+
+    try {
+        parsedContent =
+            typeof page?.content === "string"
+                ? JSON.parse(page.content)
+                : page?.content
+    } catch {
+        parsedContent = {}
+    }
 
     const eventTypeShortDesc = parsedContent?.eventType?.shortDesc
         || "Discover curated experiences and premium event services."
@@ -103,10 +110,14 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
                                     category={fullNode ?? {
                                         id: card.slug,
                                         slug: card.slug,
-                                        title: card.cardType,
+                                        title: (card as any).cardType || (card as any).title
                                     } as ServiceNode}
                                     basePath={basePath}
-                                    description={card.desc}
+                                    description={
+                                        card.desc ||        // ✅ old AI format
+                                        (card as any).description ||
+                                        ""
+                                    }
                                 />
                             )
                         })
