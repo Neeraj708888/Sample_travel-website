@@ -125,15 +125,117 @@
 
 import OpenAI from "openai"
 import { findServicePath } from "@/app/liv/serviceSlugFinder"
+import { services } from "@/app/data/services"
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
 })
 
-export async function generatePageContent(
-  slugPath: string[]
-) {
-  // ✅ Get service node from static DB
+export async function generatePageContent(slugPath: string[]) {
+
+  // ✅ Root "events" page — special handling
+  if (slugPath.length === 0) {
+    const childrenTitles = services.map((s) => s.title)
+
+    const prompt = `
+You are an SEO expert for "Ananta Hospitality" - a premium event management company in Delhi, India.
+
+Generate SEO-optimized page content for the main Events page.
+
+Sub-services (use EXACT names, do not modify):
+${childrenTitles.join(", ")}
+
+---
+
+## OUTPUT RULES:
+- Return ONLY valid JSON, no explanation, no markdown, no backticks
+- All character limits are STRICT
+
+---
+
+## JSON STRUCTURE:
+
+{
+  "meta_title": "",
+  "meta_description": "",
+  "meta_keywords": "",
+  "content": {
+    "hero": {
+      "h1": "",
+      "h2": "",
+      "shortDesc": ""
+    },
+    "eventType": {
+      "shortDesc": "",
+      "cards": [
+        { "desc": "" }
+      ]
+    },
+    "eventSolution": {
+      "shortDesc": ""
+    }
+  },
+  "faqs": [
+    {
+      "question": "",
+      "answer": ""
+    }
+  ]
+}
+
+---
+
+## CARD RULES:
+- Generate EXACTLY ${childrenTitles.length} descriptions
+- Maintain same order as given sub-services
+- Each desc must be 30-50 words
+- DO NOT include cardType in response
+
+---
+
+## FIELD RULES:
+
+### meta_title (50-60 chars):
+- Format: Event Management Company in Delhi | Ananta Hospitality
+
+### meta_description (140-155 chars):
+- Must include: "event management company in Delhi"
+
+### hero.h1:
+- Same as meta_title WITHOUT "| Ananta Hospitality"
+
+### faqs:
+- Exactly 6 FAQs
+`
+
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [{ role: "user", content: prompt }],
+      response_format: { type: "json_object" },
+    })
+
+    const aiData = JSON.parse(response.choices[0].message.content || "{}")
+
+    // ✅ Merge services.ts + AI
+    const cards = services.map((child, index) => ({
+      cardType: child.title,
+      slug: child.slug,
+      desc: aiData?.content?.eventType?.cards?.[index]?.desc || "",
+    }))
+
+    return {
+      ...aiData,
+      content: {
+        ...aiData.content,
+        eventType: {
+          ...aiData.content?.eventType,
+          cards,
+        },
+      },
+    }
+  }
+
+  // ✅ Normal service page
   const data = findServicePath(slugPath)
   const current = data?.current
   const childrenNodes = current?.children || []
@@ -142,10 +244,7 @@ export async function generatePageContent(
     throw new Error("Service not found for slug")
   }
 
-  // ✅ Service Name (clean)
   const serviceName = current.title
-
-  // ✅ Children titles for AI
   const childrenTitles = childrenNodes.map((c) => c.title)
 
   const prompt = `
@@ -219,28 +318,20 @@ ${childrenTitles.join(", ")}
 - Exactly 6 FAQs
 `
 
-  // ✅ Call OpenAI
   const response = await openai.chat.completions.create({
-    model: "gpt-5-nano",
-    messages: [
-      {
-        role: "user",
-        content: prompt,
-      },
-    ],
+    model: "gpt-4o-mini",
+    messages: [{ role: "user", content: prompt }],
     response_format: { type: "json_object" },
   })
 
   const aiData = JSON.parse(response.choices[0].message.content || "{}")
 
-  // ✅ Merge DB + AI (IMPORTANT)
   const cards = childrenNodes.map((child, index) => ({
-    cardType: child.title, // ✅ DB
-    slug: child.slug,      // ✅ DB (routing)
-    desc: aiData?.content?.eventType?.cards?.[index]?.desc || "", // ✅ AI
+    cardType: child.title,
+    slug: child.slug,
+    desc: aiData?.content?.eventType?.cards?.[index]?.desc || "",
   }))
 
-  // ✅ Final structured response
   return {
     ...aiData,
     content: {
