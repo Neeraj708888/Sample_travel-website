@@ -5,6 +5,7 @@ import { useParams } from "next/navigation"
 import { services, ServiceNode } from "@/app/data/services"
 import CategoryCard from "./CategoryCard"
 import { findNodeByPath } from "../Services/servicesUtils"
+import { useEffect, useState } from "react"
 
 interface PageData {
     description?: string
@@ -21,6 +22,9 @@ interface Props {
 export default function EventCategories({ page, pagesMap = {}, cards = [] }: Props) {
 
     const params = useParams()
+    // ✅ Hydration fix — client side ready hone tak wait karo
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
     const slug = (params?.slug ?? []) as string[]
 
     const node: ServiceNode | null = findNodeByPath(services, slug)
@@ -92,7 +96,10 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
 
                 <div className="mb-12">
                     <h2 className="text-4xl text-center md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-                        {`${node?.title} Types We Manange`}
+                        {node?.title
+                            ? `${node.title} Types We Manage`
+                            : "Event Types We Manage"  // ✅ Fallback for /events page
+                        }
                     </h2>
                     {/* ✅ DB se shortDesc */}
                     <p className="text-gray-400 mt-2 text-xl max-w-7xl text-center">
