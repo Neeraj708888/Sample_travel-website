@@ -134,10 +134,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
         console.error("PAGE FETCH ERROR:", error)
     }
 
-    // ✅ FIX: agar page null hai → tabhi notFound
+    // page null ho to fallback content use karo — crash mat karo
     if (!page) {
-        console.warn("Page data missing after getPageData:", dbSlug)
-        notFound()
+        console.warn("Page data missing, using fallback:", dbSlug)
     }
     // ✅ Content parse karo
     let parsedContent: any = {}

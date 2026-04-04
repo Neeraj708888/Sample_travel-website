@@ -13,6 +13,11 @@ export function getDb(): SupabaseClient {
 
 export const db = new Proxy({} as SupabaseClient, {
     get(_target, prop) {
-        return (getDb() as any)[prop]
+        const client = getDb()
+        const value = (client as any)[prop]
+        if (typeof value === "function") {
+            return value.bind(client)
+        }
+        return value
     }
 })
