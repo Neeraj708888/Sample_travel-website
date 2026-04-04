@@ -127,11 +127,10 @@ import OpenAI from "openai"
 import { findServicePath } from "@/app/liv/serviceSlugFinder"
 import { services } from "@/app/data/services"
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-})
-
 export async function generatePageContent(slugPath: string[]) {
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY!,
+  })
 
   // ✅ Root "events" page — special handling
   if (slugPath.length === 0) {
