@@ -122,17 +122,251 @@
 //   return JSON.parse(response.choices[0].message.content || "{}")
 // }
 
+// Previous Updated -- 3
+
+// import OpenAI from "openai"
+// import { findServicePath } from "@/app/liv/serviceSlugFinder"
+// import { services } from "@/app/data/services"
+
+// export async function generatePageContent(slugPath: string[]) {
+//   const openai = new OpenAI({
+//     apiKey: process.env.OPENAI_API_KEY!,
+//   })
+
+//   // ✅ Root "events" page — special handling
+//   if (slugPath.length === 0) {
+//     const childrenTitles = services.map((s) => s.title)
+
+//     const prompt = `
+// You are an SEO expert for "Ananta Hospitality" - a premium event management company in Delhi, India.
+
+// Generate SEO-optimized page content for the main Events page.
+
+// Sub-services (use EXACT names, do not modify):
+// ${childrenTitles.join(", ")}
+
+// ---
+
+// ## OUTPUT RULES:
+// - Return ONLY valid JSON, no explanation, no markdown, no backticks
+// - All character limits are STRICT
+
+// ---
+
+// ## JSON STRUCTURE:
+
+// {
+//   "meta_title": "",
+//   "meta_description": "",
+//   "meta_keywords": "",
+//   "content": {
+//     "hero": {
+//       "h1": "",
+//       "h2": "",
+//       "shortDesc": ""
+//     },
+//     "eventType": {
+//       "shortDesc": "",
+//       "cards": [
+//         { "desc": "" }
+//       ]
+//     },
+//     "eventSolution": {
+//       "shortDesc": "",
+//       "cards": [
+//       { "desc": "" }
+//       ]
+
+//     }
+//   },
+//   "faqs": [
+//     {
+//       "question": "",
+//       "answer": ""
+//     }
+//   ]
+// }
+
+// ---
+
+// ## CARD RULES:
+// - Generate EXACTLY ${childrenTitles.length} descriptions
+// - Maintain same order as given sub-services
+// - Each desc must be 30-50 words
+// - DO NOT include cardType in response
+
+// ---
+
+// ## FIELD RULES:
+
+// ### meta_title (50-60 chars):
+// - Format: Event Management Company in Delhi | Ananta Hospitality
+
+// ### meta_description (140-155 chars):
+// - Must include: "event management company in Delhi"
+
+// ### hero.h1:
+// - Same as meta_title WITHOUT "| Ananta Hospitality"
+
+// ### faqs:
+// - Exactly 6 FAQs
+// `
+
+//     const response = await openai.chat.completions.create({
+//       model: "gpt-4o-mini",
+//       messages: [{ role: "user", content: prompt }],
+//       response_format: { type: "json_object" },
+//     })
+
+//     const aiData = JSON.parse(response.choices[0].message.content || "{}")
+
+//     // ✅ Merge services.ts + AI
+//     const cards = services.map((child, index) => ({
+//       cardType: child.title,
+//       slug: child.slug,
+//       desc: aiData?.content?.eventType?.cards?.[index]?.desc || "",
+//     }))
+
+//     return {
+//       ...aiData,
+//       content: {
+//         ...aiData.content,
+//         eventType: {
+//           ...aiData.content?.eventType,
+//           cards,
+//         },
+//       },
+//     }
+//   }
+
+//   // ✅ Normal service page
+//   const data = findServicePath(slugPath)
+//   const current = data?.current
+//   const childrenNodes = current?.children || []
+
+//   if (!current) {
+//     throw new Error("Service not found for slug")
+//   }
+
+//   const serviceName = current.title
+//   const childrenTitles = childrenNodes.map((c) => c.title)
+
+//   const prompt = `
+// You are an SEO expert for "Ananta Hospitality" - a premium event management company in Delhi, India.
+
+// Generate SEO-optimized page content for this service: "${serviceName}"
+
+// Sub-services (use EXACT names, do not modify):
+// ${childrenTitles.join(", ")}
+
+// ---
+
+// ## OUTPUT RULES:
+// - Return ONLY valid JSON, no explanation, no markdown, no backticks
+// - All character limits are STRICT
+
+// ---
+
+// ## JSON STRUCTURE:
+
+// {
+//   "meta_title": "",
+//   "meta_description": "",
+//   "meta_keywords": "",
+//   "content": {
+//     "hero": {
+//       "h1": "",
+//       "h2": "",
+//       "shortDesc": ""
+//     },
+//     "eventType": {
+//       "shortDesc": "",
+//       "cards": [
+//         { "desc": "" }
+//       ]
+//     },
+//     "eventSolution": {
+//       "shortDesc": "",
+//       "cards": [
+//       { "desc": "" }
+//       ]
+
+//     }
+//   },
+//   "faqs": [
+//     {
+//       "question": "",
+//       "answer": ""
+//     }
+//   ]
+// }
+
+// ---
+
+// ## CARD RULES:
+// - Generate EXACTLY ${childrenTitles.length} descriptions
+// - Maintain same order as given sub-services
+// - Each desc must be 30-50 words
+// - DO NOT include cardType in response
+
+// ---
+
+// ## FIELD RULES:
+
+// ### meta_title (50-60 chars):
+// - Format: ${serviceName} Management Company in Delhi | Ananta Hospitality
+
+// ### meta_description (140-155 chars):
+// - Must include: "event management company in Delhi"
+
+// ### hero.h1:
+// - Same as meta_title WITHOUT "| Ananta Hospitality"
+
+// ### faqs:
+// - Exactly 6 FAQs
+// `
+
+//   const response = await openai.chat.completions.create({
+//     model: "gpt-4o-mini",
+//     messages: [{ role: "user", content: prompt }],
+//     response_format: { type: "json_object" },
+//   })
+
+//   const aiData = JSON.parse(response.choices[0].message.content || "{}")
+
+//   const cards = childrenNodes.map((child, index) => ({
+//     cardType: child.title,
+//     slug: child.slug,
+//     desc: aiData?.content?.eventType?.cards?.[index]?.desc || "",
+//   }))
+
+//   return {
+//     ...aiData,
+//     content: {
+//       ...aiData.content,
+//       eventType: {
+//         ...aiData.content?.eventType,
+//         cards,
+//       },
+//     },
+//   }
+// }
 
 import OpenAI from "openai"
 import { findServicePath } from "@/app/liv/serviceSlugFinder"
 import { services } from "@/app/data/services"
+import { solutions } from "../data/solution"
+
 
 export async function generatePageContent(slugPath: string[]) {
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY!,
   })
 
-  // ✅ Root "events" page — special handling
+  // ✅ Solution cards ke liye titles
+  const solutionTitles = solutions.map((s) => s.title)
+
+  // ✅ Root "events" page
   if (slugPath.length === 0) {
     const childrenTitles = services.map((s) => s.title)
 
@@ -141,14 +375,16 @@ You are an SEO expert for "Ananta Hospitality" - a premium event management comp
 
 Generate SEO-optimized page content for the main Events page.
 
-Sub-services (use EXACT names, do not modify):
+Event Types (use EXACT names):
 ${childrenTitles.join(", ")}
+
+Event Solutions (use EXACT names):
+${solutionTitles.join(", ")}
 
 ---
 
 ## OUTPUT RULES:
 - Return ONLY valid JSON, no explanation, no markdown, no backticks
-- All character limits are STRICT
 
 ---
 
@@ -159,52 +395,32 @@ ${childrenTitles.join(", ")}
   "meta_description": "",
   "meta_keywords": "",
   "content": {
-    "hero": {
-      "h1": "",
-      "h2": "",
-      "shortDesc": ""
-    },
+    "hero": { "h1": "", "h2": "", "shortDesc": "" },
     "eventType": {
       "shortDesc": "",
-      "cards": [
-        { "desc": "" }
-      ]
+      "cards": [{ "desc": "" }]
     },
     "eventSolution": {
-      "shortDesc": ""
+      "shortDesc": "",
+      "cards": [{ "desc": "" }]
     }
   },
-  "faqs": [
-    {
-      "question": "",
-      "answer": ""
-    }
-  ]
+  "faqs": [{ "question": "", "answer": "" }]
 }
 
 ---
 
 ## CARD RULES:
-- Generate EXACTLY ${childrenTitles.length} descriptions
-- Maintain same order as given sub-services
-- Each desc must be 30-50 words
+- eventType.cards: EXACTLY ${childrenTitles.length} items — same order as Event Types
+- eventSolution.cards: EXACTLY ${solutionTitles.length} items — same order as Event Solutions
+- Each desc: 30-50 words
 - DO NOT include cardType in response
 
----
-
 ## FIELD RULES:
-
-### meta_title (50-60 chars):
-- Format: Event Management Company in Delhi | Ananta Hospitality
-
-### meta_description (140-155 chars):
-- Must include: "event management company in Delhi"
-
-### hero.h1:
-- Same as meta_title WITHOUT "| Ananta Hospitality"
-
-### faqs:
-- Exactly 6 FAQs
+### meta_title: Event Management Company in Delhi | Ananta Hospitality
+### meta_description: Must include "event management company in Delhi" (140-155 chars)
+### hero.h1: Same as meta_title WITHOUT "| Ananta Hospitality"
+### faqs: Exactly 6 FAQs
 `
 
     const response = await openai.chat.completions.create({
@@ -215,11 +431,18 @@ ${childrenTitles.join(", ")}
 
     const aiData = JSON.parse(response.choices[0].message.content || "{}")
 
-    // ✅ Merge services.ts + AI
-    const cards = services.map((child, index) => ({
+    // ✅ eventType cards merge
+    const eventTypeCards = services.map((child, index) => ({
       cardType: child.title,
       slug: child.slug,
       desc: aiData?.content?.eventType?.cards?.[index]?.desc || "",
+    }))
+
+    // ✅ eventSolution cards merge — solutions.ts se
+    const eventSolutionCards = solutions.map((child, index) => ({
+      cardType: child.title,
+      slug: child.slug,
+      desc: aiData?.content?.eventSolution?.cards?.[index]?.desc || "",
     }))
 
     return {
@@ -228,7 +451,11 @@ ${childrenTitles.join(", ")}
         ...aiData.content,
         eventType: {
           ...aiData.content?.eventType,
-          cards,
+          cards: eventTypeCards,
+        },
+        eventSolution: {
+          ...aiData.content?.eventSolution,
+          cards: eventSolutionCards,  // ✅ Solutions cards
         },
       },
     }
@@ -249,16 +476,18 @@ ${childrenTitles.join(", ")}
   const prompt = `
 You are an SEO expert for "Ananta Hospitality" - a premium event management company in Delhi, India.
 
-Generate SEO-optimized page content for this service: "${serviceName}"
+Generate SEO-optimized page content for: "${serviceName}"
 
-Sub-services (use EXACT names, do not modify):
+Sub-services (use EXACT names):
 ${childrenTitles.join(", ")}
+
+Event Solutions (use EXACT names):
+${solutionTitles.join(", ")}
 
 ---
 
 ## OUTPUT RULES:
 - Return ONLY valid JSON, no explanation, no markdown, no backticks
-- All character limits are STRICT
 
 ---
 
@@ -269,52 +498,32 @@ ${childrenTitles.join(", ")}
   "meta_description": "",
   "meta_keywords": "",
   "content": {
-    "hero": {
-      "h1": "",
-      "h2": "",
-      "shortDesc": ""
-    },
+    "hero": { "h1": "", "h2": "", "shortDesc": "" },
     "eventType": {
       "shortDesc": "",
-      "cards": [
-        { "desc": "" }
-      ]
+      "cards": [{ "desc": "" }]
     },
     "eventSolution": {
-      "shortDesc": ""
+      "shortDesc": "",
+      "cards": [{ "desc": "" }]
     }
   },
-  "faqs": [
-    {
-      "question": "",
-      "answer": ""
-    }
-  ]
+  "faqs": [{ "question": "", "answer": "" }]
 }
 
 ---
 
 ## CARD RULES:
-- Generate EXACTLY ${childrenTitles.length} descriptions
-- Maintain same order as given sub-services
-- Each desc must be 30-50 words
+- eventType.cards: EXACTLY ${childrenTitles.length} items — same order as Sub-services
+- eventSolution.cards: EXACTLY ${solutionTitles.length} items — same order as Event Solutions
+- Each desc: 30-50 words
 - DO NOT include cardType in response
 
----
-
 ## FIELD RULES:
-
-### meta_title (50-60 chars):
-- Format: ${serviceName} Management Company in Delhi | Ananta Hospitality
-
-### meta_description (140-155 chars):
-- Must include: "event management company in Delhi"
-
-### hero.h1:
-- Same as meta_title WITHOUT "| Ananta Hospitality"
-
-### faqs:
-- Exactly 6 FAQs
+### meta_title (50-60 chars): ${serviceName} Management Company in Delhi | Ananta Hospitality
+### meta_description (140-155 chars): Must include "event management company in Delhi"
+### hero.h1: Same as meta_title WITHOUT "| Ananta Hospitality"
+### faqs: Exactly 6 FAQs
 `
 
   const response = await openai.chat.completions.create({
@@ -325,10 +534,18 @@ ${childrenTitles.join(", ")}
 
   const aiData = JSON.parse(response.choices[0].message.content || "{}")
 
-  const cards = childrenNodes.map((child, index) => ({
+  // ✅ eventType cards merge
+  const eventTypeCards = childrenNodes.map((child, index) => ({
     cardType: child.title,
     slug: child.slug,
     desc: aiData?.content?.eventType?.cards?.[index]?.desc || "",
+  }))
+
+  // ✅ eventSolution cards merge
+  const eventSolutionCards = solutions.map((child, index) => ({
+    cardType: child.title,
+    slug: child.slug,
+    desc: aiData?.content?.eventSolution?.cards?.[index]?.desc || "",
   }))
 
   return {
@@ -337,7 +554,11 @@ ${childrenTitles.join(", ")}
       ...aiData.content,
       eventType: {
         ...aiData.content?.eventType,
-        cards,
+        cards: eventTypeCards,
+      },
+      eventSolution: {
+        ...aiData.content?.eventSolution,
+        cards: eventSolutionCards,  // ✅
       },
     },
   }

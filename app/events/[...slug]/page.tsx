@@ -6,8 +6,8 @@ import { getPageData } from "@/app/liv/pageData"
 
 import { EventSearch } from "@/app/components/Events/Hero"
 import EventCategories from "@/app/components/Events/EventCategories"
-import CorporateEventServices from "@/app/components/Events/Services/CorporateEventServices"
 import PortfolioCaseStudy from "@/app/components/Events/Services/PortfolioCaseStudy"
+import EventSolutions from "@/app/components/Events/Services/EventSolutions"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
 import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceTypes"
 import ServiceEventTypeSolutions from "@/app/components/Events/Services/Category/ServiceEventTypeSolutions"
@@ -32,44 +32,6 @@ export const dynamicParams = true
 /* ✅ METADATA                         */
 /* ---------------------------------- */
 
-// export async function generateMetadata({ params }: PageProps) {
-//     const resolvedParams = await params
-//     const result = findEventPath(resolvedParams.slug)
-//     if (!result) return {}
-
-//     const { nodes } = result
-//     const lastNode = nodes[nodes.length - 1]
-//     const url = `${baseUrl}/events/${resolvedParams.slug.join("/")}`
-//     const dbSlug = `events/${resolvedParams.slug.join("/")}`
-
-//     let page: any = null
-
-//     try {
-//         const data = await getPageData(dbSlug)
-//         page = data?.page
-//     } catch (error) {
-//         console.error("META FETCH ERROR:", error)
-//     }
-
-//     const title = buildTitle(lastNode, resolvedParams.slug)
-//         || page?.meta_title
-//         || "Event Company in Delhi"
-
-//     return generateSeo({
-//         title,
-//         description: page?.meta_description || `${lastNode.title} Company in Delhi`,
-//         url,
-//         type: "service",
-//         breadcrumb: [
-//             { name: "Home", url: baseUrl },
-//             { name: "Events", url: `${baseUrl}/events` },
-//             ...nodes.map((node, index) => ({
-//                 name: node.title,
-//                 url: `${baseUrl}/events/${resolvedParams.slug.slice(0, index + 1).join("/")}`,
-//             })),
-//         ],
-//     })
-// }
 export async function generateMetadata({ params }: PageProps) {
     const resolvedParams = await params
     const result = findEventPath(resolvedParams.slug)
@@ -250,7 +212,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                         pagesMap={pagesMap}
                         cards={finalCards}
                     />
-                    <CorporateEventServices />
+                    <EventSolutions />
                     <PortfolioCaseStudy />
                     <FAQ faqs={faqList} />
                     <ContactCTA />

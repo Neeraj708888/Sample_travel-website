@@ -17,7 +17,8 @@ export interface PageContent {
         shortDesc?: string
     }
     eventSolution?: {
-        shortDesc?: string
+        shortDesc?: string,
+        cards?: any[]
     }
 }
 

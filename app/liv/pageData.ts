@@ -123,7 +123,8 @@ export async function getPageData(slug: string) {
 
         try {
             // ✅ slug handling (IMPORTANT — tumhara requirement)
-            const slugArray = slug.split("/").filter(s => s !== "events")
+            // Skip the first segment (route prefix: "events" or "solutions")
+            const slugArray = slug.split("/").slice(1)
 
             console.log("Slug Array:", slugArray)
 
