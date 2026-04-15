@@ -11,7 +11,7 @@ export function getDb(): SupabaseClient {
     return client
 }
 
-export const db = new Proxy({} as SupabaseClient, {
+export const dbConnect = new Proxy({} as SupabaseClient, {
     get(_target, prop) {
         const client = getDb()
         const value = (client as any)[prop]

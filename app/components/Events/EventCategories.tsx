@@ -1,8 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { useParams } from "next/navigation"
+import { useParams, usePathname } from "next/navigation"
 import { services, ServiceNode } from "@/app/data/services"
+import { solutions } from "@/app/data/solution"
 import CategoryCard from "./CategoryCard"
 import { findNodeByPath } from "../Services/servicesUtils"
 import { useEffect, useState } from "react"
@@ -22,25 +23,34 @@ interface Props {
 export default function EventCategories({ page, pagesMap = {}, cards = [] }: Props) {
 
     const params = useParams()
+    const pathname = usePathname()  // ✅ Route detect karo
+
     // ✅ Hydration fix — client side ready hone tak wait karo
     const [mounted, setMounted] = useState(false)
     useEffect(() => setMounted(true), [])
+
     const slug = (params?.slug ?? []) as string[]
 
-    const node: ServiceNode | null = findNodeByPath(services, slug)
+    // ✅ Route ke hisaab se tree aur basePath decide karo
+    const isSolutions = pathname?.startsWith("/solutions")
+    const tree = isSolutions ? solutions : services
+    const baseRoute = isSolutions ? "solutions" : "events"
+
+    // ✅ Dono trees mein node dhundho
+    const node: ServiceNode | null = findNodeByPath(tree, slug)
     const parentSlug = slug.slice(0, -1)
-    const parentNode: ServiceNode | null = findNodeByPath(services, parentSlug)
+    const parentNode: ServiceNode | null = findNodeByPath(tree, parentSlug)
 
     const isLeaf = slug.length > 0 && (!node?.children || node.children.length === 0)
 
     const categories: ServiceNode[] =
         slug.length === 0
-            ? services
+            ? tree
             : node?.children?.length
                 ? node.children
-                : parentNode?.children ?? services
+                : parentNode?.children ?? tree
 
-    const basePath = slug.length ? `/events/${slug.join("/")}` : "/events"
+    const basePath = slug.length ? `/${baseRoute}/${slug.join("/")}` : `/${baseRoute}`
 
     // ✅ Content ek baar parse karo
     let parsedContent: any = {}
@@ -98,7 +108,7 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
                     <h2 className="text-4xl text-center md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                         {node?.title
                             ? `${node.title} Types We Manage`
-                            : "Event Types We Manage"  // ✅ Fallback for /events page
+                            : "Event Types We Manage"
                         }
                     </h2>
                     {/* ✅ DB se shortDesc */}
@@ -110,6 +120,7 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {cards?.length > 0
                         ? cards.map((card) => {
+                            // ✅ Current tree se fullNode lo
                             const fullNode = categories.find(c => c.slug === card.slug)
                             return (
                                 <CategoryCard
@@ -121,7 +132,7 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
                                     } as ServiceNode}
                                     basePath={basePath}
                                     description={
-                                        card.desc ||        // ✅ old AI format
+                                        card.desc ||
                                         (card as any).description ||
                                         ""
                                     }
@@ -129,7 +140,8 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
                             )
                         })
                         : categories.map((category: ServiceNode) => {
-                            const childDbSlug = `events/${[...slug, category.slug].join("/")}`
+                            // ✅ DB slug bhi route ke hisaab se
+                            const childDbSlug = `${baseRoute}/${[...slug, category.slug].join("/")}`
                             const childPage = pagesMap[childDbSlug]
                             return (
                                 <CategoryCard

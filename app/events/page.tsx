@@ -28,7 +28,7 @@ export async function generateMetadata() {
     const url = `${baseUrl}/events`
 
     return generateSeo({
-        title: "Event Management Company in Delhi | Ananta Hospitality",
+        title: "Event Management Company in Delhi",
         description: "Luxury wedding planning, corporate events, and private celebrations in Delhi.",
         url,
         type: "event",

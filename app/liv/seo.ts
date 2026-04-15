@@ -10,7 +10,7 @@ type SeoProps = {
     description: string
     url: string
     image?: string
-    type?: "event" | "category" | "service" | "article"
+    type?: "event" | "category" | "service" | "article" | "solution"
     breadcrumb?: BreadcrumbItem[]
     noIndex?: boolean
 }
