@@ -5,34 +5,54 @@ import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { ServiceNode } from "@/app/data/services"
 import { FaCalendarAlt } from "react-icons/fa"
-import { useState } from "react"
+
+interface PageData {
+    meta_description?: string
+    description?: string
+}
 
 interface CategoryCardProps {
     category: ServiceNode
     basePath: string
-    page?: any           // ✅ "page" — match with EventCategories
-    description?: string // ✅ cards.desc se aata hai
+    page?: { page?: PageData } | PageData | null
+    description?: string
 }
 
 export default function CategoryCard({
     category,
     basePath,
     page = null,
-    description
+    description,
 }: CategoryCardProps) {
 
     const href = `${basePath}/${category.slug}`
-    const pageData = page?.page || page || null
+
+    /* =========================
+       ✅ SAFE PAGE DATA RESOLVE
+    ========================= */
+
+    const pageData: PageData | null =
+        (page as any)?.page || page || null
+
     const Icon = category.icon ?? FaCalendarAlt
 
-    // const text = description || pageData?.meta_description || pageData?.description || `Premium ${category.title.toLowerCase()} services tailored for exceptional event experiences.`
+    /* =========================
+       ✅ FINAL TEXT PRIORITY 🔥
+    ========================= */
+
+    const text =
+        description ||
+        pageData?.description ||
+        pageData?.meta_description ||
+        `Premium ${category.title.toLowerCase()} services tailored for exceptional event experiences.`
 
     return (
         <Link href={href} className="block group">
             <div
                 className="relative overflow-hidden rounded-2xl p-[1px] transition-all duration-500 hover:-translate-y-2"
                 style={{
-                    background: "linear-gradient(135deg, rgba(212,175,55,0.4), rgba(255,255,255,0.05), rgba(212,175,55,0.2))"
+                    background:
+                        "linear-gradient(135deg, rgba(212,175,55,0.4), rgba(255,255,255,0.05), rgba(212,175,55,0.2))",
                 }}
             >
                 <div className="relative rounded-2xl bg-teal-800 p-6 h-full flex flex-col gap-5 overflow-hidden">
@@ -40,10 +60,12 @@ export default function CategoryCard({
                     <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                         style={{
-                            background: "radial-gradient(ellipse at top left, rgba(212,175,55,0.08) 0%, transparent 70%)"
+                            background:
+                                "radial-gradient(ellipse at top left, rgba(212,175,55,0.08) 0%, transparent 70%)",
                         }}
                     />
 
+                    {/* ICON / IMAGE */}
                     <div className="relative flex items-center justify-between">
                         {category.image ? (
                             <div className="w-12 h-12 rounded-xl overflow-hidden relative border border-yellow-400/30">
@@ -65,6 +87,7 @@ export default function CategoryCard({
                         </div>
                     </div>
 
+                    {/* TITLE */}
                     <div>
                         <h3 className="text-white font-semibold text-base leading-snug group-hover:text-yellow-200 transition">
                             {category.title}
@@ -72,16 +95,13 @@ export default function CategoryCard({
                         <div className="mt-2 h-[1px] w-8 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-yellow-400 to-transparent" />
                     </div>
 
-                    {/* ✅ Priority: cards.desc → page.description → page.meta_description → fallback */}
+                    {/* DESCRIPTION */}
                     <p className="text-sm text-gray-400 leading-relaxed flex-1 line-clamp-4">
-                        {description ||
-                            pageData?.description ||
-                            pageData?.meta_description ||
-                            `Premium ${category.title.toLowerCase()} services tailored for exceptional event experiences.`}
+                        {text}
                     </p>
 
+                    {/* CTA */}
                     <div className="flex items-center justify-between mt-4 text-xs uppercase tracking-wider">
-
                         <div className="flex items-center gap-2 text-yellow-400 font-medium group-hover:gap-3 transition-all">
                             Explore
                             <ArrowUpRight

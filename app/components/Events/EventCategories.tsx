@@ -1,148 +1,201 @@
-"use client"
+"use client";
 
 import Image from "next/image"
 import { useParams, usePathname } from "next/navigation"
 import { services, ServiceNode } from "@/app/data/services"
 import { solutions } from "@/app/data/solution"
 import CategoryCard from "./CategoryCard"
-import { findNodeByPath } from "../Services/servicesUtils"
-import { useEffect, useState } from "react"
+import { findNodeFullPath, hasChildren } from "@/app/liv/utils/treeHelper";
+
+
+
+/* =========================
+   TYPES
+========================= */
 
 interface PageData {
+    content?: any
     description?: string
     meta_description?: string
-    [key: string]: any
+}
+
+type CardItem = {
+    title: string
+    slug: string
+    desc?: string
 }
 
 interface Props {
     page?: PageData | null
     pagesMap?: Record<string, any>
-    cards?: { cardType: string; slug: string; desc?: string }[]
+    cards?: CardItem[]
 }
 
-export default function EventCategories({ page, pagesMap = {}, cards = [] }: Props) {
+/* =========================
+   COMPONENT
+========================= */
+
+export default function EventCategories({
+    page,
+    pagesMap = {},
+    cards = [],
+}: Props) {
 
     const params = useParams()
-    const pathname = usePathname()  // ✅ Route detect karo
-
-    // ✅ Hydration fix — client side ready hone tak wait karo
-    const [mounted, setMounted] = useState(false)
-    useEffect(() => setMounted(true), [])
+    const pathname = usePathname()
 
     const slug = (params?.slug ?? []) as string[]
 
-    // ✅ Route ke hisaab se tree aur basePath decide karo
+    /* =========================
+       ✅ ROUTE DETECT
+    ========================= */
+
     const isSolutions = pathname?.startsWith("/solutions")
+
     const tree = isSolutions ? solutions : services
     const baseRoute = isSolutions ? "solutions" : "events"
 
-    // ✅ Dono trees mein node dhundho
-    const node: ServiceNode | null = findNodeByPath(tree, slug)
-    const parentSlug = slug.slice(0, -1)
-    const parentNode: ServiceNode | null = findNodeByPath(tree, parentSlug)
+    /* =========================
+       ✅ TREE CONTEXT (NEW 🔥)
+    ========================= */
 
-    const isLeaf = slug.length > 0 && (!node?.children || node.children.length === 0)
+    const fullPath = findNodeFullPath(tree, slug)
+
+    const node = fullPath?.[fullPath.length - 1] || null
+    const parentNode = fullPath?.[fullPath.length - 2] || null
+
+    const isLeaf = slug.length > 0 && !hasChildren(node)
 
     const categories: ServiceNode[] =
         slug.length === 0
             ? tree
-            : node?.children?.length
-                ? node.children
+            : hasChildren(node)
+                ? node!.children
                 : parentNode?.children ?? tree
 
-    const basePath = slug.length ? `/${baseRoute}/${slug.join("/")}` : `/${baseRoute}`
+    const basePath = slug.length
+        ? `/${baseRoute}/${slug.join("/")}`
+        : `/${baseRoute}`
 
-    // ✅ Content ek baar parse karo
+    /* =========================
+       ✅ CONTENT PARSE
+    ========================= */
+
     let parsedContent: any = {}
 
     try {
         parsedContent =
             typeof page?.content === "string"
                 ? JSON.parse(page.content)
-                : page?.content
+                : page?.content ?? {}
     } catch {
         parsedContent = {}
     }
 
-    const eventTypeShortDesc = parsedContent?.eventType?.shortDesc
-        || "Discover curated experiences and premium event services."
+    const shortDesc =
+        parsedContent?.eventType?.shortDesc ||
+        parsedContent?.eventSolution?.shortDesc ||
+        "Discover curated experiences and premium event services."
 
-    // ✅ Leaf Node UI
-    if (isLeaf) {
+    /* =========================
+       ✅ LEAF UI
+    ========================= */
+
+    if (isLeaf && node) {
         return (
             <section className="py-16 bg-neutral-950 text-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row gap-12 items-center">
+
                         <div className="flex-1 space-y-6">
                             <h2 className="text-4xl font-bold leading-tight">
-                                {node?.title}
+                                {node.title}
                             </h2>
-                            {page?.description && (
-                                <p className="text-gray-400 text-lg leading-relaxed">
-                                    {page.description}
-                                </p>
-                            )}
-                            {!page?.description && page?.meta_description && (
-                                <p className="text-gray-400 text-lg leading-relaxed">
-                                    {page.meta_description}
-                                </p>
-                            )}
+
+                            <p className="text-gray-400 text-lg leading-relaxed">
+                                {page?.description ||
+                                    page?.meta_description ||
+                                    "Professional services tailored for exceptional experiences."}
+                            </p>
                         </div>
-                        {node?.image && (
+
+                        {node.image && (
                             <div className="flex-1 w-full aspect-video relative rounded-2xl overflow-hidden">
-                                <Image src={node.image} alt={node.title} fill sizes="" className="object-cover" />
+                                <Image
+                                    src={node.image}
+                                    alt={node.title}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                         )}
+
                     </div>
                 </div>
             </section>
         )
     }
 
-    // ✅ Normal Category Cards UI
+    /* =========================
+       ✅ GRID UI
+    ========================= */
+
     return (
         <section className="py-16 bg-neutral-950 text-white">
             <div className="max-w-7xl mx-auto px-6">
 
+                {/* HEADER */}
                 <div className="mb-12">
                     <h2 className="text-4xl text-center md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                         {node?.title
                             ? `${node.title} Types We Manage`
-                            : "Event Types We Manage"
-                        }
+                            : isSolutions
+                                ? "Event Solutions We Provide"
+                                : "Event Types We Manage"}
                     </h2>
-                    {/* ✅ DB se shortDesc */}
-                    <p className="text-gray-400 mt-2 text-xl max-w-7xl text-center">
-                        {eventTypeShortDesc}
+
+                    <p className="text-gray-400 mt-2 text-xl max-w-4xl mx-auto text-center">
+                        {shortDesc}
                     </p>
                 </div>
 
+                {/* GRID */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    {/* ✅ AI CARDS */}
                     {cards?.length > 0
                         ? cards.map((card) => {
-                            // ✅ Current tree se fullNode lo
-                            const fullNode = categories.find(c => c.slug === card.slug)
+
+                            const fullNode = categories.find(
+                                (c) => c.slug === card.slug
+                            )
+
                             return (
                                 <CategoryCard
                                     key={card.slug}
-                                    category={fullNode ?? {
-                                        id: card.slug,
-                                        slug: card.slug,
-                                        title: (card as any).cardType || (card as any).title
-                                    } as ServiceNode}
-                                    basePath={basePath}
-                                    description={
-                                        card.desc ||
-                                        (card as any).description ||
-                                        ""
+                                    category={
+                                        fullNode ?? {
+                                            id: card.slug,
+                                            slug: card.slug,
+                                            title: card.title,
+                                        } as ServiceNode
                                     }
+                                    basePath={basePath}
+                                    description={card.desc || ""}
                                 />
                             )
                         })
-                        : categories.map((category: ServiceNode) => {
-                            // ✅ DB slug bhi route ke hisaab se
-                            const childDbSlug = `${baseRoute}/${[...slug, category.slug].join("/")}`
+
+                        /* ✅ FALLBACK */
+                        : categories.map((category) => {
+
+                            const childDbSlug = `${baseRoute}/${[
+                                ...slug,
+                                category.slug,
+                            ].join("/")}`
+
                             const childPage = pagesMap[childDbSlug]
+
                             return (
                                 <CategoryCard
                                     key={category.slug}
@@ -151,10 +204,9 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
                                     page={childPage}
                                 />
                             )
-                        })
-                    }
-                </div>
+                        })}
 
+                </div>
             </div>
         </section>
     )
