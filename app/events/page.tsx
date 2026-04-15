@@ -23,6 +23,14 @@ const baseUrl =
 
 export const dynamic = "force-dynamic"
 
+/* =======================================
+   🔹 AI CARD TYPE (FIX 🔥)
+======================================= */
+type AICard = {
+    slug: string
+    desc?: string
+}
+
 /* ---------------------------------- */
 /* ✅ SEO Metadata                     */
 /* ---------------------------------- */
@@ -80,15 +88,21 @@ export default async function EventServicesPage() {
     }
 
     const hero = parsedContent?.hero || {}
-    const eventCards = parsedContent?.eventType?.cards || []
 
     /* =========================
-       ✅ FINAL CARDS (slug-based merge 🔥)
+       ✅ TYPE-SAFE CARDS 🔥
     ========================= */
 
-    const aiMap = new Map(
-        eventCards.map((c: any) => [c.slug, c])
+    const eventCards: AICard[] =
+        parsedContent?.eventType?.cards || []
+
+    const aiMap = new Map<string, AICard>(
+        eventCards.map((c) => [c.slug, c])
     )
+
+    /* =========================
+       ✅ FINAL CARDS
+    ========================= */
 
     const finalCards = services.map((item) => {
         const aiCard = aiMap.get(item.slug)
@@ -104,13 +118,13 @@ export default async function EventServicesPage() {
     })
 
     /* =========================
-       ✅ FAQ (single source 🔥)
+       ✅ FAQ
     ========================= */
 
     const faqList = page?.faqs || []
 
     /* =========================
-       ✅ SCHEMA DATA
+       ✅ SCHEMA
     ========================= */
 
     const schemaData = [
