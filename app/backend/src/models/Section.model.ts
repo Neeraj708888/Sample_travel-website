@@ -1,31 +1,38 @@
-import { db } from "../config/db"
-import { PageSection } from "../../../types/page.types"
+// import { db } from "../config/db"
+// import { PageSection } from "../../../types/page.types"
 
-export const PageSectionModel = {
+// export const PageSectionModel = {
 
-    async createSections(sections: PageSection[]): Promise<PageSection[]> {
+//     async createSections(sections: PageSection[]): Promise<PageSection[]> {
 
-        const { data, error } = await db
-            .from("page_sections")
-            .insert(sections)
-            .select()
+//         if (!sections.length) return []
 
-        if (error) throw error
+//         const { data, error } = await db
+//             .from("page_sections")
+//             .insert(sections)
+//             .select()
 
-        return data as PageSection[]
-    },
+//         if (error) {
+//             console.error("Section Insert Error:", error)
+//             throw new Error("Failed to create sections")
+//         }
 
-    async getSections(page_id: number): Promise<PageSection[]> {
+//         return data as PageSection[]
+//     },
 
-        const { data, error } = await db
-            .from("page_sections")
-            .select("*")
-            .eq("page_id", page_id)
-            .order("section_order")
+//     async getSections(page_id: number): Promise<PageSection[]> {
 
-        if (error) throw error
+//         const { data, error } = await db
+//             .from("page_sections")
+//             .select("*")
+//             .eq("page_id", page_id)
+//             .order("section_order", { ascending: true })
 
-        return data as PageSection[]
-    }
+//         if (error) {
+//             console.error("Fetch Sections Error:", error)
+//             throw new Error("Failed to fetch sections")
+//         }
 
-}
+//         return data as PageSection[]
+//     }
+// }
