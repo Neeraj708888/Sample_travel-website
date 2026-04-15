@@ -6,117 +6,155 @@ import {
   faqSchema,
 } from "../liv/schema"
 import Schema from "../liv/components/Schema"
+
 import { ContactCTA } from "../components/Events/ContactCTA"
 import { EventSearch } from "../components/Events/Hero"
 import EventCategories from "../components/Events/EventCategories"
-import { getPageData } from "../liv/pageData"
 import FAQ from "../components/Events/FAQ"
-import { services } from "../data/services"
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+import { getPageData } from "../liv/pageData"
+import { solutions } from "../data/solution"
+
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
 export const dynamic = "force-dynamic"
 
 /* ---------------------------------- */
-/* ✅ SEO Metadata (FIXED)             */
+/* ✅ SEO Metadata (Dynamic 🔥)        */
 /* ---------------------------------- */
 
 export async function generateMetadata() {
-  const url = `${baseUrl}/solutions`
+
+  const data = await getPageData("solutions")
+  const page = data?.page
 
   return generateSeo({
-    title: "Event Solutions Company in Delhi",
-    description: "Luxury wedding planning, corporate events, and private celebrations in Delhi.",
-    url,
+    title:
+      page?.meta_title ||
+      "Event Solutions Company in Delhi",
+    description:
+      page?.meta_description ||
+      "Complete event solutions including planning, logistics, fabrication and execution services in Delhi.",
+    url: `${baseUrl}/solutions`,
     type: "solution",
     breadcrumb: [
       { name: "Home", url: baseUrl },
-      { name: "Solutions", url },
+      { name: "Solutions", url: `${baseUrl}/solutions` },
     ],
   })
 }
 
-
-
 /* ---------------------------------- */
-/* ✅ Page Component (FIXED)           */
+/* ✅ Page Component                   */
 /* ---------------------------------- */
 
 export default async function SolutionsPage() {
+
   const url = `${baseUrl}/solutions`
 
-  // ✅ Single DB call
   let page: any = null
-  let dbFaqs: any[] = []
 
   try {
-    const data = await getPageData("solutions") // ✅ FIXED
+    const data = await getPageData("solutions")
     page = data?.page
-    dbFaqs = data?.faqs || []
   } catch (error) {
     console.error("PAGE FETCH ERROR:", error)
   }
 
-  // ✅ Parse content
+  /* =========================
+     ✅ SAFE CONTENT PARSE
+  ========================= */
+
   let parsedContent: any = {}
+
   try {
     parsedContent =
       typeof page?.content === "string"
         ? JSON.parse(page.content)
         : page?.content ?? {}
-  } catch (e) {
-    console.error("JSON PARSE ERROR:", e)
+  } catch {
     parsedContent = {}
   }
 
   const hero = parsedContent?.hero || {}
-  const solutionCards = parsedContent?.solutions?.cards || []
 
-  // ✅ Merge AI + static services
-  let finalCards = solutionCards
+  /* =========================
+     ✅ FIXED (eventSolution)
+  ========================= */
 
-  if (services.length > 0) {
-    finalCards = services.map((child) => {
-      const aiCard = solutionCards?.find(
-        (card: any) => card.slug === child.slug
-      )
-
-      return {
-        title: child.title,
-        slug: child.slug,
-        cardType: child.title,
-        desc:
-          aiCard?.desc ||
-          `${child.title} solutions designed for seamless execution and business impact.`,
-      }
-    })
+  type AICard = {
+    slug: string
+    desc?: string
   }
 
-  const faqList = dbFaqs.length > 0 ? dbFaqs : undefined
+  const solutionCards: AICard[] =
+    parsedContent?.eventSolution?.cards || []
+
+  /* =========================
+     ✅ SLUG-BASED MAP 🔥
+  ========================= */
+
+  const aiMap = new Map<string, AICard>(
+    solutionCards.map((c) => [c.slug, c])
+  )
+
+  /* =========================
+     ✅ FINAL CARDS
+  ========================= */
+
+  const finalCards = solutions.map((item) => {
+    const aiCard = aiMap.get(item.slug)
+
+    return {
+      title: item.title,
+      slug: item.slug,
+      cardType: "service",
+      desc:
+        aiCard?.desc ||
+        `${item.title} solutions designed for seamless execution and business impact.`,
+    }
+  })
+
+  /* =========================
+     ✅ FAQ (single source)
+  ========================= */
+
+  const faqList = page?.faqs || []
+
+  /* =========================
+     ✅ SCHEMA
+  ========================= */
 
   const schemaData = [
     organizationSchema(),
-    localBusinessSchema(url),
+    localBusinessSchema(),
     breadcrumbSchema([
       { name: "Home", url: baseUrl },
-      { name: "Solutions", url }, // ✅ FIXED
+      { name: "Solutions", url },
     ]),
     faqSchema(faqList, url),
   ].filter(Boolean)
 
+  /* =========================
+     ✅ UI
+  ========================= */
+
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Solutions", href: "/solutions" }, // ✅ FIXED
+    { label: "Solutions", href: "/solutions" },
   ]
 
   return (
     <>
-      <Schema data={schemaData} id="solutions-structured-data" />
+      <Schema data={schemaData} id="solutions-schema" />
 
       <EventSearch
         breadcrumbItems={breadcrumbItems}
         title={
-          hero?.h1 || "Complete Event Solutions Company in Delhi"
+          page?.display_title ||
+          hero?.h1 ||
+          "Complete Event Solutions Company in Delhi"
         }
         h2={
           hero?.h2 ||
@@ -124,11 +162,14 @@ export default async function SolutionsPage() {
         }
         shortDesc={
           hero?.shortDesc ||
-          "We deliver complete event solutions including planning, logistics, fabrication, technical production, and on-ground execution across India."
+          "We deliver complete event solutions including planning, logistics, fabrication, technical production, and execution across India."
         }
       />
 
-      <EventCategories page={page} cards={finalCards} />
+      <EventCategories
+        page={page}
+        cards={finalCards}
+      />
 
       <FAQ faqs={faqList} />
 

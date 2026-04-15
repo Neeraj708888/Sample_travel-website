@@ -1,64 +1,88 @@
-
-import { CreatePage } from "@/app/types/page.types";
-import { dbConnect } from "../config/db";
-
+import { dbConnect } from "../config/db"
+import { CreatePage, PageType } from "@/app/types/page.types"
 
 export const PageModel = {
 
-    async createPage(page: CreatePage): Promise<CreatePage> {
+    // =========================
+    // ✅ CREATE PAGE
+    // =========================
+    async createPage(page: CreatePage): Promise<PageType> {
+
+        const payload = {
+            ...page,
+            content: page.content,   // jsonb
+            faqs: page.faqs || []   // ensure array
+        }
+
         const { data, error } = await dbConnect
             .from("pages")
-            .insert(page)
+            .insert(payload)
             .select()
             .single()
 
-        if (error) throw error;
+        if (error) {
+            console.error("DB Insert Error:", error)
+            throw new Error(error.message)
+        }
 
-        return data as CreatePage
+        return data as PageType
     },
 
-    async getPageBySlug(slug: string): Promise<CreatePage | null> {
+    // =========================
+    // ✅ GET PAGE BY SLUG
+    // =========================
+    async getPageBySlug(slug: string): Promise<PageType | null> {
+
+        const cleanSlug = slug.toLowerCase().trim()
+
         const { data, error } = await dbConnect
             .from("pages")
             .select("*")
+            .eq("slug", cleanSlug)
+            .maybeSingle()   // 🔥 better than single()
+
+        if (error) {
+            console.error("DB Fetch Error:", error)
+            throw new Error(error.message)
+        }
+
+        return data as PageType | null
+    },
+
+    // =========================
+    // ✅ GET ALL PAGES (optional 🔥)
+    // =========================
+    async getAllPages(): Promise<PageType[]> {
+
+        const { data, error } = await dbConnect
+            .from("pages")
+            .select("*")
+            .order("created_at", { ascending: false })
+
+        if (error) {
+            console.error("DB Fetch All Error:", error)
+            throw new Error(error.message)
+        }
+
+        return data as PageType[]
+    },
+
+    // =========================
+    // ✅ DELETE PAGE (optional)
+    // =========================
+    async deletePage(slug: string): Promise<boolean> {
+
+        const { error } = await dbConnect
+            .from("pages")
+            .delete()
             .eq("slug", slug)
-            .single()
 
-        if (error) return null;
+        if (error) {
+            console.error("DB Delete Error:", error)
+            throw new Error(error.message)
+        }
 
-        return data as CreatePage;
+        return true
     }
+
 }
-
-
-
-
-// import { CreatePageInput, PageType } from "../../../types/page.types";
-// import { dbConnect } from "../config/db";
-
-// export const PageModel = {
-
-//     async createPage(page: CreatePageInput): Promise<PageType> {
-//         const { data, error } = await dbConnect
-//             .from("pages")
-//             .insert(page)
-//             .select()
-//             .single()
-
-//         if (error) throw error;
-
-//         return data as PageType
-//     },
-
-//     async getPageBySlug(slug: string): Promise<PageType | null> {
-//         const { data, error } = await dbConnect
-//             .from("pages")
-//             .select("*")
-//             .eq("slug", slug)
-//             .single()
-
-//         if (error) return null;
-
-//         return data as PageType   // ✅ FIX
-//     }
-// }

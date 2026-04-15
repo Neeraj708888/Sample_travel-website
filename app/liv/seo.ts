@@ -1,5 +1,3 @@
-
-
 type BreadcrumbItem = {
     name: string
     url: string
@@ -21,43 +19,75 @@ export function generateSeo({
     url,
     image,
     type = "category",
+    breadcrumb = [],
     noIndex = false,
 }: SeoProps) {
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+    const baseUrl =
+        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+
+    const fullUrl = url.startsWith("http")
+        ? url
+        : `${baseUrl}${url}`
+
     const defaultImage = image || `${baseUrl}/og-image.jpg`
 
-    // ✅ SEO Safe Title (max 60 chars)
+    // =========================
+    // ✅ SEO SAFE TITLE
+    // =========================
     const seoTitle =
         title.length > 60
             ? `${title.substring(0, 57)}...`
             : title
 
-    // ✅ SEO Safe Description (max 155 chars)
+    // =========================
+    // ✅ SEO SAFE DESCRIPTION
+    // =========================
     const seoDescription =
         description.length > 155
             ? `${description.substring(0, 152)}...`
             : description
 
+    // =========================
+    // ✅ OG TYPE MAPPING
+    // =========================
+    const ogType =
+        type === "article"
+            ? "article"
+            : "website"
+
     return {
         title: seoTitle,
         description: seoDescription,
 
+        metadataBase: new URL(baseUrl),
+
         alternates: {
-            canonical: url,
+            canonical: fullUrl,
         },
 
         robots: {
             index: !noIndex,
             follow: !noIndex,
+            googleBot: {
+                index: !noIndex,
+                follow: !noIndex,
+            },
         },
 
         openGraph: {
             title: seoTitle,
             description: seoDescription,
-            url,
-            type: type === "article" ? "article" : "website",
-            images: [{ url: defaultImage }],
+            url: fullUrl,
+            type: ogType,
+            siteName: "Ananta Hospitality",
+            images: [
+                {
+                    url: defaultImage,
+                    width: 1200,
+                    height: 630,
+                },
+            ],
         },
 
         twitter: {
@@ -66,7 +96,10 @@ export function generateSeo({
             description: seoDescription,
             images: [defaultImage],
         },
-        // ✅ schema field hataya — page.tsx mein <Schema> component handle karta hai
+
+        // ✅ OPTIONAL: breadcrumb data pass (schema component use karega)
+        extra: {
+            breadcrumb,
+        },
     }
 }
-

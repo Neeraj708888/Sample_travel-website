@@ -1,57 +1,87 @@
 import { Card } from "@/app/types/page.types"
 
+type BaseItem = {
+    title: string
+    slug: string
+    image?: string
+    children?: BaseItem[]
+}
+
 /**
- * 🔹 Basic card mapping (AI + static merge)
- *    ✅ Added length guard — warns when AI returns fewer cards than expected
+ * 🔹 Core mapping (AI + static merge)
  */
-export function mapCards(items: any[], aiCards: any[] = []): Card[] {
+export function mapCards(
+    items: BaseItem[],
+    aiCards: Partial<Card>[] = []
+): Card[] {
+
     if (aiCards.length !== items.length) {
         console.warn(
-            `mapCards: expected ${items.length} cards from AI, got ${aiCards.length}. Some descriptions will be empty.`
+            `mapCards: expected ${items.length}, got ${aiCards.length}`
         )
     }
 
-    return items.map((item, index) => ({
-        title: item.title,
-        slug: item.slug,
-        cardType: item.title,
-        desc: aiCards?.[index]?.desc || "",
-        icon: item.icon || null,
-        image: item.image || null,
-    }))
+    return items.map((item, index) => {
+
+        const aiCard = aiCards?.[index]
+
+        return {
+            title: item.title,
+            slug: item.slug,
+
+            // ✅ controlled type
+            cardType: "service",
+
+            // ✅ safe fallback
+            desc: aiCard?.desc || "",
+
+            image: item.image || undefined,
+        }
+    })
 }
 
 /**
- * 🔹 Safe mapping (fallback descriptions)
+ * 🔹 Mapping with fallback description
  */
 export function mapCardsWithFallback(
-    items: any[],
-    aiCards: any[] = [],
-    fallbackText = "Professional services designed for seamless execution."
-) {
-    return items.map((item, index) => ({
-        title: item.title,
-        slug: item.slug,
-        cardType: item.title,
-        icon: item.icon || null,
-        image: item.image || null,
-        desc: aiCards?.[index]?.desc || fallbackText,
-    }))
+    items: BaseItem[],
+    aiCards: Partial<Card>[] = [],
+    fallbackText = "Professional event services tailored for seamless execution."
+): Card[] {
+
+    return items.map((item, index) => {
+
+        const aiCard = aiCards?.[index]
+
+        return {
+            title: item.title,
+            slug: item.slug,
+            cardType: "service",
+            image: item.image || undefined,
+            desc: aiCard?.desc || fallbackText,
+        }
+    })
 }
 
 /**
- * 🔹 Add hierarchy info (future use)
+ * 🔹 Mapping with hierarchy level (future use)
  */
 export function mapCardsWithLevel(
-    items: any[],
-    aiCards: any[] = [],
+    items: BaseItem[],
+    aiCards: Partial<Card>[] = [],
     level = 0
 ) {
-    return items.map((item, index) => ({
-        title: item.title,
-        slug: item.slug,
-        level,
-        cardType: item.title,
-        desc: aiCards?.[index]?.desc || "",
-    }))
+
+    return items.map((item, index) => {
+
+        const aiCard = aiCards?.[index]
+
+        return {
+            title: item.title,
+            slug: item.slug,
+            level,
+            cardType: "service",
+            desc: aiCard?.desc || "",
+        }
+    })
 }

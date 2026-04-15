@@ -6,17 +6,20 @@ import {
     faqSchema,
 } from "../liv/schema"
 import Schema from "../liv/components/Schema"
+
 import { PopularEvent } from "../components/Events/PopularEvent"
 import { ContactCTA } from "../components/Events/ContactCTA"
 import { EventSearch } from "../components/Events/Hero"
 import EventCategories from "../components/Events/EventCategories"
 import HowWePlanEvents from "../components/Events/HowWePlanEvents"
 import FeaturedEvents from "../components/Events/FeaturedEvents"
-import { getPageData } from "../liv/pageData"
 import FAQ from "../components/Events/FAQ"
+
+import { getPageData } from "../liv/pageData"
 import { services } from "../data/services"
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 
 export const dynamic = "force-dynamic"
 
@@ -25,16 +28,20 @@ export const dynamic = "force-dynamic"
 /* ---------------------------------- */
 
 export async function generateMetadata() {
-    const url = `${baseUrl}/events`
+
+    const data = await getPageData("events")
+    const page = data?.page
 
     return generateSeo({
-        title: "Event Management Company in Delhi",
-        description: "Luxury wedding planning, corporate events, and private celebrations in Delhi.",
-        url,
+        title: page?.meta_title || "Event Management Company in Delhi",
+        description:
+            page?.meta_description ||
+            "Luxury wedding planning, corporate events, and private celebrations in Delhi.",
+        url: `${baseUrl}/events`,
         type: "event",
         breadcrumb: [
             { name: "Home", url: baseUrl },
-            { name: "Events", url },
+            { name: "Events", url: `${baseUrl}/events` },
         ],
     })
 }
@@ -44,22 +51,24 @@ export async function generateMetadata() {
 /* ---------------------------------- */
 
 export default async function EventServicesPage() {
+
     const url = `${baseUrl}/events`
 
-    // ✅ Sirf ek DB/AI call
     let page: any = null
-    let dbFaqs: any[] = []
 
     try {
         const data = await getPageData("events")
         page = data?.page
-        dbFaqs = data?.faqs || []
     } catch (error) {
         console.error("PAGE FETCH ERROR:", error)
     }
 
-    // ✅ Content parse karo — same as [...slug]/page.tsx
+    /* =========================
+       ✅ SAFE CONTENT PARSE
+    ========================= */
+
     let parsedContent: any = {}
+
     try {
         parsedContent =
             typeof page?.content === "string"
@@ -73,37 +82,50 @@ export default async function EventServicesPage() {
     const hero = parsedContent?.hero || {}
     const eventCards = parsedContent?.eventType?.cards || []
 
-    // ✅ finalCards — AI cards + services.ts hybrid (same logic as [...slug])
-    let finalCards = eventCards
+    /* =========================
+       ✅ FINAL CARDS (slug-based merge 🔥)
+    ========================= */
 
-    if (services.length > 0) {
-        finalCards = services.map((child) => {
-            const aiCard = eventCards?.find(
-                (card: any) => card.slug === child.slug
-            )
+    const aiMap = new Map(
+        eventCards.map((c: any) => [c.slug, c])
+    )
 
-            return {
-                title: child.title,
-                slug: child.slug,
-                cardType: child.title,
-                desc:
-                    aiCard?.desc ||
-                    `${child.title} services tailored for exceptional event experiences.`,
-            }
-        })
-    }
+    const finalCards = services.map((item) => {
+        const aiCard = aiMap.get(item.slug)
 
-    const faqList = dbFaqs.length > 0 ? dbFaqs : undefined
+        return {
+            title: item.title,
+            slug: item.slug,
+            cardType: "service",
+            desc:
+                aiCard?.desc ||
+                `${item.title} services tailored for exceptional event experiences.`,
+        }
+    })
+
+    /* =========================
+       ✅ FAQ (single source 🔥)
+    ========================= */
+
+    const faqList = page?.faqs || []
+
+    /* =========================
+       ✅ SCHEMA DATA
+    ========================= */
 
     const schemaData = [
         organizationSchema(),
-        localBusinessSchema(url),
+        localBusinessSchema(),
         breadcrumbSchema([
             { name: "Home", url: baseUrl },
             { name: "Events", url },
         ]),
         faqSchema(faqList, url),
     ].filter(Boolean)
+
+    /* =========================
+       ✅ UI
+    ========================= */
 
     const breadcrumbItems = [
         { label: "Home", href: "/" },
@@ -112,21 +134,32 @@ export default async function EventServicesPage() {
 
     return (
         <>
-            <Schema data={schemaData} id="event-services-structured-data" />
+            <Schema data={schemaData} id="event-services-schema" />
+
             <EventSearch
                 breadcrumbItems={breadcrumbItems}
                 title={hero?.h1 || "Event Management Company in Delhi"}
-                h2={hero?.h2 || "Professional Event Planning & Execution Services"}
-                shortDesc={hero?.shortDesc || "We provide complete event management solutions including corporate events, weddings, brand promotions, and exhibitions across India."}
+                h2={
+                    hero?.h2 ||
+                    "Professional Event Planning & Execution Services"
+                }
+                shortDesc={
+                    hero?.shortDesc ||
+                    "We provide complete event management solutions including corporate events, weddings, brand promotions, and exhibitions across India."
+                }
             />
+
             <EventCategories
                 page={page}
                 cards={finalCards}
             />
+
             <PopularEvent />
             <HowWePlanEvents />
             <FeaturedEvents />
+
             <FAQ faqs={faqList} />
+
             <ContactCTA />
         </>
     )
