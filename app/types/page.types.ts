@@ -126,20 +126,28 @@ export interface PageType {
     faqs: FAQ[]            // ✅ always array (no undefined)
 }
 
-// Insert type
-// export interface CreatePageInput {
-//     slug: string
-//     meta_title: string
-//     meta_description: string
-//     meta_keywords?: string
-// }
-
 /**
  * 🔹 API Return Type
  */
 export interface PageData {
     page: PageType
     faqs: FAQ[]
+}
+
+export interface CreatePage {
+    id?: number
+
+    slug: string
+
+    meta_title: string
+    meta_description: string
+    meta_keywords?: string
+
+    content: any          // ✅ jsonb
+    faqs: any[]           // ✅ jsonb array
+    display_title?: string
+
+    created_at?: string
 }
 
 /**

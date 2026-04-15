@@ -71,6 +71,7 @@ export default function EventsPage() {
                   src={event.image}
                   alt={event.title}
                   fill
+                  sizes=""
                   className="object-cover group-hover:scale-110 transition duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

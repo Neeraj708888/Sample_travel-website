@@ -1,10 +1,11 @@
-import { PageData } from "../../../types/page.types";
+
+import { CreatePage } from "@/app/types/page.types";
 import { dbConnect } from "../config/db";
 
 
 export const PageModel = {
 
-    async createPage(page: PageData): Promise<PageData> {
+    async createPage(page: CreatePage): Promise<CreatePage> {
         const { data, error } = await dbConnect
             .from("pages")
             .insert(page)
@@ -13,10 +14,10 @@ export const PageModel = {
 
         if (error) throw error;
 
-        return data as PageData
+        return data as CreatePage
     },
 
-    async getPageBySlug(slug: string): Promise<PageData | null> {
+    async getPageBySlug(slug: string): Promise<CreatePage | null> {
         const { data, error } = await dbConnect
             .from("pages")
             .select("*")
@@ -25,7 +26,7 @@ export const PageModel = {
 
         if (error) return null;
 
-        return data as PageData;
+        return data as CreatePage;
     }
 }
 

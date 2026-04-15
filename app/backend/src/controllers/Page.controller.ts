@@ -1,67 +1,71 @@
 import { Request, Response } from "express"
-import { FaqModel } from "../models/FAQ.model"
 import { PageModel } from "../models/Page.model"
-import { PageSectionModel } from "../models/Section.model"
+import { CreatePage } from "@/app/types/page.types"
+
 
 export const createPage = async (req: Request, res: Response) => {
 
     try {
 
-        const { slug, meta_title, meta_description, meta_keywords, sections = [], faq = [] } = req.body
+        console.log("Incoming Body:", req.body)
 
+        // ✅ Type-safe body
+        const body: CreatePage = req.body
+
+        const {
+            slug,
+            meta_title,
+            meta_description,
+            meta_keywords,
+            content,
+            faqs = [],
+            display_title
+        } = body
+
+        // ✅ Basic validation
         if (!slug) {
             return res.status(400).json({ error: "slug is required" })
         }
 
+        if (!content) {
+            return res.status(400).json({ error: "content is required" })
+        }
+
+        // ✅ Duplicate slug check
+        const existing = await PageModel.getPageBySlug(slug)
+
+        if (existing) {
+            return res.status(400).json({ error: "Slug already exists" })
+        }
+
+        // ✅ Insert into DB (ONLY pages table)
         const page = await PageModel.createPage({
             slug,
             meta_title,
             meta_description,
-            meta_keywords
+            meta_keywords,
+            content,
+            faqs,
+            display_title
         })
 
         if (!page?.id) {
             throw new Error("Page creation failed")
         }
 
-        // insert sections
-        if (sections.length > 0) {
-
-            const sectionData = sections.map((s: any, index: number) => ({
-                page_id: page.id,
-                component: s.component,
-                content: s.content,
-                section_order: index + 1
-            }))
-
-            await PageSectionModel.createSections(sectionData)
-        }
-
-        // insert faq
-        if (faq.length > 0) {
-
-            const faqData = faq.map((f: any) => ({
-                page_id: page.id,
-                question: f.question,
-                answer: f.answer
-            }))
-
-            await FaqModel.createFaqs(faqData)
-        }
-
         res.status(201).json({
             success: true,
+            message: "Page created successfully",
             page_id: page.id
         })
 
     } catch (error: any) {
 
-        console.error(error)
+        console.error("Create Page Error:", error)
 
         res.status(500).json({
-            error: error.message
+            error: error.message || "Internal Server Error"
         })
 
     }
-
 }

@@ -90,7 +90,7 @@ export default function EventCategories({ page, pagesMap = {}, cards = [] }: Pro
                         </div>
                         {node?.image && (
                             <div className="flex-1 w-full aspect-video relative rounded-2xl overflow-hidden">
-                                <Image src={node.image} alt={node.title} fill className="object-cover" />
+                                <Image src={node.image} alt={node.title} fill sizes="" className="object-cover" />
                             </div>
                         )}
                     </div>
