@@ -144,15 +144,50 @@ import { generatePageContent } from "./generatePageContent"
 // 🔐 GLOBAL LOCK MAP
 const pageLocks = new Map<string, Promise<{ page: PageType }>>()
 
-export async function getPageData(slug: string): Promise<{ page: PageType }> {
+/* =======================================
+   🔹 NORMALIZE AI CONTENT (VERY IMPORTANT 🔥)
+======================================= */
+function normalizeContent(content: any) {
+    return {
+        hero: {
+            h1: content?.hero?.h1 || "",
+            h2: content?.hero?.h2 || "",
+            shortDesc: content?.hero?.shortDesc || "",
+            image: content?.hero?.image || undefined,
+        },
+
+        eventType: content?.eventType
+            ? {
+                title: content.eventType.title || "Event Types",
+                shortDesc: content.eventType.shortDesc || "",
+                cards: content.eventType.cards || [],
+            }
+            : undefined,
+
+        eventSolution: content?.eventSolution
+            ? {
+                title: content.eventSolution.title || "Event Solutions",
+                shortDesc: content.eventSolution.shortDesc || "",
+                cards: content.eventSolution.cards || [],
+            }
+            : undefined,
+    }
+}
+
+/* =======================================
+   🔹 MAIN FUNCTION
+======================================= */
+export async function getPageData(
+    slug: string
+): Promise<{ page: PageType }> {
 
     console.log("Checking DB for:", slug)
 
     const cleanSlug = slug.toLowerCase().trim()
 
-    // =========================
-    // ✅ STEP 1: DB CHECK
-    // =========================
+    /* =========================
+       ✅ STEP 1: DB CHECK
+    ========================= */
     const { data, error } = await dbConnect
         .from("pages")
         .select("*")
@@ -166,13 +201,13 @@ export async function getPageData(slug: string): Promise<{ page: PageType }> {
     if (data) {
         console.log("✅ DB data found")
         return {
-            page: data as PageType
+            page: data as PageType,
         }
     }
 
-    // =========================
-    // 🔐 STEP 2: LOCK CHECK
-    // =========================
+    /* =========================
+       🔐 STEP 2: LOCK CHECK
+    ========================= */
     if (pageLocks.has(cleanSlug)) {
         console.log("⏳ Waiting for existing AI generation:", cleanSlug)
         return pageLocks.get(cleanSlug)!
@@ -180,17 +215,16 @@ export async function getPageData(slug: string): Promise<{ page: PageType }> {
 
     console.log("🚀 No DB data → generating AI for:", cleanSlug)
 
-    // =========================
-    // 🔐 STEP 3: CREATE LOCK
-    // =========================
+    /* =========================
+       🔐 STEP 3: CREATE LOCK
+    ========================= */
     const lockPromise = (async () => {
-
         try {
             let slugPath: string[] = []
 
-            // =========================
-            // ✅ SLUG PARSING (FIXED)
-            // =========================
+            /* =========================
+               ✅ SLUG PARSING
+            ========================= */
             if (cleanSlug === "events") {
                 slugPath = []
             } else if (cleanSlug === "solutions") {
@@ -203,21 +237,21 @@ export async function getPageData(slug: string): Promise<{ page: PageType }> {
 
             console.log("Slug Array:", slugPath)
 
-            // =========================
-            // ✅ AI GENERATION
-            // =========================
+            /* =========================
+               ✅ AI GENERATION
+            ========================= */
             const aiContent = await generatePageContent(slugPath)
 
-            // =========================
-            // ✅ VALIDATION SAFETY (important 🔥)
-            // =========================
+            /* =========================
+               ✅ SAFETY VALIDATION
+            ========================= */
             if (!aiContent?.content?.hero?.h1) {
                 throw new Error("Invalid AI content structure")
             }
 
-            // =========================
-            // 🔁 FINAL DB CHECK
-            // =========================
+            /* =========================
+               🔁 FINAL DB CHECK
+            ========================= */
             const { data: recheckData } = await dbConnect
                 .from("pages")
                 .select("*")
@@ -227,27 +261,35 @@ export async function getPageData(slug: string): Promise<{ page: PageType }> {
             if (recheckData) {
                 console.log("⚡ Already created by another request:", cleanSlug)
                 return {
-                    page: recheckData as PageType
+                    page: recheckData as PageType,
                 }
             }
 
-            // =========================
-            // ✅ UPSERT (FINAL SAVE)
-            // =========================
+            /* =========================
+               ✅ NORMALIZE CONTENT 🔥
+            ========================= */
+            const safeContent = normalizeContent(aiContent.content)
+
+            /* =========================
+               ✅ FINAL PAYLOAD
+            ========================= */
             const payload: PageType = {
                 slug: cleanSlug,
                 meta_title: aiContent.meta_title,
                 meta_description: aiContent.meta_description,
                 meta_keywords: aiContent.meta_keywords,
-                content: aiContent.content,
-                display_title: aiContent.display_title || null,
-                faqs: aiContent.faqs || []
+                content: safeContent, // 🔥 FIXED
+                display_title: aiContent.display_title ?? undefined,
+                faqs: aiContent.faqs || [],
             }
 
+            /* =========================
+               ✅ UPSERT
+            ========================= */
             const { data: inserted, error: insertError } = await dbConnect
                 .from("pages")
                 .upsert(payload, {
-                    onConflict: "slug"
+                    onConflict: "slug",
                 })
                 .select()
                 .maybeSingle()
@@ -255,16 +297,15 @@ export async function getPageData(slug: string): Promise<{ page: PageType }> {
             if (insertError) {
                 console.error("❌ DB INSERT ERROR:", insertError)
 
-                // fallback return (no crash)
                 return {
-                    page: payload
+                    page: payload,
                 }
             }
 
             console.log("✅ Saved in DB:", cleanSlug)
 
             return {
-                page: (inserted as PageType) || payload
+                page: (inserted as PageType) || payload,
             }
 
         } catch (error) {
@@ -274,10 +315,11 @@ export async function getPageData(slug: string): Promise<{ page: PageType }> {
             // 🔓 LOCK RELEASE
             pageLocks.delete(cleanSlug)
         }
-
     })()
 
-    // 🔐 STORE LOCK
+    /* =========================
+       🔐 STORE LOCK
+    ========================= */
     pageLocks.set(cleanSlug, lockPromise)
 
     return lockPromise
