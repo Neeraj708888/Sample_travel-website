@@ -10,52 +10,57 @@ import { generateAI } from "./ai/generateContent"
 import { mapCards } from "./utils/mapCards"
 import { PageTypeKey } from "../types/page.types"
 
-// ✅ Helper — title + titleSuffix merge karo
+/* =======================================
+   🔹 Helper — display title
+======================================= */
 function getDisplayTitle(node: ServiceNode): string {
     return node.titleSuffix
         ? `${node.title} ${node.titleSuffix}`
         : node.title
 }
 
+/* =======================================
+   🔹 MAIN FUNCTION
+======================================= */
 export async function generatePageContent(slugPath: string[]) {
 
     const solutionTitles = solutions.map(s => s.title)
 
-    // =========================
-    // ✅ SOLUTIONS ROOT
-    // =========================
+    /* =========================
+       ✅ SOLUTIONS ROOT
+    ========================= */
     if (slugPath.length === 1 && slugPath[0] === "solutions") {
 
         const pageType: PageTypeKey = "solutions-root"
-        const rootNode = solutions[0] // fallback — actual title use karo
-
-        // ✅ Root solutions page ka title
         const displayTitle = "Event Solutions Company"
 
         const aiData = await generateAI(
             buildPrompt({
                 pageType,
-                title: displayTitle,       // ✅ full title AI ko
+                title: displayTitle,
                 solutionItems: solutionTitles,
             })
         )
 
         return {
             ...aiData,
-            display_title: displayTitle,   // ✅ DB mein save karo
+            display_title: displayTitle,
             content: {
                 ...aiData.content,
                 eventSolution: {
-                    ...aiData.content.eventSolution,
-                    cards: mapCards(solutions, aiData.content.eventSolution.cards),
+                    ...aiData.content?.eventSolution,
+                    cards: mapCards(
+                        solutions,
+                        aiData.content?.eventSolution?.cards || []
+                    ),
                 },
             },
         }
     }
 
-    // =========================
-    // ✅ SOLUTIONS DETAIL
-    // =========================
+    /* =========================
+       ✅ SOLUTIONS DETAIL
+    ========================= */
     if (slugPath[0] === "solutions") {
 
         const pageType: PageTypeKey = "solution-detail"
@@ -65,7 +70,6 @@ export async function generatePageContent(slugPath: string[]) {
 
         if (!current) throw new Error("Solution not found")
 
-        // ✅ title + titleSuffix merge karo
         const displayTitle = getDisplayTitle(current)
 
         const children = current.children || []
@@ -74,32 +78,35 @@ export async function generatePageContent(slugPath: string[]) {
         const aiData = await generateAI(
             buildPrompt({
                 pageType,
-                title: displayTitle,       // ✅ "Event Setup Solutions in Delhi" AI ko milega
+                title: displayTitle,
                 solutionItems: titles,
             })
         )
 
         return {
             ...aiData,
-            display_title: displayTitle,   // ✅ DB mein save
+            display_title: displayTitle,
             content: {
                 ...aiData.content,
                 eventSolution: {
-                    ...aiData.content.eventSolution,
-                    cards: mapCards(children, aiData.content.eventSolution.cards),
+                    ...aiData.content?.eventSolution,
+                    cards: mapCards(
+                        children,
+                        aiData.content?.eventSolution?.cards || []
+                    ),
                 },
             },
         }
     }
 
-    // =========================
-    // ✅ EVENTS ROOT
-    // =========================
+    /* =========================
+       ✅ EVENTS ROOT
+    ========================= */
     if (slugPath.length === 0) {
 
         const pageType: PageTypeKey = "events-root"
         const eventTitles = services.map(s => s.title)
-        console.log("Event Titles for AI coming from Generate Page Content:", eventTitles);
+
         const displayTitle = "Event Management Company in Delhi"
 
         const aiData = await generateAI(
@@ -117,20 +124,26 @@ export async function generatePageContent(slugPath: string[]) {
             content: {
                 ...aiData.content,
                 eventType: {
-                    ...aiData.content.eventType!,
-                    cards: mapCards(services, aiData.content.eventType!.cards),
+                    ...aiData.content?.eventType,
+                    cards: mapCards(
+                        services,
+                        aiData.content?.eventType?.cards || []
+                    ),
                 },
                 eventSolution: {
-                    ...aiData.content.eventSolution,
-                    cards: mapCards(solutions, aiData.content.eventSolution.cards),
+                    ...aiData.content?.eventSolution,
+                    cards: mapCards(
+                        solutions,
+                        aiData.content?.eventSolution?.cards || []
+                    ),
                 },
             },
         }
     }
 
-    // =========================
-    // ✅ EVENTS DETAIL
-    // =========================
+    /* =========================
+       ✅ EVENTS DETAIL
+    ========================= */
     const pageType: PageTypeKey = "event-detail"
 
     const data = findEventPath(slugPath)
@@ -138,7 +151,6 @@ export async function generatePageContent(slugPath: string[]) {
 
     if (!current) throw new Error("Service not found")
 
-    // ✅ Events ke liye bhi titleSuffix support
     const displayTitle = getDisplayTitle(current)
 
     const children = current.children || []
@@ -159,12 +171,18 @@ export async function generatePageContent(slugPath: string[]) {
         content: {
             ...aiData.content,
             eventType: {
-                ...aiData.content.eventType!,
-                cards: mapCards(children, aiData.content.eventType!.cards),
+                ...aiData.content?.eventType,
+                cards: mapCards(
+                    children,
+                    aiData.content?.eventType?.cards || []
+                ),
             },
             eventSolution: {
-                ...aiData.content.eventSolution,
-                cards: mapCards(solutions, aiData.content.eventSolution.cards),
+                ...aiData.content?.eventSolution,
+                cards: mapCards(
+                    solutions,
+                    aiData.content?.eventSolution?.cards || []
+                ),
             },
         },
     }
