@@ -68,8 +68,6 @@ export type PageTypeKey =
     | "solutions-root"
     | "solution-detail"
 
-
-
 /**
  * 🔹 Single Card Type (IMPORTANT)
  */
@@ -78,7 +76,7 @@ export interface Card {
     slug: string
     cardType?: string
     desc?: string
-    icon?: any
+    // icon?: string
     image?: string
 }
 
@@ -127,6 +125,14 @@ export interface PageType {
     display_title?: string      // ✅ add karo — title + titleSuffix merged
     faqs: FAQ[]            // ✅ always array (no undefined)
 }
+
+// Insert type
+// export interface CreatePageInput {
+//     slug: string
+//     meta_title: string
+//     meta_description: string
+//     meta_keywords?: string
+// }
 
 /**
  * 🔹 API Return Type
