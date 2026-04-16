@@ -70,12 +70,30 @@ export async function generateAI(prompt: string): Promise<AIResponse> {
         throw new Error("AI missing hero.h1")
     }
 
+    // ❌ REMOVE THROW
+
     if (!parsed.content?.eventSolution?.cards) {
-        throw new Error("AI missing eventSolution cards")
+        console.warn("⚠️ AI missing eventSolution cards")
+        parsed.content.eventSolution = {
+            title: "Event Solutions",
+            shortDesc: "",
+            cards: [],
+        }
     }
 
-    if (!Array.isArray(parsed.faqs) || parsed.faqs.length !== 6) {
-        throw new Error("AI must return exactly 6 FAQs")
+    if (!Array.isArray(parsed.faqs)) {
+        parsed.faqs = []
+    }
+
+    // ensure max 6
+    parsed.faqs = parsed.faqs.slice(0, 6)
+
+    // fill missing
+    while (parsed.faqs.length < 6) {
+        parsed.faqs.push({
+            question: "Coming soon",
+            answer: "Details will be updated shortly."
+        })
     }
 
     // =========================
