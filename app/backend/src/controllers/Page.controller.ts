@@ -19,6 +19,10 @@ export const createPage = async (req: Request, res: Response) => {
             display_title
         } = body
 
+        const parsedContent: PageContent =
+            typeof content === "string" ? JSON.parse(content) : content
+
+        console.log("Parsed Content:", parsedContent)
         // =========================
         // ✅ BASIC VALIDATION
         // =========================
@@ -41,12 +45,8 @@ export const createPage = async (req: Request, res: Response) => {
         // ✅ STRUCTURE VALIDATION (AI JSON SAFETY 🔥)
         // =========================
 
-        const parsedContent: PageContent = content
-
-        if (!parsedContent.hero?.h1 || !parsedContent.hero?.shortDesc) {
-            return res.status(400).json({
-                error: "Invalid content.hero structure"
-            })
+        if (!parsedContent || typeof parsedContent !== "object") {
+            throw new Error("Invalid AI content format")
         }
 
         // 👉 eventType validation (optional but strict if present)
