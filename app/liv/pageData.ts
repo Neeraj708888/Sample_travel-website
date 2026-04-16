@@ -145,12 +145,12 @@ import { generatePageContent } from "./generatePageContent"
 const pageLocks = new Map<string, Promise<{ page: PageType }>>()
 
 /* =======================================
-   🔹 NORMALIZE AI CONTENT (VERY IMPORTANT 🔥)
+   🔹 NORMALIZE AI CONTENT (SAFE 🔥)
 ======================================= */
 function normalizeContent(content: any) {
     return {
         hero: {
-            h1: content?.hero?.h1 || "",
+            h1: content?.hero?.h1 || "Content coming soon",
             h2: content?.hero?.h2 || "",
             shortDesc: content?.hero?.shortDesc || "",
             image: content?.hero?.image || undefined,
@@ -164,13 +164,37 @@ function normalizeContent(content: any) {
             }
             : undefined,
 
-        eventSolution: content?.eventSolution
-            ? {
-                title: content.eventSolution.title || "Event Solutions",
-                shortDesc: content.eventSolution.shortDesc || "",
-                cards: content.eventSolution.cards || [],
-            }
-            : undefined,
+        // 🔥 NEVER UNDEFINED (IMPORTANT FIX)
+        eventSolution: {
+            title: content?.eventSolution?.title || "Event Solutions",
+            shortDesc: content?.eventSolution?.shortDesc || "",
+            cards: content?.eventSolution?.cards || [],
+        },
+    }
+}
+
+/* =======================================
+   🔹 FALLBACK PAGE (NO 500 EVER 🔥)
+======================================= */
+function getFallbackPage(slug: string): PageType {
+    return {
+        slug,
+        meta_title: "Page",
+        meta_description: "Content temporarily unavailable",
+        meta_keywords: "",
+        content: {
+            hero: {
+                h1: "Content coming soon",
+                h2: "",
+                shortDesc: "",
+            },
+            eventSolution: {
+                title: "Solutions",
+                shortDesc: "",
+                cards: [],
+            },
+        },
+        faqs: [],
     }
 }
 
@@ -180,147 +204,158 @@ function normalizeContent(content: any) {
 export async function getPageData(
     slug: string
 ): Promise<{ page: PageType }> {
-
     console.log("Checking DB for:", slug)
 
     const cleanSlug = slug.toLowerCase().trim()
 
-    /* =========================
-       ✅ STEP 1: DB CHECK
-    ========================= */
-    const { data, error } = await dbConnect
-        .from("pages")
-        .select("*")
-        .eq("slug", cleanSlug)
-        .maybeSingle()
+    try {
+        /* =========================
+           ✅ STEP 1: DB CHECK
+        ========================= */
+        const { data, error } = await dbConnect
+            .from("pages")
+            .select("*")
+            .eq("slug", cleanSlug)
+            .maybeSingle()
 
-    if (error) {
-        console.error("DB SELECT ERROR:", error)
-    }
-
-    if (data) {
-        console.log("✅ DB data found")
-        return {
-            page: data as PageType,
+        if (error) {
+            console.error("❌ DB SELECT ERROR:", error)
         }
-    }
 
-    /* =========================
-       🔐 STEP 2: LOCK CHECK
-    ========================= */
-    if (pageLocks.has(cleanSlug)) {
-        console.log("⏳ Waiting for existing AI generation:", cleanSlug)
-        return pageLocks.get(cleanSlug)!
-    }
-
-    console.log("🚀 No DB data → generating AI for:", cleanSlug)
-
-    /* =========================
-       🔐 STEP 3: CREATE LOCK
-    ========================= */
-    const lockPromise = (async () => {
-        try {
-            let slugPath: string[] = []
-
-            /* =========================
-               ✅ SLUG PARSING
-            ========================= */
-            if (cleanSlug === "events") {
-                slugPath = []
-            } else if (cleanSlug === "solutions") {
-                slugPath = ["solutions"]
-            } else if (cleanSlug.startsWith("solutions/")) {
-                slugPath = cleanSlug.split("/")
-            } else {
-                slugPath = cleanSlug.split("/").slice(1)
-            }
-
-            console.log("Slug Array:", slugPath)
-
-            /* =========================
-               ✅ AI GENERATION
-            ========================= */
-            const aiContent = await generatePageContent(slugPath)
-
-            /* =========================
-               ✅ SAFETY VALIDATION
-            ========================= */
-            if (!aiContent?.content?.hero?.h1) {
-                throw new Error("Invalid AI content structure")
-            }
-
-            /* =========================
-               🔁 FINAL DB CHECK
-            ========================= */
-            const { data: recheckData } = await dbConnect
-                .from("pages")
-                .select("*")
-                .eq("slug", cleanSlug)
-                .maybeSingle()
-
-            if (recheckData) {
-                console.log("⚡ Already created by another request:", cleanSlug)
-                return {
-                    page: recheckData as PageType,
-                }
-            }
-
-            /* =========================
-               ✅ NORMALIZE CONTENT 🔥
-            ========================= */
-            const safeContent = normalizeContent(aiContent.content)
-
-            /* =========================
-               ✅ FINAL PAYLOAD
-            ========================= */
-            const payload: PageType = {
-                slug: cleanSlug,
-                meta_title: aiContent.meta_title,
-                meta_description: aiContent.meta_description,
-                meta_keywords: aiContent.meta_keywords,
-                content: safeContent, // 🔥 FIXED
-                display_title: aiContent.display_title ?? undefined,
-                faqs: aiContent.faqs || [],
-            }
-
-            /* =========================
-               ✅ UPSERT
-            ========================= */
-            const { data: inserted, error: insertError } = await dbConnect
-                .from("pages")
-                .upsert(payload, {
-                    onConflict: "slug",
-                })
-                .select()
-                .maybeSingle()
-
-            if (insertError) {
-                console.error("❌ DB INSERT ERROR:", insertError)
-
-                return {
-                    page: payload,
-                }
-            }
-
-            console.log("✅ Saved in DB:", cleanSlug)
-
+        if (data) {
+            console.log("✅ DB data found")
             return {
-                page: (inserted as PageType) || payload,
+                page: data as PageType,
             }
-
-        } catch (error) {
-            console.error("AI GENERATION ERROR:", error)
-            throw error
-        } finally {
-            // 🔓 LOCK RELEASE
-            pageLocks.delete(cleanSlug)
         }
-    })()
 
-    /* =========================
-       🔐 STORE LOCK
-    ========================= */
-    pageLocks.set(cleanSlug, lockPromise)
+        /* =========================
+           🔐 STEP 2: LOCK CHECK
+        ========================= */
+        if (pageLocks.has(cleanSlug)) {
+            console.log("⏳ Waiting for existing AI generation:", cleanSlug)
+            return pageLocks.get(cleanSlug)!
+        }
 
-    return lockPromise
+        console.log("🚀 No DB data → generating AI for:", cleanSlug)
+
+        /* =========================
+           🔐 STEP 3: CREATE LOCK
+        ========================= */
+        const lockPromise = (async () => {
+            try {
+                let slugPath: string[] = []
+
+                /* =========================
+                   ✅ SLUG PARSING (FIXED)
+                ========================= */
+                if (cleanSlug === "events") {
+                    slugPath = ["events"] // 🔥 FIX
+                } else if (cleanSlug === "solutions") {
+                    slugPath = ["solutions"]
+                } else if (cleanSlug.startsWith("solutions/")) {
+                    slugPath = cleanSlug.split("/")
+                } else {
+                    slugPath = cleanSlug.split("/").slice(1)
+                }
+
+                console.log("Slug Array:", slugPath)
+
+                /* =========================
+                   ✅ AI GENERATION
+                ========================= */
+                let aiContent: any = null
+
+                try {
+                    aiContent = await generatePageContent(slugPath)
+                } catch (aiError) {
+                    console.error("❌ AI ERROR:", aiError)
+                    return { page: getFallbackPage(cleanSlug) } // 🔥 NO CRASH
+                }
+
+                /* =========================
+                   ✅ SOFT VALIDATION (NO CRASH)
+                ========================= */
+                if (!aiContent?.content?.hero?.h1) {
+                    console.warn("⚠️ AI returned partial/invalid content")
+                }
+
+                /* =========================
+                   🔁 FINAL DB CHECK
+                ========================= */
+                const { data: recheckData } = await dbConnect
+                    .from("pages")
+                    .select("*")
+                    .eq("slug", cleanSlug)
+                    .maybeSingle()
+
+                if (recheckData) {
+                    console.log("⚡ Already created:", cleanSlug)
+                    return {
+                        page: recheckData as PageType,
+                    }
+                }
+
+                /* =========================
+                   ✅ NORMALIZE CONTENT
+                ========================= */
+                const safeContent = normalizeContent(aiContent?.content || {})
+
+                /* =========================
+                   ✅ FINAL PAYLOAD
+                ========================= */
+                const payload: PageType = {
+                    slug: cleanSlug,
+                    meta_title: aiContent?.meta_title || "Page",
+                    meta_description:
+                        aiContent?.meta_description ||
+                        "Content generated dynamically",
+                    meta_keywords: aiContent?.meta_keywords || "",
+                    content: safeContent,
+                    display_title: aiContent?.display_title ?? undefined,
+                    faqs: aiContent?.faqs || [],
+                }
+
+                /* =========================
+                   ✅ UPSERT (SAFE)
+                ========================= */
+                const { data: inserted, error: insertError } =
+                    await dbConnect
+                        .from("pages")
+                        .upsert(payload, {
+                            onConflict: "slug",
+                        })
+                        .select()
+                        .maybeSingle()
+
+                if (insertError) {
+                    console.error("❌ DB INSERT ERROR:", insertError)
+                    console.log("⚠️ Returning fallback payload")
+                    return { page: payload } // no crash
+                }
+
+                console.log("✅ Saved in DB:", cleanSlug)
+
+                return {
+                    page: (inserted as PageType) || payload,
+                }
+            } catch (error) {
+                console.error("🔥 UNEXPECTED ERROR:", error)
+                return { page: getFallbackPage(cleanSlug) } // 🔥 SAFETY NET
+            } finally {
+                // 🔓 LOCK RELEASE
+                pageLocks.delete(cleanSlug)
+            }
+        })()
+
+        /* =========================
+           🔐 STORE LOCK
+        ========================= */
+        pageLocks.set(cleanSlug, lockPromise)
+
+        return lockPromise
+    } catch (error) {
+        console.error("🔥 MAIN FUNCTION ERROR:", error)
+        return { page: getFallbackPage(cleanSlug) } // 🔥 NEVER 500
+    }
 }
