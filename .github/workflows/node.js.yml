@@ -31,33 +31,34 @@ jobs:
           DB_KEY=${{ secrets.DB_KEY }}
           OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
           NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
           EOF
 
       # ✅ Build project
       - name: Build Project
         run: npm run build
 
-      # ✅ Deploy to VPS
+      # ✅ Deploy to VPS (AWS EC2)
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
+          username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
 
             echo "🚀 Deployment Started..."
 
-            # Load Node
-            export NVM_DIR="/root/.nvm"
+            # Load Node (ubuntu user path)
+            export NVM_DIR="/home/ubuntu/.nvm"
             source $NVM_DIR/nvm.sh
             nvm use 22
 
-            # Go to project
-            cd /home/anantahospitality/htdocs/www.anantahospitality.com
+            # Go to project (✅ CORRECT AWS PATH)
+            cd /home/ubuntu/Sample_travel-website
 
-            # Fix safe directory
-            git config --global --add safe.directory /home/anantahospitality/htdocs/www.anantahospitality.com
+            # Fix git safe directory (UPDATED PATH)
+            git config --global --add safe.directory /home/ubuntu/Sample_travel-website
 
             # Pull latest code
             git fetch --all
@@ -69,27 +70,27 @@ jobs:
             # Clean old build
             rm -rf .next
 
-            # ✅ Create ENV on server (MOST IMPORTANT 🔥)
-            cat > .env <<EOF
+            # ✅ Create ENV on server
+            cat > .env.local <<EOF
             DB_URL=${{ secrets.DB_URL }}
             DB_KEY=${{ secrets.DB_KEY }}
             OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
             NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+            NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
             EOF
 
-            # Fix permissions
-            chown -R anantahospitality:anantahospitality /home/anantahospitality/htdocs/www.anantahospitality.com
-
-            # Build again on server
+            # Build project
             npm run build
 
-            # Restart PM2 with ENV
-            # pm2 delete anantahospitality || true
-            # pm2 start npm --name "anantahospitality" -- start
+            # ✅ PM2 safe restart (no crash)
+            pm2 describe ananta-app > /dev/null
+            if [ $? -eq 0 ]; then
+              pm2 reload ananta-app --update-env
+            else
+              pm2 start npm --name "ananta-app" -- start
+            fi
 
-            pm2 restart anantahospitality || pm2 start npm --name "anantahospitality" -- start
-
-            # Save PM2
+            # Save PM2 state
             pm2 save
 
             echo "✅ Deployment Completed Successfully!"
