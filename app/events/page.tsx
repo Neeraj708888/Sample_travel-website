@@ -7,16 +7,16 @@ import {
 } from "../liv/schema"
 import Schema from "../liv/components/Schema"
 
-import { PopularEvent } from "../components/Events/PopularEvent"
 import { ContactCTA } from "../components/Events/ContactCTA"
 import { EventSearch } from "../components/Events/Hero"
 import EventCategories from "../components/Events/EventCategories"
 import HowWePlanEvents from "../components/Events/HowWePlanEvents"
-import FeaturedEvents from "../components/Events/FeaturedEvents"
+// import FeaturedEvents from "../components/Events/FeaturedEvents"
 import FAQ from "../components/Events/FAQ"
 
 import { getPageData } from "../liv/pageData"
 import { services } from "../data/services"
+import PopularEvents from "../components/Homepage/PopularDestination"
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
@@ -168,9 +168,9 @@ export default async function EventServicesPage() {
                 cards={finalCards}
             />
 
-            <PopularEvent />
+            <PopularEvents />
             <HowWePlanEvents />
-            <FeaturedEvents />
+            {/* <FeaturedEvents /> */}
 
             <FAQ faqs={faqList} />
 

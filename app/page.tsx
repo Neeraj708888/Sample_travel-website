@@ -13,7 +13,7 @@ export default function Homepage() {
       {/* Hero Section */}
       <Hero />
       {/* Popular Destinations */}
-      <PopularDestination />
+      {/* <PopularDestination /> */}
       {/* Featured Packages */}
       <FeaturedPackages />
       {/* Why Choose Us */}
