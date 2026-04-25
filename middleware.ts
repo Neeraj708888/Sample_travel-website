@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
-export function middleware(request: any) {
+export function middleware(request: NextRequest) {
     const url = request.nextUrl
 
     if (url.hostname === 'anantahospitality.com') {
@@ -11,7 +12,6 @@ export function middleware(request: any) {
     return NextResponse.next()
 }
 
-// 👇 YAHI par add karna hai (same file me)
 export const config = {
     matcher: '/:path*',
 }
