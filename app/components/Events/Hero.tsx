@@ -58,7 +58,7 @@ export function EventSearch({ breadcrumbItems, title, h2, shortDesc }: EventSear
                     {/* High Conversion CTA */}
                     <div className="flex flex-col sm:flex-row justify-center py-3 gap-6">
                         <Link
-                            href="/contact"
+                            href="/support"
                             className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-full transition transform hover:scale-105 shadow-xl shadow-yellow-500/20"
                         >
                             Get Free Event Consultation

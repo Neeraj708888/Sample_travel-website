@@ -49,7 +49,7 @@ export default function PackagesPage() {
                     </p>
 
                     <Link
-                        href="/contact"
+                        href="/support"
                         className="inline-block mt-8 px-8 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition duration-300"
                     >
                         Customize Your Trip
@@ -127,7 +127,7 @@ export default function PackagesPage() {
                 </p>
 
                 <Link
-                    href="/contact"
+                    href="/support"
                     className="px-10 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition duration-300"
                 >
                     Get a Custom Quote

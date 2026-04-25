@@ -73,9 +73,37 @@ export default function EventCategories({
                 ? node!.children
                 : parentNode?.children ?? tree
 
-    const basePath = slug.length
-        ? `/${baseRoute}/${slug.join("/")}`
+    // const basePath = slug.length
+    //     ? `/${baseRoute}/${slug.join("/")}`
+    //     : `/${baseRoute}`
+
+    const resolvedPath = fullPath?.map((n: any) => n.slug) || []
+
+    const basePath = resolvedPath.length
+        ? `/${baseRoute}/${resolvedPath.join("/")}`
         : `/${baseRoute}`
+
+    // Helper: find full node path from tree
+    function getFullPathForSlug(cardSlug: string): string {
+
+        // 1. direct child
+        const directChild = categories.find(c => c.slug === cardSlug)
+
+        if (directChild) {
+            return `/${baseRoute}/${[...resolvedPath, cardSlug].join("/")}`
+        }
+
+        // 2. full path from tree
+        const cardFullPath = findNodeFullPath(tree, [...resolvedPath, cardSlug])
+
+        if (cardFullPath && cardFullPath.length > 0) {
+            const pathSlugs = cardFullPath.map((n: any) => n.slug)
+            return `/${baseRoute}/${pathSlugs.join("/")}`
+        }
+
+        // 3. fallback
+        return `${basePath}/${cardSlug}`
+    }
 
     /* =========================
        ✅ CONTENT PARSE
@@ -180,7 +208,8 @@ export default function EventCategories({
                                             title: card.title,
                                         } as ServiceNode
                                     }
-                                    basePath={basePath}
+                                    // basePath={basePath}
+                                    href={getFullPathForSlug(card.slug)}
                                     description={card.desc || ""}
                                 />
                             )
@@ -200,7 +229,8 @@ export default function EventCategories({
                                 <CategoryCard
                                     key={category.slug}
                                     category={category}
-                                    basePath={basePath}
+                                    // basePath={basePath}
+                                    href={getFullPathForSlug(category.slug)}
                                     page={childPage}
                                 />
                             )

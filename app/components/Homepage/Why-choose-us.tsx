@@ -151,7 +151,7 @@ export default function WhyChooseUs() {
             {/* CTA */}
             <div className="text-center">
                 <h3 className="text-4xl font-bold text-gray-900 mb-8">
-                    Ready To Start Your Journey?
+                    Ready To sr Journey?
                 </h3>
 
                 <Link

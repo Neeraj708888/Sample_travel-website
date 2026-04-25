@@ -7,7 +7,7 @@ export default function Testimonial() {
             {/* Heading */}
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                    What Our Travelers Say
+                    What Our Client Say
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                     Real experiences from our happy clients who explored the world with us.

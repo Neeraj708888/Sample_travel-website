@@ -13,19 +13,17 @@ interface PageData {
 
 interface CategoryCardProps {
     category: ServiceNode
-    basePath: string
+    href: string
     page?: { page?: PageData } | PageData | null
     description?: string
 }
 
 export default function CategoryCard({
     category,
-    basePath,
+    href,
     page = null,
     description,
 }: CategoryCardProps) {
-
-    const href = `${basePath}/${category.slug}`
 
     /* =========================
        ✅ SAFE PAGE DATA RESOLVE

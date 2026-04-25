@@ -10,8 +10,6 @@ import PortfolioCaseStudy from "@/app/components/Events/Services/PortfolioCaseSt
 import EventSolutions from "@/app/components/Events/Services/EventSolutions"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
 import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceTypes"
-import ServiceEventTypeSolutions from "@/app/components/Events/Services/Category/ServiceEventTypeSolutions"
-import ServiceTypePortfolioCaseStudy from "@/app/components/Events/Services/Category/ServiceTypePortfolioCaseStudy"
 import ServiceTypeCaseStudy from "@/app/components/Events/Services/Category/Types/ServiceTypesCaseStudy"
 import FAQ from "@/app/components/Events/FAQ"
 
@@ -190,7 +188,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                 <>
                     {TopSection}
                     <EventSolutions page={page} />
-                    <PortfolioCaseStudy />
+                    {/* <PortfolioCaseStudy /> */}
                     <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>
@@ -211,7 +209,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                 <>
                     {TopSection}
                     <ServiceTypes />
-                    <ServiceTypeCaseStudy />
+                    {/* <ServiceTypeCaseStudy /> */}
                     <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>

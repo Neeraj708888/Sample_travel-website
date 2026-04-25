@@ -160,27 +160,3321 @@ export const services: ServiceNode[] = [
                             },
                         ]
                     },
+                    {
+                        id: "annual-conference",
+                        title: "Annual Conferences",
+                        slug: "annual-conf",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            { id: "annual-general-meetings", title: "Annual General Meetings (AGMs)", slug: "agm", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-sales-conferences", title: "Annual Sales Conferences", slug: "ansc", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-strategy-conferences", title: "Annual Strategy Conferences", slug: "asc", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-product-innovation-conferences", title: "Annual Product Innovation Conferences", slug: "apic", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-employee-team-conferences", title: "Annual Employee and Team Conferences", slug: "aetc", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-customer-client-conferences", title: "Annual Customer or Client Conferences", slug: "accc", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-recognition-award-conferences", title: "Annual Recognition and Award Conferences", slug: "arac", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-csr-conferences", title: "Annual CSR - (Corporate Social Responsibility) Conferences", slug: "acsrc", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-investor-conferences", title: "Annual Investor Conferences", slug: "aic", titleSuffix: "Management Company in Delhi" },
+                            { id: "annual-leadership-conferences", title: "Annual Leadership Conferences", slug: "alc", titleSuffix: "Management Company in Delhi" },
+                        ]
+                    },
+                    {
+                        id: "seminars-and-forums",
+                        title: "Seminars & Forums",
+                        slug: "sem-for",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            { id: "training-seminars", title: "Training Seminars", slug: "trn-sem", titleSuffix: "Management Company in Delhi" },
+                            { id: "educational-seminars", title: "Educational Seminars", slug: "edu-sem", titleSuffix: "Management Company in Delhi" },
+                            { id: "product-service-seminars", title: "Product or Service Seminars", slug: "prd-svc-sem", titleSuffix: "Management Company in Delhi" },
+                            { id: "panel-discussion-forums", title: "Panel Discussion Forums", slug: "pnl-disc-for", titleSuffix: "Management Company in Delhi" },
+                            { id: "roundtable-forums", title: "Roundtable Forums", slug: "rt-for", titleSuffix: "Management Company in Delhi" },
+                            { id: "conference-seminars", title: "Conference Seminars", slug: "conf-sem", titleSuffix: "Management Company in Delhi" },
+                            { id: "interactive-workshops", title: "Interactive Workshops", slug: "int-work", titleSuffix: "Management Company in Delhi" },
+                            { id: "expert-led-forums", title: "Expert-Led Forums", slug: "exp-led-for", titleSuffix: "Management Company in Delhi" },
+                            { id: "thought-leadership-seminars", title: "Thought Leadership Seminars", slug: "thg-lead-sem", titleSuffix: "Management Company in Delhi" },
+                            { id: "policy-regulatory-forums", title: "Policy or Regulatory Forums", slug: "pol-reg-for", titleSuffix: "Management Company in Delhi" },
+                            { id: "networking-seminars", title: "Networking Seminars", slug: "net-sem", titleSuffix: "Management Company in Delhi" },
+                            { id: "virtual-seminars-and-forums", title: "Virtual Seminars and Forums", slug: "virt-sem-for", titleSuffix: "Management Company in Delhi" },
+                        ]
+
+                    }
                 ],
             },
             {
-                id: "annual-conference",
-                title: "Annual Conferences",
-                slug: "annual-conf",
+                id: "Seminars and Workshops",
+                title: "Seminars and Workshops",
+                slug: "sem-work",
                 titleSuffix: "Management Company in Delhi",
                 children: [
-                    { id: "annual-general-meetings", title: "Annual General Meetings (AGMs)", slug: "agm", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-sales-conferences", title: "Annual Sales Conferences", slug: "ansc", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-strategy-conferences", title: "Annual Strategy Conferences", slug: "asc", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-product-innovation-conferences", title: "Annual Product Innovation Conferences", slug: "apic", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-employee-team-conferences", title: "Annual Employee and Team Conferences", slug: "aetc", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-customer-client-conferences", title: "Annual Customer or Client Conferences", slug: "accc", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-recognition-award-conferences", title: "Annual Recognition and Award Conferences", slug: "arac", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-csr-conferences", title: "Annual CSR - (Corporate Social Responsibility) Conferences", slug: "acsrc", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-investor-conferences", title: "Annual Investor Conferences", slug: "aic", titleSuffix: "Management Company in Delhi" },
-                    { id: "annual-leadership-conferences", title: "Annual Leadership Conferences", slug: "alc", titleSuffix: "Management Company in Delhi" },
+                    {
+                        id: "corporate-training-seminars",
+                        title: "Corporate Training Seminars",
+                        slug: "corp-trn-sem",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "leadership-and-management-training-seminars",
+                                title: "Leadership and Management Training Seminars",
+                                slug: "lead-man-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "communication-skills-training-seminars",
+                                title: "Communication Skills Training Seminars",
+                                slug: "com-skl-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "time-management-and-productivity-training-seminars",
+                                title: "Time Management and Productivity Seminars",
+                                slug: "tme-prd-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sales-and-customer-service-training-seminars",
+                                title: "Sales and Customer Service Training Seminars",
+                                slug: "scs-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "conflict-resolution-and-negotiation-training-seminars",
+                                title: "Conflict Resolution and Negotiation Training Seminars",
+                                slug: "crn-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "diversity-equity-and-inclusion-training-seminars",
+                                title: "Diversity, Equity, and Inclusion (DEI) Training Seminars",
+                                slug: "dei-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "technical-and-software-training-seminars",
+                                title: "Technical and Software Training Seminars",
+                                slug: "tech-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "financial-and-accounting-training-seminars",
+                                title: "Financial and Accounting Training Seminars",
+                                slug: "fin-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "health-and-safety-training-seminars",
+                                title: "Health, Safety, and Compliance Training Seminars",
+                                slug: "hlt-sft-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "innovation-and-creativity-training-seminars",
+                                title: "Innovation and Creativity Training Seminars",
+                                slug: "inn-cre-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "emotional-intelligence-training-seminars",
+                                title: "Emotional Intelligence (EQ) Training Seminars",
+                                slug: "emt-int-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "change-management-training-seminars",
+                                title: "Change Management Training Seminars",
+                                slug: "chn-mgt-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "project-management-training-seminars",
+                                title: "Project Management Training Seminars",
+                                slug: "prj-mgt-trn-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            }
+                        ]
+                    },
+                    {
+                        id: "professional-development-workshops",
+                        title: "Professional Development Workshops",
+                        slug: "pro-dev-work",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "leadership-development-workshops",
+                                title: "Leadership Development Workshops",
+                                slug: "led-dev-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "communication-skills-workshops",
+                                title: "Communication Skills Workshops",
+                                slug: "comm-skl-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "time-management-and-productivity-workshops",
+                                title: "Time Management and Productivity Workshops",
+                                slug: "tim-mgt-pro-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "career-development-and-growth-workshops",
+                                title: "Career Development and Growth Workshops",
+                                slug: "car-dev-gro-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "emotional-intelligence-workshops",
+                                title: "Emotional Intelligence (EQ) Workshops",
+                                slug: "emt-int-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "diversity-and-inclusion-workshops",
+                                title: "Diversity and Inclusion Workshops",
+                                slug: "div-in-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "conflict-resolution-and-negotiation-workshops",
+                                title: "Conflict Resolution and Negotiation Workshops",
+                                slug: "conf-res-neg-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "team-building-workshops",
+                                title: "Team Building Workshops",
+                                slug: "tm-bld-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "problem-solving-and-critical-thinking-workshops",
+                                title: "Problem-Solving and Critical Thinking Workshops",
+                                slug: "psc-thnk-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sales-and-customer-service-skills-workshops",
+                                title: "Sales and Customer Service Skills Workshops",
+                                slug: "sls-cst-srv-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "creativity-and-innovation-workshops",
+                                title: "Creativity and Innovation Workshops",
+                                slug: "cre-inn-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "financial-literacy-and-budgeting-workshops",
+                                title: "Financial Literacy and Budgeting Workshops",
+                                slug: "fin-lit-bdg-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "stress-management-and-well-being-workshops",
+                                title: "Stress Management and Well-being Workshops",
+                                slug: "str-mgt-well-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "digital-literacy-and-technology-skills-workshops",
+                                title: "Digital Literacy and Technology Skills Workshops",
+                                slug: "dig-lit-tech-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "change-management-workshops",
+                                title: "Change Management Workshops",
+                                slug: "chg-mgt-work",
+                                titleSuffix: "Management Company in Delhi"
+                            }
+                        ]
+                    },
+                    {
+                        id: "creative-workshops",
+                        title: "Creative Workshops",
+                        slug: "cre-work",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "design-thinking-workshops",
+                                title: "Design Thinking Workshops",
+                                slug: "des-thnk-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "brainstorming-and-ideation-workshops",
+                                title: "Brainstorming and Ideation Workshops",
+                                slug: "bai-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "visual-storytelling-workshops",
+                                title: "Visual Storytelling Workshops",
+                                slug: "vis-stor-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "creative-writing-workshops",
+                                title: "Creative Writing Workshops",
+                                slug: "cre-wri-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "graphic-design-workshops",
+                                title: "Graphic Design Workshops",
+                                slug: "grf-des-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "photography-and-videography-workshops",
+                                title: "Photography and Videography Workshops",
+                                slug: "phto-vdo-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "digital-illustration-workshops",
+                                title: "Digital Illustration Workshops",
+                                slug: "dig-ill-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "innovation-and-creativity-in-business-workshops",
+                                title: "Innovation and Creativity in Business Workshops",
+                                slug: "inn-cre-bus-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "acting-and-performance-workshops",
+                                title: "Acting and Performance Workshops",
+                                slug: "art-perf-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "craft-and-diy-workshops",
+                                title: "Craft and DIY Workshops",
+                                slug: "crft-diy-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "music-and-sound-design-workshops",
+                                title: "Music and Sound Design Workshops",
+                                slug: "mus-snd-des-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "fashion-design-workshops",
+                                title: "Fashion Design Workshops",
+                                slug: "fash-des-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "UX/UI Design Workshops",
+                                title: "UX/UI Design Workshops",
+                                slug: "ux-ui-des-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "branding-and-identity-design-workshops",
+                                title: "Branding and Identity Design Workshops",
+                                slug: "brd-ide-des-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "mixed-media-and-collage-workshops",
+                                title: "Mixed Media and Collage Workshops",
+                                slug: "mix-med-col-work",
+                                titleSuffix: "Management Company in Delhi"
+                            }
+                        ]
+                    },
+                    {
+                        id: "technical-workshops",
+                        title: "Technical Workshops",
+                        slug: "tech-work",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "programming-and-coding-workshops",
+                                title: "Programming and Coding Workshops",
+                                slug: "prog-cod-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "data-science-and-analytics-workshops",
+                                title: "Data Science and Analytics Workshops",
+                                slug: "data-sci-ana-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "cybersecurity-workshops",
+                                title: "Cybersecurity Workshops",
+                                slug: "cybr-sec-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "cloud-computing-workshops",
+                                title: "Cloud Computing Workshops",
+                                slug: "clo-com-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "artificial-intelligence-and-machine-learning-workshops",
+                                title: "Artificial Intelligence and Machine Learning Workshops",
+                                slug: "aim-lear-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "networking-and-network-administration-workshops",
+                                title: "Networking and Network Administration Workshops",
+                                slug: "net-net-admn-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "blockchain-and-cryptocurrency-workshops",
+                                title: "Blockchain and Cryptocurrency Workshops",
+                                slug: "blck-cryp-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "internet-of-things-workshops",
+                                title: "Internet of Things (IoT) Workshops",
+                                slug: "iot-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "robotics-and-automation-workshops",
+                                title: "Robotics and Automation Workshops",
+                                slug: "rbt-auto-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "software-testing-and-quality-assurance-workshops",
+                                title: "Software Testing and Quality Assurance Workshops",
+                                slug: "sw-tst-qa-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "virtual-and-augmented-reality-vr-ar-workshops",
+                                title: "Virtual and Augmented Reality (VR/AR) Workshops",
+                                slug: "vr-ar-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "devops-workshops",
+                                title: "DevOps Workshops",
+                                slug: "dev-ops-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "3d-printing-and-additive-manufacturing-workshops",
+                                title: "3D Printing and Additive Manufacturing Workshops",
+                                slug: "prnt-add-mnf-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "mobile-app-development-workshops",
+                                title: "Mobile App Development Workshops",
+                                slug: "mob-app-dev-work",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "hardware-and-embedded-systems-workshops",
+                                title: "Hardware and Embedded Systems Workshops",
+                                slug: "hw-emb-sys-work",
+                                titleSuffix: "Management Company in Delhi"
+                            }
+                        ]
+                    },
                 ]
             },
-
+            {
+                id: "Corporate Meetings",
+                title: "Corporate Meetings",
+                slug: "corp-meet",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "annual-general-meetings",
+                        title: "Annual General Meetings (AGMs)",
+                        slug: "ann-gen-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "public-company-agm",
+                                title: "Public Company AGM",
+                                slug: "pub-co-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "private-company-agm",
+                                title: "Private Company AGM",
+                                slug: "pvt-co-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "virtual-agm",
+                                title: "Virtual AGM (Online AGM)",
+                                slug: "vrt-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "hybrid-agm",
+                                title: "Hybrid AGM",
+                                slug: "hyb-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "extraordinary-general-meetings",
+                                title: "Extraordinary General Meeting (EGM)",
+                                slug: "egm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sole-shareholder-agm",
+                                title: "Sole Shareholder AGM",
+                                slug: "sole-shr-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "international-agm",
+                                title: "International AGM",
+                                slug: "intl-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "investor-focused-agm",
+                                title: "Investor-Focused AGM",
+                                slug: "inv-fcsd-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "employee-agm",
+                                title: "Employee AGM",
+                                slug: "emp-agm",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "board-meetings",
+                        title: "Board Meetings",
+                        slug: "brd-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "regular-board-meetings",
+                                title: "Regular Board Meetings",
+                                slug: "reg-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "annual-board-meetings",
+                                title: "Annual Board Meetings",
+                                slug: "ann-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "special-emergency-board-meetings",
+                                title: "Special or Emergency Board Meetings",
+                                slug: "spec-emg-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "strategic-planning-meetings",
+                                title: "Strategic Planning Meetings",
+                                slug: "str-pln-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "committee-board-meetings",
+                                title: "Committee Board Meetings",
+                                slug: "comm-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "informal-working-board-meetings",
+                                title: "Informal or Working Board Meetings",
+                                slug: "inf-wrk-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "board-retreats",
+                                title: "Board Retreats",
+                                slug: "brd-rets",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "budget-financial-review-meetings",
+                                title: "Budget and Financial Review Meetings",
+                                slug: "bud-fin-rev-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "risk-management-meetings",
+                                title: "Risk Management Meetings",
+                                slug: "rsk-mgmt-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "performance-review-meetings",
+                                title: "Performance Review Meetings",
+                                slug: "perf-rev-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "shareholder-investor-board-meetings",
+                                title: "Shareholder or Investor Board Meetings",
+                                slug: "shr-inv-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "ma-board-meetings",
+                                title: "M&A (Merger and Acquisition) Board Meetings",
+                                slug: "ma-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            }
+                        ]
+                    },
+                    {
+                        id: "team-meetings",
+                        title: "Team Meetings",
+                        slug: "tm-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "weekly-team-meetings",
+                                title: "Weekly Team Meetings",
+                                slug: "wkly-tm-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "project-kickoff-meetings",
+                                title: "Project Kickoff Meetings",
+                                slug: "pko-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "standup-meetings",
+                                title: "Stand-up Meetings (Daily Stand-ups)",
+                                slug: "stnd-up-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "brainstorming-creative-meetings",
+                                title: "Brainstorming or Creative Meetings",
+                                slug: "brstg-cre-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "status-update-meetings",
+                                title: "Status Update Meetings",
+                                slug: "sts-upd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "problem-solving-meetings",
+                                title: "Problem-Solving Meetings",
+                                slug: "prob-slv-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "retrospective-meetings",
+                                title: "Retrospective Meetings",
+                                slug: "rts-pct-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "one-on-one-meetings",
+                                title: "One-on-One Meetings",
+                                slug: "one-on-one-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "team-building-meetings",
+                                title: "Team Building Meetings",
+                                slug: "tm-bld-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "client-stakeholder-meetings",
+                                title: "Client & Stakeholder Meetings",
+                                slug: "clnt-stk-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "alignment-meetings",
+                                title: "Alignment Meetings",
+                                slug: "algn-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "feedback-meetings",
+                                title: "Feedback Meetings",
+                                slug: "fbck-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "training-or-development-meetings",
+                                title: "Training or Development Meetings",
+                                slug: "tra-dev-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "decision-making-meetings",
+                                title: "Decision-Making Meetings",
+                                slug: "dec-mak-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "operational-or-process-improvement-meetings",
+                                title: "Operational or Process Improvement Meetings",
+                                slug: "op-pro-imp-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "cross-functional-team-meetings",
+                                title: "Cross-Functional Team Meetings",
+                                slug: "crs-fun-tm-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "stakeholder-meetings",
+                        title: "Stakeholder Meetings",
+                        slug: "stkhldr-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "kickoff-meetings",
+                                title: "Kickoff Meetings",
+                                slug: "kick-off-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "progress-update-meetings",
+                                title: "Progress Update Meetings",
+                                slug: "prog-upd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "strategy-alignment-meetings",
+                                title: "Strategy Alignment Meetings",
+                                slug: "str-alg-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "problem-solving-or-issue-resolution-meetings",
+                                title: "Problem-Solving or Issue Resolution Meetings",
+                                slug: "psi-res-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "annual-or-quarterly-review-meetings",
+                                title: "Annual or Quarterly Review Meetings",
+                                slug: "ann-qtr-rev-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "stakeholder-feedback-meetings",
+                                title: "Stakeholder Feedback Meetings",
+                                slug: "stk-fdbk-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "advisory-board-meetings",
+                                title: "Advisory Board Meetings",
+                                slug: "adv-brd-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "crisis-management-meetings",
+                                title: "Crisis Management Meetings",
+                                slug: "cris-mgmt-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "investor-meetings",
+                                title: "Investor Meetings",
+                                slug: "inv-str-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "client-review-meetings",
+                                title: "Client Review Meetings",
+                                slug: "clnt-rev-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "mergers-acquisitions-meetings",
+                                title: "Mergers & Acquisitions (M&A) Stakeholder Meetings",
+                                slug: "ma-stk-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "risk-management-meetings",
+                                title: "Risk Management Meetings",
+                                slug: "rsk-mgmt-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "change-management-meetings",
+                                title: "Change Management Meetings",
+                                slug: "chnge-mgmt-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "contract-negotiation-meetings",
+                                title: "Contract Negotiation Meetings",
+                                slug: "ctr-neg-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainability-and-csr-meetings",
+                                title: "Sustainability and Corporate Social Responsibility (CSR) Meetings",
+                                slug: "sust-csr-meet",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "sales-meetings",
+                        title: "Sales Meetings",
+                        slug: "sales-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "weekly-sales-meetings",
+                                title: "Weekly Sales Meetings",
+                                slug: "wkly-sles-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-strategy-meetings",
+                                title: "Sales Strategy Meetings",
+                                slug: "sles-strat-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-training-meetings",
+                                title: "Sales Training Meetings",
+                                slug: "sles-trn-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "lead-review-and-pipeline-meetings",
+                                title: "Lead Review and Pipeline Meetings",
+                                slug: "ld-rvw-ppl-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "client-presentation-preparation-meetings",
+                                title: "Client Presentation Preparation Meetings",
+                                slug: "clnt-pre-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "post-sales-review-meetings",
+                                title: "Post-Sales Review Meetings",
+                                slug: "pst-sles-rvw-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "quarterly-or-monthly-sales-review-meetings",
+                                title: "Quarterly or Monthly Sales Review Meetings",
+                                slug: "qms-rvw-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "event-proposal-and-bid-review-meetings",
+                                title: "Event Proposal and Bid Review Meetings",
+                                slug: "epb-rvw-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "client-relationship-management-crm-meetings",
+                                title: "Client Relationship Management (CRM) Meetings",
+                                slug: "clnt-crm-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-incentive-or-motivation-meetings",
+                                title: "Sales Incentive or Motivation Meetings",
+                                slug: "sles-inc-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cross-departmental-sales-meetings",
+                                title: "Cross-Departmental Sales Meetings",
+                                slug: "cro-dept-sles-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-forecasting-meetings",
+                                title: "Sales Forecasting Meetings",
+                                slug: "sles-for-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "target-account-key-client-strategy-meetings",
+                                title: "Target Account/Key Client Strategy Meetings",
+                                slug: "tak-clnt-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-performance-recognition-meetings",
+                                title: "Sales Performance Recognition Meetings",
+                                slug: "sles-perf-rec-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "competitor-analysis-meetings",
+                                title: "Competitor Analysis Meetings",
+                                slug: "comp-ana-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "client-meetings",
+                        title: "Client Meetings",
+                        slug: "clnt-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "initial-consultation-discovery-meetings",
+                                title: "Initial Consultation & Discovery Meetings",
+                                slug: "ini-con-dis-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "proposal-presentation-meetings",
+                                title: "Proposal Presentation Meetings",
+                                slug: "prop-pres-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "contract-negotiation-meetings",
+                                title: "Contract Negotiation Meetings",
+                                slug: "con-neg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "kickoff-meetings",
+                                title: "Kickoff Meetings",
+                                slug: "kik-off-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "status-update-and-progress-meetings",
+                                title: "Status Update & Progress Meetings",
+                                slug: "sts-upd-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "feedback-and-review-meetings",
+                                title: "Feedback and Review Meetings",
+                                slug: "feed-rev-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "problem-solving-and-issue-resolution-meetings",
+                                title: "Problem-Solving/Issue Resolution Meetings",
+                                slug: "prob-sol-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "strategic-planning-meetings",
+                                title: "Strategic Planning Meetings",
+                                slug: "strg-pln-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "quarterly-annual-business-review-qbr-abr-meetings",
+                                title: "Quarterly and Annual Business Review Meetings",
+                                slug: "qbr-abr-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "end-of-project-review-meetings",
+                                title: "End-of-Project Review Meetings",
+                                slug: "end-pro-rev-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "relationship-account-management-meetings",
+                                title: "Relationship & Account Management Meetings",
+                                slug: "rel-acc-man-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "client-escalation-meetings",
+                                title: "Client Escalation Meetings",
+                                slug: "clnt-escal-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "collaborative-brainstorming-or-workshop-meetings",
+                                title: "Collaborative Brainstorming or Workshop Meetings",
+                                slug: "col-brn-wrk-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "site-visit-meetings",
+                                title: "Site Visit Meetings",
+                                slug: "site-visit-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "contract-renewal-meetings",
+                                title: "Contract Renewal Meetings",
+                                slug: "cont-rnwl-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "partnership-and-co-marketing-meetings",
+                                title: "Partnership & Co-Marketing Meetings",
+                                slug: "prt-co-mrk-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "staff-employee-meetings",
+                        title: "Staff & Employee Meetings",
+                        slug: "staff-emp-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "department-meetings",
+                                title: "Department Meetings",
+                                slug: "dept-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "one-on-one-meetings",
+                                title: "One-on-One Meetings",
+                                slug: "one-on-one-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "all-hands-meetings",
+                                title: "All-Hands Meetings (Company-wide Meetings)",
+                                slug: "all-hnds-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "town-hall-meetings",
+                                title: "Town Hall Meetings",
+                                slug: "twn-hall-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "project-kickoff-meetings",
+                                title: "Project Kickoff Meetings",
+                                slug: "proj-kik-off-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "brainstorming-idea-generation-meetings",
+                                title: "Brainstorming or Idea Generation Meetings",
+                                slug: "brns-ida-gen-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "staff-training-development-meetings",
+                                title: "Staff Training and Development Meetings",
+                                slug: "stff-tra-dev-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "performance-review-meetings",
+                                title: "Performance Review Meetings",
+                                slug: "perf-rvw-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "employee-feedback-meetings",
+                                title: "Employee Feedback Meetings",
+                                slug: "emp-fdbk-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-management-meetings",
+                                title: "Crisis or Emergency Meetings",
+                                slug: "crs-man-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "employee-engagement-meetings",
+                                title: "Employee Engagement Meetings",
+                                slug: "emp-eng-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cross-departmental-collaboration-meetings",
+                                title: "Cross-Departmental Collaboration Meetings",
+                                slug: "crss-dept-coll-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "budget-financial-meetings",
+                                title: "Budget & Financial Meetings",
+                                slug: "bgt-fin-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "health-safety-compliance-meetings",
+                                title: "Health & Safety or Compliance Meetings",
+                                slug: "hlth-sft-com-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "exit-interviews-offboarding-meetings",
+                                title: "Exit Interviews or Offboarding Meetings",
+                                slug: "exit-off-brd-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "employee-recognition-meetings",
+                                title: "Employee Recognition Meetings",
+                                slug: "emp-rec-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "strategy-meetings",
+                        title: "Strategy Meetings",
+                        slug: "strg-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "annual-strategy-meetings",
+                                title: "Annual Strategy Meetings",
+                                slug: "ann-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "quarterly-strategy-meetings",
+                                title: "Quarterly Strategy Meetings",
+                                slug: "qrtr-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "executive-strategy-meetings",
+                                title: "Executive Strategy Meetings",
+                                slug: "exe-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "swot-analysis-meetings",
+                                title: "SWOT Analysis Meetings",
+                                slug: "swot-anls-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "marketing-strategy-meetings",
+                                title: "Marketing Strategy Meetings:",
+                                slug: "mrkt-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-strategy-meetings",
+                                title: "Product Strategy Meetings",
+                                slug: "prod-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "growth-strategy-meetings",
+                                title: "Growth Strategy Meetings",
+                                slug: "grwth-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-strategy-meetings",
+                                title: "Innovation Strategy Meetings",
+                                slug: "inno-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "financial-strategy-meetings",
+                                title: "Financial Strategy Meetings",
+                                slug: "fncl-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "operational-strategy-meetings",
+                                title: "Operational Strategy Meetings",
+                                slug: "oprl-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-management-strategy-meetings",
+                                title: "Crisis Management Strategy Meetings",
+                                slug: "crs-mgmt-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "change-management-strategy-meetings",
+                                title: "Change Management Strategy Meetings",
+                                slug: "chnge-mgmt-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "mergers-and-acquisitions-ma-strategy-meetings",
+                                title: "Mergers and Acquisitions (M&A) Strategy Meetings",
+                                slug: "ma-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-experience-cx-strategy-meetings",
+                                title: "Customer Experience (CX) Strategy Meetings",
+                                slug: "cx-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "risk-management-strategy-meetings",
+                                title: "Risk Management Strategy Meetings",
+                                slug: "rsk-mgmt-strg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "talent-strategy-meetings",
+                        title: "Talent Strategy Meetings",
+                        slug: "tlnt-strg-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "brainstorming-workshops",
+                                title: "Brainstorming Workshops",
+                                slug: "brn-str-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "team-building-workshops",
+                                title: "Team-building Workshops",
+                                slug: "tm-bld-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "problem-solving-workshops",
+                                title: "Problem-Solving Workshops",
+                                slug: "prblm-slv-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-development-workshops",
+                                title: "Leadership Development Workshops",
+                                slug: "ldr-shp-dev-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "strategic-planning-workshops",
+                                title: "Strategic Planning Workshops",
+                                slug: "stra-pln-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-workshops",
+                                title: "Innovation Workshops",
+                                slug: "innov-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "conflict-resolution-workshops",
+                                title: "Conflict Resolution Workshops",
+                                slug: "cnflct-res-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "change-management-workshops",
+                                title: "Change Management Workshops",
+                                slug: "chnge-man-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cultural-competency-workshops",
+                                title: "Cultural Competency Workshops",
+                                slug: "cul-comp-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-workshops",
+                                title: "Sales Workshops",
+                                slug: "sal-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-service-workshops",
+                                title: "Customer Service Workshops",
+                                slug: "cus-srv-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "time-management-workshops",
+                                title: "Time Management Workshops",
+                                slug: "time-man-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "performance-management-workshops",
+                                title: "Performance Management Workshops",
+                                slug: "perf-man-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "wellness-and-stress-management-workshops",
+                                title: "Wellness and Stress Management Workshops",
+                                slug: "well-strs-man-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "compliance-and-regulatory-workshops",
+                                title: "Compliance and Regulatory Workshops",
+                                slug: "comp-reg-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "digital-transformation-workshops",
+                                title: "Digital Transformation Workshops",
+                                slug: "dig-trns-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cross-functional-collaboration-workshops",
+                                title: "Cross-functional Collaboration Workshops",
+                                slug: "crs-fun-coll-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "feedback-and-evaluation-workshops",
+                                title: "Feedback and Evaluation Workshops",
+                                slug: "fbk-eval-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sustainability-workshops",
+                                title: "Sustainability Workshops",
+                                slug: "sust-wrks",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "training-meetings",
+                        title: "Training Meetings",
+                        slug: "tra-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "onboarding-training-meetings",
+                                title: "Onboarding Training Meetings",
+                                slug: "onbrd-tra-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-or-service-training",
+                                title: "Product or Service Training",
+                                slug: "prod-svc-tra-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "compliance-training",
+                                title: "Compliance Training",
+                                slug: "comp-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "soft-skills-training",
+                                title: "Soft Skills Training",
+                                slug: "soft-skl-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-and-management-training",
+                                title: "Leadership and Management Training",
+                                slug: "ldr-mngmt-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-training",
+                                title: "Sales Training",
+                                slug: "sales-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-service-training",
+                                title: "Customer Service Training",
+                                slug: "cust-svc-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "time-management-and-productivity-training",
+                                title: "Time Management and Productivity Training",
+                                slug: "tme-mngmt-prod-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "conflict-resolution-training",
+                                title: "Conflict Resolution Training",
+                                slug: "conf-res-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "diversity-and-inclusion-training",
+                                title: "Diversity and Inclusion Training",
+                                slug: "div-inc-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "health-and-safety-training",
+                                title: "Health and Safety Training",
+                                slug: "hlth-sfty-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "teamwork-and-collaboration-training",
+                                title: "Teamwork and Collaboration Training",
+                                slug: "tm-coll-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "change-management-training",
+                                title: "Change Management Training",
+                                slug: "chnge-man-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "mentoring-and-coaching-training",
+                                title: "Mentorship and Coaching Training",
+                                slug: "ment-coch-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-training",
+                                title: "Virtual Training",
+                                slug: "virt-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-management-training",
+                                title: "Crisis Management Training",
+                                slug: "cris-man-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "productivity-tools-training",
+                                title: "Productivity Tools Training",
+                                slug: "prdty-tls-tra",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "project-kickoff-meetings",
+                        title: "Project Kickoff Meetings",
+                        slug: "proj-kick-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "internal-project-kickoff-meeting",
+                                title: "Internal Project Kickoff Meeting",
+                                slug: "int-prj-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "client-facing-project-kickoff-meeting",
+                                title: "Client-Facing Project Kickoff Meeting",
+                                slug: "clnt-fac-prj-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cross-departmental-kickoff-meeting",
+                                title: "Cross-Departmental Kickoff Meeting",
+                                slug: "crss-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "stakeholder-kickoff-meeting",
+                                title: "Stakeholder Kickoff Meeting",
+                                slug: "stk-hldr-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "remote-virtual-project-kickoff-meeting",
+                                title: "Remote & Virtual Project Kickoff Meeting",
+                                slug: "rav-prj-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "agile-iterative-project-kickoff-meeting",
+                                title: "Agile & Iterative Project Kickoff Meeting",
+                                slug: "agi-prj-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "strategic-kickoff-meeting",
+                                title: "Strategic Kickoff Meeting",
+                                slug: "stra-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "high-level-executive-kickoff-meeting",
+                                title: "High-Level Executive Kickoff Meeting",
+                                slug: "hle-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "risk-and-issues-kickoff-meeting",
+                                title: "Risk and Issues Kickoff Meeting",
+                                slug: "rski-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "change-management-kickoff-meeting",
+                                title: "Change Management Kickoff Meeting",
+                                slug: "chng-mngmt-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "legal-contract-kickoff-meeting",
+                                title: "Legal and Contract Kickoff Meeting",
+                                slug: "lgl-con-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "post-kickoff-alignment-meeting",
+                                title: "Post-Kickoff Alignment Meeting",
+                                slug: "post-kik-alg-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "training-skill-building-kickoff-meeting",
+                                title: "Training or Skill-Building Kickoff Meeting",
+                                slug: "trs-bld-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "agile-sprint-kickoff-meeting",
+                                title: "Agile Sprint Kickoff Meeting",
+                                slug: "agl-sprnt-kik-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "product-launch-meetings",
+                        title: "Product Launch Meetings",
+                        slug: "prd-lan-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "internal-product-launch-meeting",
+                                title: "Internal Product Launch Meeting",
+                                slug: "int-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "marketing-product-launch-meeting",
+                                title: "Marketing Product Launch Meeting",
+                                slug: "mrk-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-product-launch-meeting",
+                                title: "Sales Product Launch Meeting",
+                                slug: "sls-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-support-product-launch-meeting",
+                                title: "Customer Support Product Launch Meeting",
+                                slug: "csp-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "executive-product-launch-meeting",
+                                title: "Executive Product Launch Meeting",
+                                slug: "exe-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cross-functional-product-launch-meeting",
+                                title: "Cross-Functional Product Launch Meeting",
+                                slug: "cfp-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "press-or-media-product-launch-meeting",
+                                title: "Product Launch Briefing Meeting (Press or Media)",
+                                slug: "prs-mdia-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-product-launch-meeting",
+                                title: "Investor and Product Launch Meeting",
+                                slug: "inv-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-launch-demo-or-showcase-event",
+                                title: "Product Launch Demo or Showcase Event",
+                                slug: "prt-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "training-and-enablement-product-launch-meeting",
+                                title: "Training and Enablement Product Launch Meeting",
+                                slug: "trn-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "partner-product-launch-meeting",
+                                title: "Partner Product Launch Meeting",
+                                slug: "prt-prd-lanc-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "post-launch-review-meeting",
+                                title: "Post-Launch Review Meeting",
+                                slug: "pst-lan-rev-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "vip-product-launch-meeting",
+                                title: "VIP - Product Launch Event",
+                                slug: "vip-prd-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "feedback-iteration-product-launch-meeting",
+                                title: "Feedback and Iteration Meeting (Post-Launch)",
+                                slug: "fip-lan-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "crisis-management-meetings",
+                        title: "Crisis Management Meetings",
+                        slug: "cris-man-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "crisis-response-meeting",
+                                title: "Crisis Response Meeting",
+                                slug: "cris-res-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-communication-meeting",
+                                title: "Crisis Communication Meeting",
+                                slug: "cris-com-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-leadership-meeting",
+                                title: "Crisis Leadership Meeting",
+                                slug: "cris-ldr-ship-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "emergency-operations-meeting",
+                                title: "Emergency Operations Meeting",
+                                slug: "emerg-op-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "incident-management-meeting",
+                                title: "Incident Management Meeting",
+                                slug: "inc-man-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "post-crisis-evaluation-meeting",
+                                title: "Post-Crisis Evaluation Meeting",
+                                slug: "post-crs-eval-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-recovery-meeting",
+                                title: "Crisis Recovery Meeting",
+                                slug: "cris-rec-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-risk-assessment-meeting",
+                                title: "Crisis Risk Assessment Meeting",
+                                slug: "crs-rsk-asse-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "legal-compliance-crisis-meeting",
+                                title: "Legal & Compliance Crisis Meeting",
+                                slug: "leg-com-crs-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "stakeholder-crisis-meeting",
+                                title: "Stakeholder Crisis Meeting",
+                                slug: "stk-cris-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "media-relations-crisis-meeting",
+                                title: "Media Relations Crisis Meeting",
+                                slug: "med-rel-crs-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-training-and-simulation-meeting",
+                                title: "Crisis Training and Simulation Meeting",
+                                slug: "cris-trn-sim-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "investor-meetings",
+                        title: "Investor Meetings",
+                        slug: "invst-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "annual-general-meeting-agm-for-investors",
+                                title: "Annual General Meeting (AGM) for Investors",
+                                slug: "ann-gen-meet-inv",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "quarterly-earnings-call",
+                                title: "Quarterly Earnings Call",
+                                slug: "qtr-ern-call",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "private-investor-meetings",
+                                title: "Private Investor Meetings",
+                                slug: "pvt-inv-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-roadshows-and-presentations",
+                                title: "Investor Roadshows and Presentations",
+                                slug: "inv-road-pres",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "board-of-directors-meeting-with-investors",
+                                title: "Board of Directors Meeting with Investors",
+                                slug: "brd-dir-meet-inv",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-conference-calls",
+                                title: "Investor Conference Calls",
+                                slug: "inv-conf-call",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "private-equity-or-venture-capital-investor-meetings",
+                                title: "Private Equity or Venture Capital Investor Meetings",
+                                slug: "peb-cap-inv-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "special-investor-presentations",
+                                title: "Special Investor Presentation (e.g., Mergers & Acquisitions, IPO)",
+                                slug: "spec-inv-pres",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-feedback-sessions",
+                                title: "Investor Feedback Sessions",
+                                slug: "inv-feed-sess",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-relations-ir-event-or-meetings",
+                                title: "Investor Relations (IR) Event or Meetings",
+                                slug: "iri-evnt-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "debt-or-bondholder-investor-meetings",
+                                title: "Debt or Bondholder Investor Meetings",
+                                slug: "deb-bon-inv-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "follow-up-investor-meetings",
+                                title: "Follow-up Investor Meetings",
+                                slug: "foll-up-inv-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-strategy-sessions",
+                                title: "Investor Strategy Sessions",
+                                slug: "inv-stra-sess",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-networking-events",
+                                title: "Investor Networking Events",
+                                slug: "inv-net-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "annual-investor-day",
+                                title: "Annual Investor Day",
+                                slug: "ann-inv-day",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "networking-meetings",
+                        title: "Networking Meetings",
+                        slug: "net-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "industry-networking-meetings",
+                                title: "Industry Networking Meetings",
+                                slug: "ind-net-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "business-networking-breakfast-lunch-dinner",
+                                title: "Business Networking Breakfast - Lunch - Dinner",
+                                slug: "bnb-lun-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "speed-networking-sessions",
+                                title: "Speed Networking Sessions",
+                                slug: "spd-net-sess",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "professional-association-networking-events",
+                                title: "Professional Association Networking Events",
+                                slug: "prof-ass-net-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "corporate-networking-events",
+                                title: "Corporate Networking Events",
+                                slug: "cor-net-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "alumni-networking-meetings",
+                                title: "Alumni Networking Meetings",
+                                slug: "alm-net-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "conference-networking-sessions",
+                                title: "Conference Networking Sessions",
+                                slug: "conf-net-sess",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "trade-show-networking-events",
+                                title: "Trade Show Networking Events",
+                                slug: "trd-shw-net-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "mentorship-networking-meetings",
+                                title: "Mentorship Networking Meetings",
+                                slug: "mnt-net-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cross-company-networking-events",
+                                title: "Cross-Company Networking Events",
+                                slug: "crs-com-net-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-networking-meetings",
+                                title: "Investor Networking Meetings",
+                                slug: "inv-net-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-networking-meetings",
+                                title: "Virtual Networking Meetings",
+                                slug: "virt-net-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "executive-networking-roundtables",
+                                title: "Executive Networking Roundtables",
+                                slug: "exe-net-rnd-tbls",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "charter-or-fundraising-networking-events",
+                                title: "Charity or Fundraising Networking Events",
+                                slug: "chr-fnd-net-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-and-startup-networking-events",
+                                title: "Innovation and Startup Networking Events",
+                                slug: "inn-strt-net-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "executive-committee-meetings",
+                        title: "Executive Committee Meetings",
+                        slug: "exe-com-meet",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "strategic-planning-meetings",
+                                title: "Strategic Planning Meetings",
+                                slug: "stra-pln-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "budgeting-and-financial-planning-meetings",
+                                title: "Budgeting and Financial Planning Meetings",
+                                slug: "bud-fin-pln-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-management-meetings",
+                                title: "Crisis Management Meetings",
+                                slug: "cri-man-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "board-reporting-and-updates-meetings",
+                                title: "Board Reporting and Updates Meetings",
+                                slug: "brd-rpt-upd-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "performance-review-meetings",
+                                title: "Performance Review Meetings",
+                                slug: "per-rvw-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "mergers-and-acquisitions-ma-meetings",
+                                title: "Mergers and Acquisitions (M&A) Meetings",
+                                slug: "mer-acq-ma-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "risk-management-and-compliance-meetings",
+                                title: "Risk Management and Compliance Meetings",
+                                slug: "risk-com-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-development-and-succession-planning-meetings",
+                                title: "Leadership Development and Succession Planning Meetings",
+                                slug: "lds-pln-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-and-product-development-meetings",
+                                title: "Innovation and Product Development Meetings",
+                                slug: "inn-pro-dev-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "operational-efficiency-and-improvement-meetings",
+                                title: "Operational Efficiency and Improvement Meetings",
+                                slug: "opr-eff-impr-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "employee-engagement-and-corporate-culture-meetings",
+                                title: "Employee Engagement and Corporate Culture Meetings",
+                                slug: "eec-cul-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "investor-relations-and-communication-meetings",
+                                title: "Investor Relations and Communication Meetings",
+                                slug: "inv-rel-com-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "global-expansion-and-market-entry-meetings",
+                                title: "Global Expansion and Market Entry Meetings",
+                                slug: "gem-ntry-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sustainability-and-corporate-social-responsibility-csr-meetings",
+                                title: "Sustainability and Corporate Social Responsibility (CSR) Meetings",
+                                slug: "sus-csr-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "corporate-governance-meetings",
+                                title: "Corporate Governance Meetings",
+                                slug: "cor-gov-meet",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "focus-groups",
+                        title: "Focus Groups",
+                        slug: "foc-grps",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "product-feedback-focus-groups",
+                                title: "Product Feedback Focus Groups",
+                                slug: "prd-fdk-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "market-research-focus-groups",
+                                title: "Market Research Focus Groups",
+                                slug: "mrk-rsrch-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-satisfaction-focus-groups",
+                                title: "Customer Satisfaction Focus Groups",
+                                slug: "cus-sat-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "concept-testing-focus-groups",
+                                title: "Concept Testing Focus Groups",
+                                slug: "cnpt-tst-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "brand-perception-focus-groups",
+                                title: "Brand Perception Focus Groups",
+                                slug: "brd-per-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "usability-testing-focus-groups",
+                                title: "Usability Testing Focus Groups",
+                                slug: "usa-tst-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "ad-testing-focus-groups",
+                                title: "Ad Testing Focus Groups",
+                                slug: "ad-tst-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "employee-focus-groups",
+                                title: "Employee Focus Groups",
+                                slug: "emp-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-journey-focus-groups",
+                                title: "Customer Journey Focus Groups",
+                                slug: "cus-jrn-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "diversity-and-inclusion-focus-groups",
+                                title: "Diversity and Inclusion Focus Groups",
+                                slug: "div-inc-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "trend-analysis-focus-groups",
+                                title: "Trend Analysis Focus Groups",
+                                slug: "trd-ana-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "community-or-stakeholder-focus-groups",
+                                title: "Community or Stakeholder Focus Groups",
+                                slug: "cmn-stk-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "pricing-strategy-focus-groups",
+                                title: "Pricing Strategy Focus Groups",
+                                slug: "prd-str-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "consumer-behavior-focus-groups",
+                                title: "Consumer Behavior Focus Groups",
+                                slug: "csm-bhv-foc-grps",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "Team-Building Events",
+                title: "Team-Building Events",
+                slug: "tm-bld-evt",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "outdoor-retreats",
+                        title: "Outdoor Retreats",
+                        slug: "out-ret",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "adventure-based-retreats",
+                                title: "Adventure-Based Retreats",
+                                slug: "adv-bsd-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "survival-skills-retreats",
+                                title: "Survival Skills Retreats",
+                                slug: "surv-skll-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "wellness-retreats",
+                                title: "Wellness Retreats",
+                                slug: "well-ness-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "corporate-challenge-retreats",
+                                title: "Corporate Challenge Retreats",
+                                slug: "cor-chll-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "environmental-sustainability-retreats",
+                                title: "Environmental or Sustainability Retreats",
+                                slug: "env-sus-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "creative-innovation-retreats",
+                                title: "Creative and Innovation Retreats",
+                                slug: "cre-inn-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "mindfulness-reflection-retreats",
+                                title: "Mindfulness and Reflection Retreats",
+                                slug: "mind-refl-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "team-bonding-retreats",
+                                title: "Team Bonding Retreats",
+                                slug: "tm-bond-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "adventure-therapy-retreats",
+                                title: "Adventure Therapy Retreats",
+                                slug: "adv-ther-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sports-and-outdoor-competition-retreats",
+                                title: "Sports and Outdoor Competition Retreats",
+                                slug: "spr-out-com-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cultural-exploration-retreats",
+                                title: "Cultural Exploration Retreats",
+                                slug: "cul-expl-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "campfire-and-storytelling-retreats",
+                                title: "Campfire and Storytelling Retreats",
+                                slug: "camp-stry-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "yoga-and-outdoor-retreats",
+                                title: "Yoga and Outdoor Retreats",
+                                slug: "yog-out-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "escape-room-challenges",
+                        title: "Escape Room Challenges",
+                        slug: "esc-rom-chal",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "physical-escape-room-challenges",
+                                title: "Physical Escape Room Challenges",
+                                slug: "phys-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "themed-escape-room-challenges",
+                                title: "Themed Escape Room Challenges",
+                                slug: "thmd-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-escape-room-challenges",
+                                title: "Virtual Escape Room Challenges",
+                                slug: "vir-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "outdoor-escape-room-challenges",
+                                title: "Outdoor Escape Room Challenges",
+                                slug: "out-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "puzzle-based-escape-room-challenges",
+                                title: "Puzzle-Based Escape Room Challenges",
+                                slug: "puz-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "mission-based-escape-room-challenges",
+                                title: "Mission-Based Escape Room Challenges",
+                                slug: "mis-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "time-based-escape-room-challenges",
+                                title: "Time-Based Escape Room Challenges",
+                                slug: "tim-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "collaborative-escape-room-challenges",
+                                title: "Collaborative Escape Room Challenges",
+                                slug: "coll-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "themed-scavenger-hunt-escape-rooms",
+                                title: "Themed Scavenger Hunt Escape Rooms",
+                                slug: "tsh-esc-rom",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "escape-room-challenges-with-role-play",
+                                title: "Escape Room with Role Play",
+                                slug: "rol-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "escape-room-challenges-with-problem-solving-scenarios",
+                                title: "Escape Room Challenges with Problem-Solving Scenarios",
+                                slug: "pse-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "hybrid-escape-room-challenges",
+                                title: "Hybrid Escape Room Challenges",
+                                slug: "hyb-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-focused-escape-room-challenges",
+                                title: "Leadership-Focused Escape Rooms",
+                                slug: "ldr-esc-rom-chll",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "mystery-detective-escape-rooms",
+                                title: "Mystery & Detective Escape Rooms",
+                                slug: "mys-det-esc-rom",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "group-challenges",
+                        title: "Group Challenges",
+                        slug: "grp-chal",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "problem-solving-challenges",
+                                title: "Problem-Solving Challenges",
+                                slug: "prb-sol-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "trust-building-challenges",
+                                title: "Trust-Building Challenges",
+                                slug: "trst-bld-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "physical-challenges",
+                                title: "Physical Challenges",
+                                slug: "phys-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "creative-challenges",
+                                title: "Creative Challenges",
+                                slug: "crat-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "survival-challenges",
+                                title: "Survival Challenges",
+                                slug: "srvl-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "scavenger-hunts",
+                                title: "Scavenger Hunts",
+                                slug: "scav-hunts",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "communication-challenges",
+                                title: "Communication Challenges",
+                                slug: "comm-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-development-challenges",
+                                title: "Leadership Development Challenges",
+                                slug: "ldr-dev-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "role-specific-challenges",
+                                title: "Role-Specific Challenges",
+                                slug: "rl-spc-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-and-design-challenges",
+                                title: "Innovation and Design Challenges",
+                                slug: "inn-dsg-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cultural-awareness-challenges",
+                                title: "Cultural Awareness Challenges",
+                                slug: "cul-awr-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "conflict-resolution-challenges",
+                                title: "Conflict Resolution Challenges",
+                                slug: "cnfl-res-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "time-management-challenges",
+                                title: "Time Management Challenges",
+                                slug: "tm-mng-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "charity-or-social-good-challenges",
+                                title: "Charity or Social Good Challenges",
+                                slug: "chr-soc-god-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "escape-room-challenges",
+                                title: "Escape Room Challenges (Group-Based)",
+                                slug: "esc-rm-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "competitive-challenges",
+                                title: "Competitive Challenges",
+                                slug: "comp-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "team-strategy-challenges",
+                                title: "Team Strategy Challenges",
+                                slug: "tm-str-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "volunteer-community-service-events",
+                        title: "Workshops and Collaborative Tasks",
+                        slug: "wrk-coll-tsks",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "creative-problem-solving-workshops",
+                                title: "Creative Problem-Solving Workshops",
+                                slug: "cre-pro-sol-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "communication-and-active-listening-workshops",
+                                title: "Communication and Active Listening Workshops",
+                                slug: "comm-act-lst-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "trust-building-workshops",
+                                title: "Trust-Building Workshops",
+                                slug: "trs-bld-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-development-workshops",
+                                title: "Leadership Development Workshops",
+                                slug: "led-dev-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "team-collaboration-workshops",
+                                title: "Team Collaboration Workshops",
+                                slug: "tm-coll-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "time-management-workshops",
+                                title: "Time Management Workshops",
+                                slug: "tm-mngt-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "conflict-resolution-workshops",
+                                title: "Conflict Resolution Workshops",
+                                slug: "cnf-res-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-and-creativity-workshops",
+                                title: "Innovation and Creativity Workshops",
+                                slug: "inn-cre-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "outdoor-adventure-challenges",
+                                title: "Outdoor Adventure Challenges",
+                                slug: "out-adv-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "role-playing-and-scenario-based-workshops",
+                                title: "Role-Playing and Scenario-Based Workshops",
+                                slug: "rps-bas-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "team-building-games-and-icebreakers",
+                                title: "Team Building Games and Icebreakers",
+                                slug: "tm-bld-gms-ice",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "project-management-workshops",
+                                title: "Project Management Workshops",
+                                slug: "proj-mngt-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "decision-making-and-delegation-workshops",
+                                title: "Decision-Making and Delegation Workshops",
+                                slug: "dec-mak-del-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cultural-awareness-and-inclusion-workshops",
+                                title: "Cultural Awareness and Inclusion Workshops",
+                                slug: "cul-awa-inc-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "fitness-and-wellbeing-challenges",
+                                title: "Fitness and Wellbeing Challenges",
+                                slug: "fit-wel-chal",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-service-and-client-interaction-workshops",
+                                title: "Customer Service and Client Interaction Workshops",
+                                slug: "csc-int-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "feedback-and-reflection-workshops",
+                                title: "Feedback and Reflection Workshops",
+                                slug: "fdbk-rfl-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "strategic-planning-workshops",
+                                title: "Strategic Planning Workshops",
+                                slug: "str-pln-wrk",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                ]
+            },
+            {
+                id: "Product Launches",
+                title: "Product Launches",
+                slug: "prd-lan",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "press-conferences",
+                        title: "Press Conferences",
+                        slug: "prs-conf",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "traditional-press-conferences",
+                                title: "Traditional Press Conference",
+                                slug: "trd-prs-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-press-conferences",
+                                title: "Virtual Press Conference",
+                                slug: "vrt-prs-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "hybrid-press-conferences",
+                                title: "Hybrid Press Conference",
+                                slug: "hyb-prs-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-showcase-press-conferences",
+                                title: "Product Showcase Press Conference",
+                                slug: "prd-shw-prs-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "media-briefings-roundtable-press-conferences",
+                                title: "Media Briefing or Roundtable Press Conference",
+                                slug: "med-brf-rt-prs-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "global-press-conferences",
+                                title: "Global Press Conference",
+                                slug: "glb-prs-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "influencer-social-media-press-conferences",
+                                title: "Influencer or Social Media Press Conference",
+                                slug: "ism-prs-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "press-conferences-with-live-audience",
+                                title: "Press Conference with a Live Audience",
+                                slug: "prs-conf-liv-aud",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "press-conferences-with-panel-discussion",
+                                title: "Press Conference with Panel Discussion",
+                                slug: "prs-conf-pl-disc",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "product-demos",
+                        title: "Product Demos",
+                        slug: "prd-dmo",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "live-product-demonstrations",
+                                title: "Live Product Demonstrations",
+                                slug: "liv-prd-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "pre-recorded-product-demonstrations",
+                                title: "Pre-Recorded Product Demonstrations",
+                                slug: "pre-rec-prd-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "interactive-product-demos",
+                                title: "Interactive Product Demos",
+                                slug: "int-prd-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "hands-on-demo-stations",
+                                title: "Hands-On Demo Stations",
+                                slug: "hnd-ons-dmo-sta",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "webinars-or-online-product-demos",
+                                title: "Webinars or Online Product Demos",
+                                slug: "web-on-prd-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "trade-show-product-demos",
+                                title: "Trade Show Product Demos",
+                                slug: "trd-shw-prd-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "influencer-or-social-media-product-demos",
+                                title: "Influencer or Social Media Product Demos",
+                                slug: "ism-prd-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-reality-vr-or-augmented-reality-ar-demos",
+                                title: "Virtual Reality (VR) or Augmented Reality (AR) Demos",
+                                slug: "vir-rea-vr-ar-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-testimonial-demos",
+                                title: "Customer Testimonial Demos",
+                                slug: "cust-tst-dmo",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-demo-with-expert-panel",
+                                title: "Product Demo with Expert Panel",
+                                slug: "pdw-exp-pnl",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "interactive-product-demo-contests",
+                                title: "Interactive Product Demo Contests",
+                                slug: "int-prd-dmo-con",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "exclusive-launch-events",
+                        title: "Exclusive Launch Events",
+                        slug: "exc-lan-evt",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "vip-invitation-only-launch-events",
+                                title: "VIP Invitation-Only Launch Events",
+                                slug: "vio-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "private-media-events",
+                                title: "Private Media Events",
+                                slug: "pvt-med-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "influencer-and-celebrity-led-launch-events",
+                                title: "Influencer and Celebrity-Led Launch Events",
+                                slug: "inf-clb-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "private-gala-dinner-or-cocktail-events",
+                                title: "Private Gala Dinner or Cocktail Events",
+                                slug: "pgd-or-cock-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "pop-up-experience-or-private-showroom",
+                                title: "Pop-Up Experience or Private Showroom",
+                                slug: "pop-up-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-loyalty-and-exclusive-club-events",
+                                title: "Customer Loyalty and Exclusive Club Events",
+                                slug: "cst-loy-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "exclusive-online-launch-events",
+                                title: "Exclusive Online Launch Events",
+                                slug: "exc-onl-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "brand-ambassador-launch-events",
+                                title: "Brand Ambassador Launch Events",
+                                slug: "brd-amb-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "press-and-industry-leader-preview-events",
+                                title: "Press and Industry Leader Preview Events",
+                                slug: "prs-ind-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "virtual-launch-events",
+                        title: "Virtual Launch Events",
+                        slug: "virt-lan-evt",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "live-streamed-product-launch-events",
+                                title: "Live Streamed Product Launch Events",
+                                slug: "liv-str-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "webinar-product-launch-events",
+                                title: "Webinar Product Launch Events",
+                                slug: "web-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-trade-show-or-exhibitions",
+                                title: "Virtual Trade Show or Exhibitions",
+                                slug: "vrt-trd-shw-exh",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-product-unboxing-events",
+                                title: "Virtual Product Unboxing Events",
+                                slug: "vrt-pro-unb-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-press-conferences",
+                                title: "Virtual Press Conferences",
+                                slug: "vrt-prs-con",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-influencer-launch-events",
+                                title: "Virtual Influencer Launch Events",
+                                slug: "vrt-inf-lan-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-product-launch-party",
+                                title: "Virtual Product Launch Party",
+                                slug: "vrt-pro-lan-prty",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-roundtable-or-panel-discussion",
+                                title: "Virtual Roundtable or Panel Discussion",
+                                slug: "vrt-rtp-dsc",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-interactive-experiences",
+                                title: "Virtual Interactive Experiences",
+                                slug: "vrt-int-exp",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "on-demand-product-launch-events",
+                                title: "On-Demand Product Launch Events",
+                                slug: "vrt-on-dln-evt",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "Corporate Social Responsibility (CSR) Events",
+                title: "Corporate Social Responsibility (CSR) Events",
+                slug: "csr-evt",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "charity-fundraisers",
+                        title: "Charity Fundraisers",
+                        slug: "char-fun",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "gala-dinners",
+                                title: "Gala Dinners",
+                                slug: "gala-din",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "charity-walks-runs-and-marathons",
+                                title: "Charity Walks, Runs, and Marathons",
+                                slug: "chr-wlk-rns-mrn",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "charity-auctions",
+                                title: "Charity Auctions",
+                                slug: "chr-auc",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "benefit-concerts-and-performances",
+                                title: "Benefit Concerts and Performances",
+                                slug: "bnf-con-per",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "charity-raffles",
+                                title: "Charity Raffles",
+                                slug: "chr-rffles",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "volunteer-fundraisers",
+                                title: "Volunteer Fundraisers",
+                                slug: "vol-fun",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "corporate-social-responsibility",
+                                title: "Corporate Social Responsibility (CSR) Challenges",
+                                slug: "csr-chal",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "charity-dinners-or-luncheons",
+                                title: "Charity Dinners or Luncheons",
+                                slug: "chr-din-lun",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "online-charity-campaigns",
+                                title: "Online Charity Campaigns",
+                                slug: "chr-on-camp",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "corporate-sponsorship-fundraisers",
+                                title: "Corporate Sponsorship Fundraisers",
+                                slug: "csr-fun",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "volunteer-days",
+                        title: "Volunteering Days",
+                        slug: "vol-day",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "community-service-days",
+                                title: "Community Service Days",
+                                slug: "comm-srv-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "skills-based-volunteering-days",
+                                title: "Skills-Based Volunteering Days",
+                                slug: "skil-vol-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "charity-event-volunteering",
+                                title: "Charity Event Volunteering",
+                                slug: "chr-evt-vol",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "team-building-volunteering-days",
+                                title: "Team-Building Volunteering Days",
+                                slug: "tm-bld-vol-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "environmental-volunteering-days",
+                                title: "Environmental Volunteering Days",
+                                slug: "env-vol-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "disaster-relief-volunteering-days",
+                                title: "Disaster Relief Volunteering Days",
+                                slug: "dis-rel-vol-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "virtual-volunteering-days",
+                                title: "Virtual Volunteering Days",
+                                slug: "vrt-vol-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "employee-volunteer-programs-evps",
+                                title: "Employee Volunteer Programs (EVPs)",
+                                slug: "emp-vol-prg",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "fundraising-volunteering-days",
+                                title: "Fundraising Volunteering Days",
+                                slug: "fund-vol-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "health-and-wellness-volunteering-days",
+                                title: "Health and Wellness Volunteering Days",
+                                slug: "hlth-wel-vol-day",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "sustainability-events",
+                        title: "Sustainability Events",
+                        slug: "sust-evt",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "eco-friendly-product-launches",
+                                title: "Eco-Friendly Product Launches",
+                                slug: "eco-prd-lan",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "green-conferences-and-seminars",
+                                title: "Green Conferences and Seminars",
+                                slug: "grn-con-sem",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "eco-friendly-trade-shows-and-expos",
+                                title: "Eco-Friendly Trade Shows and Expos",
+                                slug: "eco-trd-shw-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainable-team-building-events",
+                                title: "Sustainable Team-Building Events",
+                                slug: "sus-tm-bld-evt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainable-corporate-retreats",
+                                title: "Sustainable Corporate Retreats",
+                                slug: "sus-corp-rtr",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "corporate-sustainability-awards",
+                                title: "Corporate Sustainability Awards",
+                                slug: "crp-sus-awrds",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainability-workshops-and-trainings",
+                                title: "Sustainability Workshops and Trainings",
+                                slug: "sus-wrk-trn",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainability-volunteer-days",
+                                title: "Sustainability Volunteer Days",
+                                slug: "sus-vol-days",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainablity-hackathons",
+                                title: "Sustainability Hackathons",
+                                slug: "sus-hck-thns",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainable-fashion-events",
+                                title: "Sustainable Fashion Events",
+                                slug: "sus-fsh-evt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainability-festivals",
+                                title: "Sustainability Festivals",
+                                slug: "sus-fst",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "community-service-projects",
+                        title: "Community Service Projects",
+                        slug: "comm-srv-prjt",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "environmental-conservation-projects",
+                                title: "Environmental Conservation Projects",
+                                slug: "env-con-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "community-development-projects",
+                                title: "Community Development Projects",
+                                slug: "comm-dev-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "educational-support-projects",
+                                title: "Educational Support Projects",
+                                slug: "edu-sup-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "health-and-wellness-projects",
+                                title: "Health and Wellness Projects",
+                                slug: "hlth-wlln-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "food-and-hunger-relief-projects",
+                                title: "Food and Hunger Relief Projects",
+                                slug: "fd-hun-rlf-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "youth-empowerment-projects",
+                                title: "Youth Empowerment Projects",
+                                slug: "yth-emp-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "elderly-and-senior-support-projects",
+                                title: "Elderly and Senior Support Projects",
+                                slug: "eld-snr-sprt-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "disaster-relief-and-emergency-response-projects",
+                                title: "Disaster Relief and Emergency Response Projects",
+                                slug: "dre-res-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "cultural-and-arts-projects",
+                                title: "Cultural and Arts Projects",
+                                slug: "clt-art-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "disability-support-projects",
+                                title: "Disability Support Projects",
+                                slug: "dis-sprt-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "animal-welfare-projects",
+                                title: "Animal Welfare Projects",
+                                slug: "ani-wlf-prjt",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    }
+                ]
+            },
+            // {
+            //     id: "Trade Shows and Exhibitions",
+            //     title: "Trade Shows and Exhibitions",
+            //     slug: "trd-shw-exh",
+            //     titleSuffix: "Management Company in Delhi",
+            //     children: [
+            //         {
+            //             id: "industry-expos",
+            //             title: "Industry Expos",
+            //             slug: "ind-expos",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "product-exhibitions",
+            //             title: "Product Exhibitions",
+            //             slug: "prd-exh",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "b2b-trade-shows",
+            //             title: "B2B Trade Shows",
+            //             slug: "b-to-b",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: [
+            //                 {
+            //                     id: "industry-specific-b2b-trade-shows",
+            //                     title: "Industry-Specific B2B Trade Shows",
+            //                     slug: "isb-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "technology-and-innovation-b2b-trade-shows",
+            //                     title: "Technology and Innovation B2B Trade Shows",
+            //                     slug: "tib-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "manufacturing-and-industrial-b2b-trade-shows",
+            //                     title: "Manufacturing and Industrial B2B Trade Shows",
+            //                     slug: "mib-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "consumer-goods-b2b-trade-shows",
+            //                     title: "Consumer Goods B2B Trade Shows",
+            //                     slug: "cgb-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "service-oriented-b2b-trade-shows",
+            //                     title: "Service-Oriented B2B Trade Shows",
+            //                     slug: "sob-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "trade-and-wholesale-b2b-trade-shows",
+            //                     title: "Trade and Wholesale B2B Trade Shows",
+            //                     slug: "twb-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "sustainability-and-green-b2b-trade-shows",
+            //                     title: "Sustainability and Green B2B Trade Shows",
+            //                     slug: "sbg-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "educational-b2b-trade-shows",
+            //                     title: "Educational B2B Trade Shows",
+            //                     slug: "edb-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "tourism-and-hospitality-b2b-trade-shows",
+            //                     title: "Tourism and Hospitality B2B Trade Shows",
+            //                     slug: "tih-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //                 {
+            //                     id: "logistics-and-supply-chain-b2b-trade-shows",
+            //                     title: "Logistics and Supply Chain B2B Trade Shows",
+            //                     slug: "lsc-trd-shw",
+            //                     titleSuffix: "Management Company in Delhi"
+            //                 },
+            //             ]
+            //         },
+            //         {
+            //             id: "virtual-trade-shows",
+            //             title: "Virtual Trade Shows",
+            //             slug: "vir-trd-shw",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //     ]
+            // },
+            // {
+            //     id: "Networking Events",
+            //     title: "Networking Events",
+            //     slug: "net-evt",
+            //     titleSuffix: "Management Company in Delhi",
+            //     children: [
+            //         {
+            //             id: "industry-networking-events",
+            //             title: "Industry Networking Events",
+            //             slug: "ind-net-evt",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "business-luncheons-or-dinners",
+            //             title: "Business Luncheons or Dinners",
+            //             slug: "bus-lun-din",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "professional-conferences-networking",
+            //             title: "Professional Conferences Networking",
+            //             slug: "pro-conf-evt",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "speed-networking",
+            //             title: "Speed Networking",
+            //             slug: "spd-net",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //     ]
+            // },
+            // {
+            //     id: "Incentive Programs",
+            //     title: "Incentive Programs",
+            //     slug: "inc-pro",
+            //     titleSuffix: "Management Company in Delhi",
+            //     children: [
+            //         {
+            //             id: "sales-incentive-trips",
+            //             title: "Sales Incentive Trips",
+            //             slug: "sal-inc-trp",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "recognition-dinners-or-galas",
+            //             title: "Recognition Dinners or Galas",
+            //             slug: "rec-din-gls",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "annual-awards-ceremonies",
+            //             title: "Annual Awards Ceremonies",
+            //             slug: "ann-awd-crt",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "client-appreciation-events",
+            //             title: "Client Appreciation Events",
+            //             slug: "cli-app-evt",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         }
+            //     ]
+            // },
+            // {
+            //     id: "Corporate Parties and Celebrations",
+            //     title: "Corporate Parties and Celebrations",
+            //     slug: "corp-prt-cel",
+            //     titleSuffix: "Management Company in Delhi",
+            //     children: [
+            //         {
+            //             id: "holiday-parties",
+            //             title: "Holiday Parties",
+            //             slug: "hol-prt",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "company-anniversary-celebrations",
+            //             title: "Company Anniversary Celebrations",
+            //             slug: "cmp-ann-cele",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "milestone-celebrations",
+            //             title: "Milestone Celebrations",
+            //             slug: "mil-cele",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "themed-parties",
+            //             title: "Themed Parties",
+            //             slug: "thm-prt",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         }
+            //     ]
+            // },
+            // {
+            //     id: "Executive Retreats",
+            //     title: "Executive Retreats",
+            //     slug: "exe-ret",
+            //     titleSuffix: "Management Company in Delhi",
+            //     children: [
+            //         {
+            //             id: "leadership-retreats",
+            //             title: "Leadership Retreats",
+            //             slug: "led-ret",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "board-retreats",
+            //             title: "Board Retreats",
+            //             slug: "brd-ret",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "team-strategy-retreats",
+            //             title: "Team Strategy Retreats",
+            //             slug: "tm-stra-ret",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "reflection-and-wellness-retreats",
+            //             title: "Reflection and Wellness Retreats",
+            //             slug: "ref-wel-ret",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         }
+            //     ]
+            // },
+            // {
+            //     id: "Webinars and Virtual Events",
+            //     title: "Webinars and Virtual Events",
+            //     slug: "web-vir-evt",
+            //     titleSuffix: "Management Company in Delhi",
+            //     children: [
+            //         {
+            //             id: "online-training-workshops",
+            //             title: "Online Training Workshops",
+            //             slug: "onl-trn-work",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "virtual-conferences",
+            //             title: "Virtual Conferences",
+            //             slug: "vir-conf",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         },
+            //         {
+            //             id: "product-webinars",
+            //             title: "Product Webinars",
+            //             slug: "prod-web",
+            //             titleSuffix: "Management Company in Delhi",
+            //             children: []
+            //         }
+            //     ]
+            // },
         ]
     },
 
@@ -322,23 +3616,29 @@ export const services: ServiceNode[] = [
                     }
                 ]
             },
-            // {
-            //     id: "visual-artists",
-            //     title: "Visual Artists",
-            //     slug: "visual-artists",
-            //     children: [
-            //         {
-            //             id: "painters",
-            //             title: "Painters",
-            //             slug: "painters",
-            //             children: [
-            //                 { id: "abstract-painters", title: "Abstract Painters", slug: "abstract-painters" },
-            //                 { id: "realist-painters", title: "Realist Painters", slug: "realist-painters" },
-            //                 { id: "surrealist-artists", title: "Surrealist Artists", slug: "surrealist-artists" },
-            //                 { id: "impressionists", title: "Impressionists", slug: "impressionists" },
-            //                 { id: "portrait-painters", title: "Portrait Painters", slug: "portrait-painters" }
-            //             ]
-            //         },
+            {
+                id: "visual-artists",
+                title: "Visual Artists",
+                slug: "vis-art",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "painters",
+                        title: "Painters",
+                        slug: "pntrs",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            { id: "abstract-painters", title: "Abstract Painters", slug: "abs-pntrs", titleSuffix: "Management Company in Delhi" },
+                            { id: "realist-painters", title: "Realist Painters", slug: "real-pntrs", titleSuffix: "Management Company in Delhi" },
+                            { id: "surrealist-artists", title: "Surrealist Artists", slug: "sur-pntrs", titleSuffix: "Management Company in Delhi" },
+                            { id: "impressionists", title: "Impressionists", slug: "impre", titleSuffix: "Management Company in Delhi" },
+                            { id: "portrait-painters", title: "Portrait Painters", slug: "port-pntrs", titleSuffix: "Management Company in Delhi" }
+                        ]
+                    },
+                ],
+            },
+
+
             //         {
             //             id: "sculptors",
             //             title: "Sculptors",
@@ -3369,65 +6669,72 @@ export const services: ServiceNode[] = [
                     { id: "indigenous-weddings", title: "Indigenous Weddings", slug: "ind-wed", titleSuffix: "Management Company in Delhi" }
                 ]
             },
-            // {
-            //     id: "destination-weddings",
-            //     title: "Destination Weddings",
-            //     slug: "destination-weddings",
-            //     children: [
-            //         {
-            //             id: "beach-weddings",
-            //             title: "Beach Weddings",
-            //             slug: "beach-weddings",
-            //             children: [
-            //                 { id: "maldives", title: "Maldives", slug: "maldives" },
-            //                 { id: "hawaii-usa", title: "Hawaii (USA)", slug: "hawaii-usa" },
-            //                 { id: "bora-bora-french-polynesia", title: "Bora Bora (French Polynesia)", slug: "bora-bora-french-polynesia" },
-            //                 { id: "tulum-mexico", title: "Tulum (Mexico)", slug: "tulum-mexico" },
-            //                 { id: "santorini-greece", title: "Santorini (Greece)", slug: "santorini-greece" },
-            //                 { id: "fiji", title: "Fiji", slug: "fiji" },
-            //                 { id: "jamaica", title: "Jamaica", slug: "jamaica" },
-            //                 { id: "bahamas", title: "Bahamas", slug: "bahamas" },
-            //                 { id: "amalfi-coast-italy", title: "Amalfi Coast (Italy)", slug: "amalfi-coast-italy" },
-            //                 { id: "phuket-thailand", title: "Phuket (Thailand)", slug: "phuket-thailand" },
-            //                 { id: "seychelles", title: "Seychelles", slug: "seychelles" },
-            //                 { id: "mauritius", title: "Mauritius", slug: "mauritius" },
-            //                 { id: "zanzibar-tanzania", title: "Zanzibar (Tanzania)", slug: "zanzibar-tanzania" },
-            //                 { id: "kerala-india", title: "Kerala (India)", slug: "kerala-india" },
-            //                 { id: "punta-cana-dominican-republic", title: "Punta Cana (Dominican Republic)", slug: "punta-cana-dominican-republic" },
-            //                 { id: "barbados", title: "Barbados", slug: "barbados" },
-            //                 { id: "cabo-san-lucas-mexico", title: "Cabo San Lucas (Mexico)", slug: "cabo-san-lucas-mexico" },
-            //                 { id: "bali-indonesia", title: "Bali (Indonesia)", slug: "bali-indonesia" },
-            //                 { id: "canary-islands-spain", title: "The Canary Islands (Spain)", slug: "canary-islands-spain" },
-            //                 { id: "costa-rica", title: "Costa Rica", slug: "costa-rica" }
-            //             ]
-            //         },
-            //         {
-            //             id: "mountain-weddings",
-            //             title: "Mountain Weddings",
-            //             slug: "mountain-weddings",
-            //             children: [
-            //                 { id: "swiss-alps-switzerland", title: "Swiss Alps (Switzerland)", slug: "swiss-alps-switzerland" },
-            //                 { id: "rocky-mountains-usa-canada", title: "Rocky Mountains (USA & Canada)", slug: "rocky-mountains-usa-canada" },
-            //                 { id: "dolomites-italy", title: "Dolomites (Italy)", slug: "dolomites-italy" },
-            //                 { id: "himalayas-nepal-india", title: "Himalayas (Nepal & India)", slug: "himalayas-nepal-india" },
-            //                 { id: "banff-national-park-canada", title: "Banff National Park (Canada)", slug: "banff-national-park-canada" },
-            //                 { id: "lake-tahoe-usa", title: "Lake Tahoe (USA)", slug: "lake-tahoe-usa" },
-            //                 { id: "kyoto-mountains-japan", title: "Kyoto Mountains (Japan)", slug: "kyoto-mountains-japan" },
-            //                 { id: "chamonix-france", title: "Chamonix (France)", slug: "chamonix-france" },
-            //                 { id: "tasmanian-wilderness-australia", title: "Tasmanian Wilderness (Australia)", slug: "tasmanian-wilderness-australia" },
-            //                 { id: "patagonia-argentina-chile", title: "Patagonia (Argentina & Chile)", slug: "patagonia-argentina-chile" },
-            //                 { id: "whistler-canada", title: "Whistler (Canada)", slug: "whistler-canada" },
-            //                 { id: "mount-hood-usa", title: "Mount Hood (USA)", slug: "mount-hood-usa" },
-            //                 { id: "tatra-mountains", title: "Tatra Mountains (Poland & Slovakia)", slug: "tatra-mountains" },
-            //                 { id: "andes-south-america", title: "The Andes (South America)", slug: "andes-south-america" },
-            //                 { id: "mt-fuji-japan", title: "Mt. Fuji (Japan)", slug: "mt-fuji-japan" },
-            //                 { id: "corsica-france", title: "Corsica (France)", slug: "corsica-france" },
-            //                 { id: "alaska-usa", title: "Alaska (USA)", slug: "alaska-usa" },
-            //                 { id: "scotland-highlands-uk", title: "Scotland Highlands (United Kingdom)", slug: "scotland-highlands-uk" },
-            //                 { id: "aoraki-mount-cook", title: "Aoraki/Mount Cook National Park (New Zealand)", slug: "aoraki-mount-cook" },
-            //                 { id: "mont-blanc", title: "Mont Blanc (France/Italy/Switzerland)", slug: "mont-blanc" }
-            //             ]
-            //         },
+            {
+                id: "destination-weddings",
+                title: "Destination Weddings",
+                titleSuffix: "Management Company in Delhi",
+                slug: "dest-wed",
+                children: [
+                    {
+                        id: "beach-weddings",
+                        title: "Beach Weddings",
+                        slug: "bea-wed",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            { id: "maldives", title: "Maldives", slug: "mal-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "hawaii-usa", title: "Hawaii (USA)", slug: "haw-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "bora-bora-french-polynesia", title: "Bora Bora (French Polynesia)", slug: "bor-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "tulum-mexico", title: "Tulum (Mexico)", slug: "tul-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "santorini-greece", title: "Santorini (Greece)", slug: "san-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "fiji", title: "Fiji", slug: "fij-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "jamaica", title: "Jamaica", slug: "jam-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "bahamas", title: "Bahamas", slug: "bah-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "amalfi-coast-italy", title: "Amalfi Coast (Italy)", slug: "ama-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "phuket-thailand", title: "Phuket (Thailand)", slug: "phu-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "seychelles", title: "Seychelles", slug: "sey-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "mauritius", title: "Mauritius", slug: "mau-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "zanzibar-tanzania", title: "Zanzibar (Tanzania)", slug: "zan-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "kerala-india", title: "Kerala (India)", slug: "ker-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "punta-cana-dominican-republic", title: "Punta Cana (Dominican Republic)", slug: "pun-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "barbados", title: "Barbados", slug: "bar-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "cabo-san-lucas-mexico", title: "Cabo San Lucas (Mexico)", slug: "cab-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "bali-indonesia", title: "Bali (Indonesia)", slug: "bal-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "canary-islands-spain", title: "The Canary Islands (Spain)", slug: "can-wed", titleSuffix: "Management Company in Delhi" },
+                            { id: "costa-rica", title: "Costa Rica", slug: "cos-wed", titleSuffix: "Management Company in Delhi" }
+
+                        ]
+                    },
+                    {
+                        id: "mountain-weddings",
+                        title: "Mountain Weddings",
+                        slug: "moun-wed",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            { id: "swiss-alps-switzerland", title: "Swiss Alps (Switzerland)", slug: "sws-alp-swt", titleSuffix: "Management Company in Delhi" },
+                            { id: "rocky-mountains-usa-canada", title: "Rocky Mountains (USA & Canada)", slug: "roc-mou-usa-can", titleSuffix: "Management Company in Delhi" },
+                            { id: "dolomites-italy", title: "Dolomites (Italy)", slug: "dol-mou-ita", titleSuffix: "Management Company in Delhi" },
+                            { id: "himalayas-nepal-india", title: "Himalayas (Nepal & India)", slug: "him-nep-ind", titleSuffix: "Management Company in Delhi" },
+                            { id: "banff-national-park-canada", title: "Banff National Park (Canada)", slug: "ban-nat-park-can", titleSuffix: "Management Company in Delhi" },
+                            { id: "lake-tahoe-usa", title: "Lake Tahoe (USA)", slug: "lak-tah-usa", titleSuffix: "Management Company in Delhi" },
+                            { id: "kyoto-mountains-japan", title: "Kyoto Mountains (Japan)", slug: "kyo-mou-jpn", titleSuffix: "Management Company in Delhi" },
+                            { id: "chamonix-france", title: "Chamonix (France)", slug: "cha-fra", titleSuffix: "Management Company in Delhi" },
+                            { id: "tasmanian-wilderness-australia", title: "Tasmanian Wilderness (Australia)", slug: "tas-wil-aus", titleSuffix: "Management Company in Delhi" },
+                            { id: "patagonia-argentina-chile", title: "Patagonia (Argentina & Chile)", slug: "pat-arg-chi", titleSuffix: "Management Company in Delhi" },
+                            { id: "whistler-canada", title: "Whistler (Canada)", slug: "whi-can", titleSuffix: "Management Company in Delhi" },
+                            { id: "mount-hood-usa", title: "Mount Hood (USA)", slug: "mou-hood-usa", titleSuffix: "Management Company in Delhi" },
+                            { id: "tatra-mountains", title: "Tatra Mountains (Poland & Slovakia)", slug: "tat-mou-pol-svk", titleSuffix: "Management Company in Delhi" },
+                            { id: "andes-south-america", title: "The Andes (South America)", slug: "and-sou-ame", titleSuffix: "Management Company in Delhi" },
+                            { id: "mt-fuji-japan", title: "Mt. Fuji (Japan)", slug: "mt-fuji-japan", titleSuffix: "Management Company in Delhi" },
+                            { id: "alaska-usa", title: "Alaska (USA)", slug: "ala-usa", titleSuffix: "Management Company in Delhi" },
+                            { id: "scotland-highlands-uk", title: "Scotland Highlands (United Kingdom)", slug: "sco-high-uk", titleSuffix: "Management Company in Delhi" },
+                            { id: "aoraki-mount-cook", title: "Aoraki/Mount Cook National Park (New Zealand)", slug: "aor-mou-cook", titleSuffix: "Management Company in Delhi" },
+                            { id: "mont-blanc", title: "Mont Blanc (France/Italy/Switzerland)", slug: "mont-blanc", titleSuffix: "Management Company in Delhi" }
+                        ]
+                    },
+                ]
+
+            },
+
             //         {
             //             id: "historical-cultural-destination-weddings",
             //             title: "Destination Weddings in Historical or Cultural Locations",

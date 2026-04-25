@@ -111,6 +111,9 @@ ${!isSolutionOnly ? `- eventType.cards: EXACTLY ${eventItems.length}` : ""}
 
 ## FAQ RULES:
 - EXACTLY 6 FAQs
+- FAQs MUST be based on the primary page intent and title: "${title}"
+- Do NOT focus on internal categories like event solutions or service lists
+- Avoid generic company-wide FAQs
 - Questions should be user-focused
 - Answers: 30-50 words
 `

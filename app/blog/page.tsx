@@ -114,7 +114,7 @@ export default function BlogPage() {
                 </p>
 
                 <Link
-                    href="/contact"
+                    href="/support"
                     className="px-10 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition duration-300"
                 >
                     Start Your Journey
