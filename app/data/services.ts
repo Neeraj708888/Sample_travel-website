@@ -3205,103 +3205,249 @@ export const services: ServiceNode[] = [
                     }
                 ]
             },
-            // {
-            //     id: "Trade Shows and Exhibitions",
-            //     title: "Trade Shows and Exhibitions",
-            //     slug: "trd-shw-exh",
-            //     titleSuffix: "Management Company in Delhi",
-            //     children: [
-            //         {
-            //             id: "industry-expos",
-            //             title: "Industry Expos",
-            //             slug: "ind-expos",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "product-exhibitions",
-            //             title: "Product Exhibitions",
-            //             slug: "prd-exh",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "b2b-trade-shows",
-            //             title: "B2B Trade Shows",
-            //             slug: "b-to-b",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: [
-            //                 {
-            //                     id: "industry-specific-b2b-trade-shows",
-            //                     title: "Industry-Specific B2B Trade Shows",
-            //                     slug: "isb-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "technology-and-innovation-b2b-trade-shows",
-            //                     title: "Technology and Innovation B2B Trade Shows",
-            //                     slug: "tib-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "manufacturing-and-industrial-b2b-trade-shows",
-            //                     title: "Manufacturing and Industrial B2B Trade Shows",
-            //                     slug: "mib-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "consumer-goods-b2b-trade-shows",
-            //                     title: "Consumer Goods B2B Trade Shows",
-            //                     slug: "cgb-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "service-oriented-b2b-trade-shows",
-            //                     title: "Service-Oriented B2B Trade Shows",
-            //                     slug: "sob-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "trade-and-wholesale-b2b-trade-shows",
-            //                     title: "Trade and Wholesale B2B Trade Shows",
-            //                     slug: "twb-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "sustainability-and-green-b2b-trade-shows",
-            //                     title: "Sustainability and Green B2B Trade Shows",
-            //                     slug: "sbg-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "educational-b2b-trade-shows",
-            //                     title: "Educational B2B Trade Shows",
-            //                     slug: "edb-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "tourism-and-hospitality-b2b-trade-shows",
-            //                     title: "Tourism and Hospitality B2B Trade Shows",
-            //                     slug: "tih-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //                 {
-            //                     id: "logistics-and-supply-chain-b2b-trade-shows",
-            //                     title: "Logistics and Supply Chain B2B Trade Shows",
-            //                     slug: "lsc-trd-shw",
-            //                     titleSuffix: "Management Company in Delhi"
-            //                 },
-            //             ]
-            //         },
-            //         {
-            //             id: "virtual-trade-shows",
-            //             title: "Virtual Trade Shows",
-            //             slug: "vir-trd-shw",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //     ]
-            // },
+            {
+                id: "trade-shows-and-exhibitions",
+                title: "Trade Shows and Exhibitions",
+                slug: "trd-shw-exh",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "industry-expos",
+                        title: "Industry Expos",
+                        slug: "ind-expos",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "technology-expos",
+                                title: "Technology Expos",
+                                slug: "tech-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "healthcare-expos",
+                                title: "Healthcare Expos",
+                                slug: "hlth-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "fashion-expos",
+                                title: "Fashion Expos",
+                                slug: "fas-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "automotive-expos",
+                                title: "Automotive Expos",
+                                slug: "auto-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "food-and-beverage-expos",
+                                title: "Food and Beverage Expos",
+                                slug: "food-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "construction-and-real-estate-expos",
+                                title: "Construction and Real Estate Expos",
+                                slug: "cons-re-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "entertainment-and-media-expos",
+                                title: "Entertainment and Media Expos",
+                                slug: "ent-me-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "renewable-energy-and-sustainability-expos",
+                                title: "Renewable Energy and Sustainability Expos",
+                                slug: "ren-es-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "retail-and-e-Commerce-expos",
+                                title: "Retail and E-Commerce Expos",
+                                slug: "ret-ecom-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "hospitality-and-tourism-expos",
+                                title: "Hospitality and Tourism Expos",
+                                slug: "hos-tur-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "financial-services-expos",
+                                title: "Financial Services Expos",
+                                slug: "fin-ser-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "beauty-and-cosmetics-expos",
+                                title: "Beauty and Cosmetics Expos",
+                                slug: "bea-cos-expos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "product-exhibitions",
+                        title: "Product Exhibitions",
+                        slug: "prd-exh",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "consumer-goods-exhibitions",
+                                title: "Consumer Goods Exhibitions",
+                                slug: "cons-gd-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "industrial-product-exhibitions",
+                                title: "Industrial Product Exhibitions",
+                                slug: "inds-pro-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "technology-product-exhibitions",
+                                title: "Technology Product Exhibitions",
+                                slug: "tech-pro-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "automotive-product-exhibitions",
+                                title: "Automotive Product Exhibitions",
+                                slug: "auto-pro-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "food-and-beverage-product-exhibitions",
+                                title: "Food and Beverage Product Exhibitions",
+                                slug: "food-bp-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "healthcare-and-medical-product-exhibitions",
+                                title: "Healthcare and Medical Product Exhibitions",
+                                slug: "hlth-mp-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "construction-and-building-product-exhibitions",
+                                title: "Construction and Building Product Exhibitions",
+                                slug: "cons-bp-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "fashion-and-textile-product-exhibitions",
+                                title: "Fashion and Textile Product Exhibitions",
+                                slug: "fash-tp-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "beauty-and-personal-care-product-exhibitions",
+                                title: "Beauty and Personal Care Product Exhibitions",
+                                slug: "beau-pcp-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainable-product-exhibitions",
+                                title: "Sustainable Product Exhibitions",
+                                slug: "sust-pro-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sports-and-fitness-product-exhibitions",
+                                title: "Sports and Fitness Product Exhibitions",
+                                slug: "sprt-fp-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "packaging-product-exhibitions",
+                                title: "Packaging Product Exhibitions",
+                                slug: "pack-pro-exh",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "b2b-trade-shows",
+                        title: "B2B Trade Shows",
+                        slug: "b-to-b",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "industry-specific-b2b-trade-shows",
+                                title: "Industry-Specific B2B Trade Shows",
+                                slug: "isb-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "technology-and-innovation-b2b-trade-shows",
+                                title: "Technology and Innovation B2B Trade Shows",
+                                slug: "tib-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "manufacturing-and-industrial-b2b-trade-shows",
+                                title: "Manufacturing and Industrial B2B Trade Shows",
+                                slug: "mib-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "consumer-goods-b2b-trade-shows",
+                                title: "Consumer Goods B2B Trade Shows",
+                                slug: "cgb-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "service-oriented-b2b-trade-shows",
+                                title: "Service-Oriented B2B Trade Shows",
+                                slug: "sob-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "trade-and-wholesale-b2b-trade-shows",
+                                title: "Trade and Wholesale B2B Trade Shows",
+                                slug: "twb-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainability-and-green-b2b-trade-shows",
+                                title: "Sustainability and Green B2B Trade Shows",
+                                slug: "sbg-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "educational-b2b-trade-shows",
+                                title: "Educational B2B Trade Shows",
+                                slug: "edb-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "tourism-and-hospitality-b2b-trade-shows",
+                                title: "Tourism and Hospitality B2B Trade Shows",
+                                slug: "tih-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "logistics-and-supply-chain-b2b-trade-shows",
+                                title: "Logistics and Supply Chain B2B Trade Shows",
+                                slug: "lsc-trd-shw",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
+                    },
+                    {
+                        id: "virtual-trade-shows",
+                        title: "Virtual Trade Shows",
+                        slug: "vir-trd-shw",
+                        titleSuffix: "Management Company in Delhi",
+                        children: []
+                    },
+                ]
+            },
             // {
             //     id: "Networking Events",
             //     title: "Networking Events",
