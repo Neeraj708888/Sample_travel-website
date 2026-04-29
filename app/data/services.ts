@@ -3770,46 +3770,351 @@ export const services: ServiceNode[] = [
                         title: "Virtual Trade Shows",
                         slug: "vir-trd-shw",
                         titleSuffix: "Management Company in Delhi",
-                        children: []
+                        children: [
+                            {
+                                id: "industry-specific-virtual-trade-shows",
+                                title: "Industry-Specific Virtual Trade Shows",
+                                slug: "ind-sv-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "product-specific-virtual-trade-shows",
+                                title: "Product-Specific Virtual Trade Shows",
+                                slug: "pro-sv-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "technology-and-innovation-virtual-trade-shows",
+                                title: "Technology and Innovation Virtual Trade Shows",
+                                slug: "tech-ivt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "global-and-regional-virtual-trade-shows",
+                                title: "Global and Regional Virtual Trade Shows",
+                                slug: "glo-rvt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "networking-centric-virtual-trade-shows",
+                                title: "Networking-Centric Virtual Trade Shows",
+                                slug: "net-cvt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "interactive-virtual-trade-shows",
+                                title: "Interactive Virtual Trade Shows",
+                                slug: "int-vt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "hybrid-virtual-trade-shows",
+                                title: "Hybrid Virtual Trade Shows",
+                                slug: "hyb-vt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "job-fair-and-recruitment-virtual-trade-shows",
+                                title: "Job Fair and Recruitment Virtual Trade Shows",
+                                slug: "job-frvt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "sustainability-and-green-virtual-trade-shows",
+                                title: "Sustainability and Green Virtual Trade Shows",
+                                slug: "sust-gvt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                            {
+                                id: "consumer-focused-virtual-trade-shows",
+                                title: "Consumer-Focused Virtual Trade Shows (B2C)",
+                                slug: "con-fvt-show",
+                                titleSuffix: "Management Company in Delhi"
+                            },
+                        ]
                     },
                 ]
             },
-            // {
-            //     id: "Networking Events",
-            //     title: "Networking Events",
-            //     slug: "net-evt",
-            //     titleSuffix: "Management Company in Delhi",
-            //     children: [
-            //         {
-            //             id: "industry-networking-events",
-            //             title: "Industry Networking Events",
-            //             slug: "ind-net-evt",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "business-luncheons-or-dinners",
-            //             title: "Business Luncheons or Dinners",
-            //             slug: "bus-lun-din",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "professional-conferences-networking",
-            //             title: "Professional Conferences Networking",
-            //             slug: "pro-conf-evt",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "speed-networking",
-            //             title: "Speed Networking",
-            //             slug: "spd-net",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //     ]
-            // },
+            {
+                id: "Networking Events",
+                title: "Networking Events",
+                slug: "net-evt",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "industry-networking-events",
+                        title: "Industry Networking Events",
+                        slug: "ind-net-evt",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "sector-specific-networking-mixers",
+                                title: "Sector-Specific Networking Mixers",
+                                slug: "sec-sn-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "small-business-and-startup-networking-mixers",
+                                title: "Small Business and Startup Networking Mixers",
+                                slug: "sml-bsn-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "professional-development-networking-mixers",
+                                title: "Professional Development Networking Mixers",
+                                slug: "pro-dn-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-networking-mixers",
+                                title: "Virtual Networking Mixers",
+                                slug: "vir-net-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "industry-collaboration-networking-mixers",
+                                title: "Industry Collaboration Networking Mixers",
+                                slug: "ind-cn-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "trade-association-and-industry-group-networking Mixers",
+                                title: "Trade Association and Industry Group Networking Mixers",
+                                slug: "trd-aign-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "conference-event-centric-networking-mixers",
+                                title: "Conference or Event-Centric Networking Mixers",
+                                slug: "con-ecn-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "exclusive-vip-networking-mixers",
+                                title: "Exclusive VIP Networking Mixers",
+                                slug: "exl-vip-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "social-and-informal-industry-networking-mixers",
+                                title: "Social and Informal Industry Networking Mixers",
+                                slug: "soc-iin-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "charity-and-community-focused-networking-mixers",
+                                title: "Charity and Community-Focused Networking Mixers",
+                                slug: "char-cfn-mix",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "business-luncheons-or-dinners",
+                        title: "Business Luncheons or Dinners",
+                        slug: "bus-lun-din",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "industry-specific-business-luncheons-dinners",
+                                title: "Industry-Specific Business Luncheons and Dinners",
+                                slug: "ind-sbl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "executive-and-c-suite-business-luncheons-binners",
+                                title: "Executive and C-Suite Business Luncheons Dinners",
+                                slug: "exe-bl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "client-customer-business-luncheons-dinners",
+                                title: "Client or Customer Business Luncheons and Dinners",
+                                slug: "clnt-cbl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "networking-business-luncheons-dinners",
+                                title: "Networking Business Luncheons and Dinners",
+                                slug: "net-bl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "small-group-business-luncheons-dinners",
+                                title: "Small Group Business Luncheons and Dinners",
+                                slug: "sm-gbl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "charity-cause-oriented-business-luncheons-dinners",
+                                title: "Charity or Cause-Oriented Business Luncheons and Dinners",
+                                slug: "char-cobl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "holiday-seasonal-business-luncheons-dinners",
+                                title: "Holiday or Seasonal Business Luncheons and Dinners",
+                                slug: "holi-sbl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "international-business-luncheons-dinners",
+                                title: "International Business Luncheons and Dinners",
+                                slug: "int-bl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "panel-discussion-business-luncheons-dinners",
+                                title: "Panel Discussion Business Luncheons and Dinners",
+                                slug: "pan-dbl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "alumni-and-educational-business-luncheons-dinners",
+                                title: "Alumni and Educational Business Luncheons and Dinners",
+                                slug: "alu-ebl-din",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "professional-conferences-networking",
+                        title: "Professional Conferences Networking",
+                        slug: "pro-conf-evt",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "industry-specific-networking-at-conferences",
+                                title: "Industry-Specific Networking at Conferences",
+                                slug: "ind-sn-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "small-group-networking-sessions-at-conferences",
+                                title: "Small Group Networking Sessions at Conferences",
+                                slug: "sm-gns-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "panel-discussion-networking-at-conferences",
+                                title: "Panel Discussion Networking at Conferences",
+                                slug: "pan-dn-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "speed-networking-at-conferences",
+                                title: "Speed Networking at Conferences",
+                                slug: "spd-net-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "networking-dinners-luncheons-at-conferences",
+                                title: "Networking Dinners & Luncheons at Conferences",
+                                slug: "net-dl-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "workshops-and-collaborative-networking-sessions-at-conferences",
+                                title: "Workshops and Collaborative Networking Sessions at Conferences",
+                                slug: "wrk-cns-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "international-networking-at-conferences",
+                                title: "International Networking at Conferences",
+                                slug: "int-net-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "technology-driven-networking-at-conferences",
+                                title: "Technology-Driven Networking at Conferences",
+                                slug: "tech-dn-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "post-conference-networking-events",
+                                title: "Post-Conference Networking Events",
+                                slug: "post-cn-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "student-and-young-professional-networking-at-conferences",
+                                title: "Student and Young Professional Networking at Conferences",
+                                slug: "stu-ypn-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "speed-networking",
+                        title: "Speed Networking",
+                        slug: "spd-net",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "industry-specific-speed-networking",
+                                title: "Industry-Specific Speed Networking",
+                                slug: "ind-sp-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "corporate-speed-networking",
+                                title: "Corporate Speed Networking",
+                                slug: "corp-s-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "entrepreneur-and-startup-speed-networking",
+                                title: "Entrepreneur and Startup Speed Networking",
+                                slug: "ent-ss-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "young-professionals-speed-networking",
+                                title: "Young Professionals Speed Networking",
+                                slug: "yng-ps-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cross-industry-speed-networking",
+                                title: "Cross-Industry Speed Networking",
+                                slug: "crss-is-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-speed-networking",
+                                title: "Virtual Speed Networking",
+                                slug: "vir-s-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "charity-and-cause-based-speed-networking",
+                                title: "Charity and Cause-Based Speed Networking",
+                                slug: "char-cbs-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "women-in-business-speed-networking",
+                                title: "Women in Business Speed Networking",
+                                slug: "wom-bs-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "academic-and-research-speed-networking",
+                                title: "Academic and Research Speed Networking",
+                                slug: "aca-rs-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "job-focused-speed-networking",
+                                title: "Job-Focused Speed Networking",
+                                slug: "job-fs-net",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                ]
+            },
             // {
             //     id: "Incentive Programs",
             //     title: "Incentive Programs",
