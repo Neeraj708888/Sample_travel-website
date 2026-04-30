@@ -6,11 +6,9 @@ import { getPageData } from "@/app/liv/pageData"
 
 import { EventSearch } from "@/app/components/Events/Hero"
 import EventCategories from "@/app/components/Events/EventCategories"
-import PortfolioCaseStudy from "@/app/components/Events/Services/PortfolioCaseStudy"
 import EventSolutions from "@/app/components/Events/Services/EventSolutions"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
 import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceTypes"
-import ServiceTypeCaseStudy from "@/app/components/Events/Services/Category/Types/ServiceTypesCaseStudy"
 import FAQ from "@/app/components/Events/FAQ"
 
 import { findEventPath } from "@/app/liv/eventSlugFinder"
@@ -208,7 +206,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {depth >= 3 && (
                 <>
                     {TopSection}
-                    <ServiceTypes />
+                    {/* <ServiceTypes title={current.title} /> */}
                     {/* <ServiceTypeCaseStudy /> */}
                     <FAQ faqs={faqList} />
                     <ContactCTA />
