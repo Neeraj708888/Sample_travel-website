@@ -4755,42 +4755,298 @@ export const services: ServiceNode[] = [
                     }
                 ]
             },
-            // {
-            //     id: "Executive Retreats",
-            //     title: "Executive Retreats",
-            //     slug: "exe-ret",
-            //     titleSuffix: "Management Company in Delhi",
-            //     children: [
-            //         {
-            //             id: "leadership-retreats",
-            //             title: "Leadership Retreats",
-            //             slug: "led-ret",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "board-retreats",
-            //             title: "Board Retreats",
-            //             slug: "brd-ret",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "team-strategy-retreats",
-            //             title: "Team Strategy Retreats",
-            //             slug: "tm-stra-ret",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "reflection-and-wellness-retreats",
-            //             title: "Reflection and Wellness Retreats",
-            //             slug: "ref-wel-ret",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         }
-            //     ]
-            // },
+            {
+                id: "executive-retreats",
+                title: "Executive Retreats",
+                slug: "exe-ret",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "leadership-retreats",
+                        title: "Leadership Retreats",
+                        slug: "led-ret",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "strategic-planning-retreats",
+                                title: "Strategic Planning Retreats",
+                                slug: "str-pla-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "team-building-and-bonding-retreats",
+                                title: "Team Building and Bonding Retreats",
+                                slug: "tm-bb-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-development-retreats",
+                                title: "Leadership Development Retreats",
+                                slug: "lea-dev-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-and-creativity-retreats",
+                                title: "Innovation and Creativity Retreats",
+                                slug: "inn-cre-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-management-and-risk-mitigation-retreats",
+                                title: "Crisis Management and Risk Mitigation Retreats",
+                                slug: "cri-mrm-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "visionary-leadership-retreats",
+                                title: "Visionary Leadership Retreats",
+                                slug: "vis-lea-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "change-management-retreats",
+                                title: "Change Management Retreats",
+                                slug: "cha-mng-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "high-Performance-leadership-retreats",
+                                title: "High-Performance Leadership Retreats",
+                                slug: "high-pl-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "executive-wellness-retreats",
+                                title: "Executive Wellness Retreats",
+                                slug: "exe-well-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "philanthropy-and-csr-leadership-retreats",
+                                title: "Philanthropy and CSR Leadership Retreats",
+                                slug: "phi-csrl-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "executive-collaboration-retreats",
+                                title: "Executive Collaboration Retreats",
+                                slug: "exe-col-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "board-retreats",
+                        title: "Board Retreats",
+                        slug: "brd-ret",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "strategic-planning-board-retreats",
+                                title: "Strategic Planning Board Retreats",
+                                slug: "str-pb-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "governance-and-compliance-retreats",
+                                title: "Governance and Compliance Retreats",
+                                slug: "gov-com-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "team-building-and-collaboration-retreats",
+                                title: "Team Building and Collaboration Retreats",
+                                slug: "tm-bc-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "performance-review-and-evaluation-retreats",
+                                title: "Performance Review and Evaluation Retreats",
+                                slug: "per-rae-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "crisis-management-and-contingency-planning-retreats",
+                                title: "Crisis Management and Contingency Planning Retreats",
+                                slug: "cri-mac-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "financial-oversight-and-management-retreats",
+                                title: "Financial Oversight and Management Retreats",
+                                slug: "fin-oam-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-development-and-succession-planning-retreats",
+                                title: "Leadership Development and Succession Planning Retreats",
+                                slug: "lead-dsp-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-and-future-growth-retreats",
+                                title: "Innovation and Future Growth Retreats",
+                                slug: "inn-afw-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "board-member-education-retreats",
+                                title: "Board Member Education Retreats",
+                                slug: "boa-me-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "relationship-building-with-stakeholders-retreats",
+                                title: "Relationship Building with Stakeholders Retreats",
+                                slug: "rel-bs-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "team-strategy-retreats",
+                        title: "Team Strategy Retreats",
+                        slug: "tm-stra-ret",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "vision-and-goal-alignment-retreats",
+                                title: "Vision and Goal Alignment Retreats",
+                                slug: "vis-aga-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "collaboration-and-communication-strategy-retreats",
+                                title: "Collaboration and Communication Strategy Retreats",
+                                slug: "col-cs-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "inovation-and-problem-solving-strategy-retreats",
+                                title: "Innovation and Problem-Solving Strategy Retreats",
+                                slug: "inn-pss-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "performance-review-and-improvement-retreats",
+                                title: "Performance Review and Improvement Retreats",
+                                slug: "per-rai-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "risk-management-and-contingency-planning-retreats",
+                                title: "Risk Management and Contingency Planning Retreats",
+                                slug: "risk-mcp-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-development-and-succession-planning-retreats",
+                                title: "Leadership Development and Succession Planning Retreats",
+                                slug: "lead-dasp-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "cultural-alignment-and-values-integration-retreats",
+                                title: "Cultural Alignment and Values Integration Retreats",
+                                slug: "cul-aavi-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "productivity-and-efficiency-retreats",
+                                title: "Productivity and Efficiency Retreats",
+                                slug: "pro-ae-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "financial-strategy-and-budgeting-retreats",
+                                title: "Financial Strategy and Budgeting Retreats",
+                                slug: "fin-sab-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "executive-alignment-and-relationship-building-retreats",
+                                title: "Executive Alignment and Relationship Building Retreats",
+                                slug: "exe-aga-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "change-management-strategy-retreats",
+                                title: "Change Management Strategy Retreats",
+                                slug: "cha-ms-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "reflection-and-wellness-retreats",
+                        title: "Reflection and Wellness Retreats",
+                        slug: "ref-wel-ret",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "mindfulness-and-meditation-retreats",
+                                title: "Mindfulness and Meditation Retreats",
+                                slug: "mind-med-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "stress-management-and-relaxation-retreats",
+                                title: "Stress Management and Relaxation Retreats",
+                                slug: "stre-mar-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "physical-wellness-and-fitness-retreats",
+                                title: "Physical Wellness and Fitness Retreats",
+                                slug: "phy-waf-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "personal-reflection-and-goal-setting-retreats",
+                                title: "Personal Reflection and Goal Setting Retreats",
+                                slug: "per-rgs-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "digital-detox-and-disconnect-retreats",
+                                title: "Digital Detox and Disconnect Retreats",
+                                slug: "digi-dad-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "holistic-healing-and-restorative-retreats",
+                                title: "Holistic Healing and Restorative Retreats",
+                                slug: "holi-har-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "nature-based-wellness-retreats",
+                                title: "Nature-Based Wellness Retreats",
+                                slug: "nat-bw-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sleep-and-recovery-retreats",
+                                title: "Sleep and Recovery Retreats",
+                                slug: "sle-ar-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "emotional-wellness-and-resilience-retreats",
+                                title: "Emotional Wellness and Resilience Retreats",
+                                slug: "emo-war-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "creative-expression-and-arts-based-retreats",
+                                title: "Creative Expression and Arts-Based Retreats",
+                                slug: "cre-eab-ret",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    }
+                ]
+            },
             // {
             //     id: "Webinars and Virtual Events",
             //     title: "Webinars and Virtual Events",
