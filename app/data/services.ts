@@ -5047,35 +5047,248 @@ export const services: ServiceNode[] = [
                     }
                 ]
             },
-            // {
-            //     id: "Webinars and Virtual Events",
-            //     title: "Webinars and Virtual Events",
-            //     slug: "web-vir-evt",
-            //     titleSuffix: "Management Company in Delhi",
-            //     children: [
-            //         {
-            //             id: "online-training-workshops",
-            //             title: "Online Training Workshops",
-            //             slug: "onl-trn-work",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "virtual-conferences",
-            //             title: "Virtual Conferences",
-            //             slug: "vir-conf",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         },
-            //         {
-            //             id: "product-webinars",
-            //             title: "Product Webinars",
-            //             slug: "prod-web",
-            //             titleSuffix: "Management Company in Delhi",
-            //             children: []
-            //         }
-            //     ]
-            // },
+            {
+                id: "webinars-and-virtual-events",
+                title: "Webinars and Virtual Events",
+                slug: "web-vir-evt",
+                titleSuffix: "Management Company in Delhi",
+                children: [
+                    {
+                        id: "online-training-workshops",
+                        title: "Online Training Workshops",
+                        slug: "onl-trn-work",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "skill-development-workshops",
+                                title: "Skill Development Workshops",
+                                slug: "skil-dev-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "certifications-and-professional-development-workshops",
+                                title: "Certifications and Professional Development Workshops",
+                                slug: "cert-pd-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-training-workshops",
+                                title: "Product Training Workshops",
+                                slug: "pro-tra-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "employee-onboarding-workshops",
+                                title: "Employee Onboarding Workshops",
+                                slug: "emp-onb-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "leadership-and-management-training-workshops",
+                                title: "Leadership and Management Training Workshops",
+                                slug: "lea-mt-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "personal-development-workshops",
+                                title: "Personal Development Workshops",
+                                slug: "pers-dev-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "sales-and-marketing-training-workshops",
+                                title: "Sales and Marketing Training Workshops",
+                                slug: "sales-mt-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "tech-and-software-training-workshops",
+                                title: "Tech and Software Training Workshops",
+                                slug: "tech-st-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "creative-and-design-workshops",
+                                title: "Creative and Design Workshops",
+                                slug: "cre-des-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-service-and-support-workshops",
+                                title: "Customer Service and Support Workshops",
+                                slug: "cust-ss-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "compliance-and-legal-training-workshops",
+                                title: "Compliance and Legal Training Workshops",
+                                slug: "comp-lt-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "innovation-and-change-management-workshops",
+                                title: "Innovation and Change Management Workshops",
+                                slug: "inn-cm-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-networking-and-collaboration-workshops",
+                                title: "Virtual Networking and Collaboration Workshops",
+                                slug: "vir-nc-work",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "virtual-conferences",
+                        title: "Virtual Conferences",
+                        slug: "vir-conf",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "industry-Specific-conferences",
+                                title: "Industry-Specific Conferences",
+                                slug: "indus-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "educational-and-academic-conferences",
+                                title: "Educational and Academic Conferences",
+                                slug: "edu-ace-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "networking-conferences",
+                                title: "Networking Conferences",
+                                slug: "netw-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "corporate-conferences",
+                                title: "Corporate Conferences",
+                                slug: "corp-confs",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "trade-and-product-showcase-conferences",
+                                title: "Trade and Product Showcase Conferences",
+                                slug: "trd-ps-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "keynote-and-thought-leadership-conferences",
+                                title: "Keynote and Thought Leadership Conferences",
+                                slug: "key-tls-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "workshops-and-hands-on-learning-conferences",
+                                title: "Workshops and Hands-On Learning Conferences",
+                                slug: "work-hol-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "annual-or-bi-annual-conferences",
+                                title: "Annual or Bi-Annual Conferences",
+                                slug: "ann-bia-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-development-or-innovation-conferences",
+                                title: "Product Development or Innovation Conferences",
+                                slug: "pro-doi-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-summits",
+                                title: "Virtual Summits",
+                                slug: "virt-summ",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "interactive-q-and-a-and-panel-discussion Conferences",
+                                title: "Interactive Q and A and Panel Discussion Conferences",
+                                slug: "int-qapd-summ",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "global-or-international-conferences",
+                                title: "Global or International Conferences",
+                                slug: "glob-int-conf",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    },
+                    {
+                        id: "product-webinars",
+                        title: "Product Webinars",
+                        slug: "prod-web",
+                        titleSuffix: "Management Company in Delhi",
+                        children: [
+                            {
+                                id: "product-demonstrations",
+                                title: "Product Demonstrations (Demos)",
+                                slug: "prod-demos",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-launch-webinars",
+                                title: "Product Launch Webinars",
+                                slug: "prod-webi",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-training-webinars",
+                                title: "Product Training Webinars",
+                                slug: "prod-tran",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-updates-and-new-features-webinars",
+                                title: "Product Updates and New Features Webinars",
+                                slug: "prod-unf-webi",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-use-case-webinars",
+                                title: "Product Use Case Webinars",
+                                slug: "prod-uc-webi",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-q-and-a-webinars",
+                                title: "Product Q and A Webinars",
+                                slug: "prod-qa-webi",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-webinars-for-sales-teams",
+                                title: "Product Webinars for Sales Teams",
+                                slug: "prod-wfs-tm",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-webinars-for-partners-and-resellers",
+                                title: "Product Webinars for Partners and Resellers",
+                                slug: "prod-wfp-rese",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "customer-feedback-and-advisory-webinars",
+                                title: "Customer Feedback and Advisory Webinars",
+                                slug: "cust-faa-webi",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "product-comparison-webinars",
+                                title: "Product Comparison Webinars",
+                                slug: "prod-comp-webi",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                        ]
+                    }
+                ]
+            },
         ]
     },
 
