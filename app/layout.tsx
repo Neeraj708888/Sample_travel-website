@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import './globals.css'
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Footer from "@/app/components/Footer";
 import EnquiryPopup from "./components/EnquiryFormPopup";
 import Navbar from "./components/Navbar";
@@ -58,3 +58,42 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+// import type { Metadata } from "next";
+// import './globals.css'
+// import { Geist, Geist_Mono } from "next/font/google";
+// import LayoutSwitcher from "./components/LayoutSwitcher";
+// import EnquiryPopup from "./components/EnquiryFormPopup";
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+// export const metadata: Metadata = {
+//   title: "Website",
+// };
+
+// export default function RootLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <html lang="en">
+//       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+//         <LayoutSwitcher>
+//           {children}
+//         </LayoutSwitcher>
+
+//         <EnquiryPopup />
+//       </body>
+//     </html>
+//   );
+// }

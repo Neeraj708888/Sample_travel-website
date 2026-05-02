@@ -137,7 +137,7 @@
 
 
 
-import { dbConnect } from "../backend/src/config/db"
+import { dbConnect } from "../api/src/config/db"
 import { PageType } from "../types/page.types"
 import { generatePageContent } from "./generatePageContent"
 
