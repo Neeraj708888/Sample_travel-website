@@ -1,19 +1,14 @@
-import { generateSeo } from "../liv/seo/seo"
-import {
-  breadcrumbSchema,
-  localBusinessSchema,
-  organizationSchema,
-  faqSchema,
-} from "../liv/seo/schema"
-import Schema from "../components/Common/Schema"
+import Schema from "@/app/components/Common/Schema"
+import { ContactCTA } from "@/app/components/Events/ContactCTA"
+import EventCategories from "@/app/components/Events/EventCategories"
+import FAQ from "@/app/components/Events/FAQ"
+import { EventSearch } from "@/app/components/Events/Hero"
+import { solutions } from "@/app/data/solution"
+import { getPageData } from "@/app/helpers/pageData"
+import { breadcrumbSchema, faqSchema, localBusinessSchema, organizationSchema } from "@/app/liv/seo/schema"
+import { generateSeo } from "@/app/liv/seo/seo"
 
-import { ContactCTA } from "../components/Events/ContactCTA"
-import { EventSearch } from "../components/Events/Hero"
-import EventCategories from "../components/Events/EventCategories"
-import FAQ from "../components/Events/FAQ"
 
-import { getPageData } from "../helpers/pageData"
-import { solutions } from "../data/solution"
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
