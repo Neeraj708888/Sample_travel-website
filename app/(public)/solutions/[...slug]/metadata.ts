@@ -1,6 +1,6 @@
 import { solutions } from "@/app/data/solution"
 import type { ServiceNode } from "@/app/data/solution"
-import { generateSeo } from "@/app/liv/seo"
+import { generateSeo } from "@/app/liv/seo/seo"
 
 /* ---------------------------------- */
 /* ✅ Solutions tree traversal         */

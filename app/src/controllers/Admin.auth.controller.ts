@@ -1,3 +1,5 @@
+// src/controllers/adminAuth.controller.ts
+// Aapka EXISTING controller — bilkul same, sirf user info response mein add kiya
 import { NextResponse } from 'next/server';
 import { findAdminByEmail, validatePassword } from '../services/adminAuth.service';
 import { generateToken } from '../utils/jwt';
@@ -14,7 +16,6 @@ export const loginController = async (req: Request) => {
         }
 
         const user = await findAdminByEmail(email)
-
         if (!user) {
             return NextResponse.json(
                 { success: false, message: 'Invalid email' },
@@ -23,7 +24,6 @@ export const loginController = async (req: Request) => {
         }
 
         const match = await validatePassword(password, user.password)
-
         if (!match) {
             return NextResponse.json(
                 { success: false, message: 'Wrong password' },
@@ -40,6 +40,7 @@ export const loginController = async (req: Request) => {
         const response = NextResponse.json({
             success: true,
             message: 'Login successful',
+            user: { id: user.id, name: user.name, email: user.email, role: user.role }
         })
 
         response.cookies.set('admin_token', token, {
@@ -60,15 +61,7 @@ export const loginController = async (req: Request) => {
 }
 
 export const logoutController = async () => {
-    const response = NextResponse.json({
-        success: true,
-        message: 'Logout successful',
-    })
-
-    response.cookies.set('admin_token', '', {
-        path: '/',
-        expires: new Date(0),
-    })
-
+    const response = NextResponse.json({ success: true, message: 'Logout successful' })
+    response.cookies.set('admin_token', '', { path: '/', expires: new Date(0) })
     return response
 }

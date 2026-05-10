@@ -42,7 +42,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ServiceNode } from "../data/services";
-import { findNodeFullPath } from "@/app/liv/utils/treeHelper";
+import { findNodeFullPath } from "@/app/helpers/treeHelper";
 
 export function useServicePathNavigation(services: ServiceNode[]) {
 

@@ -1,17 +1,54 @@
-import { redirect } from 'next/navigation'
-import Link from 'next/link'
+// import { redirect } from 'next/navigation'
+// import Link from 'next/link'
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
-    const loggedIn = true // replace with cookie/session check
-    if (!loggedIn) redirect('/admin/login')
+// export default function AdminLayout({ children }: { children: React.ReactNode }) {
+//     const loggedIn = true // replace with cookie/session check
+//     if (!loggedIn) redirect('/admin/login')
+
+//     return (
+//         <div className="flex min-h-screen">
+//             <main className="flex-1 p-6">{children}</main>
+//         </div>
+//     )
+// }
+
+// app/admin/layout.tsx
+// app/admin/(protected)/layout.tsx
+// app/admin/(protected)/layout.tsx
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+
+import { AdminShell } from "./AdminShell";
+import { verifyToken } from "@/app/src/utils/jwt";
+
+export default async function ProtectedAdminLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    const cookieStore = await cookies();
+    const token = cookieStore.get("admin_token")?.value;
+
+    if (!token) redirect("/admin/login");
+
+    // jsonwebtoken se verify — server side only
+    const payload = verifyToken(token);
+    if (!payload) redirect("/admin/login");
+
+    // Supabase se name fetch karo (token mein name nahi hai)
+    // Agar token mein naam store karna ho toh generateToken mein add karo
+    const name = payload.email.split("@")[0]; // fallback — email se naam
 
     return (
-        <div className="flex min-h-screen">
-            <main className="flex-1 p-6">{children}</main>
-        </div>
-    )
+        <AdminShell
+            adminName={name}
+            adminEmail={payload.email}
+            adminRole={payload.role}
+        >
+            {children}
+        </AdminShell>
+    );
 }
-
 //  -----------------  1st Approach ------------------
 // 'use client'
 

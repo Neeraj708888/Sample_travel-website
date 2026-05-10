@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation"
 
-import { breadcrumbSchema, serviceSchema, faqSchema } from "@/app/liv/schema"
-import Schema from "@/app/liv/components/Schema"
-import { getPageData } from "@/app/liv/pageData"
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/app/liv/seo/schema"
+import Schema from "@/app/components/Common/Schema"
+import { getPageData } from "@/app/helpers/pageData"
 
 import { EventSearch } from "@/app/components/Events/Hero"
 import EventCategories from "@/app/components/Events/EventCategories"
@@ -11,7 +11,7 @@ import { ContactCTA } from "@/app/components/Events/ContactCTA"
 import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceTypes"
 import FAQ from "@/app/components/Events/FAQ"
 
-import { findEventPath } from "@/app/liv/eventSlugFinder"
+import { findEventPath } from "@/app/helpers/eventSlugFinder"
 
 type PageProps = {
     params: Promise<{

@@ -6,10 +6,10 @@ export default function NotFound() {
                 Sorry, this event does not exist.
             </p>
             <a
-                href="/destinations"
+                href="/"
                 className="text-blue-600 hover:underline"
             >
-                Back to Destinations
+                Back to Home
             </a>
         </div>
     );

@@ -222,7 +222,7 @@ import Link from "next/link";
 import { services, ServiceNode } from "@/app/data/services";
 import GlobalServiceSearch from "../GlobalServiceSearch";
 import { useServicePathNavigation } from "@/app/hooks/useServicePathNavigation";
-import { findNodeFullPath } from "@/app/liv/utils/treeHelper";
+import { findNodeFullPath } from "@/app/helpers/treeHelper";
 import { findNodeByPath } from "./servicesUtils";
 
 

@@ -196,9 +196,9 @@ import type { ServiceNode } from "@/app/data/solution"
 import { findEventPath } from "./eventSlugFinder"
 import { findSolutionPath } from "./solutionSlugFinder"
 
-import { buildPrompt } from "./ai/promptBuilder"
-import { generateAI } from "./ai/generateContent"
-import { mapCards } from "./utils/mapCards"
+import { buildPrompt } from "../liv/ai/promptBuilder"
+import { generateAI } from "../liv/ai/generateContent"
+import { mapCards } from "./mapCards"
 import { PageTypeKey } from "../types/page.types"
 
 /* =======================================

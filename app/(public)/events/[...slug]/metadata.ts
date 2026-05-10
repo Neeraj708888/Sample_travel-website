@@ -1,5 +1,5 @@
-import { findEventPath } from "@/app/liv/eventSlugFinder"
-import { generateSeo } from "@/app/liv/seo"
+import { findEventPath } from "@/app/helpers/eventSlugFinder"
+import { generateSeo } from "@/app/liv/seo/seo"
 import { Metadata } from "next"
 
 type Props = {

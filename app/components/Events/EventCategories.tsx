@@ -5,7 +5,7 @@ import { useParams, usePathname } from "next/navigation"
 import { services, ServiceNode } from "@/app/data/services"
 import { solutions } from "@/app/data/solution"
 import CategoryCard from "./CategoryCard"
-import { findNodeFullPath, hasChildren } from "@/app/liv/utils/treeHelper";
+import { findNodeFullPath, hasChildren } from "@/app/helpers/treeHelper";
 
 
 

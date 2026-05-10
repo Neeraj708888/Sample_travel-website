@@ -5,15 +5,15 @@ import {
   breadcrumbSchema,
   serviceSchema,
   faqSchema,
-} from "@/app/liv/schema"
-import Schema from "@/app/liv/components/Schema"
-import { getPageData } from "@/app/liv/pageData"
+} from "@/app/liv/seo/schema"
+import Schema from "@/app/components/Common/Schema"
+import { getPageData } from "@/app/helpers/pageData"
 
 import { EventSearch } from "@/app/components/Events/Hero"
 import EventCategories from "@/app/components/Events/EventCategories"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
 import FAQ from "@/app/components/Events/FAQ"
-import { findSolutionPath } from "@/app/liv/solutionSlugFinder"
+import { findSolutionPath } from "@/app/helpers/solutionSlugFinder"
 
 type PageProps = {
   params: Promise<{

@@ -1,18 +1,18 @@
-import { generateSeo } from "../liv/seo"
+import { generateSeo } from "../liv/seo/seo"
 import {
   breadcrumbSchema,
   localBusinessSchema,
   organizationSchema,
   faqSchema,
-} from "../liv/schema"
-import Schema from "../liv/components/Schema"
+} from "../liv/seo/schema"
+import Schema from "../components/Common/Schema"
 
 import { ContactCTA } from "../components/Events/ContactCTA"
 import { EventSearch } from "../components/Events/Hero"
 import EventCategories from "../components/Events/EventCategories"
 import FAQ from "../components/Events/FAQ"
 
-import { getPageData } from "../liv/pageData"
+import { getPageData } from "../helpers/pageData"
 import { solutions } from "../data/solution"
 
 const baseUrl =

@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import './globals.css'
 import { Geist, Geist_Mono } from "next/font/google";
-import Footer from "@/app/components/Footer";
-import EnquiryPopup from "./components/EnquiryFormPopup";
-import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,14 +43,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* ✅ Navbar Added */}
-        <Navbar />
+        {/* <Navbar /> */}
         {/* ✅ Padding because navbar is fixed  remove class- className="pt-20"*/}
         <main>
           {children}
-          <EnquiryPopup />
         </main>
         {/* Footer Added */}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
