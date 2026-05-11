@@ -92,6 +92,15 @@ export interface CreatePage {
     created_at?: string
 }
 
+
+// Query - Type
+export interface Query {
+    name: string;
+    email: string;
+    mobile: string;
+    message: string;
+}
+
 /**
  * 🔹 Optional (Future CMS)
  */

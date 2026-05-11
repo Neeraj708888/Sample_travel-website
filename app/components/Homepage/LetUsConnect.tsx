@@ -97,6 +97,14 @@ export default function ConnectPage() {
                                 placeholder="Your Email"
                                 className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
                             />
+                            <input
+                                type="tel"
+                                placeholder="Your Mobile Number"
+                                inputMode="numeric"
+                                pattern="[0-9]{10}"
+                                maxLength={10}
+                                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                            />
 
                             <textarea
                                 rows={4}

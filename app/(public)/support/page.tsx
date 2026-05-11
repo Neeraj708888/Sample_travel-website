@@ -1,8 +1,68 @@
+"use client";
 import Script from "next/script";
 import { Mail, Phone, MessageCircle } from "lucide-react";
-export { metadata } from "./metadata";
+import { useState } from "react";
+import { submitQuery } from "@/app/helpers/submitQuery";
+// export { metadata } from "./metadata";
 
 export default function SupportPage() {
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        mobile: "",
+        message: "",
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [toast, setToast] = useState<{
+        type: "success" | "error";
+        message: string;
+    } | null>(null);
+
+    function handleChange(
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value,
+        });
+    }
+
+    async function handleSubmit(
+        e: React.FormEvent<HTMLFormElement>
+    ) {
+        e.preventDefault();
+
+        setLoading(true);
+        setToast(null);
+
+        try {
+
+            await submitQuery(form);
+
+            setToast({
+                type: "success",
+                message: "Query submitted successfully!",
+            });
+
+            setForm({
+                name: "",
+                email: "",
+                mobile: "",
+                message: "",
+            });
+
+        } catch (err: any) {
+
+            setToast({
+                type: "error",
+                message: err.message,
+            });
+
+        } finally {
+            setLoading(false);
+        }
+    }
     return (
         <>
             {/* SEO Schema */}
@@ -84,31 +144,64 @@ export default function SupportPage() {
                         <h2 className="text-3xl font-bold mb-8 text-center">
                             Send Us a Message
                         </h2>
-
-                        <form className="space-y-6">
+                        {/* Toast Message */}
+                        {toast && (
+                            <div
+                                className={`mb-6 p-4 rounded-xl text-sm font-medium border ${toast.type === "success"
+                                    ? "bg-green-500/10 border-green-500 text-green-400"
+                                    : "bg-red-500/10 border-red-500 text-red-400"
+                                    }`}
+                            >
+                                {toast.message}
+                            </div>
+                        )}
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <input
                                 type="text"
+                                name="name"
+                                value={form.name}
+                                onChange={handleChange}
                                 placeholder="Your Name"
                                 className="w-full p-4 rounded-lg bg-black border border-white/10 focus:border-yellow-500 outline-none"
                             />
 
                             <input
                                 type="email"
+                                name="email"
+                                value={form.email}
+                                onChange={handleChange}
                                 placeholder="Your Email"
                                 className="w-full p-4 rounded-lg bg-black border border-white/10 focus:border-yellow-500 outline-none"
                             />
 
+                            <input
+                                type="tel"
+                                name="mobile"
+                                value={form.mobile}
+                                onChange={handleChange}
+                                placeholder="Your Mobile Number"
+                                inputMode="numeric"
+                                pattern="[0-9]{10}"
+                                maxLength={10}
+                                className="w-full p-4 rounded-lg bg-black border border-white/10 focus:border-yellow-500 outline-none"
+                            />
                             <textarea
                                 rows={5}
+                                name="message"
+                                value={form.message}
+                                onChange={handleChange}
                                 placeholder="How can we help you?"
                                 className="w-full p-4 rounded-lg bg-black border border-white/10 focus:border-yellow-500 outline-none"
                             ></textarea>
 
                             <button
                                 type="submit"
+                                disabled={loading}
                                 className="w-full py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold rounded-lg transition"
                             >
-                                Submit Request
+                                {loading
+                                    ? "Submitting..."
+                                    : "Submit Request"}
                             </button>
                         </form>
                     </div>

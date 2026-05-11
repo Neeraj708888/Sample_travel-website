@@ -32,6 +32,7 @@ export const ROLE_PERMISSIONS: Record<AdminRole, string[]> = {
 export const NAV_ITEMS = [
     { href: "/admin/dashboard", label: "Dashboard", key: "dashboard" },
     { href: "/admin/queries", label: "Queries", key: "queries" },
+    { href: "/admin/pages", label: "Page Sections", key: "pages" },
     { href: "/admin/bookings", label: "Bookings", key: "bookings" },
     { href: "/admin/gallery", label: "Gallery", key: "gallery" },
     { href: "/admin/blog", label: "Blog", key: "blog" },

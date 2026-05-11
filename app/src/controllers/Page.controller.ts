@@ -1,7 +1,11 @@
+import { NextRequest, NextResponse } from "next/server";
 import { Request, Response } from "express"
 import { PageModel } from "../models/Page.model"
 import { CreatePage, PageContent, FAQ } from "@/app/types/page.types"
+import { dbConnect } from "../config/db"
+import { pageService } from "../services/page.service";
 
+// Create Page
 export const createPage = async (req: Request, res: Response) => {
     try {
 
@@ -166,5 +170,95 @@ export const createPage = async (req: Request, res: Response) => {
             error: error.message || "Internal Server Error"
         })
 
+    }
+}
+
+// ─── GET PAGE ─────────────────────────────────────
+export async function getPageController(
+    _req: NextRequest,
+    id: string
+) {
+    try {
+        const data = await pageService.getPageById(id);
+
+        return NextResponse.json({
+            success: true,
+            data,
+        });
+
+    } catch (error: any) {
+
+        return NextResponse.json(
+            {
+                success: false,
+                message: error.message,
+            },
+            { status: 404 }
+        );
+    }
+}
+
+// ─── UPDATE PAGE ──────────────────────────────────
+export async function updatePageController(
+    req: NextRequest,
+    id: string
+) {
+    try {
+
+        const body = await req.json();
+
+        const {
+            slug,
+            meta_title,
+        } = body;
+
+        // Validation
+        if (!slug?.trim() || !meta_title?.trim()) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    message: "Slug aur meta_title required hain",
+                },
+                { status: 400 }
+            );
+        }
+
+        // Duplicate Slug Check
+        const existing = await pageService.checkSlugExists(
+            slug,
+            id
+        );
+
+        if (existing) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    message:
+                        "Yeh slug already kisi aur page mein use ho raha hai",
+                },
+                { status: 409 }
+            );
+        }
+
+        // Update
+        const data = await pageService.updatePage(id, body);
+
+        return NextResponse.json({
+            success: true,
+            message: "Page update ho gaya",
+            data,
+        });
+
+    } catch (error: any) {
+
+        console.error("[Page Update Error]", error);
+
+        return NextResponse.json(
+            {
+                success: false,
+                message: error.message || "Server error",
+            },
+            { status: 500 }
+        );
     }
 }
