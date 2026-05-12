@@ -106,7 +106,7 @@ export default function MobileSidebar({ isOpen, setIsOpen }: MobileSidebarProps)
     const COMMON_LINKS = [
         { href: "/blog", label: "Blog" },
         { href: "/locations", label: "Locations" },
-        { href: "/vision", label: "Our Vision" },
+        // { href: "/vision", label: "Our Vision" },
         { href: "/success-story", label: "Success Story" },
     ];
 
