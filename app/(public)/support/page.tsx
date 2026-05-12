@@ -42,7 +42,7 @@ export default function SupportPage() {
 
             setToast({
                 type: "success",
-                message: "Query submitted successfully!",
+                message: "Your message submitted successfully!",
             });
 
             setForm({

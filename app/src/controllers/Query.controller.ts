@@ -112,3 +112,82 @@ export async function createQueryController(
         );
     }
 }
+// ─────────────────────────────────────────────
+// GET QUERY CONTROLLER
+// ─────────────────────────────────────────────
+
+export async function getQueryController() {
+    try {
+        const data = await QueryService.getQuery();
+
+        return NextResponse.json({
+            success: true,
+            data,
+        });
+    } catch (error: any) {
+        return NextResponse.json({
+            success: false,
+            message: error.message
+        },
+            {
+                status: 500
+            })
+    }
+}
+
+// ─────────────────────────────────────────────
+// GET SINGLE QUERY CONTROLLER
+// ─────────────────────────────────────────────
+export async function getQueryByIdController(id: string) {
+    try {
+        const data = await QueryService.getQueryById(id);
+
+        return NextResponse.json({
+            success: true,
+            data
+        });
+
+
+    } catch (error: any) {
+        return NextResponse.json({
+            success: false,
+            message: error.message
+        },
+            {
+                status: 404
+            })
+    }
+}
+export async function deleteQueryController(id: string) {
+    try {
+        if (!id) {
+            return NextResponse.json({
+                success: false,
+                message: "Query Id Required"
+            },
+                {
+                    status: 400,
+                }
+            );
+        }
+
+        const data = await QueryService.deleteQuery(id);
+
+        return NextResponse.json({
+            success: true,
+            message: "Query deleted successfully!",
+            data,
+        },
+            {
+                status: 200
+            })
+    } catch (error: any) {
+        return NextResponse.json({
+            success: false,
+            message: error.message || "Internal Server error"
+        },
+            {
+                status: 500
+            })
+    }
+}

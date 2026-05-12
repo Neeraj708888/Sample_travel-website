@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Request, Response } from "express"
 import { PageModel } from "../models/Page.model"
 import { CreatePage, PageContent, FAQ } from "@/app/types/page.types"
-import { dbConnect } from "../config/db"
 import { pageService } from "../services/page.service";
 
 // Create Page

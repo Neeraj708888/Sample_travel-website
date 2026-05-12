@@ -1,16 +1,72 @@
+"use client"
+
 import Script from "next/script";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useState } from "react";
+import { submitQuery } from "@/app/helpers/submitQuery";
 
-export const metadata = {
-    title: "Contact Ananta Hospitality | Call or WhatsApp for Luxury Events & Travel",
-    description:
-        "Get in touch with Ananta Hospitality — Delhi's trusted event & travel planners since 1991. Call or WhatsApp us for luxury weddings, corporate events & customized tours. Quick response guaranteed!",
+// export const metadata = {
+//     title: "Contact Ananta Hospitality | Call or WhatsApp for Luxury Events & Travel",
+//     description:
+//         "Get in touch with Ananta Hospitality — Delhi's trusted event & travel planners since 1991. Call or WhatsApp us for luxury weddings, corporate events & customized tours. Quick response guaranteed!",
 
-    // description:
-    // "Delhi's trusted event & travel planners since 1991. Call or WhatsApp Ananta Hospitality for luxury weddings, corporate events & tours. Quick response!",
-};
+//     // description:
+//     // "Delhi's trusted event & travel planners since 1991. Call or WhatsApp Ananta Hospitality for luxury weddings, corporate events & tours. Quick response!",
+// };
 
 export default function ConnectPage() {
+
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        mobile: "",
+        message: ""
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [toast, setToast] = useState<{
+        type: "success" | "error";
+        message: string;
+    } | null>(null);
+
+    function handleChange(
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    async function handleSubmit(
+        e: React.FormEvent<HTMLFormElement>
+    ) {
+        e.preventDefault();
+        setLoading(true);
+        setToast(null);
+
+        try {
+            await submitQuery(form);
+            setToast({
+                type: "success",
+                message: "Query submitted successfully!"
+            });
+
+            setForm({
+                name: "",
+                email: "",
+                mobile: "",
+                message: "",
+            })
+        } catch (error: any) {
+            setToast({
+                type: "error",
+                message: error.message,
+            })
+        } finally {
+            setLoading(false);
+        }
+    }
     const schema = {
         "@context": "https://schema.org",
         "@type": "TravelAgency",
@@ -85,20 +141,29 @@ export default function ConnectPage() {
                             Send Us a Message
                         </h2>
 
-                        <form className="space-y-5">
+                        <form className="space-y-5" onClick={handleSubmit}>
                             <input
                                 type="text"
+                                name="name"
+                                value={form.name}
+                                onChange={handleChange}
                                 placeholder="Your Name"
                                 className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
                             />
 
                             <input
                                 type="email"
+                                name="email"
+                                value={form.email}
+                                onChange={handleChange}
                                 placeholder="Your Email"
                                 className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
                             />
                             <input
                                 type="tel"
+                                name="mobile"
+                                value={form.mobile}
+                                onChange={handleChange}
                                 placeholder="Your Mobile Number"
                                 inputMode="numeric"
                                 pattern="[0-9]{10}"
@@ -108,15 +173,21 @@ export default function ConnectPage() {
 
                             <textarea
                                 rows={4}
+                                name="message"
+                                value={form.message}
+                                onChange={handleChange}
                                 placeholder="Tell us about your travel plan..."
                                 className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
                             ></textarea>
 
                             <button
                                 type="submit"
+                                disabled={loading}
                                 className="w-full py-4 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold hover:scale-105 transition duration-300"
                             >
-                                Send Message
+                                {loading
+                                    ? "Sending message..."
+                                    : "Send Message"}
                             </button>
                         </form>
                     </div>
