@@ -102,7 +102,7 @@ export default function EventsPage() {
           </p>
 
           <Link
-            href="/contact"
+            href="/support"
             className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-amber-400 text-black font-semibold rounded-full hover:scale-105 transition duration-300 shadow-xl"
           >
             Plan Your Event
@@ -131,7 +131,7 @@ export default function EventsPage() {
                 catering, photography and premium guest hospitality.
               </p>
               <Link
-                href="/contact"
+                href="/support"
                 className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-amber-400 text-black rounded-full font-semibold hover:scale-105 transition"
               >
                 Get Quote
@@ -149,7 +149,7 @@ export default function EventsPage() {
                 and complete travel coordination for corporate groups.
               </p>
               <Link
-                href="/contact"
+                href="/support"
                 className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-amber-400 text-black rounded-full font-semibold hover:scale-105 transition"
               >
                 Get Quote

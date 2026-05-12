@@ -105,7 +105,7 @@ export default function Partners() {
                     </p>
 
                     <Link
-                        href="/contact"
+                        href="/support"
                         className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-amber-400 text-black font-semibold rounded-full hover:scale-105 transition duration-300 shadow-xl"
                     >
                         Become A Partner

@@ -74,7 +74,7 @@ export default function PortfolioPage() {
                             </h3>
 
                             <Link
-                                href="/contact"
+                                href="/support"
                                 className="text-sm font-medium text-blue-600 hover:underline"
                             >
                                 Plan Similar Event →
@@ -98,7 +98,7 @@ export default function PortfolioPage() {
                 </p>
 
                 <Link
-                    href="/contact"
+                    href="/support"
                     className="bg-yellow-500 hover:bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold"
                 >
                     Get Free Consultation

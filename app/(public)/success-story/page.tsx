@@ -88,7 +88,7 @@ export default function SuccessStoriesPage() {
                                 </p>
 
                                 <Link
-                                    href="/contact"
+                                    href="/support"
                                     className="inline-block text-sm font-semibold tracking-wide border-b border-black hover:opacity-70 transition"
                                 >
                                     Plan Your Experience →
@@ -136,7 +136,7 @@ export default function SuccessStoriesPage() {
                 </p>
 
                 <Link
-                    href="/contact"
+                    href="/support"
                     className="px-10 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition duration-300"
                 >
                     Get Started

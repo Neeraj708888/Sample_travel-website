@@ -117,7 +117,7 @@ export default function PopularEvents() {
           Plan Your Next Event With Experts
         </h3>
         <Link
-          href="/contact"
+          href="/support"
           className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition shadow-lg"
         >
           Get Free Quote

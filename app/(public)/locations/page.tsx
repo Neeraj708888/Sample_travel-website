@@ -53,7 +53,7 @@ export default function LocationPage() {
 
                     <div className="mt-8">
                         <Link
-                            href="/contact"
+                            href="/support"
                             className="px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition duration-300"
                         >
                             Book Consultation

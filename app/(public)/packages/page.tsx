@@ -104,7 +104,7 @@ export default function PackagesPage() {
                                     </span>
 
                                     <Link
-                                        href="/contact"
+                                        href="/support"
                                         className="px-5 py-2 border text-gray-800 border-black rounded-full text-sm font-medium hover:bg-black hover:text-white transition duration-300"
                                     >
                                         View Details

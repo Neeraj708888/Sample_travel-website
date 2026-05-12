@@ -136,7 +136,7 @@ export default function FeaturedEvents() {
                     Let’s Create Your Next Big Event
                 </h3>
                 <Link
-                    href="/contact"
+                    href="/support"
                     className="px-10 py-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 hover:scale-105 transition font-semibold shadow-2xl"
                 >
                     Get Free Consultation

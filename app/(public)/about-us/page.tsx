@@ -129,7 +129,7 @@ export default function AboutPage() {
                 </p>
 
                 <Link
-                    href="/contact"
+                    href="/support"
                     className="px-10 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition duration-300"
                 >
                     Get In Touch
