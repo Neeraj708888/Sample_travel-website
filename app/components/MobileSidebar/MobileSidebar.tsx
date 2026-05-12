@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { X, ChevronDown, Factory, ArrowBigRight } from "lucide-react";
+import { ChevronDown, Factory, ArrowBigRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { ServiceNode, services } from "@/app/data/services";
 import GlobalServiceSearch from "../GlobalServiceSearch";
 
@@ -11,78 +12,81 @@ interface MobileSidebarProps {
     setIsOpen: (value: boolean) => void;
 }
 
-export default function MobileSidebar({
-    isOpen,
-    setIsOpen,
-}: MobileSidebarProps) {
+export default function MobileSidebar({ isOpen, setIsOpen }: MobileSidebarProps) {
+    const router = useRouter();
     const [serviceOpen, setServiceOpen] = useState(false);
     const [activePath, setActivePath] = useState<string[]>([]);
     const activeRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         if (activeRef.current) {
-            activeRef.current.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-            });
+            activeRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
     }, [activePath]);
 
     /* ================= Recursive Renderer ================= */
-    const renderNodes = (
-        nodes: ServiceNode[],
-        parentSlugs: string[] = []
-    ) => {
+    const renderNodes = (nodes: ServiceNode[], parentSlugs: string[] = []) => {
         return nodes.map((node) => {
             const currentPath = [...parentSlugs, node.slug];
             const hasChildren = node.children && node.children.length > 0;
-
-            const isOpen = currentPath.every(
-                (slug, index) => activePath[index] === slug
-            );
+            const isNodeOpen = currentPath.every((slug, i) => activePath[i] === slug);
+            const pageUrl = `/events/${currentPath.join("/")}`;
 
             return (
-                <div key={node.id} ref={activePath.join("/") === currentPath.join("/")
-                    ? activeRef
-                    : null}>
+                <div
+                    key={node.id}
+                    ref={activePath.join("/") === currentPath.join("/") ? activeRef : null}
+                >
                     {hasChildren ? (
                         <>
-                            <button
-                                // onClick={() => setActivePath(currentPath)}
-                                onClick={() =>
-                                    setActivePath((prev) =>
-                                        isOpen ? parentSlugs : currentPath
-                                    )
-                                }
-                                className="flex justify-between items-center w-full"
-                            >
-                                <span className="flex gap-2 text-start">
-                                    <Factory size={20} />
-                                    {node.title}
-                                </span>
+                            <div className="flex items-center justify-between w-full gap-2">
 
-                                <ChevronDown
-                                    size={16}
-                                    className={`transition-transform ${isOpen ? "rotate-180" : ""
-                                        }`}
-                                />
-                            </button>
+                                {/* Left: title → page navigate + accordion expand */}
+                                {/* ✅ Sidebar band NAHI hoga — user manually band karega */}
+                                <button
+                                    className="flex items-center gap-2 text-start flex-1 hover:text-white transition-colors"
+                                    onClick={() => {
+                                        setActivePath(isNodeOpen ? parentSlugs : currentPath);
+                                        router.push(pageUrl); // navigate
+                                        // setIsOpen(false) ← intentionally nahi hai
+                                    }}
+                                >
+                                    <Factory size={18} className="shrink-0" />
+                                    <span>{node.title}</span>
+                                </button>
 
+                                {/* Right: chevron → sirf accordion toggle */}
+                                <button
+                                    className="p-1 hover:text-white transition-colors shrink-0"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setActivePath(isNodeOpen ? parentSlugs : currentPath);
+                                    }}
+                                >
+                                    <ChevronDown
+                                        size={16}
+                                        className={`transition-transform duration-200 ${isNodeOpen ? "rotate-180" : ""}`}
+                                    />
+                                </button>
+                            </div>
+
+                            {/* Children */}
                             <div
-                                className={`ml-4 mt-3 flex flex-col gap-2 text-gray-400 transition-all duration-300 ease-in-out ${isOpen ? "opacity-100" : "opacity-0 max-h-0 overflow-hidden"
+                                className={`ml-4 mt-3 flex flex-col gap-2 text-gray-400 transition-all duration-300 ease-in-out ${isNodeOpen ? "opacity-100" : "opacity-0 max-h-0 overflow-hidden"
                                     } ${node.children && node.children.length > 4
                                         ? "max-h-[200px] overflow-y-auto pr-2"
                                         : "max-h-[500px]"
                                     }`}
                             >
-                                {isOpen && renderNodes(node.children!, currentPath)}
+                                {isNodeOpen && renderNodes(node.children!, currentPath)}
                             </div>
                         </>
                     ) : (
+                        // Leaf node — sidebar band hoga (user ne final page choose kiya)
                         <Link
-                            href={`/events/${currentPath.join("/")}`}
+                            href={pageUrl}
                             onClick={() => setIsOpen(false)}
-                            className="block"
+                            className="block hover:text-white transition-colors"
                         >
                             {node.title}
                         </Link>
@@ -91,6 +95,21 @@ export default function MobileSidebar({
             );
         });
     };
+
+    const MOBILE_ONLY_LINKS = [
+        { href: "/", label: "Home" },
+        { href: "/about-us", label: "About Us" },
+        { href: "/gallery", label: "Gallery" },
+        { href: "/support", label: "Support" },
+    ];
+
+    const COMMON_LINKS = [
+        { href: "/blog", label: "Blog" },
+        { href: "/locations", label: "Locations" },
+        { href: "/vision", label: "Our Vision" },
+        { href: "/success-story", label: "Success Story" },
+    ];
+
     return (
         <>
             {/* Overlay */}
@@ -108,41 +127,40 @@ export default function MobileSidebar({
             >
                 {/* Header */}
                 <div className="flex items-center py-5 border-b border-gray-800">
-
-                    {/* 📱 Mobile → Only Search */}
                     <div className="w-full md:hidden px-4">
                         <GlobalServiceSearch />
                     </div>
-
-                    {/* 💻 Desktop → Only Title */}
                     <h4 className="hidden md:block mx-auto text-lg sm:text-xl font-semibold tracking-wide">
                         Event Management Company
                     </h4>
-
                 </div>
 
+                {/* Body */}
                 <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-5 bg-amber-950 text-gray-300 font-medium">
-                    {/* MOBILE ONLY LINKS */}
+
+                    {/* MOBILE ONLY */}
                     <div className="md:hidden flex flex-col gap-5">
-                        <Link href="/" onClick={() => setIsOpen(false)}>
-                            Home
-                        </Link>
+                        {MOBILE_ONLY_LINKS.map(({ href, label }) => (
+                            <Link
+                                key={href}
+                                href={href}
+                                onClick={() => setIsOpen(false)}
+                                className="hover:text-white transition-colors"
+                            >
+                                {label}
+                            </Link>
+                        ))}
 
-                        <Link href="/about-us" onClick={() => setIsOpen(false)}>
-                            About Us
-                        </Link>
-
-                        {/* OUR SERVICES */}
+                        {/* OUR SERVICES accordion */}
                         <div>
                             <button
                                 onClick={() => setServiceOpen(!serviceOpen)}
-                                className="flex justify-between items-center w-full"
+                                className="flex justify-between items-center w-full hover:text-white transition-colors"
                             >
                                 Our Services
                                 <ChevronDown
                                     size={18}
-                                    className={`transition-transform ${serviceOpen ? "rotate-180" : ""
-                                        }`}
+                                    className={`transition-transform duration-200 ${serviceOpen ? "rotate-180" : ""}`}
                                 />
                             </button>
 
@@ -151,40 +169,31 @@ export default function MobileSidebar({
                                     {renderNodes(services)}
                                 </div>
                             )}
-
                         </div>
-
-                        <Link href="/gallery" onClick={() => setIsOpen(false)}>
-                            Gallery
-                        </Link>
-
-                        <Link href="/support" onClick={() => setIsOpen(false)}>
-                            Support
-                        </Link>
                     </div>
 
-                    <Link href="/blog" onClick={() => setIsOpen(false)}>
-                        Blog
-                    </Link>
-
-                    <Link href="/locations" onClick={() => setIsOpen(false)}>
-                        Locations
-                    </Link>
-
-                    <Link href="/vision" onClick={() => setIsOpen(false)}>
-                        Our Vision
-                    </Link>
-
-                    <Link href="/success-story" onClick={() => setIsOpen(false)}>
-                        Success Story
-                    </Link>
+                    {/* COMMON LINKS */}
+                    {COMMON_LINKS.map(({ href, label }) => (
+                        <Link
+                            key={href}
+                            href={href}
+                            onClick={() => setIsOpen(false)}
+                            className="hover:text-white transition-colors"
+                        >
+                            {label}
+                        </Link>
+                    ))}
                 </div>
-                <button onClick={() => setIsOpen(false)} className="p-2">
+
+                {/* Close button */}
+                <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 hover:text-white transition-colors"
+                    aria-label="Close sidebar"
+                >
                     <ArrowBigRight size={30} />
                 </button>
             </div>
-
-
         </>
     );
 }
