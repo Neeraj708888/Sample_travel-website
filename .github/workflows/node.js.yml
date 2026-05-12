@@ -1,32 +1,33 @@
-name: CI + Deploy (Next.js Production Ready)
+name: CI + Deploy (Hostinger Node.js)
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # ✅ Checkout code
-      - uses: actions/checkout@v4
+      # Checkout
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      # ✅ Setup Node
+      # Setup Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
 
-      # ✅ Install deps
+      # Install dependencies
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
-      # ✅ Create ENV for build (GitHub side)
-      - name: Create .env
+      # Create env for build
+      - name: Create .env.local
         run: |
-          cat > .env <<EOF
+          cat > .env.local <<EOF
           DB_URL=${{ secrets.DB_URL }}
           DB_KEY=${{ secrets.DB_KEY }}
           OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
@@ -34,63 +35,30 @@ jobs:
           NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
           EOF
 
-      # ✅ Build project
+      # Build project
       - name: Build Project
         run: npm run build
 
-      # ✅ Deploy to VPS (AWS EC2)
-      - name: Deploy to Server
+      # Deploy to Hostinger
+      - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ubuntu
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 65002
           script: |
 
-            echo "🚀 Deployment Started..."
+            echo "🚀 Deploy Started"
 
-            # Load Node (ubuntu user path)
-            export NVM_DIR="/home/ubuntu/.nvm"
-            source $NVM_DIR/nvm.sh
-            nvm use 22
+            cd domains/YOUR_DOMAIN/public_html
 
-            # Go to project (✅ CORRECT AWS PATH)
-            cd /home/ubuntu/Sample_travel-website
+            git pull origin master
 
-            # Fix git safe directory (UPDATED PATH)
-            git config --global --add safe.directory /home/ubuntu/Sample_travel-website
+            npm install
 
-            # Pull latest code
-            git fetch --all
-            git reset --hard origin/master
-
-            # Install deps
-            npm ci
-
-            # Clean old build
-            rm -rf .next
-
-            # ✅ Create ENV on server
-            cat > .env.local <<EOF
-            DB_URL=${{ secrets.DB_URL }}
-            DB_KEY=${{ secrets.DB_KEY }}
-            OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
-            NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
-            NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
-            EOF
-
-            # Build project
             npm run build
 
-            # ✅ PM2 safe restart (no crash)
-            pm2 describe ananta-app > /dev/null
-            if [ $? -eq 0 ]; then
-              pm2 reload ananta-app --update-env
-            else
-              pm2 start npm --name "ananta-app" -- start
-            fi
+            touch tmp/restart.txt
 
-            # Save PM2 state
-            pm2 save
-
-            echo "✅ Deployment Completed Successfully!"
+            echo "✅ Deploy Complete"
