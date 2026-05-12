@@ -1,4 +1,4 @@
-name: CI + Deploy (Hostinger Node.js)
+name: CI
 
 on:
   push:
@@ -6,26 +6,21 @@ on:
       - master
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # Setup Node
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      # Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Create env for build
-      - name: Create .env.local
+      - name: Create ENV
         run: |
           cat > .env.local <<EOF
           DB_URL=${{ secrets.DB_URL }}
@@ -35,30 +30,5 @@ jobs:
           NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
           EOF
 
-      # Build project
       - name: Build Project
         run: npm run build
-
-      # Deploy to Hostinger
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          port: 65002
-          script: |
-
-            echo "🚀 Deploy Started"
-
-            cd domains/YOUR_DOMAIN/public_html
-
-            git pull origin master
-
-            npm install
-
-            npm run build
-
-            touch tmp/restart.txt
-
-            echo "✅ Deploy Complete"
