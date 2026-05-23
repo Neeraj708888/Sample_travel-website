@@ -55,7 +55,8 @@ export default function AboutPage() {
                         src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
                         alt="Ananta Hospitality Team"
                         fill
-                        className="object-cover"
+                        // className="object-cover"
+                        className="object-contain w-auto h-auto max-h-20"
                         priority
                     />
                 </div>

@@ -102,6 +102,7 @@ export default function ServiceEventTypeSolutions() {
                                         src={`${service.image}?auto=format&fit=crop&w=900&q=80`}
                                         alt={service.title}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover group-hover:scale-110 transition duration-700"
                                     />
                                 </div>

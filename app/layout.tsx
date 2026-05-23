@@ -1,6 +1,9 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import './globals.css'
 import { Geist, Geist_Mono } from "next/font/google";
+import AuthkeyWidget from "./components/Common/WhatsappWidget";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,14 +45,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ✅ Navbar Added */}
-        {/* <Navbar /> */}
         {/* ✅ Padding because navbar is fixed  remove class- className="pt-20"*/}
         <main>
           {children}
+          {/* <Script
+            src="https://console.authkey.io/js/main.js"
+            id="authkey-chat-widget"
+            strategy="afterInteractive"
+            widget-id="552aef89-ff19-4ddb-8209-2ff77a51301c"
+          /> */}
+          <AuthkeyWidget />
         </main>
-        {/* Footer Added */}
-        {/* <Footer /> */}
+
       </body>
     </html>
   );

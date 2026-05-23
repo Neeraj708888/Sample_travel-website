@@ -5749,11 +5749,11 @@ export const services: ServiceNode[] = [
                 id: "performing-artists",
                 title: "Performing Artists",
                 titleSuffix: "Management Company in Delhi",
-                slug: "artist-mngmt",
+                slug: "perform-artist",
                 children: [
                     {
                         id: "performing-actors",
-                        title: "Actors",
+                        title: "Performing Actors",
                         titleSuffix: "Management Company in Delhi",
                         slug: "perform-actor",
                         children: []

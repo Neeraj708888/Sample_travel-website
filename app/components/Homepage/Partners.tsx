@@ -74,8 +74,10 @@ export default function Partners() {
                                     <Image
                                         src={partner.logo}
                                         alt={partner.name}
-                                        fill
-                                        className="object-contain"
+                                        width={180}
+                                        height={80}
+                                        unoptimized
+                                        className="object-contain w-auto h-auto max-h-20"
                                     />
                                 </div>
 
