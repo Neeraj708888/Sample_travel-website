@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import redirectData from "./redirect.json"
 
 const nextConfig: NextConfig = {
   images: {
@@ -12,6 +13,14 @@ const nextConfig: NextConfig = {
         hostname: "upload.wikimedia.org",
       },
     ],
+  },
+
+  async redirects() {
+    return redirectData.map((item) => ({
+      source: item.source,
+      destination: item.destination,
+      permanent: true,
+    }));
   },
 };
 
