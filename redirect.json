@@ -116,7 +116,7 @@
     "destination": "/events/artist-mngmt/musi-art/coa/cla-ins"
   },
   {
-    "source": "/solutions/corp/trd-shw-exh/b-to-b/cgb-trd-shw/fash-a-expo",
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/edb-trd-shw/text-l-expo",
     "destination": "/events/corp/trd-shw-exh/b-to-b/edb-trd-shw/text-l-expo"
   },
   {
@@ -186,6 +186,10 @@
   {
     "source": "/solutions/corp/conf/corp-conf/iscc",
     "destination": "/events/corp/conf/corp-conf/iscc"
+  },
+  {
+    "source": "/events/art-evt/musi-art/music-prod/bea-mak",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/bea-mak"
   },
   {
     "source": "/events/art-evt/musi-art/music-prod/bea-mak",
