@@ -186,6 +186,10 @@
   {
     "source": "/solutions/corp/conf/corp-conf/iscc",
     "destination": "/events/corp/conf/corp-conf/iscc"
+  },
+  {
+    "source": "/events/art-evt/musi-art/music-prod/bea-mak",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/bea-mak"
   }
 
 ]
