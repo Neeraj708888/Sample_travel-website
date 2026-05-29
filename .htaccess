@@ -1,0 +1,3 @@
+RewriteEngine On
+
+Redirect 301 /events/corporate-event/networking-events/business-luncheons-or-dinners/small-group-business-luncheons-or-dinners /events/corp/net-evt/bus-lun-din/sm-gbl-din
