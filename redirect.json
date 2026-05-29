@@ -2,5 +2,190 @@
   {
     "source": "/events/corporate-event/networking-events/business-luncheons-or-dinners/small-group-business-luncheons-or-dinners",
     "destination": "/events/corp/net-evt/bus-lun-din/sm-gbl-din"
+  },
+  {
+    "source": "/events/corporate-event/incentive-programs/annual-awards-ceremonies/health-and-wellness-achievement-awards",
+    "destination": "/events/corp/inc-pro/ann-awd-crt/hlt-wa-awa"
+  },
+  {
+    "source": "/events/corporate-event/incentive-programs/recognition-dinners-or-galas/vip-recognition-event",
+    "destination": "https://anantahospitality.com/events/corp/inc-pro/rec-din-gls/vip-rec-evt"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/char-fun",
+    "destination": "/events/corp/csr-evt/char-fun"
+  },
+  {
+    "source": "/events/corporate-event/corporate-parties-and-celebrations/anniversary-celebrations/product-or-service-anniversary-launch-party",
+    "destination": "/events/corp/corp-prt-cel/cmp-ann-cele/pro-sal-par"
+  },
+  {
+    "source": "/events/corporate-event/incentive-programs/sales-incentive-trips/wellness-and-health-focused-incentive-trips",
+    "destination": "/events/corp/inc-pro/sal-inc-trp/well-hfi-trp"
+  },
+  {
+    "source": "/events/corporate-event/corporate-parties-and-celebrations/holiday-parties/virtual-holiday-parties",
+    "destination": "/events/corp/corp-prt-cel/hol-prt/vir-hol-par"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/music-prod/mix-mas-eng",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/mix-mas-eng"
+  },
+  {
+    "source": "/events/art-evt/musi-art/solo-art/pop-str",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/pop-str"
+  },
+  {
+    "source": "/events/corporate-event/corporate-social-responsibility-events/community-service-projects/animal-welfare-projects",
+    "destination": "/events/corp/csr-evt/comm-srv-prjt/ani-wlf-prjt"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/icc/eec",
+    "destination": "/events/corp/conf/corp-conf/icc/eec"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/edma/djs",
+    "destination": "/events/artist-mngmt/musi-art/edma/djs"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/coa/ope-sin",
+    "destination": "/events/artist-mngmt/musi-art/coa/ope-sin"
+  },
+  {
+    "source": "/events/corporate-event/networking-events/professional-conferences-networking-events/student-and-young-professional-networking-at-conferences",
+    "destination": "/events/corp/net-evt/pro-conf-evt/stu-ypn-conf"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/icc",
+    "destination": "/events/corp/conf/corp-conf/icc"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/solo-art/pop-str",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/pop-str"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/twb-trd-shw/whl-d-expo",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/twb-trd-shw/whl-d-expo"
+  },
+  {
+    "source": "/events/art-evt/musi-art/coa/cond",
+    "destination": "/events/artist-mngmt/musi-art/coa/cond"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/rhh-art/solo-rap",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art/solo-rap"
+  },
+  {
+    "source": "/events/art-evt/musi-art/comp-song/lyrts",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/lyrts"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/lec",
+    "destination": "/events/corp/conf/corp-conf/lec"
+  },
+  {
+    "source": "/events/art-evt/musi-art/bag/hhu-grps",
+    "destination": "/events/artist-mngmt/musi-art/bag/hhu-grps"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/cre-pro-sol-wrk",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks/cre-pro-sol-wrk"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/rhh-art/rnb-sin",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art/rnb-sin"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/sales-meet/cro-dept-sles-meet",
+    "destination": "/events/corp/corp-meet/sales-meet/cro-dept-sles-meet"
+  },
+  {
+    "source": "/events/corporate-event/incentive-programs/client-appreciation-events/client-appreciation-parties",
+    "destination": "/events/corp/inc-pro/cli-app-evt/cli-app-par"
+  },
+  {
+    "source": "/events/corporate-event/trade-shows-exhibitions/virtual-trade-shows/global-and-regional-virtual-trade-shows",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/glo-rvt-show"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/wma/lat-mus-art",
+    "destination": "/events/artist-mngmt/musi-art/wma/lat-mus-art"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/coa/cla-ins",
+    "destination": "/events/artist-mngmt/musi-art/coa/cla-ins"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/cgb-trd-shw/fash-a-expo",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/edb-trd-shw/text-l-expo"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/sbg-trd-shw",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/sbg-trd-shw"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/pvt-inv-meet",
+    "destination": "/events/corp/corp-meet/invst-meet/pvt-inv-meet"
+  },
+  {
+    "source": "/solutions/corp/sem-work/corp-trn-sem/hlt-sft-trn-sem",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/hlth-sft-com-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/ann-gen-meet/hyb-agm",
+    "destination": "/events/corp/corp-meet/ann-gen-meet/hyb-agm"
+  },
+  {
+    "source": "/solutions/corp/sem-work/cre-work/fash-des-work",
+    "destination": "/events/corp/sem-work/cre-work/fash-des-work"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/comm-srv-prjt/env-con-prjt",
+    "destination": "/events/corp/csr-evt/comm-srv-prjt/env-con-prjt"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/prd-lan-meet/pst-lan-rev-meet",
+    "destination": "/events/corp/corp-meet/prd-lan-meet/pst-lan-rev-meet"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/wma/fol-trad-mus",
+    "destination": "/events/artist-mngmt/musi-art/wma/fol-trad-mus"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/net-meet/alm-net-meet",
+    "destination": "/events/corp/corp-meet/net-meet/alm-net-meet"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/cab-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/cab-wed"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/dec-mak-del-wrk",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks/dec-mak-del-wrk"
+  },
+  {
+    "source": "/events/art-evt/musi-art/iaa/ahh-art",
+    "destination": "/events/artist-mngmt/musi-art/iaa/ahh-art"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/solo-art/ele-djs",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/ele-djs"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/csrc",
+    "destination": "/events/corp/conf/corp-conf/csrc"
+  },
+  {
+    "source": "/events/art-evt/musi-art/iaa/ifs-son",
+    "destination": "/events/artist-mngmt/musi-art/iaa/ifs-son"
+  },
+  {
+    "source": "/solutions/corp/sem-work/cre-work/cre-wri-work",
+    "destination": "/events/corp/sem-work/cre-work/cre-wri-work"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/iscc",
+    "destination": "/events/corp/conf/corp-conf/iscc"
   }
+
 ]
