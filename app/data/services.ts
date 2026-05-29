@@ -2558,12 +2558,6 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
-                                id: "time-management-workshops",
-                                title: "Time Management Workshops",
-                                slug: "tm-mngt-wrk",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
                                 id: "innovation-and-creativity-workshops",
                                 title: "Innovation and Creativity Workshops",
                                 slug: "inn-cre-wrk",

@@ -235,7 +235,7 @@
   },
   {
     "source": "/events/art-evt/musi-art/wma/fol-trad-mus",
-    "destination": "/events/corp/corp-meet/clnt-meet/rel-acc-man-meet"
+    "destination": "/events/artist-mngmt/musi-art/wma/fol-trad-mus"
   },
   {
     "source": "/solutions/corp/conf/ind-conf/inv-conf",
