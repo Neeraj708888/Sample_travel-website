@@ -194,6 +194,207 @@
   {
     "source": "/events/art-evt/musi-art/music-prod/bea-mak",
     "destination": "/events/artist-mngmt/musi-art/music-prod/bea-mak"
-  }
+  },
 
+
+  {
+    "source": "/solutions/corp/prd-lan/prd-dmo/trd-shw-prd-dmo",
+    "destination": "/events/corp/prd-lan/prd-dmo/trd-shw-prd-dmo"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/foc-grps/prd-fdk-foc-grps",
+    "destination": "/events/corp/corp-meet/foc-grps/prd-fdk-foc-grps"
+  },
+  {
+    "source": "/events/art-evt/musi-art/bag/roc-ban",
+    "destination": "/events/artist-mngmt/musi-art/bag/roc-ban"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal/pse-rom-chll",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal/pse-rom-chll"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/prd-exh/cons-bp-exh",
+    "destination": "/events/corp/trd-shw-exh/prd-exh/cons-bp-exh"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/gpc",
+    "destination": "/events/corp/conf/ind-conf/gpc"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet/dec-mak-meet",
+    "destination": "/events/corp/corp-meet/tm-meet/dec-mak-meet"
+  },
+  {
+    "source": "/events/art-evt/musi-art/wma/reg-art",
+    "destination": "/events/artist-mngmt/musi-art/wma/reg-art"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/clnt-meet/rel-acc-man-meet",
+    "destination": "/events/corp/corp-meet/clnt-meet/rel-acc-man-meet"
+  },
+  {
+    "source": "/events/art-evt/musi-art/wma/fol-trad-mus",
+    "destination": "/events/corp/corp-meet/clnt-meet/rel-acc-man-meet"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/inv-conf",
+    "destination": "/events/corp/conf/ind-conf/inv-conf"
+  },
+  {
+    "source": "/solutions/corp/sem-work/tech-work/clo-com-work",
+    "destination": "/events/corp/sem-work/tech-work/clo-com-work"
+  },
+  {
+    "source": "/events/art-evt/musi-art/music-prod/liv-pro",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/liv-pro"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed/cha-fra",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed/cha-fra"
+  },
+  {
+    "source": "/events/art-evt/musi-art/iaa/exp-mus",
+    "destination": "/events/artist-mngmt/musi-art/iaa/exp-mus"
+  },
+  {
+    "source": "/solutions/corp/sem-work/corp-trn-sem/scs-trn-sem",
+    "destination": "/events/corp/sem-work/corp-trn-sem/scs-trn-sem"
+  },
+  {
+    "source": "/solutions/corp/sem-work/pro-dev-work/tm-bld-work",
+    "destination": "http://anantahospitality.com/events/corp/sem-work/pro-dev-work/tm-bld-work"
+  },
+  {
+    "source": "/events/art-evt/musi-art/sess-music/liv-ses-mus",
+    "destination": "/events/artist-mngmt/musi-art/sess-music/liv-ses-mus"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/stff-tra-dev-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/stff-tra-dev-meet"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/solo-art/rock-alt-mus",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/rock-alt-mus"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/mib-trd-shw",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/mib-trd-shw"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/prod-conf",
+    "destination": "/events/corp/conf/ind-conf/prod-conf"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/ann-gen-meet/emp-agm",
+    "destination": "/events/corp/corp-meet/ann-gen-meet/emp-agm"
+  },
+  {
+    "source": "/events/art-evt/musi-art/bag/pop-grps",
+    "destination": "/events/artist-mngmt/musi-art/bag/pop-grps"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/brd-meet/ma-brd-meet",
+    "destination": "/events/corp/corp-meet/brd-meet/ma-brd-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/lsc-trd-shw/wrh-d-expo",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/lsc-trd-shw/wrh-d-expo"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/prd-lan-meet/csp-lan-meet",
+    "destination": "/events/corp/corp-meet/prd-lan-meet/csp-lan-meet"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/netw-conf",
+    "destination": "/events/corp/conf/ind-conf/netw-conf"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prs-conf/prs-conf-pl-disc",
+    "destination": "/events/corp/prd-lan/prs-conf/prs-conf-pl-disc"
+  },
+  {
+    "source": "/events/art-evt/musi-art/solo-art/rock-alt-mus",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/rock-alt-mus"
+  },
+  {
+    "source": "/solutions/corp/conf/sem-for/edu-sem",
+    "destination": "http://anantahospitality.com/events/corp/conf/sem-for/edu-sem"
+  },
+  {
+    "source": "/events/art-evt/musi-art/solo-art/clsl-mus",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/clsl-mus"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/cos-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/cos-wed"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/coa/cond",
+    "destination": "/events/artist-mngmt/musi-art/coa/cond"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet/bud-fin-pln-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet/bud-fin-pln-meet"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/comp-song/lyrts",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/lyrts"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/out-ret/mind-refl-ret",
+    "destination": "/events/corp/tm-bld-evt/out-ret/mind-refl-ret"
+  },
+  {
+    "source": "/events/art-evt/musi-art/edma/djs",
+    "destination": "/events/artist-mngmt/musi-art/edma/djs"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/vol-day/chr-evt-vol",
+    "destination": "/events/corp/csr-evt/vol-day/chr-evt-vol"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/wma/afrb-art",
+    "destination": "/events/artist-mngmt/musi-art/wma/afrb-art"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/virt-lan-evt/vrt-prs-con",
+    "destination": "/events/corp/prd-lan/prs-conf/vrt-prs-conf"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/iaa/ahh-art",
+    "destination": "/events/artist-mngmt/musi-art/iaa/ahh-art"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed/pat-arg-chi",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed/pat-arg-chi"
+  },
+  {
+    "source": "/events/art-evt/musi-art/rhh-art/fre-rap",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art/fre-rap"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/sey-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/sey-wed"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/corp-ret",
+    "destination": "/events/corp/conf/corp-conf/corp-ret"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/ann-gen-meet/sole-shr-agm",
+    "destination": "/events/corp/corp-meet/ann-gen-meet/sole-shr-agm"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/bag/jaz-ens",
+    "destination": "/events/artist-mngmt/musi-art/bag/jaz-ens"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/phu-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/phu-wed"
+  },
+  {
+    "source": "/events/art-evt/musi-art/bag/foc-band",
+    "destination": "/events/artist-mngmt/musi-art/bag/foc-band"
+  }
 ]

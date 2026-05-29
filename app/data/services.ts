@@ -731,7 +731,7 @@ export const services: ServiceNode[] = [
                             },
                             {
                                 id: "ma-board-meetings",
-                                title: "M&A (Merger and Acquisition) Board Meetings",
+                                title: "M & A (Merger and Acquisition) Board Meetings",
                                 slug: "ma-brd-meet",
                                 titleSuffix: "Management Company in Delhi"
                             }
@@ -2564,12 +2564,6 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
-                                id: "conflict-resolution-workshops",
-                                title: "Conflict Resolution Workshops",
-                                slug: "cnf-res-wrk",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
                                 id: "innovation-and-creativity-workshops",
                                 title: "Innovation and Creativity Workshops",
                                 slug: "inn-cre-wrk",
@@ -2871,12 +2865,6 @@ export const services: ServiceNode[] = [
                                 id: "virtual-product-unboxing-events",
                                 title: "Virtual Product Unboxing Events",
                                 slug: "vrt-pro-unb-evt",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
-                                id: "virtual-press-conferences",
-                                title: "Virtual Press Conferences",
-                                slug: "vrt-prs-con",
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
@@ -5155,12 +5143,6 @@ export const services: ServiceNode[] = [
                                 id: "educational-and-academic-conferences",
                                 title: "Educational and Academic Conferences",
                                 slug: "edu-ace-conf",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
-                                id: "networking-conferences",
-                                title: "Networking Conferences",
-                                slug: "netw-conf",
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
