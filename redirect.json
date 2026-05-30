@@ -396,5 +396,408 @@
   {
     "source": "/events/art-evt/musi-art/bag/foc-band",
     "destination": "/events/artist-mngmt/musi-art/bag/foc-band"
+  },
+  
+  {
+    "source": "/solutions/corp/conf/sem-for/rt-for",
+    "destination": "/events/corp/conf/sem-for/rt-for"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/sust-evt",
+    "destination": "/events/corp/csr-evt/sust-evt"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/cust-conf",
+    "destination": "/events/corp/conf/ind-conf/cust-conf"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/virt-lan-evt/vrt-trd-shw-exh",
+    "destination": "/events/corp/prd-lan/virt-lan-evt/vrt-trd-shw-exh"
+  },
+  {
+    "source": "/events/art-evt/musi-art/comp-song/cla-com",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/cla-com"
+  },
+  {
+    "source": "/solutions/corp/sem-work/tech-work/aim-lear-work",
+    "destination": "/events/corp/sem-work/tech-work/aim-lear-work"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/cnf-res-wrk",
+    "destination": "/events/corp/corp-meet/tlnt-strg-meet/cnflct-res-wrks"
+  },
+  {
+    "source": "/events/art-evt/musi-art/iaa/ind-roc-ban",
+    "destination": "/events/artist-mngmt/musi-art/iaa/ind-roc-ban"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/ind-expos/fas-expos",
+    "destination": "/events/corp/trd-shw-exh/ind-expos/fas-expos"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/tecc",
+    "destination": "/events/corp/conf/corp-conf/tecc"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prd-dmo/pre-rec-prd-dmo",
+    "destination": "/events/corp/prd-lan/prd-dmo/pre-rec-prd-dmo"
+  },
+  {
+    "source": "/events/art-evt/musi-art/rhh-art/hip-hop-grps",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art/hip-hop-grps"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/virt-lan-evt/web-lan-evt",
+    "destination": "/events/corp/prd-lan/virt-lan-evt/web-lan-evt"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/music-prod/liv-pro",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/liv-pro"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/stkhldr-meet/str-alg-meet",
+    "destination": "/events/corp/corp-meet/stkhldr-meet/str-alg-meet"
+  },
+  {
+    "source": "/events/art-evt/musi-art/music-prod/std-prod",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/std-prod"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/cgb-trd-shw",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/cgb-trd-shw"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/proj-kick-meet/stk-hldr-kik-meet",
+    "destination": "/events/corp/corp-meet/proj-kick-meet/stk-hldr-kik-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/prd-exh/fash-tp-exh",
+    "destination": "/events/corp/trd-shw-exh/prd-exh/fash-tp-exh"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tra-meet/virt-tra",
+    "destination": "/events/corp/corp-meet/tra-meet/virt-tra"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prs-conf/med-brf-rt-prs-conf",
+    "destination": "/events/corp/prd-lan/prs-conf/med-brf-rt-prs-conf"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/bgt-fin-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/bgt-fin-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/net-meet/ind-net-meet",
+    "destination": "/events/corp/corp-meet/net-meet/ind-net-meet"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed/ala-usa",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed/ala-usa"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/tib-trd-shw",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/tib-trd-shw"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prs-conf/vrt-prs-conf",
+    "destination": "/events/corp/prd-lan/prs-conf/vrt-prs-conf"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tlnt-strg-meet/cus-srv-wrks",
+    "destination": "/events/corp/corp-meet/tlnt-strg-meet/cus-srv-wrks"
+  },
+  {
+    "source": "/solutions/art-evt/vis-art/pntrs/sur-pntrs",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs/sur-arts"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/exc-lan-evt/pgd-or-cock-evt",
+    "destination": "/events/corp/prd-lan/exc-lan-evt/pgd-or-cock-evt"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/net-meet/inn-strt-net-evt",
+    "destination": "/events/corp/corp-meet/net-meet/inn-strt-net-evt"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/prd-exh/pack-pro-exh",
+    "destination": "/events/corp/trd-shw-exh/prd-exh/pack-pro-exh"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tra-meet/tme-mngmt-prod-tra",
+    "destination": "/events/corp/corp-meet/tra-meet/tme-mngmt-prod-tra"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/tm-mngt-wrk",
+    "destination": "/events/corp/corp-meet/tlnt-strg-meet/time-man-wrks"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tra-meet/comp-tra",
+    "destination": "/events/corp/corp-meet/tra-meet/comp-tra"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal/mis-esc-rom-chll",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal/mis-esc-rom-chll"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/comp-song/fil-tv-com",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/fil-tv-com"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/brd-dir-meet-inv",
+    "destination": "/events/corp/corp-meet/invst-meet/brd-dir-meet-inv"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/clnt-meet/kik-off-meet",
+    "destination": "/events/corp/corp-meet/stkhldr-meet/kick-off-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/cris-man-meet/stk-cris-meet",
+    "destination": "/events/corp/corp-meet/cris-man-meet/stk-cris-meet"
+  },
+  {
+    "source": "/solutions/tp/gpt",
+    "destination": "/events/tp/gpt"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/net-meet/virt-net-meet",
+    "destination": "/events/corp/corp-meet/net-meet/virt-net-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/prd-exh/tech-pro-exh",
+    "destination": "/events/corp/trd-shw-exh/prd-exh/tech-pro-exh"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/cul-awa-inc-wrk",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks/cul-awa-inc-wrk"
+  },
+  {
+    "source": "/solutions/corp/sem-work/tech-work/cybr-sec-work",
+    "destination": "/events/corp/sem-work/tech-work/cybr-sec-work"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/grp-chal/tm-mng-chal",
+    "destination": "/events/corp/tm-bld-evt/grp-chal/tm-mng-chal"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/bag/pop-grps",
+    "destination": "/events/artist-mngmt/musi-art/bag/pop-grps"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tra-meet/ldr-mngmt-tra",
+    "destination": "/events/corp/corp-meet/tra-meet/ldr-mngmt-tra"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/comp-song/cla-com",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/cla-com"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/cbt-exh",
+    "destination": "/events/exhbn/trd-exh/cbt-exh"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/prd-exh/hlth-mp-exh",
+    "destination": "/events/corp/trd-shw-exh/prd-exh/hlth-mp-exh"
+  },
+
+  {
+    "source": "/events/art-evt/musi-art/rhh-art/solo-rap",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art/solo-rap"
+  },
+  {
+    "source": "/solutions/corp/sem-work/corp-trn-sem/emt-int-trn-sem",
+    "destination": "/events/corp/sem-work/corp-trn-sem/emt-int-trn-sem"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet/gem-ntry-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet/gem-ntry-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet/lds-pln-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet/lds-pln-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/inv-road-pres",
+    "destination": "/events/corp/corp-meet/invst-meet/inv-road-pres"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed/tas-wil-aus",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed/tas-wil-aus"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed/aor-mou-cook",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed/aor-mou-cook"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/sust-evt/sus-wrk-trn",
+    "destination": "/events/corp/csr-evt/sust-evt/sus-wrk-trn"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/grp-chal/trst-bld-chal",
+    "destination": "/events/corp/tm-bld-evt/grp-chal/trst-bld-chal"
+  },
+  {
+    "source": "/solutions/corp/sem-work/cre-work/mus-snd-des-work",
+    "destination": "/events/corp/sem-work/cre-work/mus-snd-des-work"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/brd-meet/ann-brd-meet",
+    "destination": "/events/corp/corp-meet/brd-meet/ann-brd-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet/rts-pct-meet",
+    "destination": "/events/corp/corp-meet/tm-meet/rts-pct-meet"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal/phys-esc-rom-chll",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal/phys-esc-rom-chll"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/vol-day/dis-rel-vol-day",
+    "destination": "/events/corp/csr-evt/vol-day/dis-rel-vol-day"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/crs-man-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/crs-man-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tra-meet/cust-svc-tra",
+    "destination": "/events/corp/corp-meet/tra-meet/cust-svc-tra"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet/prob-slv-meet",
+    "destination": "/events/corp/corp-meet/tm-meet/prob-slv-meet"
+  },
+  {
+    "source": "/solutions/corp/conf/sem-for/trn-sem",
+    "destination": "/events/corp/conf/sem-for/trn-sem"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prs-conf/ism-prs-conf",
+    "destination": "/events/corp/prd-lan/prs-conf/ism-prs-conf"
+  },
+  {
+    "source": "/events/art-evt/musi-art/bag/orc-and-sym",
+    "destination": "/events/artist-mngmt/musi-art/bag/orc-and-sym"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet/wkly-tm-meet",
+    "destination": "/events/corp/corp-meet/tm-meet/wkly-tm-meet"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/music-prod/std-prod",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/std-prod"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/proj-mngt-wrk",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks/proj-mngt-wrk"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/sess-music/liv-ses-mus",
+    "destination": "/events/artist-mngmt/musi-art/sess-music/liv-ses-mus"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/sales-meet/clnt-pre-meet",
+    "destination": "/events/corp/corp-meet/sales-meet/clnt-pre-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/sob-trd-shw",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/sob-trd-shw"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prd-dmo/int-prd-dmo-con",
+    "destination": "/events/corp/prd-lan/prd-dmo/int-prd-dmo-con"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/proj-kick-meet/chng-mngmt-kik-meet",
+    "destination": "/events/corp/corp-meet/proj-kick-meet/chng-mngmt-kik-meet"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/jam-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/jam-wed"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal/mys-det-esc-rom",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal/mys-det-esc-rom"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/led-dev-wrk",
+    "destination": "/events/corp/sem-work/pro-dev-work/led-dev-work"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/net-meet/prof-ass-net-evt",
+    "destination": "/events/corp/corp-meet/net-meet/prof-ass-net-evt"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/stkhldr-meet/psi-res-meet",
+    "destination": "/events/corp/corp-meet/stkhldr-meet/psi-res-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/proj-kick-meet/post-kik-alg-meet",
+    "destination": "/events/corp/corp-meet/proj-kick-meet/post-kik-alg-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/perf-rvw-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/perf-rvw-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/ind-expos/bea-cos-expos",
+    "destination": "/events/corp/trd-shw-exh/ind-expos/bea-cos-expos"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/grp-chal/comp-chal",
+    "destination": "/events/corp/tm-bld-evt/grp-chal/comp-chal"
+  },
+  {
+    "source": "/solutions/corp/sem-work/pro-dev-work/conf-res-neg-work",
+    "destination": "/events/corp/sem-work/pro-dev-work/conf-res-neg-work"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/cgb-trd-shw/sprt-eo-good",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/cgb-trd-shw/sprt-eo-good"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed/ban-nat-park-can",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed/ban-nat-park-can"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/grp-chal/ldr-dev-chal",
+    "destination": "/events/corp/tm-bld-evt/grp-chal/ldr-dev-chal"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/exit-off-brd-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/exit-off-brd-meet"
+  },
+  {
+    "source": "/solutions/corp/sem-work/corp-trn-sem/tech-trn-sem",
+    "destination": "/events/corp/sem-work/corp-trn-sem/tech-trn-sem"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/twn-hall-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/twn-hall-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet/inn-pro-dev-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet/inn-pro-dev-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/sales-meet/clnt-crm-meet",
+    "destination": "/events/corp/corp-meet/sales-meet/clnt-crm-meet"
+  },
+  {
+    "source": "/events/corporate-event/networking-events/professional-conferences-networking-events/post-conference-networking-events",
+    "destination": "/events/corp/net-evt/pro-conf-evt/post-cn-conf"
+  },
+  {
+    "source": "/solutions/corp/conf/sem-for/int-work",
+    "destination": "/events/corp/conf/sem-for/int-work"
+  },
+  {
+    "source": "/solutions/corp/conf/annual-conf/acsrc",
+    "destination": "/events/corp/conf/annual-conf/acsrc"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/crss-dept-coll-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/crss-dept-coll-meet"
   }
+
 ]
