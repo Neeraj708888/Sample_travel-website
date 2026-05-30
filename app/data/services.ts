@@ -1368,12 +1368,6 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
-                                id: "leadership-development-workshops",
-                                title: "Leadership Development Workshops",
-                                slug: "ldr-shp-dev-wrks",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
                                 id: "strategic-planning-workshops",
                                 title: "Strategic Planning Workshops",
                                 slug: "stra-pln-wrks",
@@ -2543,12 +2537,6 @@ export const services: ServiceNode[] = [
                                 id: "trust-building-workshops",
                                 title: "Trust-Building Workshops",
                                 slug: "trs-bld-wrk",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
-                                id: "leadership-development-workshops",
-                                title: "Leadership Development Workshops",
-                                slug: "led-dev-wrk",
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {

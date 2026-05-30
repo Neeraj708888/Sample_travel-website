@@ -9,7 +9,7 @@
   },
   {
     "source": "/events/corporate-event/incentive-programs/recognition-dinners-or-galas/vip-recognition-event",
-    "destination": "https://anantahospitality.com/events/corp/inc-pro/rec-din-gls/vip-rec-evt"
+    "destination": "/events/corp/inc-pro/rec-din-gls/vip-rec-evt"
   },
   {
     "source": "/solutions/corp/csr-evt/char-fun",
@@ -263,7 +263,7 @@
   },
   {
     "source": "/solutions/corp/sem-work/pro-dev-work/tm-bld-work",
-    "destination": "http://anantahospitality.com/events/corp/sem-work/pro-dev-work/tm-bld-work"
+    "destination": "/events/corp/sem-work/pro-dev-work/tm-bld-work"
   },
   {
     "source": "/events/art-evt/musi-art/sess-music/liv-ses-mus",
@@ -319,7 +319,7 @@
   },
   {
     "source": "/solutions/corp/conf/sem-for/edu-sem",
-    "destination": "http://anantahospitality.com/events/corp/conf/sem-for/edu-sem"
+    "destination": "/events/corp/conf/sem-for/edu-sem"
   },
   {
     "source": "/events/art-evt/musi-art/solo-art/clsl-mus",
