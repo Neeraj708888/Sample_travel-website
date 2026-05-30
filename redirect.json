@@ -999,5 +999,206 @@
   {
     "source": "/solutions/corp/conf/corp-conf/ecc",
     "destination": "/events/corp/conf/corp-conf/ecc"
+  },
+
+  {
+    "source": "/solutions/art-evt/musi-art/bag/roc-ban",
+    "destination": "/events/artist-mngmt/musi-art/bag/roc-ban"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/pdc",
+    "destination": "/events/corp/conf/ind-conf/pdc"
+  },
+  {
+    "source": "/events/art-evt/musi-art/comp-song/son-for-oth-art",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/son-for-oth-art"
+  },
+  {
+    "source": "/events/art-evt/musi-art/coa/cha-mus",
+    "destination": "/events/artist-mngmt/musi-art/coa/cha-mus"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/comp-song/son-for-oth-art",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/son-for-oth-art"
+  },
+  {
+    "source": "/events/art-evt/musi-art",
+    "destination": "/events/artist-mngmt/musi-art"
+  },
+  {
+    "source": "/solutions/tp/hrc-par",
+    "destination": "/events/tp/hrc-par"
+  },
+  {
+    "source": "/solutions/tp/spo-the-par",
+    "destination": "/events/tp/spo-the-par"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/rhh-art",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art"
+  },
+  {
+    "source": "/events/art-evt/musi-art/wma/afrb-art",
+    "destination": "/events/artist-mngmt/musi-art/wma/afrb-art"
+  },
+  {
+    "source": "/solutions/tp/fcf-par",
+    "destination": "/events/tp/fcf-par"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet/clnt-stk-meet",
+    "destination": "/events/corp/corp-meet/tm-meet/clnt-stk-meet"
+  },
+  {
+    "source": "/solutions/tp/ptp",
+    "destination": "/events/tp/ptp"
+  },
+  {
+    "source": "/solutions/corp/corp-meet",
+    "destination": "/events/corp/corp-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/clnt-meet/site-visit-meet",
+    "destination": "/events/corp/corp-meet/clnt-meet/site-visit-meet"
+  },
+  {
+    "source": "/solutions/art-evt/vis-art",
+    "destination": "/events/artist-mngmt/vis-artist"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/rete",
+    "destination": "/events/exhbn/trd-exh/rete"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/comp-song",
+    "destination": "/events/artist-mngmt/musi-art/comp-song"
+  },
+  {
+    "source": "/events/art-evt/musi-art/bag",
+    "destination": "/events/artist-mngmt/musi-art/bag"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf",
+    "destination": "/events/corp/conf/corp-conf"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/lsc-tra-exh",
+    "destination": "/events/exhbn/trd-exh/lsc-tra-exh"
+  },
+  {
+    "source": "/events/corporate-event/incentive-programs/recognition-dinners-or-galas/executive-recognition-dinner",
+    "destination": "/events/corp/inc-pro/rec-din-gls/exe-rec-din"
+  },
+  {
+    "source": "/solutions/tp/mmd-par",
+    "destination": "/events/tp/mmd-par"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt",
+    "destination": "/events/corp/tm-bld-evt"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/ret-exh",
+    "destination": "/events/exhbn/trd-exh/ret-exh"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/spec-inv-pres",
+    "destination": "/events/corp/corp-meet/invst-meet/spec-inv-pres"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/fate",
+    "destination": "/events/exhbn/trd-exh/fate"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/coa",
+    "destination": "/events/artist-mngmt/musi-art/coa"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/ind-expos/ent-me-expos",
+    "destination": "/events/corp/trd-shw-exh/ind-expos/ent-me-expos"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf",
+    "destination": "/events/corp/conf/ind-conf"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prd-dmo",
+    "destination": "/events/corp/prd-lan/prd-dmo"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/sess-music",
+    "destination": "/events/artist-mngmt/musi-art/sess-music"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/ate",
+    "destination": "/events/exhbn/trd-exh/ate"
+  },
+  {
+    "source": "/events/art-evt/musi-art/iaa",
+    "destination": "/events/artist-mngmt/musi-art/iaa"
+  },
+  {
+    "source": "/solutions/corp/annual-conf/aetc",
+    "destination": "/events/corp/conf/annual-conf/aetc"
+  },
+  {
+    "source": "/solutions/cm/acs/aca",
+    "destination": "/events/corp/conf/annual-conf"
+  },
+  {
+    "source": "/solutions/cm/acs/intc",
+    "destination": "/events/cm/acs/intc"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/prd-lan-meet/prt-prd-lan-meet",
+    "destination": "/events/corp/corp-meet/prd-lan-meet/prt-prd-lan-meet"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/ind-wed",
+    "destination": "/events/wedd-plan/trd-wed/ind-wed"
+  },
+  {
+    "source": "/solutions/corp/annual-conf/accc",
+    "destination": "/events/corp/conf/annual-conf/accc"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/sik-wed",
+    "destination": "/events/wedd-plan/trd-wed/sik-wed"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/ite",
+    "destination": "/events/exhbn/trd-exh/ite"
+  },
+  {
+    "source": "/solutions/cm/acs/reg-con",
+    "destination": "/events/cm/acs/reg-con"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal/puz-esc-rom-chll",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal/puz-esc-rom-chll"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed/sws-alp-swt",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed/sws-alp-swt"
+  },
+  {
+    "source": "/solutions/cm/acs/nat-con",
+    "destination": "/events/cm/acs/nat-con"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/net-meet",
+    "destination": "/events/corp/corp-meet/net-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/prd-exh",
+    "destination": "/events/corp/trd-shw-exh/prd-exh"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal"
+  },
+  {
+    "source": "/solutions/bp/ple/ipl-eve",
+    "destination": "/events/bp/ple/ipl-eve"
   }
 ]
