@@ -166,7 +166,6 @@ export const services: ServiceNode[] = [
                         slug: "annual-conf",
                         titleSuffix: "Management Company in Delhi",
                         children: [
-                            { id: "annual-general-meetings", title: "Annual General Meetings (AGMs)", slug: "agm", titleSuffix: "Management Company in Delhi" },
                             { id: "annual-sales-conferences", title: "Annual Sales Conferences", slug: "ansc", titleSuffix: "Management Company in Delhi" },
                             { id: "annual-strategy-conferences", title: "Annual Strategy Conferences", slug: "asc", titleSuffix: "Management Company in Delhi" },
                             { id: "annual-product-innovation-conferences", title: "Annual Product Innovation Conferences", slug: "apic", titleSuffix: "Management Company in Delhi" },
@@ -699,12 +698,12 @@ export const services: ServiceNode[] = [
                                 slug: "inf-wrk-brd-meet",
                                 titleSuffix: "Management Company in Delhi"
                             },
-                            {
-                                id: "board-retreats",
-                                title: "Board Retreats",
-                                slug: "brd-rets",
-                                titleSuffix: "Management Company in Delhi"
-                            },
+                            // {
+                            //     id: "board-retreats",
+                            //     title: "Board Retreats",
+                            //     slug: "brd-rets",
+                            //     titleSuffix: "Management Company in Delhi"
+                            // },
                             {
                                 id: "budget-financial-review-meetings",
                                 title: "Budget and Financial Review Meetings",
@@ -925,12 +924,12 @@ export const services: ServiceNode[] = [
                                 slug: "chnge-mgmt-meet",
                                 titleSuffix: "Management Company in Delhi"
                             },
-                            {
-                                id: "contract-negotiation-meetings",
-                                title: "Contract Negotiation Meetings",
-                                slug: "ctr-neg-meet",
-                                titleSuffix: "Management Company in Delhi"
-                            },
+                            // {
+                            //     id: "contract-negotiation-meetings",
+                            //     title: "Contract Negotiation Meetings",
+                            //     slug: "ctr-neg-meet",
+                            //     titleSuffix: "Management Company in Delhi"
+                            // },
                             {
                                 id: "sustainability-and-csr-meetings",
                                 title: "Sustainability and Corporate Social Responsibility (CSR) Meetings",
@@ -6672,7 +6671,7 @@ export const services: ServiceNode[] = [
                     { id: "workshops-seminars", title: "Workshops and Seminars", slug: "was", titleSuffix: "Management Company in Delhi" },
                     { id: "virtual-conferences", title: "Virtual or Online Conferences", slug: "voc", titleSuffix: "Management Company in Delhi" },
                     { id: "annual-conferences-academic", title: "Annual Conferences", slug: "aca", titleSuffix: "Management Company in Delhi" },
-                    { id: "professional-development-academic", title: "Professional Development Conferences", slug: "pdc-aca", titleSuffix: "Management Company in Delhi" },
+                    { id: "professional-development-academic", title: "Professional Development Acedemic", slug: "pdc-aca", titleSuffix: "Management Company in Delhi" },
                     { id: "research-conferences", title: "Research Conferences", slug: "res-con", titleSuffix: "Management Company in Delhi" },
                     { id: "graduate-conferences", title: "Graduate and Postgraduate Conferences", slug: "grp-con", titleSuffix: "Management Company in Delhi" },
                     { id: "academic-networking", title: "Academic Networking Conferences", slug: "anc", titleSuffix: "Management Company in Delhi" }
