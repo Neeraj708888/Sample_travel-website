@@ -1200,5 +1200,407 @@
   {
     "source": "/solutions/bp/ple/ipl-eve",
     "destination": "/events/bp/ple/ipl-eve"
+  },
+
+  {
+    "source": "/solutions/corp/sem-work/cre-work/crft-diy-work",
+    "destination": "/events/corp/sem-work/cre-work/crft-diy-work"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/moun-wed",
+    "destination": "/events/wedd-plan/dest-wed/moun-wed"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet",
+    "destination": "/events/corp/corp-meet/tm-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet",
+    "destination": "/events/corp/corp-meet/invst-meet"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/can-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/can-wed"
+  },
+  {
+    "source": "/solutions/art-evt/vis-art/pntrs/impre",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs/impre"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/virt-lan-evt",
+    "destination": "/events/corp/prd-lan/virt-lan-evt"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/sales-meet",
+    "destination": "/events/corp/corp-meet/sales-meet"
+  },
+  {
+    "source": "/solutions/corp/conf",
+    "destination": "/events/corp/conf"
+  },
+  {
+    "source": "/solutions/tp/git-dar-par",
+    "destination": "/events/tp/git-dar-par"
+  },
+  {
+    "source": "/events/art-evt/vis-art",
+    "destination": "/events/artist-mngmt/vis-artist"
+  },
+  {
+    "source": "/solutions/corp/sem-work",
+    "destination": "/events/corp/sem-work"
+  },
+  {
+    "source": "/solutions/cm/acs/res-con",
+    "destination": "/events/cm/acs/res-con"
+  },
+  {
+    "source": "/events/art-evt/vis-art/pntrs",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/proj-kick-meet",
+    "destination": "/events/corp/corp-meet/proj-kick-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/clnt-meet",
+    "destination": "/events/corp/corp-meet/clnt-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/prd-lan-meet",
+    "destination": "/events/corp/corp-meet/prd-lan-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/stkhldr-meet",
+    "destination": "/events/corp/corp-meet/stkhldr-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/ann-gen-meet",
+    "destination": "/events/corp/corp-meet/ann-gen-meet"
+  },
+  {
+    "source": "/solutions/art-evt/vis-art/pntrs",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/vol-day",
+    "destination": "/events/corp/csr-evt/vol-day"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tlnt-strg-meet",
+    "destination": "/events/corp/corp-meet/tlnt-strg-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b",
+    "destination": "/events/corp/trd-shw-exh/b-to-b"
+  },
+  {
+    "source": "/solutions/tp/stf-par",
+    "destination": "/events/tp/stf-par"
+  },
+  {
+    "source": "/solutions/tp/aiw-par",
+    "destination": "/events/tp/aiw-par"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/char-fun/bnf-con-per",
+    "destination": "/events/corp/csr-evt/char-fun/bnf-con-per"
+  },
+  {
+    "source": "/solutions/tp/hlp",
+    "destination": "/events/tp/hlp"
+  },
+  {
+    "source": "/solutions/cm/acs",
+    "destination": "/events/cm/acs"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet/opr-eff-impr-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet/opr-eff-impr-meet"
+  },
+  {
+    "source": "/solutions/corp/sem-work/tech-work/dev-ops-work",
+    "destination": "/events/corp/sem-work/tech-work/dev-ops-work"
+  },
+  {
+    "source": "/solutions/corp/sem-work/corp-trn-sem/fin-trn-sem",
+    "destination": "/events/corp/sem-work/corp-trn-sem/fin-trn-sem"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/chi-wed",
+    "destination": "/events/wedd-plan/trd-wed/chi-wed"
+  },
+  {
+    "source": "/solutions/corp/annual-conf",
+    "destination": "/events/corp/conf/annual-conf"
+  },
+  {
+    "source": "/solutions/tp/tpp",
+    "destination": "/events/tp/tpp"
+  },
+  {
+    "source": "/events/art-evt/musi-art/solo-art",
+    "destination": "/events/artist-mngmt/musi-art/solo-art"
+  },
+  {
+    "source": "/solutions/tp/vtp",
+    "destination": "/events/tp/vtp"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/bah-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/bah-wed"
+  },
+  {
+    "source": "/solutions/tp/boho-chic-party",
+    "destination": "/events/tp/boho-chic-party"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet/fbck-meet",
+    "destination": "/events/corp/corp-meet/tm-meet/fbck-meet"
+  },
+  {
+    "source": "/solutions/cm/acs/dss-con",
+    "destination": "/events/cm/acs/dss-con"
+  },
+  {
+    "source": "/solutions/tp/amp",
+    "destination": "/events/tp/amp"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/set-dsigner",
+    "destination": "/events/artist-mngmt/film-tele-artist/set-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/stunt-performer",
+    "destination": "/events/artist-mngmt/film-tele-artist/stunt-performer"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/matr-wr-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/matr-wr-dsigner"
+  },
+  {
+    "source": "/solutions/bp/ple/cll-eve",
+    "destination": "/events/bp/ple/cll-eve"
+  },
+  {
+    "source": "/solutions/tp/ffp",
+    "destination": "/events/tp/ffp"
+  },
+  {
+    "source": "/solutions/bp/ple/vr-ar-pl",
+    "destination": "/events/bp/ple/vr-ar-pl"
+  },
+
+  {
+    "source": "/solutions/bp/ple/vpl-eve",
+    "destination": "/events/bp/ple/vpl-eve"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/bud-wed",
+    "destination": "/events/wedd-plan/trd-wed/bud-wed"
+  },
+  {
+    "source": "/solutions/bp/ple/wop-dem",
+    "destination": "/events/bp/ple/wop-dem"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/comp-song",
+    "destination": "/events/artist-mngmt/musi-art/comp-song"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/music-the-artist",
+    "destination": "/events/artist-mngmt/perform-artist/music-the-artist"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/sprt-wear-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/sprt-wear-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/writer-author/Ply-wright",
+    "destination": "/events/artist-mngmt/writer-author/play-wright"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/illust",
+    "destination": "/events/artist-mngmt/vis-artist/illust"
+  },
+  {
+    "source": "/solutions/corp/annual-conf/aic",
+    "destination": "/events/corp/conf/annual-conf/aic"
+  },
+  {
+    "source": "/solutions/corp/annual-conf/arac",
+    "destination": "/events/corp/conf/annual-conf/arac"
+  },
+  {
+    "source": "/events/art-evt/musi-art/music-prod",
+    "destination": "/events/artist-mngmt/musi-art/music-prod"
+  },
+  {
+    "source": "/solutions/cm/acs/sym",
+    "destination": "/events/cm/acs/sym"
+  },
+  {
+    "source": "/solutions/bp/ple/plp",
+    "destination": "/events/bp/ple/plp"
+  },
+  {
+    "source": "/solutions/corp/annual-conf/ansc",
+    "destination": "/events/corp/conf/annual-conf/ansc"
+  },
+  {
+    "source": "/solutions/corp/sem-work/pro-dev-work/chg-mgt-work",
+    "destination": "/events/corp/sem-work/pro-dev-work/chg-mgt-work"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/hmte",
+    "destination": "/events/exhbn/trd-exh/hmte"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/music-prod",
+    "destination": "/events/artist-mngmt/musi-art/music-prod"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/casting-director",
+    "destination": "/events/artist-mngmt/film-tele-artist/casting-director"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/sess-music",
+    "destination": "/events/artist-mngmt/musi-art/sess-music"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/wma",
+    "destination": "/events/artist-mngmt/musi-art/wma"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/out-ret/surv-skll-ret",
+    "destination": "/events/corp/tm-bld-evt/out-ret/surv-skll-ret"
+  },
+  {
+    "source": "/solutions/cm/acs/voc",
+    "destination": "/events/cm/acs/voc"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/cmt-exh",
+    "destination": "/events/exhbn/trd-exh/cmt-exh"
+  },
+  {
+    "source": "/solutions/cm/acs/anc",
+    "destination": "/events/cm/acs/anc"
+  },
+  {
+    "source": "/solutions/corp/conf/sem-for/net-sem",
+    "destination": "/events/corp/conf/sem-for/net-sem"
+  },
+  {
+    "source": "/events/art-evt/musi-art/edma",
+    "destination": "/events/artist-mngmt/musi-art/edma"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/edma",
+    "destination": "/events/artist-mngmt/musi-art/edma"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/jew-wed",
+    "destination": "/events/wedd-plan/trd-wed/jew-wed"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed"
+  },
+  {
+    "source": "/solutions/tp",
+    "destination": "/events/tp"
+  },
+  {
+    "source": "/events/art-evt/musi-art/coa",
+    "destination": "/events/artist-mngmt/musi-art/coa"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/jap-wed",
+    "destination": "/events/wedd-plan/trd-wed/jap-wed"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/out-ret",
+    "destination": "/events/corp/tm-bld-evt/out-ret"
+  },
+  {
+    "source": "/events/corporate-event/corporate-parties-and-celebrations/holiday-parties/office-potluck-holiday-party",
+    "destination": "/events/corp/corp-prt-cel/hol-prt/off-ph-par"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/ann-gen-meet/inv-fcsd-agm",
+    "destination": "/events/corp/corp-meet/ann-gen-meet/inv-fcsd-agm"
+  },
+  {
+    "source": "/solutions/cm",
+    "destination": "/events/cm"
+  },
+  {
+    "source": "/solutions/corp/sem-work/cre-work/bai-work",
+    "destination": "/events/corp/sem-work/cre-work/bai-work"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/inv-stra-sess",
+    "destination": "/events/corp/corp-meet/invst-meet/inv-stra-sess"
+  },
+  {
+    "source": "/solutions/exhbn",
+    "destination": "/events/exhbn"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/vhcc/virt-conf",
+    "destination": "/events/corp/conf/corp-conf/vhcc/virt-conf"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/grp-chal/srvl-chal",
+    "destination": "/events/corp/tm-bld-evt/grp-chal/srvl-chal"
+  },
+  {
+    "source": "/events/art-evt",
+    "destination": "/events/artist-mngmt"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prd-dmo/int-prd-dmo",
+    "destination": "/events/corp/prd-lan/prd-dmo/int-prd-dmo"
+  },
+  {
+    "source": "/solutions/corp/csr-evt",
+    "destination": "/events/corp/csr-evt"
+  },
+  {
+    "source": "/solutions/tp/wsp",
+    "destination": "/events/tp/wsp"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/out-ret/adv-bsd-ret",
+    "destination": "/events/corp/tm-bld-evt/out-ret/adv-bsd-ret"
+  },
+  {
+    "source": "/solutions/tp/cnp",
+    "destination": "/events/tp/cnp"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/ann-gen-meet/egm",
+    "destination": "/events/corp/corp-meet/ann-gen-meet/egm"
+  },
+  {
+    "source": "/solutions/tp/wwc-par",
+    "destination": "/events/tp/wwc-par"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tlnt-strg-meet/brn-str-wrks",
+    "destination": "/events/corp/corp-meet/tlnt-strg-meet/brn-str-wrks"
   }
 ]

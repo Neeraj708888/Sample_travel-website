@@ -749,12 +749,6 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi"
                             },
                             {
-                                id: "project-kickoff-meetings",
-                                title: "Project Kickoff Meetings",
-                                slug: "pko-meet",
-                                titleSuffix: "Management Company in Delhi"
-                            },
-                            {
                                 id: "standup-meetings",
                                 title: "Stand-up Meetings (Daily Stand-ups)",
                                 slug: "stnd-up-meet",
@@ -894,12 +888,12 @@ export const services: ServiceNode[] = [
                                 slug: "cris-mgmt-meet",
                                 titleSuffix: "Management Company in Delhi"
                             },
-                            {
-                                id: "investor-meetings",
-                                title: "Investor Meetings",
-                                slug: "inv-str-meet",
-                                titleSuffix: "Management Company in Delhi"
-                            },
+                            // {
+                            //     id: "investor-meetings",
+                            //     title: "Investor Meetings",
+                            //     slug: "inv-str-meet",
+                            //     titleSuffix: "Management Company in Delhi"
+                            // },
                             {
                                 id: "client-review-meetings",
                                 title: "Client Review Meetings",
@@ -1171,12 +1165,6 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
-                                id: "project-kickoff-meetings",
-                                title: "Project Kickoff Meetings",
-                                slug: "proj-kik-off-meet",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
                                 id: "brainstorming-idea-generation-meetings",
                                 title: "Brainstorming or Idea Generation Meetings",
                                 slug: "brns-ida-gen-meet",
@@ -1384,12 +1372,12 @@ export const services: ServiceNode[] = [
                                 slug: "cnflct-res-wrks",
                                 titleSuffix: "Management Company in Delhi",
                             },
-                            {
-                                id: "change-management-workshops",
-                                title: "Change Management Workshops",
-                                slug: "chnge-man-wrks",
-                                titleSuffix: "Management Company in Delhi",
-                            },
+                            // {
+                            //     id: "change-management-workshops",
+                            //     title: "Change Management Workshops",
+                            //     slug: "chnge-man-wrks",
+                            //     titleSuffix: "Management Company in Delhi",
+                            // },
                             {
                                 id: "cultural-competency-workshops",
                                 title: "Cultural Competency Workshops",
@@ -6190,7 +6178,7 @@ export const services: ServiceNode[] = [
                         id: "playwrights",
                         title: "Playwrights",
                         titleSuffix: "Management Company in Delhi",
-                        slug: "Ply-wright",
+                        slug: "ply-wright",
                         children: []
                     },
                     {
