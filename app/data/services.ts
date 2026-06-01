@@ -4637,12 +4637,6 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
-                                id: "masquerade-ball",
-                                title: "Masquerade Ball",
-                                slug: "mas-ball",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
                                 id: "casino-night-party",
                                 title: "Casino Night Party",
                                 slug: "cas-par",
@@ -6669,8 +6663,6 @@ export const services: ServiceNode[] = [
         ]
     },
 
-
-
     // Theme Parties
     {
         id: "theme-parties",
@@ -6707,7 +6699,6 @@ export const services: ServiceNode[] = [
             { id: "hollywood-glamour", title: "Hollywood Glamour Party", slug: "hgp", titleSuffix: "Management Company in Delhi" }
         ]
     },
-
 
 
     // Brand Prmotion

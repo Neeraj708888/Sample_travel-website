@@ -1602,5 +1602,407 @@
   {
     "source": "/solutions/corp/corp-meet/tlnt-strg-meet/brn-str-wrks",
     "destination": "/events/corp/corp-meet/tlnt-strg-meet/brn-str-wrks"
+  },
+
+  {
+    "source": "/solutions/corp/corp-meet/cris-man-meet/inc-man-meet",
+    "destination": "/events/corp/corp-meet/cris-man-meet/inc-man-meet"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art",
+    "destination": "/events/artist-mngmt/musi-art"
+  },
+  {
+    "source": "/solutions/bp/ple/cpl-eve",
+    "destination": "/events/bp/ple/cpl-eve"
+  },
+  {
+    "source": "/solutions/tp/ccp",
+    "destination": "/events/tp/ccp"
+  },
+  {
+    "source": "/solutions/tp/mas-ball",
+    "destination": "/events/corp/corp-prt-cel/thm-prt/mas-ball"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/proj-kick-meet/hle-kik-meet",
+    "destination": "/events/corp/corp-meet/proj-kick-meet/hle-kik-meet"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/trs-bld-wrk",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks/trs-bld-wrk"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/fdbk-rfl-wrk",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks/fdbk-rfl-wrk"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh",
+    "destination": "/events/corp/trd-shw-exh"
+  },
+  {
+    "source": "/events/art-evt/vis-art/pntrs/real-pntrs",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs/real-pntrs"
+  },
+  {
+    "source": "/solutions/corp/annual-conf/alc",
+    "destination": "/events/corp/conf/annual-conf/alc"
+  },
+  {
+    "source": "/solutions/bp/ple/ppe",
+    "destination": "/events/bp/ple/ppe"
+  },
+  {
+    "source": "/events/art-evt/musi-art/wma",
+    "destination": "/events/artist-mngmt/musi-art/wma"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/mus-wed",
+    "destination": "/events/wedd-plan/trd-wed/mus-wed"
+  },
+  {
+    "source": "/solutions/cm/acs/grp-con",
+    "destination": "/events/cm/acs/grp-con"
+  },
+  {
+    "source": "/solutions/tp/mmp",
+    "destination": "/events/tp/mmp"
+  },
+  {
+    "source": "/events/art-evt/musi-art/rhh-art",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/wma/reg-art",
+    "destination": "/events/artist-mngmt/musi-art/wma/reg-art"
+  },
+  {
+    "source": "/solutions/cm/acs/was",
+    "destination": "/events/cm/acs/was"
+  },
+  {
+    "source": "/events/art-evt/musi-art/sess-music",
+    "destination": "/events/artist-mngmt/musi-art/sess-music"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/bag",
+    "destination": "/events/artist-mngmt/musi-art/bag"
+  },
+  {
+    "source": "/solutions/corp",
+    "destination": "/events/corp"
+  },
+  {
+    "source": "/events/corporate-event/corporate-parties-and-celebrations/milestone-celebrations/revenue-or-profitability-milestone-celebrations",
+    "destination": "/events/corp/corp-prt-cel/mil-cele/rev-pm-cel"
+  },
+  {
+    "source": "/solutions/corp/conf/annual-conf",
+    "destination": "/events/corp/conf/annual-conf"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/comm-srv-prjt",
+    "destination": "/events/corp/csr-evt/comm-srv-prjt"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/ind-expos",
+    "destination": "/events/corp/trd-shw-exh/ind-expos"
+  },
+  {
+    "source": "/solutions/wedd-plan",
+    "destination": "/events/wedd-plan"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet/inv-rel-com-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet/inv-rel-com-meet"
+  },
+  {
+    "source": "/solutions/bp",
+    "destination": "/events/bp"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/brd-meet",
+    "destination": "/events/corp/corp-meet/brd-meet"
+  },
+  {
+    "source": "/solutions/corp/sem-work/corp-trn-sem",
+    "destination": "/events/corp/sem-work/corp-trn-sem"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/edma/liv-perf",
+    "destination": "/events/artist-mngmt/musi-art/edma/liv-perf"
+  },
+  {
+    "source": "/solutions/bp/ple/tse-lau",
+    "destination": "/events/bp/ple/tse-lau"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/prd-exh/auto-pro-exh",
+    "destination": "/events/corp/trd-shw-exh/prd-exh/auto-pro-exh"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed",
+    "destination": "/events/wedd-plan/trd-wed"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/wrk-coll-tsks/csc-int-wrk",
+    "destination": "/events/corp/tm-bld-evt/wrk-coll-tsks/csc-int-wrk"
+  },
+  {
+    "source": "/solutions/wedd-plan/trd-wed/eur-tra-wed",
+    "destination": "/events/wedd-plan/trd-wed/eur-tra-wed"
+  },
+  {
+    "source": "/solutions/art-evt",
+    "destination": "/events/artist-mngmt"
+  },
+  {
+    "source": "/solutions/corp/conf/sem-for/pol-reg-for",
+    "destination": "/events/corp/conf/sem-for/pol-reg-for"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tm-meet/one-on-one-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/one-on-one-meet"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/ama-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/ama-wed"
+  },
+  {
+    "source": "/solutions/tp/stp",
+    "destination": "/events/tp/stp"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/sust-evt/sus-corp-rtr",
+    "destination": "/events/corp/csr-evt/sust-evt/sus-corp-rtr"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/acc",
+    "destination": "/events/corp/conf/corp-conf/acc"
+  },
+  {
+    "source": "/events/corporate-event/corporate-parties-and-celebrations/holiday-parties/end-of-year-celebration",
+    "destination": "/events/corp/corp-prt-cel/hol-prt/end-yr-cel"
+  },
+  {
+    "source": "/solutions/corp/sem-work/cre-work/mix-med-col-work",
+    "destination": "/events/corp/sem-work/cre-work/mix-med-col-work"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/sust-evt/sus-vol-days",
+    "destination": "/events/corp/csr-evt/sust-evt/sus-vol-days"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/ind-expos/ret-ecom-expos",
+    "destination": "/events/corp/trd-shw-exh/ind-expos/ret-ecom-expos"
+  },
+  {
+    "source": "/events/corporate-event/incentive-programs/sales-incentive-trips",
+    "destination": "/events/corp/inc-pro/sal-inc-trp"
+  },
+
+  {
+    "source": "/solutions/corp/corp-meet/brd-meet/bud-fin-rev-meet",
+    "destination": "/events/corp/corp-meet/brd-meet/bud-fin-rev-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/cris-man-meet/emerg-op-meet",
+    "destination": "/events/corp/corp-meet/cris-man-meet/emerg-op-meet"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/hip-hop-dance",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/hip-hop-dance"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/street-urb-art/street-install",
+    "destination": "/events/artist-mngmt/vis-artist/street-urb-art/street-install"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/trad-sculp/mot-gra-art",
+    "destination": "/events/artist-mngmt/vis-artist/trad-sculp/mot-gra-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/music-prod/bea-mak",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/bea-mak"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/illust/grap-desig",
+    "destination": "/events/artist-mngmt/vis-artist/illust/grap-desig"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/folk-trd-dance",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/solo-art/rock-alt-mus",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/rock-alt-mus"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/illust/comic-art",
+    "destination": "/events/artist-mngmt/vis-artist/illust/comic-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/bag/jaz-ens",
+    "destination": "/events/artist-mngmt/musi-art/bag/jaz-ens"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/wma/lat-mus-art",
+    "destination": "/events/artist-mngmt/musi-art/wma/lat-mus-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/cont-dancer",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/cont-dancer"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/edma/liv-perf",
+    "destination": "/events/artist-mngmt/musi-art/edma/liv-perf"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/iaa/ifs-son",
+    "destination": "/events/artist-mngmt/musi-art/iaa/ifs-son"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/edma/tht-art",
+    "destination": "/events/artist-mngmt/musi-art/edma/tht-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/iaa/ind-roc-ban",
+    "destination": "/events/artist-mngmt/musi-art/iaa/ind-roc-ban"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/illust/edit-illust",
+    "destination": "/events/artist-mngmt/vis-artist/illust/edit-illust"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/ball-dancer",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/ball-dancer"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/sess-music/inst-spc",
+    "destination": "/events/artist-mngmt/musi-art/sess-music/inst-spc"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/print-maker/screen-print",
+    "destination": "/events/artist-mngmt/vis-artist/print-maker/screen-print"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/sculp/inst-art",
+    "destination": "/events/artist-mngmt/vis-artist/sculp/inst-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/bag/orc-and-sym",
+    "destination": "/events/artist-mngmt/musi-art/bag/orc-and-sym"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/print-maker/etch-litho",
+    "destination": "/events/artist-mngmt/vis-artist/print-maker/etch-litho"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/comp-song/son-for-oth-art",
+    "destination": "/events/artist-mngmt/musi-art/comp-song/son-for-oth-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/pntrs/sur-arts",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs/sur-arts"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/conce-artist/text-base-art",
+    "destination": "/events/artist-mngmt/vis-artist/conce-artist/text-base-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/bag/foc-band",
+    "destination": "/events/artist-mngmt/musi-art/bag/foc-band"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/solo-art/ele-djs",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/ele-djs"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/lat-ball-dance",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/lat-ball-dance"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/wma/fol-trad-mus",
+    "destination": "/events/artist-mngmt/musi-art/wma/fol-trad-mus"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/iaa/exp-mus",
+    "destination": "/events/artist-mngmt/musi-art/iaa/exp-mus"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/music-prod/std-prod",
+    "destination": "/events/artist-mngmt/musi-art/music-prod/std-prod"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/wma/reg-art",
+    "destination": "/events/artist-mngmt/musi-art/wma/reg-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/rhh-art/hip-hop-grps",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art/hip-hop-grps"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/pntrs/abs-pntrs",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs/abs-pntrs"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/solo-art/sin-son",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/sin-son"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/photo/nat-land-photo",
+    "destination": "/events/artist-mngmt/vis-artist/photo/nat-land-photo"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/bag/hhu-grps",
+    "destination": "/events/artist-mngmt/musi-art/bag/hhu-grps"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/text-fab-art/fash-artist",
+    "destination": "/events/artist-mngmt/vis-artist/text-fab-art/fash-artist"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/print-maker/mono-art",
+    "destination": "/events/artist-mngmt/vis-artist/print-maker/mono-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/coa/cha-mus",
+    "destination": "/events/artist-mngmt/musi-art/coa/cha-mus"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/street-urb-art/stick-post-art",
+    "destination": "/events/artist-mngmt/vis-artist/street-urb-art/stick-post-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/solo-art/pop-str",
+    "destination": "/events/artist-mngmt/musi-art/solo-art/pop-str"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/pntrs/impre",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs/impre"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/rhh-art/fre-rap",
+    "destination": "/events/artist-mngmt/musi-art/rhh-art/fre-rap"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/coa/cla-ins",
+    "destination": "/events/artist-mngmt/musi-art/coa/cla-ins"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/iaa/ahh-art",
+    "destination": "/events/artist-mngmt/musi-art/iaa/ahh-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/trad-sculp/vdeo-gam-art",
+    "destination": "/events/artist-mngmt/vis-artist/trad-sculp/vdeo-gam-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/edma/edm-prod",
+    "destination": "/events/artist-mngmt/musi-art/edma/edm-prod"
   }
 ]
