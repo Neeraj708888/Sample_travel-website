@@ -1622,7 +1622,7 @@
   },
   {
     "source": "/solutions/tp/mas-ball",
-    "destination": "/events/corp/corp-prt-cel/thm-prt/mas-ball"
+    "destination": "/events/tp/mas-ball"
   },
   {
     "source": "/solutions/corp/corp-meet/proj-kick-meet/hle-kik-meet",

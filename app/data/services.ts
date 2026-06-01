@@ -779,12 +779,6 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi"
                             },
                             {
-                                id: "one-on-one-meetings",
-                                title: "One-on-One Meetings",
-                                slug: "one-on-one-meet",
-                                titleSuffix: "Management Company in Delhi"
-                            },
-                            {
                                 id: "team-building-meetings",
                                 title: "Team Building Meetings",
                                 slug: "tm-bld-meet",
@@ -5321,7 +5315,7 @@ export const services: ServiceNode[] = [
                         children: [
                             { id: "solo-rappers", title: "Solo Rappers", slug: "solo-rap", titleSuffix: "Management Company in Delhi" },
                             { id: "hip-hop-groups", title: "Hip-Hop Groups", slug: "hip-hop-grps", titleSuffix: "Management Company in Delhi" },
-                            { id: "rnb-singers", title: "R&B Singers", slug: "rnb-sin", titleSuffix: "Management Company in Delhi" },
+                            { id: "rnb-singers", title: "R & B Singers", slug: "rnb-sin", titleSuffix: "Management Company in Delhi" },
                             { id: "freestyle-rappers", title: "Freestyle Rappers", slug: "fre-rap", titleSuffix: "Management Company in Delhi" }
                         ]
                     },
@@ -5480,12 +5474,6 @@ export const services: ServiceNode[] = [
                                 id: "editorial-illustrators",
                                 title: "Editorial Illustrators",
                                 slug: "edit-illust",
-                                titleSuffix: "Management Company in Delhi",
-                            },
-                            {
-                                id: "graphic-designers",
-                                title: "Graphic Designers",
-                                slug: "grap-desig",
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
