@@ -2206,6 +2206,207 @@
   {
     "source": "/solutions/corp/corp-meet/prd-lan-meet/exe-prd-lan-meet",
     "destination": "/events/corp/corp-meet/prd-lan-meet/exe-prd-lan-meet"
+  },
+
+  {
+    "source": "/solutions/artist-mngmt/fashion-design",
+    "destination": "/events/artist-mngmt/fashion-design"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist",
+    "destination": "/events/artist-mngmt/film-tele-artist"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist",
+    "destination": "/events/artist-mngmt/vis-artist"
+  },
+  {
+    "source": "/solutions/artist-mngmt/writer-author",
+    "destination": "/events/artist-mngmt/writer-author"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/sculp/trad-sculp",
+    "destination": "/events/artist-mngmt/vis-artist/sculp/trad-sculp"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art",
+    "destination": "/events/artist-mngmt/musi-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt",
+    "destination": "/events/artist-mngmt/artist-mngmt"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/corp-ret/tbr",
+    "destination": "/events/corp/conf/corp-conf/corp-ret/tbr"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/composer",
+    "destination": "/events/artist-mngmt/film-tele-artist/composer"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/comedians",
+    "destination": "/events/artist-mngmt/artist-mngmt/comedians"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer",
+    "destination": "/events/artist-mngmt/artist-mngmt/dancer"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/ft-wear-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/ft-wear-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/bag",
+    "destination": "/events/artist-mngmt/musi-art/bag"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/haut-cout-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/haut-cout-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/photo",
+    "destination": "/events/artist-mngmt/vis-artist/photo"
+  },
+  {
+    "source": "/solutions/artist-mngmt/writer-author/poets",
+    "destination": "/events/artist-mngmt/writer-author/poets"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/access-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/access-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/child-wear-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/child-wear-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/writer-author/copy-writer",
+    "destination": "/events/artist-mngmt/writer-author/copy-writer"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/locking",
+    "destination": "/events/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/locking"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/lat-ball-dance/ball-rm-dance",
+    "destination": "/events/artist-mngmt/artist-mngmt/dancer/lat-ball-dance/ball-rm-dance"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/text-fab-art/weav-fib-artist",
+    "destination": "/events/artist-mngmt/vis-artist/text-fab-art/weav-fib-artist"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/bag/foc-band",
+    "destination": "/events/art-evt/musi-art/bag/foc-band"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/text-fab-art/text-install",
+    "destination": "/events/artist-mngmt/vis-artist/text-fab-art/text-install"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/cont-dancer/relea-susp",
+    "destination": "/events/artist-mngmt/artist-mngmt/dancer/cont-dancer/relea-susp"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/turfing",
+    "destination": "/events/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/turfing"
+  },
+  {
+    "source": "/events/art-evt/musi-art/coa/ope-sin",
+    "destination": "/events/art-evt/musi-art/coa/ope-sin"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/pntrs",
+    "destination": "/events/artist-mngmt/vis-artist/pntrs"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/concep-fash-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/concep-fash-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/perform-actor",
+    "destination": "/events/artist-mngmt/artist-mngmt/perform-actor"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/out-ret/well-ness-ret",
+    "destination": "/events/corp/tm-bld-evt/out-ret/well-ness-ret"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/glass-c-art/glass",
+    "destination": "/events/artist-mngmt/vis-artist/glass-c-art/glass"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/cinema-grapher",
+    "destination": "/events/artist-mngmt/film-tele-artist/cinema-grapher"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/film-director",
+    "destination": "/events/artist-mngmt/film-tele-artist/film-director"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/cost-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/cost-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/cost-fdft-park",
+    "destination": "/events/artist-mngmt/fashion-design/cost-fdft-park"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/street-urb-art",
+    "destination": "/events/artist-mngmt/vis-artist/street-urb-art"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/telent-manager",
+    "destination": "/events/artist-mngmt/film-tele-artist/telent-manager"
+  },
+  {
+    "source": "/solutions/artist-mngmt/writer-author/jornl-and-column",
+    "destination": "/events/artist-mngmt/writer-author/jornl-and-column"
+  },
+  {
+    "source": "/solutions/artist-mngmt/film-tele-artist/sound-designer",
+    "destination": "/events/artist-mngmt/film-tele-artist/sound-designer"
+  },
+  {
+    "source": "/solutions/artist-mngmt/vis-artist/conce-artist/conce-paint",
+    "destination": "/events/artist-mngmt/vis-artist/conce-artist/conce-paint"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/run-fash-dsigner",
+    "destination": "/events/artist-mngmt/fashion-design/run-fash-dsigner"
+  },
+  {
+    "source": "/solutions/artist-mngmt/fashion-design/fashion-stylist",
+    "destination": "/events/artist-mngmt/fashion-design/fashion-stylist"
+  },
+  {
+    "source": "/events/art-evt/musi-art/music-prod/mix-mas-eng",
+    "destination": "/events/art-evt/musi-art/music-prod/mix-mas-eng"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/iaa/ind-roc-ban",
+    "destination": "/events/art-evt/musi-art/iaa/ind-roc-ban"
+  },
+  {
+    "source": "/solutions/art-evt/musi-art/bag/orc-and-sym",
+    "destination": "/events/art-evt/musi-art/bag/orc-and-sym"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/trad-conf",
+    "destination": "/events/corp/conf/ind-conf/trad-conf"
+  },
+  {
+    "source": "/solutions/corp/conf/corp-conf/vhcc",
+    "destination": "/events/corp/conf/corp-conf/vhcc"
+  },
+  {
+    "source": "/solutions/corp/conf/ind-conf/arc",
+    "destination": "/events/corp/conf/ind-conf/arc"
+  },
+  {
+    "source": "/solutions/artist-mngmt/musi-art/music-prod",
+    "destination": "/events/artist-mngmt/musi-art/music-prod"
   }
 ]
 
