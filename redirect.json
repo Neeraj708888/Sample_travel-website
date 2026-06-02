@@ -2234,7 +2234,7 @@
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt",
-    "destination": "/events/artist-mngmt/artist-mngmt"
+    "destination": "/events/artist-mngmt"
   },
   {
     "source": "/solutions/corp/conf/corp-conf/corp-ret/tbr",
@@ -2246,11 +2246,11 @@
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt/comedians",
-    "destination": "/events/artist-mngmt/artist-mngmt/comedians"
+    "destination": "/events/artist-mngmt/perform-artist/comedians"
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt/dancer",
-    "destination": "/events/artist-mngmt/artist-mngmt/dancer"
+    "destination": "/events/artist-mngmt/perform-artist/dancer"
   },
   {
     "source": "/solutions/artist-mngmt/fashion-design/ft-wear-dsigner",
@@ -2286,11 +2286,11 @@
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/locking",
-    "destination": "/events/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/locking"
+    "destination": "/events/artist-mngmt/perform-artist/dancer/hip-hop-dance/locking"
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt/dancer/lat-ball-dance/ball-rm-dance",
-    "destination": "/events/artist-mngmt/artist-mngmt/dancer/lat-ball-dance/ball-rm-dance"
+    "destination": "/events/artist-mngmt/perform-artist/dancer/lat-ball-dance/ball-rm-dance"
   },
   {
     "source": "/solutions/artist-mngmt/vis-artist/text-fab-art/weav-fib-artist",
@@ -2306,15 +2306,15 @@
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt/dancer/cont-dancer/relea-susp",
-    "destination": "/events/artist-mngmt/artist-mngmt/dancer/cont-dancer/relea-susp"
+    "destination": "/events/artist-mngmt/perform-artist/dancer/cont-dancer/relea-susp"
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/turfing",
-    "destination": "/events/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/turfing"
+    "destination": "/events/artist-mngmt/perform-artist/dancer/hip-hop-dance/turfing"
   },
   {
     "source": "/events/art-evt/musi-art/coa/ope-sin",
-    "destination": "/events/art-evt/musi-art/coa/ope-sin"
+    "destination": "/events/artist-mngmt/musi-art/coa/ope-sin"
   },
   {
     "source": "/solutions/artist-mngmt/vis-artist/pntrs",
@@ -2326,7 +2326,7 @@
   },
   {
     "source": "/solutions/artist-mngmt/artist-mngmt/perform-actor",
-    "destination": "/events/artist-mngmt/artist-mngmt/perform-actor"
+    "destination": "/events/artist-mngmt/perform-artist/perform-actor"
   },
   {
     "source": "/solutions/corp/tm-bld-evt/out-ret/well-ness-ret",
@@ -2382,7 +2382,7 @@
   },
   {
     "source": "/events/art-evt/musi-art/music-prod/mix-mas-eng",
-    "destination": "/events/art-evt/musi-art/music-prod/mix-mas-eng"
+    "destination": "/events/artist-mngmt/musi-art/music-prod/mix-mas-eng"
   },
   {
     "source": "/solutions/art-evt/musi-art/iaa/ind-roc-ban",
