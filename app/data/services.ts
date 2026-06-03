@@ -1258,7 +1258,7 @@ export const services: ServiceNode[] = [
                             },
                             {
                                 id: "marketing-strategy-meetings",
-                                title: "Marketing Strategy Meetings:",
+                                title: "Marketing Strategy Meetings",
                                 slug: "mrkt-strg-meet",
                                 titleSuffix: "Management Company in Delhi",
                             },
@@ -6363,7 +6363,7 @@ export const services: ServiceNode[] = [
                 children: [
                     {
                         id: "film-actors",
-                        title: "film Actors",
+                        title: "Film Actors",
                         titleSuffix: "Management Company in Delhi",
                         slug: "film-actor",
                         children: []
@@ -6376,7 +6376,7 @@ export const services: ServiceNode[] = [
                     },
                     {
                         id: "film-producers",
-                        title: "film Producers",
+                        title: "Film Producers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "film-producer",
                         children: []
@@ -6471,7 +6471,7 @@ export const services: ServiceNode[] = [
                         id: "public-relations-and-marketing-teams",
                         title: "Public Relations and Marketing Teams",
                         titleSuffix: "Management Company in Delhi",
-                        slug: "Public-rel-mkt-team",
+                        slug: "public-rel-mkt-team",
                     },
                     {
                         id: "talent-managers",
