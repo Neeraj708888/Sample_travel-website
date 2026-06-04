@@ -87,9 +87,9 @@ export default function ConnectPage() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]"></div>
 
                 <div className="relative max-w-6xl mx-auto px-6 text-center">
-                    <h1 className="text-5xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+                    <h3 className="text-5xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
                         Let's Connect With Us
-                    </h1>
+                    </h3>
 
                     <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
                         Planning your next luxury escape? Destination wedding? Corporate
@@ -137,9 +137,9 @@ export default function ConnectPage() {
 
                     {/* CONTACT FORM */}
                     <div className="bg-red-900 p-10 rounded-3xl shadow-2xl">
-                        <h2 className="text-3xl font-bold mb-6 text-gray-800">
+                        <h3 className="text-3xl font-bold mb-6 text-gray-800">
                             Send Us a Message
-                        </h2>
+                        </h3>
 
                         <form className="space-y-5" onClick={handleSubmit}>
                             <input
@@ -196,9 +196,9 @@ export default function ConnectPage() {
 
             {/* WHATSAPP CTA */}
             <section className="py-16 text-white text-center">
-                <h2 className="text-3xl font-bold">
+                <h3 className="text-3xl font-bold">
                     Prefer Instant Chat?
-                </h2>
+                </h3>
                 <p className="mt-3 text-gray-400">
                     Connect with our travel experts instantly on WhatsApp.
                 </p>

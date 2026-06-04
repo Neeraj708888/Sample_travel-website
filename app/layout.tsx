@@ -1,4 +1,3 @@
-import Script from "next/script";
 import type { Metadata } from "next";
 import './globals.css'
 import { Geist, Geist_Mono } from "next/font/google";
@@ -17,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://anantahospitality.com"
   ),
   title: "Luxury Event Management Delhi | Weddings & Corporate Events",
   description:

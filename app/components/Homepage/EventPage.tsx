@@ -50,9 +50,9 @@ export default function EventsPage() {
 
         {/* Hero Section */}
         <div className="text-center mb-24">
-          <h1 className="text-5xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent mb-6">
             Premium Event Experiences
-          </h1>
+          </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             We craft unforgettable weddings, corporate gatherings and private
             celebrations at breathtaking destinations.
@@ -78,9 +78,9 @@ export default function EventsPage() {
               </div>
 
               <div className="p-8 bg-zinc-900">
-                <h2 className="text-xl font-bold mb-4 group-hover:text-yellow-400 transition">
+                <h3 className="text-xl font-bold mb-4 group-hover:text-yellow-400 transition">
                   {event.title}
-                </h2>
+                </h3>
                 <p className="text-gray-400 text-sm">
                   {event.description}
                 </p>
@@ -92,9 +92,9 @@ export default function EventsPage() {
         {/* Premium CTA Section */}
         <div className="bg-gradient-to-r from-yellow-500/20 via-amber-400/10 to-yellow-500/20 border border-yellow-500/30 rounded-3xl py-20 px-12 text-center shadow-2xl mb-32 backdrop-blur-xl">
 
-          <h2 className="text-4xl font-bold text-yellow-400 mb-6">
+          <h3 className="text-4xl font-bold text-yellow-400 mb-6">
             Why Plan Your Event With Us?
-          </h2>
+          </h3>
 
           <p className="max-w-3xl mx-auto text-gray-300 mb-10">
             From venue selection and logistics to décor, catering and guest
@@ -111,9 +111,9 @@ export default function EventsPage() {
 
         {/* Featured Event Packages */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h3 className="text-4xl font-bold text-white mb-4">
             Featured Event Packages
-          </h2>
+          </h3>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Curated event packages tailored to your vision and expectations.
           </p>

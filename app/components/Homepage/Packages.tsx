@@ -59,9 +59,9 @@ export default function FeaturedEvents() {
 
             {/* Hero */}
             <header className="text-center mb-20">
-                <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h2 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                     Featured Event Experiences
-                </h1>
+                </h2>
                 <p className="text-gray-300 max-w-2xl mx-auto text-lg">
                     Discover our premium event management experiences designed for corporate brands, weddings and high-impact promotions.
                 </p>
@@ -96,9 +96,9 @@ export default function FeaturedEvents() {
 
                         {/* Content */}
                         <div className="p-8 relative z-20">
-                            <h2 className="text-2xl font-bold mb-3">
+                            <h3 className="text-2xl font-bold mb-3">
                                 {event.title}
-                            </h2>
+                            </h3>
 
                             <p className="text-gray-400 text-sm mb-2">
                                 📍 {event.location}

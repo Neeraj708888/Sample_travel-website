@@ -16,11 +16,19 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return redirectData.map((item) => ({
-      source: item.source,
-      destination: item.destination,
-      permanent: true,
-    }));
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "anantahospitality.com" }],
+        destination: "https://www.anantahospitality.com/:path*",
+        permanent: true,
+      },
+      ...redirectData.map((item) => ({
+        source: item.source,
+        destination: item.destination,
+        permanent: true,
+      })),
+    ];
   },
 };
 

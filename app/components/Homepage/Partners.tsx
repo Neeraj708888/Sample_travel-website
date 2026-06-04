@@ -52,9 +52,9 @@ export default function Partners() {
 
                 {/* Hero Section */}
                 <div className="text-center mb-20">
-                    <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent mb-6">
+                    <h2 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent mb-6">
                         Our Trusted Global Partners
-                    </h1>
+                    </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
                         Collaborating with world-class airlines, luxury hotels and global
                         travel brands to deliver seamless elite experiences.
@@ -81,9 +81,9 @@ export default function Partners() {
                                     />
                                 </div>
 
-                                <h2 className="text-lg font-semibold mb-2 group-hover:text-yellow-400 transition">
+                                <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-400 transition">
                                     {partner.name}
-                                </h2>
+                                </h4>
 
                                 <p className="text-sm text-gray-400">
                                     {partner.category}
@@ -97,9 +97,9 @@ export default function Partners() {
                 {/* Premium CTA Section */}
                 <div className="bg-gradient-to-r from-yellow-500/20 via-amber-400/10 to-yellow-500/20 border border-yellow-500/30 rounded-3xl max-w-6xl mx-auto py-20 px-12 text-center shadow-2xl mb-28 backdrop-blur-xl">
 
-                    <h2 className="text-4xl font-bold mb-6 text-yellow-400">
+                    <h3 className="text-4xl font-bold mb-6 text-yellow-400">
                         Strong Partnerships. Seamless Luxury Travel.
-                    </h2>
+                    </h3>
 
                     <p className="max-w-3xl mx-auto mb-10 text-gray-300">
                         Our strategic alliances ensure priority bookings, exclusive

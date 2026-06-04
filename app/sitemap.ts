@@ -3,6 +3,7 @@ import { MetadataRoute } from "next"
 
 const domain =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com"
+console.log("SITE URL:", process.env.NEXT_PUBLIC_SITE_URL);
 
 // reusable function
 function flattenRoutes(nodes: any[], basePath: string, path: string[] = []) {

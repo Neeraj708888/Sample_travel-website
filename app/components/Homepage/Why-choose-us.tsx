@@ -52,9 +52,9 @@ export default function WhyChooseUs() {
 
             {/* Hero */}
             <div className="text-center mb-20 max-w-3xl mx-auto">
-                <h1 className="text-5xl md:text-5xl font-extrabold text-gray-900 mb-6">
+                <h3 className="text-5xl md:text-5xl font-extrabold text-gray-900 mb-6">
                     Why Choose Us
-                </h1>
+                </h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
                     We are committed to delivering unforgettable travel experiences
                     with exceptional service, personalized planning and unmatched value.
@@ -72,9 +72,9 @@ export default function WhyChooseUs() {
                             {feature.icon}
                         </div>
 
-                        <h2 className="text-2xl font-bold mb-4 text-gray-900">
+                        <h4 className="text-2xl font-bold mb-4 text-gray-900">
                             {feature.title}
-                        </h2>
+                        </h4>
 
                         <p className="text-gray-600 leading-relaxed text-sm">
                             {feature.description}
@@ -109,9 +109,9 @@ export default function WhyChooseUs() {
 
             {/* Process Section */}
             <div className="max-w-5xl mx-auto text-center mb-28">
-                <h2 className="text-4xl font-bold mb-16 text-gray-900">
+                <h3 className="text-4xl font-bold mb-16 text-gray-900">
                     How We Make Your Trip Perfect
-                </h2>
+                </h3>
 
                 <div className="grid md:grid-cols-3 gap-12">
 

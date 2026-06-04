@@ -87,6 +87,14 @@ ${!isSolutionOnly ? `- eventType.cards: EXACTLY ${eventItems.length}` : ""}
 
 ---
 
+## SHORTDESC RULES:
+- eventType.shortDesc: minimum 80 words, maximum 100 words
+- eventSolution.shortDesc: minimum 80 words, maximum 100 words
+- Must be descriptive, engaging, and contextually relevant to "${title}"
+- Do NOT use bullet points inside shortDesc
+
+---
+
 ## CONTENT RULES:
 - Write natural, human-like, conversion-focused content
 - Avoid keyword stuffing
@@ -103,8 +111,8 @@ ${!isSolutionOnly ? `- eventType.cards: EXACTLY ${eventItems.length}` : ""}
 
 ## HERO RULES:
 - h1: same as meta_title WITHOUT "| Ananta Hospitality"
-- h2: supporting emotional or benefit-driven line
-- shortDesc: 25-40 words
+- h2: supporting emotional or benefit-driven line 
+- shortDesc: 30-40 words
 - image: /images/${title.toLowerCase().replace(/\\s+/g, "-")}.jpg
 
 ---
