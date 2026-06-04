@@ -2809,6 +2809,408 @@
   {
     "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/glo-rvt-show",
     "destination": "/events/corp/trd-shw-exh/vir-trd-shw/glo-rvt-show"
+  },
+
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/net-cvt-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/net-cvt-show"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/holi-sbl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/holi-sbl-din"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/wrk-cns-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/wrk-cns-conf"
+  },
+  {
+    "source": "/solutions/corp/net-evt/ind-net-evt/char-cfn-mix",
+    "destination": "/events/corp/net-evt/ind-net-evt/char-cfn-mix"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/exe-bl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/exe-bl-din"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/con-fvt-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/con-fvt-show"
+  },
+  {
+    "source": "/solutions/corp/net-evt/ind-net-evt/sml-bsn-mix",
+    "destination": "/events/corp/net-evt/ind-net-evt/sml-bsn-mix"
+  },
+  {
+    "source": "/solutions/corp/sem-work/pro-dev-work/cre-inn-work",
+    "destination": "/events/corp/sem-work/pro-dev-work/cre-inn-work"
+  },
+  {
+    "source": "/solutions/corp/net-evt/spd-net/job-fs-net",
+    "destination": "/events/corp/net-evt/spd-net/job-fs-net"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/sm-gbl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/sm-gbl-din"
+  },
+  {
+    "source": "/solutions/corp/net-evt/ind-net-evt/trd-aign-mix",
+    "destination": "/events/corp/net-evt/ind-net-evt/trd-aign-mix"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/pan-dn-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/pan-dn-conf"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/hyb-vt-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/hyb-vt-show"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/stu-ypn-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/stu-ypn-conf"
+  },
+  {
+    "source": "/solutions/corp/net-evt/ind-net-evt/exl-vip-mix",
+    "destination": "/events/corp/net-evt/ind-net-evt/exl-vip-mix"
+  },
+  {
+    "source": "/solutions/corp/net-evt/ind-net-evt/ind-cn-mix",
+    "destination": "/events/corp/net-evt/ind-net-evt/ind-cn-mix"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/pan-dbl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/pan-dbl-din"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh",
+    "destination": "/events/exhbn/trd-exh"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/ind-sbl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/ind-sbl-din"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/int-bl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/int-bl-din"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/post-cn-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/post-cn-conf"
+  },
+  {
+    "source": "/solutions/corp/net-evt/spd-net/wom-bs-net",
+    "destination": "/events/corp/net-evt/spd-net/wom-bs-net"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/sust-gvt-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/sust-gvt-show"
+  },
+  {
+    "source": "/solutions/corp/net-evt/spd-net/ind-sp-net",
+    "destination": "/events/corp/net-evt/spd-net/ind-sp-net"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/alu-ebl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/alu-ebl-din"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/char-cobl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/char-cobl-din"
+  },
+  {
+    "source": "/solutions/corp/net-evt/spd-net/vir-s-net",
+    "destination": "/events/corp/net-evt/spd-net/vir-s-net"
+  },
+  {
+    "source": "/solutions/corp/net-evt/spd-net/corp-s-net",
+    "destination": "/events/corp/net-evt/spd-net/corp-s-net"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/spd-net-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/spd-net-conf"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/int-net-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/int-net-conf"
+  },
+  {
+    "source": "/solutions/corp/net-evt/spd-net/ent-ss-net",
+    "destination": "/events/corp/net-evt/spd-net/ent-ss-net"
+  },
+  {
+    "source": "/solutions/corp/csr-evt/comm-srv-prjt/hlth-wlln-prjt",
+    "destination": "/events/corp/csr-evt/comm-srv-prjt/hlth-wlln-prjt"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/net-dl-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/net-dl-conf"
+  },
+  {
+    "source": "/solutions/corp/sem-work/pro-dev-work",
+    "destination": "/events/corp/sem-work/pro-dev-work"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/tm-stra-ret/pro-ae-ret",
+    "destination": "/events/corp/exe-ret/tm-stra-ret/pro-ae-ret"
+  },
+  {
+    "source": "/solutions/corp/sem-work/pro-dev-work/str-mgt-well-work",
+    "destination": "/events/corp/sem-work/pro-dev-work/str-mgt-well-work"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/thm-prt/aro-tw-par",
+    "destination": "/events/corp/corp-prt-cel/thm-prt/aro-tw-par"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/ann-awd-crt/sal-ach-awa",
+    "destination": "/events/corp/inc-pro/ann-awd-crt/sal-ach-awa"
+  },
+  {
+    "source": "/solutions/corp/net-evt/bus-lun-din/net-bl-din",
+    "destination": "/events/corp/net-evt/bus-lun-din/net-bl-din"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/pro-sv-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/pro-sv-show"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/ind-sv-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/ind-sv-show"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/tech-dn-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/tech-dn-conf"
+  },
+  {
+    "source": "/solutions/corp/net-evt/pro-conf-evt/ind-sn-conf",
+    "destination": "/events/corp/net-evt/pro-conf-evt/ind-sn-conf"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/job-frvt-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/job-frvt-show"
+  },
+  {
+    "source": "/solutions/corp/net-evt/ind-net-evt/soc-iin-mix",
+    "destination": "/events/corp/net-evt/ind-net-evt/soc-iin-mix"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/int-vt-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/int-vt-show"
+  },
+  {
+    "source": "/solutions/corp/net-evt/spd-net/crss-is-net",
+    "destination": "/events/corp/net-evt/spd-net/crss-is-net"
+  },
+  {
+    "source": "/solutions/corp/net-evt/ind-net-evt/sec-sn-mix",
+    "destination": "/events/corp/net-evt/ind-net-evt/sec-sn-mix"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/thm-prt/hol-rct-par",
+    "destination": "/events/corp/corp-prt-cel/thm-prt/hol-rct-par"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/thm-prt/crv-cir-thm",
+    "destination": "/events/corp/corp-prt-cel/thm-prt/crv-cir-thm"
+  },
+
+  {
+    "source": "/solutions/corp/inc-pro/cli-app-evt/gol-out-tour",
+    "destination": "/events/corp/inc-pro/cli-app-evt/gol-out-tour"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prd-dmo/vir-rea-vr-ar-dmo",
+    "destination": "/events/corp/prd-lan/prd-dmo/vir-rea-vr-ar-dmo"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/cmp-ann-cele/emp-ann-cel",
+    "destination": "/events/corp/inc-pro/rec-din-gls/emp-ac-gala"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/sal-inc-trp/tm-bi-trip",
+    "destination": "/events/corp/inc-pro/sal-inc-trp/tm-bi-trip"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/ref-wel-ret/mind-med-ret",
+    "destination": "/events/corp/exe-ret/ref-wel-ret/mind-med-ret"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/vir-conf/pro-doi-conf",
+    "destination": "/events/corp/web-vir-evt/vir-conf/pro-doi-conf"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/tm-stra-ret/per-rai-ret",
+    "destination": "/events/corp/exe-ret/tm-stra-ret/per-rai-ret"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/sal-inc-trp/cru-inc",
+    "destination": "/events/corp/inc-pro/sal-inc-trp/cru-inc"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/prod-web/prod-demos",
+    "destination": "/events/corp/web-vir-evt/prod-web/prod-demos"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/brd-ret/tm-bc-ret",
+    "destination": "/events/corp/exe-ret/brd-ret/tm-bc-ret"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/mil-cele/sal-rm-cel",
+    "destination": "/events/corp/corp-prt-cel/mil-cele/sal-rm-cel"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/prod-web/prod-uc-webi",
+    "destination": "/events/corp/web-vir-evt/prod-web/prod-uc-webi"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/mil-cele/pro-sm-cel",
+    "destination": "/events/corp/corp-prt-cel/mil-cele/pro-sm-cel"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/cmp-ann-cele/cha-ca-evt",
+    "destination": "/events/corp/corp-prt-cel/cmp-ann-cele/cha-ca-evt"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/vir-trd-shw/tech-ivt-show",
+    "destination": "/events/corp/trd-shw-exh/vir-trd-shw/tech-ivt-show"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/ann-awd-crt/lea-me-awa",
+    "destination": "/events/corp/inc-pro/ann-awd-crt/lea-me-awa"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/rec-din-gls/the-rec-gala",
+    "destination": "/events/corp/inc-pro/rec-din-gls/the-rec-gala"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/ann-awd-crt/emp-ls-awa",
+    "destination": "/events/corp/inc-pro/ann-awd-crt/emp-ls-awa"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/led-ret/lea-dev-ret",
+    "destination": "/events/corp/exe-ret/led-ret/lea-dev-ret"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/ref-wel-ret/stre-mar-ret",
+    "destination": "/events/corp/exe-ret/ref-wel-ret/stre-mar-ret"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/vir-conf/netw-conf",
+    "destination": "/events/corp/conf/ind-conf/netw-conf"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/cmp-ann-cele/int-ann-evt",
+    "destination": "/events/corp/corp-prt-cel/cmp-ann-cele/int-ann-evt"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/vir-conf/virt-summ",
+    "destination": "/events/corp/web-vir-evt/vir-conf/virt-summ"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/prod-web/prod-qa-webi",
+    "destination": "/events/corp/web-vir-evt/prod-web/prod-qa-webi"
+  },
+  {
+    "source": "/solutions/cm/acs/pdc-aca",
+    "destination": "/events/cm/acs/pdc-aca"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/ref-wel-ret/cre-eab-ret",
+    "destination": "/events/corp/exe-ret/ref-wel-ret/cre-eab-ret"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/tm-stra-ret/vis-aga-ret",
+    "destination": "/events/corp/exe-ret/tm-stra-ret/vis-aga-ret"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/rec-din-gls/exe-rec-din",
+    "destination": "/events/corp/inc-pro/rec-din-gls/exe-rec-din"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/mil-cele/cmp-am-cel",
+    "destination": "/events/corp/corp-prt-cel/mil-cele/cmp-am-cel"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/sal-inc-trp/glo-trv-inc",
+    "destination": "/events/corp/inc-pro/sal-inc-trp/glo-trv-inc"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/thm-prt/dec-thm-prt",
+    "destination": "/events/corp/corp-prt-cel/thm-prt/dec-thm-prt"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/rec-din-gls/top-pr-din",
+    "destination": "/events/corp/inc-pro/rec-din-gls/top-pr-din"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/mil-cele/corp-srm-cel",
+    "destination": "/events/corp/corp-prt-cel/mil-cele/corp-srm-cel"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/rec-din-gls/hol-rec-gala",
+    "destination": "/events/corp/inc-pro/rec-din-gls/hol-rec-gala"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/hol-prt/win-won-par",
+    "destination": "/events/corp/corp-prt-cel/hol-prt/win-won-par"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/ref-wel-ret/emo-war-ret",
+    "destination": "/events/corp/exe-ret/ref-wel-ret/emo-war-ret"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/onl-trn-work/lea-mt-work",
+    "destination": "/events/corp/web-vir-evt/onl-trn-work/lea-mt-work"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/cmp-ann-cele/clnt-sa-evt",
+    "destination": "/events/corp/corp-prt-cel/cmp-ann-cele/clnt-sa-evt"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/hol-prt/off-ph-par",
+    "destination": "/events/corp/corp-prt-cel/hol-prt/off-ph-par"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/led-ret/cha-mng-ret",
+    "destination": "/events/corp/exe-ret/led-ret/cha-mng-ret"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/mil-cele/mkt-eog-mil",
+    "destination": "/events/corp/corp-prt-cel/mil-cele/mkt-eog-mil"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/onl-trn-work/inn-cm-work",
+    "destination": "/events/corp/web-vir-evt/onl-trn-work/inn-cm-work"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/tm-stra-ret/exe-aga-ret",
+    "destination": "/events/corp/exe-ret/tm-stra-ret/exe-aga-ret"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/sal-inc-trp/lux-gtw",
+    "destination": "/events/corp/inc-pro/sal-inc-trp/lux-gtw"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/onl-trn-work/vir-nc-work",
+    "destination": "/events/corp/web-vir-evt/onl-trn-work/vir-nc-work"
+  },
+  {
+    "source": "/solutions/corp/inc-pro/ann-awd-crt/cus-se-awa",
+    "destination": "/events/corp/inc-pro/ann-awd-crt/cus-se-awa"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/vir-conf/indus-conf",
+    "destination": "/events/corp/web-vir-evt/vir-conf/indus-conf"
+  },
+  {
+    "source": "/solutions/corp/exe-ret/ref-wel-ret/holi-har-ret",
+    "destination": "/events/corp/exe-ret/ref-wel-ret/holi-har-ret"
+  },
+  {
+    "source": "/solutions/corp/web-vir-evt/vir-conf/edu-ace-conf",
+    "destination": "/events/corp/web-vir-evt/vir-conf/edu-ace-conf"
+  },
+  {
+    "source": "/solutions/corp/corp-prt-cel/thm-prt/far-ct-par",
+    "destination": "/events/corp/corp-prt-cel/thm-prt/far-ct-par"
   }
 ]
 
