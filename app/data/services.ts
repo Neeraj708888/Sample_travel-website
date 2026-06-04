@@ -5767,13 +5767,6 @@ export const services: ServiceNode[] = [
                                         children: []
                                     },
                                     {
-                                        id: "ballet-dancers-in-modern-experimental-ballet",
-                                        title: "Ballet Dancers in Modern & Experimental Ballet",
-                                        slug: "ball-dme-ball",
-                                        titleSuffix: "Management Company in Delhi",
-                                        children: []
-                                    },
-                                    {
                                         id: "ballet-dancers-in-ballet-companies",
                                         title: "Ballet Dancers in Ballet Companies",
                                         slug: "ball-dib-comp",

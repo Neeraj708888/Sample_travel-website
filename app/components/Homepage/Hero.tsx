@@ -58,6 +58,7 @@ export default function Hero() {
 
                     <Link
                         href="/support"
+
                         className="px-10 py-4 rounded-full border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 transition duration-300"
                     >
                         Plan Your Dream Event
