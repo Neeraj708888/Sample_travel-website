@@ -1,38 +1,25 @@
-// import { db } from "../config/db"
-// import { PageSection } from "../../../types/page.types"
 
-// export const PageSectionModel = {
+export type SectionKey =
+    | "hero"
+    | "event_types"
+    | "event_solutions"
+    | "faqs"
+    | "why_choose_us"
+    | "testimonials"
+    | "event_planning_process"
+    | "about_event_type"
+    | "company_branding";
 
-//     async createSections(sections: PageSection[]): Promise<PageSection[]> {
+export interface SectionSEOItem {
+    id?: string;
+    section_key: SectionKey;
+    heading?: string;
+    subheading?: string;
+    h2_tag?: string;           // keyword-rich H2 for SEO
+    cta_text?: string;
+    cta_url?: string;
+    schema_section_name?: string;
+    is_active?: boolean;
+    updated_at?: string;
+}
 
-//         if (!sections.length) return []
-
-//         const { data, error } = await db
-//             .from("page_sections")
-//             .insert(sections)
-//             .select()
-
-//         if (error) {
-//             console.error("Section Insert Error:", error)
-//             throw new Error("Failed to create sections")
-//         }
-
-//         return data as PageSection[]
-//     },
-
-//     async getSections(page_id: number): Promise<PageSection[]> {
-
-//         const { data, error } = await db
-//             .from("page_sections")
-//             .select("*")
-//             .eq("page_id", page_id)
-//             .order("section_order", { ascending: true })
-
-//         if (error) {
-//             console.error("Fetch Sections Error:", error)
-//             throw new Error("Failed to fetch sections")
-//         }
-
-//         return data as PageSection[]
-//     }
-// }
