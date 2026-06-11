@@ -8,6 +8,8 @@ import HeroSectionEditor from "./page-editor/HeroSectionEditor";
 import { PageType } from "@/app/types/page.types";
 import TextInput from "./page-editor/TextInput";
 import TextareaField from "./page-editor/TextAreaField";
+import EventPlanningProcessEditor from "./page-editor/EventPlanningProcessEditor";
+import WhyChooseUsEditor from "./page-editor/WhyChooseUsEditor";
 
 // interface PageData {
 //     id: string;
@@ -87,83 +89,6 @@ function JsonTextarea({
     );
 }
 
-// ─── Text Input ─────────────────────────────────────────────────────────────
-// function TextInput({
-//     label, value, onChange, error, placeholder, hint,
-// }: {
-//     label: string;
-//     value: string;
-//     onChange: (v: string) => void;
-//     error?: string;
-//     placeholder?: string;
-//     hint?: string;
-// }) {
-//     return (
-//         <div className="flex flex-col gap-1.5">
-//             <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
-//                 {label}
-//             </label>
-//             {hint && <p className="text-xs text-gray-400 -mt-1">{hint}</p>}
-//             <input
-//                 type="text"
-//                 value={value}
-//                 onChange={(e) => onChange(e.target.value)}
-//                 placeholder={placeholder}
-//                 className={`h-11 w-full rounded-xl border px-4 text-sm text-gray-700 outline-none transition-all focus:ring-2 ${error
-//                     ? "border-red-300 focus:border-red-300 focus:ring-red-100"
-//                     : "border-gray-200 focus:border-[#c9a96e] focus:ring-[#c9a96e]/10"
-//                     }`}
-//             />
-//             {error && <p className="text-xs text-red-500 flex items-center gap-1">
-//                 <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" d="M12 8v4m0 4h.01" /></svg>
-//                 {error}
-//             </p>}
-//         </div>
-//     );
-// }
-
-// ─── Char Counter Textarea ──────────────────────────────────────────────────
-// function TextareaField({
-//     label, value, onChange, error, placeholder, hint, max, rows = 3,
-// }: {
-//     label: string;
-//     value: string;
-//     onChange: (v: string) => void;
-//     error?: string;
-//     placeholder?: string;
-//     hint?: string;
-//     max?: number;
-//     rows?: number;
-// }) {
-//     return (
-//         <div className="flex flex-col gap-1.5">
-//             <div className="flex items-center justify-between">
-//                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">{label}</label>
-//                 {max && (
-//                     <span className={`text-xs ${value.length > max ? "text-red-500" : "text-gray-400"}`}>
-//                         {value.length}/{max}
-//                     </span>
-//                 )}
-//             </div>
-//             {hint && <p className="text-xs text-gray-400 -mt-1">{hint}</p>}
-//             <textarea
-//                 value={value}
-//                 onChange={(e) => onChange(e.target.value)}
-//                 placeholder={placeholder}
-//                 rows={rows}
-//                 className={`w-full rounded-xl border px-4 py-3 text-sm text-gray-700 outline-none resize-none transition-all focus:ring-2 ${error
-//                     ? "border-red-300 focus:border-red-300 focus:ring-red-100"
-//                     : "border-gray-200 focus:border-[#c9a96e] focus:ring-[#c9a96e]/10"
-//                     }`}
-//             />
-//             {error && <p className="text-xs text-red-500 flex items-center gap-1">
-//                 <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" d="M12 8v4m0 4h.01" /></svg>
-//                 {error}
-//             </p>}
-//         </div>
-//     );
-// }
-
 // ─── Main Form ──────────────────────────────────────────────────────────────
 export default function EditPageSection({ page }: { page: PageType }) {
     const router = useRouter();
@@ -193,6 +118,8 @@ export default function EditPageSection({ page }: { page: PageType }) {
                 shortDesc: "",
                 cards: [],
             },
+            whyChoose: { heading: "", subheading: "", points: [] },       // 🆕
+            planningProcess: { heading: "", subheading: "", steps: [] },  // 🆕
         },
     });
 
@@ -500,6 +427,19 @@ export default function EditPageSection({ page }: { page: PageType }) {
                                 sectionKey="eventSolution"
                                 form={form}
                                 setForm={setForm}
+                            />
+
+                            {/* 🆕 Yeh do add karo */}
+                            <WhyChooseUsEditor
+                                form={form}
+                                setForm={setForm}
+                                pageTitle={page.meta_title || form.slug}  // page ka title AI ko jaega
+                            />
+
+                            <EventPlanningProcessEditor
+                                form={form}
+                                setForm={setForm}
+                                pageTitle={page.meta_title || form.slug}
                             />
 
                         </div>

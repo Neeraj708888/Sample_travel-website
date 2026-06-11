@@ -109,7 +109,8 @@ export default function FeaturedEvents() {
                             </p>
 
                             <Link
-                                href={`/events/${event.slug}`}
+                                // href={`/events/${event.slug}`}
+                                href="#"
                                 className="inline-block w-full text-center py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition font-semibold shadow-lg"
                             >
                                 View Details

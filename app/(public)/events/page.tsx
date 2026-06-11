@@ -88,6 +88,9 @@ export default async function EventServicesPage() {
     }
 
     const hero = parsedContent?.hero || {}
+    const whyChoose = parsedContent?.whyChoose || null  // ✅ key match karo
+    const planningProcess = parsedContent?.planningProcess || null  // ✅ key match karo
+    const testimonials = parsedContent?.testimonials || null  // 🆕
 
     /* =========================
        ✅ TYPE-SAFE CARDS 🔥

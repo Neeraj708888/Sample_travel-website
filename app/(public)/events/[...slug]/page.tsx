@@ -12,6 +12,9 @@ import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceType
 import FAQ from "@/app/components/Events/FAQ"
 
 import { findEventPath } from "@/app/helpers/eventSlugFinder"
+import WhyChoose from "@/app/components/Events/WhyChoose"
+import PlanningProcess from "@/app/components/Events/PlanninProcess"
+import Testimonials from "@/app/components/Events/Testimonials"
 
 type PageProps = {
     params: Promise<{
@@ -85,6 +88,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
     }
 
     const hero = parsedContent?.hero || {}
+    const whyChoose = parsedContent?.whyChoose || null  // ✅ key match karo
+    const planningProcess = parsedContent?.planningProcess || null  // ✅ key match karo
+    const testimonials = parsedContent?.testimonials || null  // 🆕
 
     /* =========================
        ✅ AI CARDS
@@ -178,6 +184,15 @@ export default async function DynamicServicePage({ params }: PageProps) {
         </>
     )
 
+    // 🆕 Conditional sections — sirf ek baar define, sab depths mein reuse
+    const DynamicSections = (
+        <>
+            {whyChoose && <WhyChoose data={whyChoose} />}
+            {planningProcess && <PlanningProcess data={planningProcess} />}
+            {testimonials && <Testimonials data={testimonials} />}
+        </>
+    )
+
     return (
         <>
             <Schema data={schemaData} id={`schema-${slug.join("-")}`} />
@@ -186,7 +201,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                 <>
                     {TopSection}
                     <EventSolutions page={page} />
-                    {/* <PortfolioCaseStudy /> */}
+                    {DynamicSections}
                     <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>
@@ -198,6 +213,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     {/* <ServiceTypes />
                     <ServiceEventTypeSolutions />
                     <ServiceTypePortfolioCaseStudy /> */}
+                    {DynamicSections}
                     <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>
@@ -208,6 +224,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     {TopSection}
                     {/* <ServiceTypes title={current.title} /> */}
                     {/* <ServiceTypeCaseStudy /> */}
+                    {DynamicSections}
                     <FAQ faqs={faqList} />
                     <ContactCTA />
                 </>
