@@ -8,9 +8,8 @@ import HeroSectionEditor from "./page-editor/HeroSectionEditor";
 import { PageType } from "@/app/types/page.types";
 import TextInput from "./page-editor/TextInput";
 import TextareaField from "./page-editor/TextAreaField";
-import EventPlanningProcessEditor from "./page-editor/EventPlanningProcessEditor";
-import WhyChooseUsEditor from "./page-editor/WhyChooseUsEditor";
 import SectionsManager from "./page-editor/SectionManagerEditor";
+import SectionEditor from "./page-editor/SectionManagerEditor";
 
 // interface PageData {
 //     id: string;
@@ -435,25 +434,12 @@ export default function EditPageSection({ page }: { page: PageType }) {
                                 setForm={setForm}
                             />
 
-                            {/* 🆕 Yeh do add karo */}
-                            {/* <WhyChooseUsEditor
-                                form={form}
-                                setForm={setForm}
-                                pageTitle={page.meta_title || form.slug}  // page ka title AI ko jaega
-                            /> */}
-
-                            {/* <EventPlanningProcessEditor
+                            <SectionEditor
                                 form={form}
                                 setForm={setForm}
                                 pageTitle={page.meta_title || form.slug}
-                            /> */}
-                            <SectionsManager
-                                pageId={String(page.id)}
-                                pageTitle={page.meta_title || page.slug}
-                                pageSlug={page.slug}
-                                initialContent={content}
+                                pageId={page.id}   // ← zaroori hai AI fetch ke liye
                             />
-
                         </div>
                     </div>
                 </div>

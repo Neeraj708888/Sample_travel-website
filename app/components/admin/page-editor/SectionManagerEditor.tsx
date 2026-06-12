@@ -1,634 +1,785 @@
+// app/admin/(protected)/pages/edit/[id]/page-editor/SectionEditor.tsx
 "use client"
 
-// app/admin/(protected)/pages/edit/[id]/sections/SectionsManager.tsx
-
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 
-// ─── Types ───────────────────────────────────────────────────────────────────
+/* ============================================================
+   TYPES
+============================================================ */
 type SectionKey = "whyChoose" | "planningProcess" | "testimonials"
 
-interface WhyChoosePoint { icon: string; title: string; desc: string }
-interface PlanningStep { step: number; title: string; desc: string }
-interface TestimonialItem { name: string; role: string; rating: number; review: string; avatar: string }
+interface SectionMeta {
+    key: SectionKey
+    label: string
+    icon: React.ReactNode
+    color: string        // tailwind bg color for icon box
+    iconColor: string    // stroke color
+}
 
-interface WhyChooseData { heading: string; subheading: string; points: WhyChoosePoint[] }
-interface PlanningData { heading: string; subheading: string; steps: PlanningStep[] }
-interface TestimonialsData { heading: string; subheading: string; items: TestimonialItem[] }
+interface Props {
+    form: any
+    setForm: (fn: (prev: any) => any) => void
+    pageTitle: string
+    pageId: string | number | undefined
+}
 
-// ─── Sidebar config ───────────────────────────────────────────────────────────
-const SIDEBAR = [
-    { key: "whyChoose" as SectionKey, label: "Why Choose Us", icon: "⭐", count: (d: any) => d?.points?.length ?? 0 },
-    { key: "planningProcess" as SectionKey, label: "Planning Process", icon: "📋", count: (d: any) => d?.steps?.length ?? 0 },
-    { key: "testimonials" as SectionKey, label: "Testimonials", icon: "💬", count: (d: any) => d?.items?.length ?? 0 },
+/* ============================================================
+   SECTION REGISTRY — ek jagah se saare sections manage
+============================================================ */
+const SECTIONS: SectionMeta[] = [
+    {
+        key: "whyChoose",
+        label: "Why Choose Us",
+        color: "bg-violet-50",
+        iconColor: "#7c3aed",
+        icon: (
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#7c3aed" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+        ),
+    },
+    {
+        key: "planningProcess",
+        label: "Planning Process",
+        color: "bg-orange-50",
+        iconColor: "#ea580c",
+        icon: (
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#ea580c" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+        ),
+    },
+    {
+        key: "testimonials",
+        label: "Testimonials",
+        color: "bg-yellow-50",
+        iconColor: "#d97706",
+        icon: (
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#d97706" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+        ),
+    },
 ]
 
-// ─── Props ────────────────────────────────────────────────────────────────────
-interface Props {
-    pageId: string
+/* ============================================================
+   AI FETCH BUTTON
+============================================================ */
+function AIFetchButton({
+    sectionKey,
+    pageTitle,
+    pageId,
+    onGenerated,
+}: {
+    sectionKey: SectionKey
     pageTitle: string
-    pageSlug: string
-    initialContent: Record<string, any>
-}
+    pageId: string | number | undefined
+    onGenerated: (data: any) => void
+}) {
+    const [loading, setLoading] = useState(false)
+    const [err, setErr] = useState<string | null>(null)
 
-// ─── Toast helper ─────────────────────────────────────────────────────────────
-function useToast() {
-    const [toast, setToast] = useState<{ type: "success" | "error"; msg: string } | null>(null)
-    function show(type: "success" | "error", msg: string) {
-        setToast({ type, msg })
-        setTimeout(() => setToast(null), 3500)
-    }
-    return { toast, show }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-export default function SectionsManager({ pageId, pageTitle, pageSlug, initialContent }: Props) {
-    const router = useRouter()
-    const [active, setActive] = useState<SectionKey>("whyChoose")
-    const [content, setContent] = useState<Record<string, any>>(initialContent)
-    const [globalGenerating, setGlobalGenerating] = useState(false)
-    const { toast, show } = useToast()
-
-    // ── Top-right: Fetch ALL sections with AI ────────────────────────────────
-    async function handleFetchAll() {
-        setGlobalGenerating(true)
-        show("success", "Teeno sections AI se generate ho rahe hain...")
-        try {
-            const keys: SectionKey[] = ["whyChoose", "planningProcess", "testimonials"]
-            const results = await Promise.allSettled(
-                keys.map((key) =>
-                    fetch("/api/admin/sections/generate", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ pageId, sectionKey: key, pageTitle }),
-                    }).then((r) => r.json())
-                )
-            )
-            const updated = { ...content }
-            results.forEach((r, i) => {
-                if (r.status === "fulfilled" && r.value.success) {
-                    updated[keys[i]] = r.value.data
-                }
-            })
-            setContent(updated)
-            show("success", "Teeno sections generate aur save ho gaye! ✅")
-        } catch (err: any) {
-            show("error", err.message ?? "Generation fail ho gayi")
-        } finally {
-            setGlobalGenerating(false)
+    async function handleFetch() {
+        if (!pageTitle || !pageId) {
+            setErr("pageId / pageTitle missing")
+            return
         }
-    }
+        setLoading(true)
+        setErr(null)
 
-    // ── Per-section AI generate ───────────────────────────────────────────────
-    async function handleGenerate(key: SectionKey) {
         try {
             const res = await fetch("/api/admin/sections/generate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ pageId, sectionKey: key, pageTitle }),
+                body: JSON.stringify({ pageId: String(pageId), sectionKey, pageTitle }),
             })
             const json = await res.json()
             if (!json.success) throw new Error(json.message)
-            setContent((prev) => ({ ...prev, [key]: json.data }))
-            show("success", `${SIDEBAR.find(s => s.key === key)?.label} generate ho gaya!`)
-        } catch (err: any) {
-            show("error", err.message)
+            onGenerated(json.data)
+        } catch (e: any) {
+            setErr(e.message ?? "Failed")
+        } finally {
+            setLoading(false)
         }
     }
-
-    // ── Per-section save (manual edits) ──────────────────────────────────────
-    async function handleSave(key: SectionKey, data: any) {
-        try {
-            const res = await fetch(`/api/admin/sections/save`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ pageId, sectionKey: key, data }),
-            })
-            const json = await res.json()
-            if (!json.success) throw new Error(json.message)
-            setContent((prev) => ({ ...prev, [key]: data }))
-            show("success", "Changes save ho gaye!")
-        } catch (err: any) {
-            show("error", err.message)
-        }
-    }
-
-    // ── Per-section delete ────────────────────────────────────────────────────
-    async function handleDelete(key: SectionKey) {
-        if (!confirm(`"${SIDEBAR.find(s => s.key === key)?.label}" delete karna chahte ho?`)) return
-        try {
-            const res = await fetch(`/api/admin/sections?pageId=${pageId}&sectionKey=${key}`, {
-                method: "DELETE",
-            })
-            const json = await res.json()
-            if (!json.success) throw new Error(json.message)
-            setContent((prev) => {
-                const next = { ...prev }
-                delete next[key]
-                return next
-            })
-            show("success", "Section delete ho gaya!")
-        } catch (err: any) {
-            show("error", err.message)
-        }
-    }
-
-    const activeData = content[active] ?? null
 
     return (
-        <div className="w-full max-w-6xl mx-auto">
-
-            {/* ── Header ── */}
-            <div className="flex items-center gap-3 mb-6">
-                <button
-                    onClick={() => router.back()}
-                    className="w-9 h-9 rounded-xl border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition shrink-0"
-                >
-                    <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                    </svg>
-                </button>
-                <div className="flex-1 min-w-0">
-                    <h2 className="text-xl font-semibold text-gray-800 truncate">Page Sections</h2>
-                    <p className="text-xs text-gray-400 font-mono truncate">{pageSlug}</p>
-                </div>
-
-                {/* ✅ Top-right AI Fetch All button */}
-                <button
-                    onClick={handleFetchAll}
-                    disabled={globalGenerating}
-                    className="flex items-center gap-2 h-10 px-5 rounded-xl bg-[#1a1a1a] text-[#c9a96e] text-sm font-semibold hover:bg-[#c9a96e] hover:text-[#1a1a1a] transition-all disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
-                >
-                    {globalGenerating ? (
-                        <>
-                            <svg className="animate-spin" width="14" height="14" fill="none" viewBox="0 0 24 24">
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={4} />
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-                            </svg>
-                            Generating...
-                        </>
-                    ) : (
-                        <>
-                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                            </svg>
-                            Fetch AI (All)
-                        </>
-                    )}
-                </button>
-            </div>
-
-            {/* ── Global Toast ── */}
-            {toast && (
-                <div className={`mb-5 flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium ${toast.type === "success"
-                        ? "bg-emerald-50 border border-emerald-200 text-emerald-700"
-                        : "bg-red-50 border border-red-200 text-red-700"
-                    }`}>
-                    {toast.type === "success"
-                        ? <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        : <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" d="M12 8v4m0 4h.01" /></svg>
-                    }
-                    {toast.msg}
-                </div>
-            )}
-
-            <div className="flex gap-5 items-start">
-
-                {/* ── LEFT Sidebar ── */}
-                <aside className="w-52 shrink-0 sticky top-6">
-                    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-2 space-y-1">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-3 pt-2 pb-1">Sections</p>
-
-                        {SIDEBAR.map((item) => {
-                            const isActive = active === item.key
-                            const data = content[item.key]
-                            const exists = !!data
-                            const count = item.count(data)
-
-                            return (
-                                <button
-                                    key={item.key}
-                                    onClick={() => setActive(item.key)}
-                                    className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-all ${isActive
-                                            ? "bg-[#1a1a1a] text-white shadow-sm"
-                                            : "text-gray-600 hover:bg-gray-50"
-                                        }`}
-                                >
-                                    <span className="text-base shrink-0">{item.icon}</span>
-                                    <div className="flex-1 min-w-0">
-                                        <p className={`text-xs font-semibold truncate ${isActive ? "text-white" : "text-gray-700"}`}>
-                                            {item.label}
-                                        </p>
-                                        <p className="text-[10px] text-gray-400">
-                                            {exists ? `${count} items` : "Not generated"}
-                                        </p>
-                                    </div>
-                                    <span className={`w-2 h-2 rounded-full shrink-0 ${exists ? "bg-emerald-400" : isActive ? "bg-gray-500" : "bg-gray-200"}`} />
-                                </button>
-                            )
-                        })}
-
-                        {/* Legend */}
-                        <div className="px-3 pt-3 pb-2 border-t border-gray-100 mt-1 space-y-1">
-                            <div className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                                <span className="text-[10px] text-gray-400">Generated</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-200" />
-                                <span className="text-[10px] text-gray-400">Not generated</span>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-
-                {/* ── RIGHT Panel ── */}
-                <main className="flex-1 min-w-0">
-                    {active === "whyChoose" && (
-                        <WhyChoosePanel
-                            data={content.whyChoose ?? null}
-                            onGenerate={() => handleGenerate("whyChoose")}
-                            onSave={(d) => handleSave("whyChoose", d)}
-                            onDelete={() => handleDelete("whyChoose")}
-                        />
-                    )}
-                    {active === "planningProcess" && (
-                        <PlanningPanel
-                            data={content.planningProcess ?? null}
-                            onGenerate={() => handleGenerate("planningProcess")}
-                            onSave={(d) => handleSave("planningProcess", d)}
-                            onDelete={() => handleDelete("planningProcess")}
-                        />
-                    )}
-                    {active === "testimonials" && (
-                        <TestimonialsPanel
-                            data={content.testimonials ?? null}
-                            onGenerate={() => handleGenerate("testimonials")}
-                            onSave={(d) => handleSave("testimonials", d)}
-                            onDelete={() => handleDelete("testimonials")}
-                        />
-                    )}
-                </main>
-            </div>
+        <div className="flex flex-col items-end gap-1">
+            <button
+                type="button"
+                onClick={handleFetch}
+                disabled={loading}
+                title="Fetch AI"
+                className="flex items-center gap-1.5 h-8 px-3 rounded-lg bg-violet-50 border border-violet-200
+                           text-violet-700 text-xs font-medium hover:bg-violet-100 transition disabled:opacity-50"
+            >
+                {loading ? (
+                    <>
+                        <svg className="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={4} />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                        </svg>
+                        Generating...
+                    </>
+                ) : (
+                    <>
+                        {/* Sparkle icon */}
+                        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                        </svg>
+                        Fetch AI
+                    </>
+                )}
+            </button>
+            {err && <p className="text-xs text-red-500 max-w-[180px] text-right">{err}</p>}
         </div>
     )
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// SECTION SHELL — reusable header with CRUD icons + AI generate
-// ─────────────────────────────────────────────────────────────────────────────
-function SectionShell({
-    label, icon, exists, itemCount,
-    onGenerate, onDelete,
-    children,
-}: {
-    label: string; icon: string; exists: boolean; itemCount: number
-    onGenerate: () => Promise<void>
-    onDelete: () => void
-    children: React.ReactNode
-}) {
-    const [generating, setGenerating] = useState(false)
+/* ============================================================
+   ICONS
+============================================================ */
+const EditIcon = () => (
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z" />
+    </svg>
+)
+const DeleteIcon = () => (
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 7.5h12M9.75 7.5v9m4.5-9v9M5.25 7.5l.675 10.125A2.25 2.25 0 008.169 19.5h7.662a2.25 2.25 0 002.244-1.875L18.75 7.5" />
+    </svg>
+)
+const AddIcon = () => (
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+)
+const CheckIcon = () => (
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+    </svg>
+)
+const CloseIcon = () => (
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+)
 
-    async function doGenerate() {
-        setGenerating(true)
-        await onGenerate()
-        setGenerating(false)
-    }
+/* ============================================================
+   SHARED: INLINE TEXT INPUT
+============================================================ */
+function InlineInput({
+    label, value, onChange, placeholder, textarea = false,
+}: {
+    label: string; value: string; onChange: (v: string) => void
+    placeholder?: string; textarea?: boolean
+}) {
+    const base = "w-full rounded-xl border text-black border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[#c9a96e]/10 transition"
+    return (
+        <div className="flex flex-col gap-1">
+            <label className="text-xs font-semibold uppercase tracking-wider text-gray-400">{label}</label>
+            {textarea ? (
+                <textarea
+                    rows={2}
+                    value={value}
+                    onChange={(e) => onChange(e.target.value)}
+                    placeholder={placeholder}
+                    className={`${base} py-2 resize-none`}
+                />
+            ) : (
+                <input
+                    value={value}
+                    onChange={(e) => onChange(e.target.value)}
+                    placeholder={placeholder}
+                    className={`${base} h-10`}
+                />
+            )}
+        </div>
+    )
+}
+
+/* ============================================================
+   SECTION CARD WRAPPER
+============================================================ */
+function SectionCard({
+    meta, exists, children, onClear, pageTitle, pageId, onGenerated,
+}: {
+    meta: SectionMeta
+    exists: boolean
+    children: React.ReactNode
+    onClear: () => void
+    pageTitle: string
+    pageId: string | number | undefined
+    onGenerated: (data: any) => void
+}) {
+    const [collapsed, setCollapsed] = useState(false)
 
     return (
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-            {/* Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-gray-50/60">
-                <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#c9a96e]/10 flex items-center justify-center text-lg">{icon}</div>
-                    <div>
-                        <h3 className="text-sm font-semibold text-gray-800">{label}</h3>
-                        <p className={`text-xs mt-0.5 flex items-center gap-1.5 ${exists ? "text-emerald-600" : "text-gray-400"}`}>
-                            <span className={`w-1.5 h-1.5 rounded-full inline-block ${exists ? "bg-emerald-500" : "bg-gray-300"}`} />
-                            {exists ? `${itemCount} items saved` : "Not generated yet"}
-                        </p>
+
+            {/* ── Card Header ── */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+                <div className="flex items-center gap-2.5">
+                    <div className={`w-7 h-7 rounded-lg ${meta.color} flex items-center justify-center`}>
+                        {meta.icon}
                     </div>
+                    <h3 className="text-sm font-semibold text-gray-700">{meta.label}</h3>
+
+                    {/* Exists badge */}
+                    {exists ? (
+                        <span className="flex items-center gap-1 text-xs font-medium text-green-600 bg-green-50 border border-green-100 rounded-full px-2 py-0.5">
+                            <CheckIcon /> Saved
+                        </span>
+                    ) : (
+                        <span className="text-xs font-medium text-gray-400 bg-gray-50 border border-gray-200 rounded-full px-2 py-0.5">
+                            Empty
+                        </span>
+                    )}
                 </div>
 
-                {/* CRUD icons */}
+                {/* Right side actions */}
                 <div className="flex items-center gap-2">
-                    {/* AI Generate / Re-generate */}
-                    <button
-                        onClick={doGenerate}
-                        disabled={generating}
-                        title={exists ? "Re-generate with AI" : "Generate with AI"}
-                        className="flex items-center gap-1.5 h-9 px-3.5 rounded-xl bg-[#1a1a1a] text-[#c9a96e] text-xs font-semibold hover:bg-[#c9a96e] hover:text-[#1a1a1a] transition-all disabled:opacity-50"
-                    >
-                        {generating ? (
-                            <svg className="animate-spin" width="13" height="13" fill="none" viewBox="0 0 24 24">
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={4} />
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-                            </svg>
-                        ) : (
-                            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                            </svg>
-                        )}
-                        {generating ? "Generating..." : exists ? "Re-generate" : "AI Generate"}
-                    </button>
 
-                    {/* Delete — only if exists */}
+                    {/* AI Fetch — top right */}
+                    <AIFetchButton
+                        sectionKey={meta.key}
+                        pageTitle={pageTitle}
+                        pageId={pageId}
+                        onGenerated={onGenerated}
+                    />
+
+                    {/* Clear */}
                     {exists && (
                         <button
-                            onClick={onDelete}
-                            title="Delete section"
-                            className="w-9 h-9 flex items-center justify-center rounded-xl border border-red-100 text-red-400 hover:bg-red-50 transition"
+                            type="button"
+                            onClick={onClear}
+                            title="Clear section"
+                            className="flex items-center gap-1 h-8 px-3 rounded-lg text-red-500 bg-red-50 border border-red-100
+                                       text-xs font-medium hover:bg-red-100 transition"
                         >
-                            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 7.5h12M9.75 7.5v9m4.5-9v9M5.25 7.5l.675 10.125A2.25 2.25 0 008.169 19.5h7.662a2.25 2.25 0 002.244-1.875L18.75 7.5M9 4.5h6a1.5 1.5 0 011.5 1.5v1.5h-9V6A1.5 1.5 0 019 4.5z" />
-                            </svg>
+                            <DeleteIcon /> Clear
                         </button>
                     )}
+
+                    {/* Collapse toggle */}
+                    <button
+                        type="button"
+                        onClick={() => setCollapsed(c => !c)}
+                        className="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200
+                                   text-gray-400 hover:bg-gray-50 transition"
+                    >
+                        <svg
+                            width="14" height="14" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" strokeWidth={2}
+                            className={`transition-transform ${collapsed ? "rotate-180" : ""}`}
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                        </svg>
+                    </button>
                 </div>
             </div>
 
-            {/* Content */}
-            <div className="p-5">{children}</div>
+            {/* ── Card Body ── */}
+            {!collapsed && (
+                <div className="p-6 space-y-5">
+                    {children}
+                </div>
+            )}
         </div>
     )
 }
 
-// ─── Empty State ─────────────────────────────────────────────────────────────
-function EmptyState({ icon, label }: { icon: string; label: string }) {
-    return (
-        <div className="flex flex-col items-center justify-center py-14 rounded-xl border-2 border-dashed border-gray-200 text-center">
-            <span className="text-4xl mb-3">{icon}</span>
-            <p className="text-sm font-medium text-gray-500">Koi data nahi hai</p>
-            <p className="text-xs text-gray-400 mt-1">"AI Generate" button click karo upar</p>
-        </div>
-    )
-}
+/* ============================================================
+   WHY CHOOSE US EDITOR
+============================================================ */
+function WhyChooseEditor({
+    form, setForm, pageTitle, pageId,
+}: Props) {
 
-// ─── Save Button ─────────────────────────────────────────────────────────────
-function SaveBtn({ onSave }: { onSave: () => Promise<void> }) {
-    const [saving, setSaving] = useState(false)
-    const [saved, setSaved] = useState(false)
+    const data = form.content?.whyChoose || { heading: "", subheading: "", points: [] }
+    const exists = !!(data.heading || data.points?.length)
 
-    async function handle() {
-        setSaving(true)
-        await onSave()
-        setSaving(false)
-        setSaved(true)
-        setTimeout(() => setSaved(false), 2000)
+    // Editing state: index of point being edited, or null
+    const [editingIdx, setEditingIdx] = useState<number | null>(null)
+    const [draft, setDraft] = useState({ icon: "", title: "", desc: "" })
+
+    function updateRoot(key: string, val: string) {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, whyChoose: { ...data, [key]: val } },
+        }))
     }
 
+    function startEdit(i: number) {
+        setEditingIdx(i)
+        setDraft({ ...data.points[i] })
+    }
+
+    function saveEdit() {
+        if (editingIdx === null) return
+        const pts = [...data.points]
+        pts[editingIdx] = { ...draft }
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, whyChoose: { ...data, points: pts } },
+        }))
+        setEditingIdx(null)
+    }
+
+    function deletePoint(i: number) {
+        const pts = data.points.filter((_: any, idx: number) => idx !== i)
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, whyChoose: { ...data, points: pts } },
+        }))
+    }
+
+    function addPoint() {
+        const pts = [...data.points, { icon: "✅", title: "", desc: "" }]
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, whyChoose: { ...data, points: pts } },
+        }))
+        setEditingIdx(pts.length - 1)
+        setDraft({ icon: "✅", title: "", desc: "" })
+    }
+
+    function onGenerated(generated: any) {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, whyChoose: generated },
+        }))
+    }
+
+    function onClear() {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, whyChoose: { heading: "", subheading: "", points: [] } },
+        }))
+    }
+
+    const meta = SECTIONS.find(s => s.key === "whyChoose")!
+
     return (
-        <div className="flex justify-end pt-2">
-            <button
-                onClick={handle}
-                disabled={saving}
-                className={`h-9 px-5 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 disabled:opacity-50 ${saved ? "bg-emerald-500 text-white" : "bg-[#1a1a1a] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#1a1a1a]"
-                    }`}
-            >
-                {saving ? (
-                    <><svg className="animate-spin" width="13" height="13" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={4} /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" /></svg>Saving...</>
-                ) : saved ? (
-                    <><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>Saved!</>
-                ) : "Save Changes"}
-            </button>
-        </div>
-    )
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// PANEL 1 — WHY CHOOSE US
-// ─────────────────────────────────────────────────────────────────────────────
-function WhyChoosePanel({ data, onGenerate, onSave, onDelete }: {
-    data: WhyChooseData | null
-    onGenerate: () => Promise<void>
-    onSave: (d: WhyChooseData) => Promise<void>
-    onDelete: () => void
-}) {
-    const [local, setLocal] = useState<WhyChooseData>(data ?? { heading: "", subheading: "", points: [] })
-
-    // Sync when AI generates new data
-    useState(() => { if (data) setLocal(data) })
-
-    const updatePoint = (i: number, field: keyof WhyChoosePoint, val: string) =>
-        setLocal((p) => { const pts = [...p.points]; pts[i] = { ...pts[i], [field]: val }; return { ...p, points: pts } })
-
-    return (
-        <SectionShell
-            label="Why Choose Us" icon="⭐"
-            exists={!!data} itemCount={data?.points?.length ?? 0}
-            onGenerate={async () => { await onGenerate(); if (data) setLocal(data) }}
-            onDelete={onDelete}
+        <SectionCard
+            meta={meta} exists={exists}
+            onClear={onClear} pageTitle={pageTitle}
+            pageId={pageId} onGenerated={onGenerated}
         >
-            {!data ? <EmptyState icon="⭐" label="Why Choose Us" /> : (
-                <div className="space-y-5">
-                    {/* Heading row */}
-                    <div className="grid grid-cols-2 gap-3">
-                        {(["heading", "subheading"] as const).map((f) => (
-                            <div key={f} className="flex flex-col gap-1">
-                                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400">{f}</label>
-                                <input type="text" value={local[f]}
-                                    onChange={(e) => setLocal((p) => ({ ...p, [f]: e.target.value }))}
-                                    className="h-10 rounded-xl border border-gray-200 px-3 text-sm text-gray-700 outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[#c9a96e]/10 transition" />
-                            </div>
-                        ))}
-                    </div>
+            {/* Heading + Subheading */}
+            <InlineInput label="Heading" value={data.heading} onChange={v => updateRoot("heading", v)} placeholder="Why Choose Us for..." />
+            <InlineInput label="Subheading" value={data.subheading} onChange={v => updateRoot("subheading", v)} placeholder="One line tagline" />
 
-                    {/* Points grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {local.points.map((pt, i) => (
-                            <div key={i} className="rounded-xl border border-gray-100 bg-gray-50 p-3.5 space-y-2.5">
-                                <div className="flex items-center justify-between">
-                                    <span className="text-[10px] font-bold text-gray-400 uppercase">Point {i + 1}</span>
-                                    <button onClick={() => setLocal((p) => ({ ...p, points: p.points.filter((_, x) => x !== i) }))}
-                                        className="text-gray-300 hover:text-red-400 transition">
-                                        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
+            {/* Points List */}
+            <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                    <label className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        Points ({data.points.length})
+                    </label>
+                    <button
+                        type="button" onClick={addPoint}
+                        className="flex items-center gap-1 h-7 px-3 rounded-lg border border-dashed border-gray-300
+                                   text-xs text-gray-500 hover:border-[#c9a96e] hover:text-[#c9a96e] transition"
+                    >
+                        <AddIcon /> Add
+                    </button>
+                </div>
+
+                {data.points.map((pt: any, i: number) => (
+                    <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 overflow-hidden">
+
+                        {/* Collapsed row */}
+                        {editingIdx !== i ? (
+                            <div className="flex items-center gap-3 px-4 py-3">
+                                <span className="text-xl w-7 text-center flex-shrink-0">{pt.icon}</span>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-sm font-medium text-gray-700 truncate">{pt.title || <span className="text-gray-400 italic">Untitled</span>}</p>
+                                    <p className="text-xs text-gray-400 truncate">{pt.desc}</p>
+                                </div>
+                                <div className="flex items-center gap-1.5 flex-shrink-0">
+                                    <button type="button" onClick={() => startEdit(i)}
+                                        className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#c9a96e] hover:border-[#c9a96e] transition">
+                                        <EditIcon />
+                                    </button>
+                                    <button type="button" onClick={() => deletePoint(i)}
+                                        className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition">
+                                        <DeleteIcon />
                                     </button>
                                 </div>
-                                <div className="flex gap-2">
-                                    <input type="text" value={pt.icon} onChange={(e) => updatePoint(i, "icon", e.target.value)}
-                                        placeholder="🎯" className="w-11 h-9 rounded-lg border border-gray-200 text-center text-lg outline-none focus:border-[#c9a96e] bg-white transition" />
-                                    <input type="text" value={pt.title} onChange={(e) => updatePoint(i, "title", e.target.value)}
-                                        placeholder="Title..." className="flex-1 h-9 rounded-lg border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e] bg-white transition" />
-                                </div>
-                                <textarea rows={2} value={pt.desc} onChange={(e) => updatePoint(i, "desc", e.target.value)}
-                                    placeholder="Description..." className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none resize-none focus:border-[#c9a96e] bg-white transition" />
                             </div>
-                        ))}
-                        {/* Add point */}
-                        <button onClick={() => setLocal((p) => ({ ...p, points: [...p.points, { icon: "", title: "", desc: "" }] }))}
-                            className="rounded-xl border-2 border-dashed border-gray-200 min-h-[120px] flex flex-col items-center justify-center gap-1.5 text-gray-400 hover:border-[#c9a96e] hover:text-[#c9a96e] transition text-xs font-medium">
-                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>
-                            Add Point
-                        </button>
+                        ) : (
+                            /* Expanded edit form */
+                            <div className="p-4 space-y-3 bg-white border-t border-[#c9a96e]/20">
+                                <div className="grid grid-cols-12 gap-2">
+                                    <input
+                                        value={draft.icon}
+                                        onChange={e => setDraft(d => ({ ...d, icon: e.target.value }))}
+                                        placeholder="✅"
+                                        className="col-span-2 h-10 text-black rounded-xl border border-gray-200 px-2 text-center text-xl outline-none focus:border-[#c9a96e]"
+                                    />
+                                    <input
+                                        value={draft.title}
+                                        onChange={e => setDraft(d => ({ ...d, title: e.target.value }))}
+                                        placeholder="Point title"
+                                        className="col-span-10 h-10 text-black rounded-xl border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e]"
+                                    />
+                                </div>
+                                <textarea
+                                    rows={6}
+                                    value={draft.desc}
+                                    onChange={e => setDraft(d => ({ ...d, desc: e.target.value }))}
+                                    placeholder="Short description..."
+                                    className="w-full text-black rounded-xl border text-gray-800 border-gray-200 px-3 py-2 text-sm outline-none resize-none focus:border-[#c9a96e]"
+                                />
+                                <div className="flex gap-2 justify-end">
+                                    <button type="button" onClick={() => setEditingIdx(null)}
+                                        className="flex items-center gap-1 h-8 px-3 rounded-lg border border-gray-200 text-xs text-gray-500 hover:bg-gray-50 transition">
+                                        <CloseIcon /> Cancel
+                                    </button>
+                                    <button type="button" onClick={saveEdit}
+                                        className="flex items-center gap-1 h-8 px-3 rounded-lg bg-[#1a1a1a] text-[#c9a96e] text-xs font-medium hover:bg-[#c9a96e] hover:text-[#1a1a1a] transition">
+                                        <CheckIcon /> Save
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
-                    <SaveBtn onSave={() => onSave(local)} />
-                </div>
-            )}
-        </SectionShell>
+                ))}
+            </div>
+        </SectionCard>
     )
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// PANEL 2 — PLANNING PROCESS
-// ─────────────────────────────────────────────────────────────────────────────
-function PlanningPanel({ data, onGenerate, onSave, onDelete }: {
-    data: PlanningData | null
-    onGenerate: () => Promise<void>
-    onSave: (d: PlanningData) => Promise<void>
-    onDelete: () => void
-}) {
-    const [local, setLocal] = useState<PlanningData>(data ?? { heading: "", subheading: "", steps: [] })
+/* ============================================================
+   PLANNING PROCESS EDITOR
+============================================================ */
+function PlanningProcessEditor({
+    form, setForm, pageTitle, pageId,
+}: Props) {
 
-    const updateStep = (i: number, field: keyof PlanningStep, val: string) =>
-        setLocal((p) => { const steps = [...p.steps]; steps[i] = { ...steps[i], [field]: val }; return { ...p, steps } })
+    const data = form.content?.planningProcess || { heading: "", subheading: "", steps: [] }
+    const exists = !!(data.heading || data.steps?.length)
+
+    const [editingIdx, setEditingIdx] = useState<number | null>(null)
+    const [draft, setDraft] = useState({ step: 1, title: "", desc: "" })
+
+    function updateRoot(key: string, val: string) {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, planningProcess: { ...data, [key]: val } },
+        }))
+    }
+
+    function startEdit(i: number) {
+        setEditingIdx(i)
+        setDraft({ ...data.steps[i] })
+    }
+
+    function saveEdit() {
+        if (editingIdx === null) return
+        const steps = [...data.steps]
+        steps[editingIdx] = { ...draft }
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, planningProcess: { ...data, steps } },
+        }))
+        setEditingIdx(null)
+    }
+
+    function deleteStep(i: number) {
+        const steps = data.steps
+            .filter((_: any, idx: number) => idx !== i)
+            .map((s: any, idx: number) => ({ ...s, step: idx + 1 }))
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, planningProcess: { ...data, steps } },
+        }))
+    }
+
+    function addStep() {
+        const steps = [...data.steps, { step: data.steps.length + 1, title: "", desc: "" }]
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, planningProcess: { ...data, steps } },
+        }))
+        setEditingIdx(steps.length - 1)
+        setDraft({ step: steps.length, title: "", desc: "" })
+    }
+
+    function onGenerated(generated: any) {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, planningProcess: generated },
+        }))
+    }
+
+    function onClear() {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, planningProcess: { heading: "", subheading: "", steps: [] } },
+        }))
+    }
+
+    const meta = SECTIONS.find(s => s.key === "planningProcess")!
 
     return (
-        <SectionShell
-            label="Planning Process" icon="📋"
-            exists={!!data} itemCount={data?.steps?.length ?? 0}
-            onGenerate={onGenerate} onDelete={onDelete}
+        <SectionCard
+            meta={meta} exists={exists}
+            onClear={onClear} pageTitle={pageTitle}
+            pageId={pageId} onGenerated={onGenerated}
         >
-            {!data ? <EmptyState icon="📋" label="Planning Process" /> : (
-                <div className="space-y-5">
-                    <div className="grid grid-cols-2 gap-3">
-                        {(["heading", "subheading"] as const).map((f) => (
-                            <div key={f} className="flex flex-col gap-1">
-                                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400">{f}</label>
-                                <input type="text" value={local[f]}
-                                    onChange={(e) => setLocal((p) => ({ ...p, [f]: e.target.value }))}
-                                    className="h-10 rounded-xl border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[#c9a96e]/10 transition" />
-                            </div>
-                        ))}
-                    </div>
+            <InlineInput label="Heading" value={data.heading} onChange={v => updateRoot("heading", v)} placeholder="Our Planning Process" />
+            <InlineInput label="Subheading" value={data.subheading} onChange={v => updateRoot("subheading", v)} placeholder="From planning to execution" />
 
-                    {/* Steps timeline */}
-                    <div className="space-y-2.5">
-                        {local.steps.map((step, i) => (
-                            <div key={i} className="flex gap-3 items-start">
-                                <div className="flex flex-col items-center gap-1 shrink-0">
-                                    <div className="w-8 h-8 rounded-lg bg-[#1a1a1a] text-[#c9a96e] text-xs font-bold flex items-center justify-center">{step.step}</div>
-                                    {i < local.steps.length - 1 && <div className="w-px h-5 bg-gray-200" />}
+            <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                    <label className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        Steps ({data.steps.length})
+                    </label>
+                    <button
+                        type="button" onClick={addStep}
+                        className="flex items-center gap-1 h-7 px-3 rounded-lg border border-dashed border-gray-300
+                                   text-xs text-gray-500 hover:border-[#c9a96e] hover:text-[#c9a96e] transition"
+                    >
+                        <AddIcon /> Add
+                    </button>
+                </div>
+
+                {data.steps.map((st: any, i: number) => (
+                    <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 overflow-hidden">
+                        {editingIdx !== i ? (
+                            <div className="flex items-center gap-3 px-4 py-3">
+                                <span className="w-7 h-7 rounded-full bg-orange-100 text-orange-600 text-xs font-bold
+                                                 flex items-center justify-center flex-shrink-0">
+                                    {st.step}
+                                </span>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-sm font-medium text-gray-700 truncate">{st.title || <span className="text-gray-400 italic">Untitled</span>}</p>
+                                    <p className="text-xs text-gray-400 truncate">{st.desc}</p>
                                 </div>
-                                <div className="flex-1 rounded-xl border border-gray-100 bg-gray-50 p-3 space-y-2">
-                                    <div className="flex gap-2 items-center">
-                                        <input type="text" value={step.title} onChange={(e) => updateStep(i, "title", e.target.value)}
-                                            placeholder="Step title..."
-                                            className="flex-1 h-8 rounded-lg border border-gray-200 px-3 text-sm font-semibold outline-none focus:border-[#c9a96e] bg-white transition" />
-                                        <button onClick={() => setLocal((p) => ({
-                                            ...p, steps: p.steps.filter((_, x) => x !== i).map((s, x) => ({ ...s, step: x + 1 }))
-                                        }))} className="text-gray-300 hover:text-red-400 transition shrink-0">
-                                            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                <div className="flex items-center gap-1.5 flex-shrink-0">
+                                    <button type="button" onClick={() => startEdit(i)}
+                                        className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#c9a96e] hover:border-[#c9a96e] transition">
+                                        <EditIcon />
+                                    </button>
+                                    <button type="button" onClick={() => deleteStep(i)}
+                                        className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition">
+                                        <DeleteIcon />
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="p-4 space-y-3 bg-white border-t border-[#c9a96e]/20">
+                                <input
+                                    value={draft.title}
+                                    onChange={e => setDraft(d => ({ ...d, title: e.target.value }))}
+                                    placeholder="Step title"
+                                    className="w-full h-10 rounded-xl text-black border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e]"
+                                />
+                                <textarea
+                                    rows={10}
+                                    value={draft.desc}
+                                    onChange={e => setDraft(d => ({ ...d, desc: e.target.value }))}
+                                    placeholder="What happens in this step..."
+                                    className="w-full text-black rounded-xl border border-gray-200 px-3 py-2 text-sm outline-none resize-none focus:border-[#c9a96e]"
+                                />
+                                <div className="flex gap-2 justify-end">
+                                    <button type="button" onClick={() => setEditingIdx(null)}
+                                        className="flex items-center gap-1 h-8 px-3 rounded-lg border border-gray-200 text-xs text-gray-800 hover:bg-gray-50 transition">
+                                        <CloseIcon /> Cancel
+                                    </button>
+                                    <button type="button" onClick={saveEdit}
+                                        className="flex items-center gap-1 h-8 px-3 rounded-lg bg-[#1a1a1a] text-[#c9a96e] text-xs font-medium hover:bg-[#c9a96e] hover:text-[#1a1a1a] transition">
+                                        <CheckIcon /> Save
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </SectionCard>
+    )
+}
+
+/* ============================================================
+   TESTIMONIALS EDITOR
+============================================================ */
+function TestimonialsEditor({
+    form, setForm, pageTitle, pageId,
+}: Props) {
+
+    const data = form.content?.testimonials || { heading: "", subheading: "", items: [] }
+    const exists = !!(data.heading || data.items?.length)
+
+    const [editingIdx, setEditingIdx] = useState<number | null>(null)
+    const [draft, setDraft] = useState({ name: "", role: "", rating: 5, review: "", avatar: "" })
+
+    function updateRoot(key: string, val: string) {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, testimonials: { ...data, [key]: val } },
+        }))
+    }
+
+    function startEdit(i: number) {
+        setEditingIdx(i)
+        setDraft({ ...data.items[i] })
+    }
+
+    function saveEdit() {
+        if (editingIdx === null) return
+        const items = [...data.items]
+        items[editingIdx] = { ...draft }
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, testimonials: { ...data, items } },
+        }))
+        setEditingIdx(null)
+    }
+
+    function deleteItem(i: number) {
+        const items = data.items.filter((_: any, idx: number) => idx !== i)
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, testimonials: { ...data, items } },
+        }))
+    }
+
+    function addItem() {
+        const newItem = { name: "", role: "", rating: 5, review: "", avatar: "" }
+        const items = [...data.items, newItem]
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, testimonials: { ...data, items } },
+        }))
+        setEditingIdx(items.length - 1)
+        setDraft(newItem)
+    }
+
+    function onGenerated(generated: any) {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, testimonials: generated },
+        }))
+    }
+
+    function onClear() {
+        setForm((p: any) => ({
+            ...p,
+            content: { ...p.content, testimonials: { heading: "", subheading: "", items: [] } },
+        }))
+    }
+
+    const meta = SECTIONS.find(s => s.key === "testimonials")!
+
+    return (
+        <SectionCard
+            meta={meta} exists={exists}
+            onClear={onClear} pageTitle={pageTitle}
+            pageId={pageId} onGenerated={onGenerated}
+        >
+            <InlineInput label="Heading" value={data.heading} onChange={v => updateRoot("heading", v)} placeholder="What Our Clients Say" />
+            <InlineInput label="Subheading" value={data.subheading} onChange={v => updateRoot("subheading", v)} placeholder="Real stories from real clients" />
+
+            <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                    <label className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        Reviews ({data.items.length})
+                    </label>
+                    <button
+                        type="button" onClick={addItem}
+                        className="flex items-center gap-1 h-7 px-3 rounded-lg border border-dashed border-gray-300
+                                   text-xs text-gray-500 hover:border-[#c9a96e] hover:text-[#c9a96e] transition"
+                    >
+                        <AddIcon /> Add
+                    </button>
+                </div>
+
+                {data.items.map((it: any, i: number) => (
+                    <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 overflow-hidden">
+                        {editingIdx !== i ? (
+                            <div className="flex items-center gap-3 px-4 py-3">
+                                {/* Avatar initials */}
+                                <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-700 text-xs font-bold
+                                                flex items-center justify-center flex-shrink-0">
+                                    {it.name ? it.name.split(" ").map((n: string) => n[0]).slice(0, 2).join("").toUpperCase() : "?"}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-sm font-medium text-gray-700 truncate">{it.name || <span className="text-gray-400 italic">No name</span>}</p>
+                                    <p className="text-xs text-gray-400 truncate">{it.role} — {"★".repeat(it.rating ?? 5)}</p>
+                                </div>
+                                <div className="flex items-center gap-1.5 flex-shrink-0">
+                                    <button type="button" onClick={() => startEdit(i)}
+                                        className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#c9a96e] hover:border-[#c9a96e] transition">
+                                        <EditIcon />
+                                    </button>
+                                    <button type="button" onClick={() => deleteItem(i)}
+                                        className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition">
+                                        <DeleteIcon />
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="p-4 space-y-3 bg-white border-t border-[#c9a96e]/20">
+                                <div className="grid grid-cols-2 gap-2">
+                                    <input value={draft.name} onChange={e => setDraft(d => ({ ...d, name: e.target.value }))}
+                                        placeholder="Client name"
+                                        className="h-10 rounded-xl text-black border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e]" />
+                                    <input value={draft.role} onChange={e => setDraft(d => ({ ...d, role: e.target.value }))}
+                                        placeholder="Role / Company"
+                                        className="h-10 rounded-xl text-black border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e]" />
+                                </div>
+
+                                {/* Star rating picker */}
+                                <div className="flex items-center gap-1">
+                                    <span className="text-xs text-gray-400 mr-1">Rating:</span>
+                                    {[1, 2, 3, 4, 5].map(s => (
+                                        <button key={s} type="button" onClick={() => setDraft(d => ({ ...d, rating: s }))}>
+                                            <svg width="18" height="18" viewBox="0 0 24 24"
+                                                fill={s <= draft.rating ? "#f59e0b" : "none"}
+                                                stroke="#f59e0b" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round"
+                                                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                             </svg>
                                         </button>
-                                    </div>
-                                    <input type="text" value={step.desc} onChange={(e) => updateStep(i, "desc", e.target.value)}
-                                        placeholder="Description..."
-                                        className="w-full h-8 rounded-lg border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e] bg-white transition" />
-                                </div>
-                            </div>
-                        ))}
-                        <button onClick={() => setLocal((p) => ({ ...p, steps: [...p.steps, { step: p.steps.length + 1, title: "", desc: "" }] }))}
-                            className="w-full rounded-xl border-2 border-dashed border-gray-200 py-2.5 flex items-center justify-center gap-2 text-gray-400 hover:border-[#c9a96e] hover:text-[#c9a96e] transition text-xs font-medium">
-                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>
-                            Add Step
-                        </button>
-                    </div>
-                    <SaveBtn onSave={() => onSave(local)} />
-                </div>
-            )}
-        </SectionShell>
-    )
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// PANEL 3 — TESTIMONIALS
-// ─────────────────────────────────────────────────────────────────────────────
-function TestimonialsPanel({ data, onGenerate, onSave, onDelete }: {
-    data: TestimonialsData | null
-    onGenerate: () => Promise<void>
-    onSave: (d: TestimonialsData) => Promise<void>
-    onDelete: () => void
-}) {
-    const [local, setLocal] = useState<TestimonialsData>(data ?? { heading: "", subheading: "", items: [] })
-
-    const updateItem = (i: number, field: keyof TestimonialItem, val: string | number) =>
-        setLocal((p) => { const items = [...p.items]; items[i] = { ...items[i], [field]: val }; return { ...p, items } })
-
-    return (
-        <SectionShell
-            label="Testimonials" icon="💬"
-            exists={!!data} itemCount={data?.items?.length ?? 0}
-            onGenerate={onGenerate} onDelete={onDelete}
-        >
-            {!data ? <EmptyState icon="💬" label="Testimonials" /> : (
-                <div className="space-y-5">
-                    <div className="grid grid-cols-2 gap-3">
-                        {(["heading", "subheading"] as const).map((f) => (
-                            <div key={f} className="flex flex-col gap-1">
-                                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400">{f}</label>
-                                <input type="text" value={local[f]}
-                                    onChange={(e) => setLocal((p) => ({ ...p, [f]: e.target.value }))}
-                                    className="h-10 rounded-xl border border-gray-200 px-3 text-sm outline-none focus:border-[#c9a96e] focus:ring-2 focus:ring-[#c9a96e]/10 transition" />
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {local.items.map((item, i) => (
-                            <div key={i} className="rounded-xl border border-gray-100 bg-gray-50 p-3.5 space-y-2.5">
-                                <div className="flex items-center justify-between gap-2">
-                                    <div className="flex items-center gap-2.5 flex-1 min-w-0">
-                                        <div className="w-8 h-8 rounded-full bg-[#c9a96e]/20 text-[#c9a96e] font-bold text-sm flex items-center justify-center shrink-0">
-                                            {item.name ? item.name[0].toUpperCase() : "?"}
-                                        </div>
-                                        <div className="flex-1 min-w-0 space-y-0.5">
-                                            <input type="text" value={item.name} onChange={(e) => updateItem(i, "name", e.target.value)}
-                                                placeholder="Client name" className="w-full h-7 rounded-lg border border-transparent px-2 text-sm font-semibold text-gray-700 outline-none focus:border-gray-200 bg-transparent transition" />
-                                            <input type="text" value={item.role} onChange={(e) => updateItem(i, "role", e.target.value)}
-                                                placeholder="Role, Company" className="w-full h-6 rounded-lg border border-transparent px-2 text-xs text-gray-400 outline-none focus:border-gray-200 bg-transparent transition" />
-                                        </div>
-                                    </div>
-                                    <button onClick={() => setLocal((p) => ({ ...p, items: p.items.filter((_, x) => x !== i) }))}
-                                        className="text-gray-300 hover:text-red-400 transition shrink-0">
-                                        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                {/* Stars */}
-                                <div className="flex gap-0.5">
-                                    {[1, 2, 3, 4, 5].map((s) => (
-                                        <button key={s} type="button" onClick={() => updateItem(i, "rating", s)}
-                                            className={`text-lg transition ${s <= item.rating ? "text-[#c9a96e]" : "text-gray-200"}`}>★</button>
                                     ))}
                                 </div>
 
-                                <textarea rows={3} value={item.review} onChange={(e) => updateItem(i, "review", e.target.value)}
-                                    placeholder="Client review..." className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none resize-none focus:border-[#c9a96e] bg-white transition" />
-                            </div>
-                        ))}
+                                <textarea rows={7} value={draft.review}
+                                    onChange={e => setDraft(d => ({ ...d, review: e.target.value }))}
+                                    placeholder="Client review text..."
+                                    className="w-full rounded-xl border text-black border-gray-200 px-3 py-2 text-sm outline-none resize-none focus:border-[#c9a96e]" />
 
-                        {/* Add */}
-                        <button onClick={() => setLocal((p) => ({ ...p, items: [...p.items, { name: "", role: "", rating: 5, review: "", avatar: "" }] }))}
-                            className="rounded-xl border-2 border-dashed border-gray-200 min-h-[180px] flex flex-col items-center justify-center gap-1.5 text-gray-400 hover:border-[#c9a96e] hover:text-[#c9a96e] transition text-xs font-medium">
-                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>
-                            Add Testimonial
-                        </button>
+                                <div className="flex gap-2 justify-end">
+                                    <button type="button" onClick={() => setEditingIdx(null)}
+                                        className="flex items-center gap-1 h-8 px-3 rounded-lg border border-gray-200 text-xs text-gray-500 hover:bg-gray-50 transition">
+                                        <CloseIcon /> Cancel
+                                    </button>
+                                    <button type="button" onClick={saveEdit}
+                                        className="flex items-center gap-1 h-8 px-3 rounded-lg bg-[#1a1a1a] text-[#c9a96e] text-xs font-medium hover:bg-[#c9a96e] hover:text-[#1a1a1a] transition">
+                                        <CheckIcon /> Save
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
-                    <SaveBtn onSave={() => onSave(local)} />
-                </div>
-            )}
-        </SectionShell>
+                ))}
+            </div>
+        </SectionCard>
+    )
+}
+
+/* ============================================================
+   MAIN EXPORT — SectionEditor
+   EditPageForm mein ek hi component import karo
+============================================================ */
+export default function SectionEditor({ form, setForm, pageTitle, pageId }: Props) {
+    return (
+        <div className="space-y-6">
+            <WhyChooseEditor form={form} setForm={setForm} pageTitle={pageTitle} pageId={pageId} />
+            <PlanningProcessEditor form={form} setForm={setForm} pageTitle={pageTitle} pageId={pageId} />
+            <TestimonialsEditor form={form} setForm={setForm} pageTitle={pageTitle} pageId={pageId} />
+        </div>
     )
 }

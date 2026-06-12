@@ -127,7 +127,7 @@ export default function PageSectionsTable({
                                     onClick={() => router.push(`/admin/pages/edit/${q.id}/sections`)} />
                                 {/* ✅ Pencil → sections page */}
                                 <ActionButton color="yellow" title="Manage Sections" icon={<EditIcon />}
-                                    onClick={() => router.push(`/admin/pages/edit/${q.id}/sections`)} />
+                                    onClick={() => router.push(`/admin/pages/edit/${q.id}`)} />
                                 <ActionButton color="red" title="Delete" icon={<DeleteIcon />} onClick={() => { }} />
                             </div>
                         </div>

@@ -80,7 +80,7 @@ export default function DynamicCardsEditor({
             {/* Section Desc */}
             <TextareaField
                 label="Section Description"
-                rows={3}
+                rows={8}
                 value={section.shortDesc}
                 onChange={(v) => {
                     setForm((prev: any) => ({
