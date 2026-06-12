@@ -8,7 +8,6 @@ import { EventSearch } from "@/app/components/Events/Hero"
 import EventCategories from "@/app/components/Events/EventCategories"
 import EventSolutions from "@/app/components/Events/Services/EventSolutions"
 import { ContactCTA } from "@/app/components/Events/ContactCTA"
-import ServiceTypes from "@/app/components/Events/Services/Category/SeriviceTypes"
 import FAQ from "@/app/components/Events/FAQ"
 
 import { findEventPath } from "@/app/helpers/eventSlugFinder"
@@ -92,6 +91,9 @@ export default async function DynamicServicePage({ params }: PageProps) {
     const planningProcess = parsedContent?.planningProcess || null  // ✅ key match karo
     const testimonials = parsedContent?.testimonials || null  // 🆕
 
+    // pageId aur pageTitle — API generation ke liye zaroori
+    const pageId = page?.id ?? null
+    const pageTitle = page?.meta_title || current.title
     /* =========================
        ✅ AI CARDS
     ========================= */
@@ -187,11 +189,24 @@ export default async function DynamicServicePage({ params }: PageProps) {
     // 🆕 Conditional sections — sirf ek baar define, sab depths mein reuse
     const DynamicSections = (
         <>
-            {whyChoose && <WhyChoose data={whyChoose} />}
-            {planningProcess && <PlanningProcess data={planningProcess} />}
-            {testimonials && <Testimonials data={testimonials} />}
+            <WhyChoose
+                data={whyChoose}
+                pageId={pageId}
+                pageTitle={pageTitle}
+            />
+            <PlanningProcess
+                data={planningProcess}
+                pageId={pageId}
+                pageTitle={pageTitle}
+            />
+            <Testimonials
+                data={testimonials}
+                pageId={pageId}
+                pageTitle={pageTitle}
+            />
         </>
     )
+
 
     return (
         <>
@@ -222,8 +237,6 @@ export default async function DynamicServicePage({ params }: PageProps) {
             {depth >= 3 && (
                 <>
                     {TopSection}
-                    {/* <ServiceTypes title={current.title} /> */}
-                    {/* <ServiceTypeCaseStudy /> */}
                     {DynamicSections}
                     <FAQ faqs={faqList} />
                     <ContactCTA />

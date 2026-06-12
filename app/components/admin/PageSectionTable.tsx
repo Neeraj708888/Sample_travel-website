@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import Pagination from "../Common/Pagination";
 import { useRouter } from "next/navigation";
 
-
 const ITEMS_PER_PAGE = 10;
 
 export default function PageSectionsTable({
@@ -17,35 +16,28 @@ export default function PageSectionsTable({
     const [currentPage, setCurrentPage] = useState(1);
     const router = useRouter();
 
-    // Debounce
     useEffect(() => {
         const timer = setTimeout(() => setDebouncedSearch(search), 300);
         return () => clearTimeout(timer);
     }, [search]);
 
-    // FIX 2: Search badalne par page 1 pe reset karo
     useEffect(() => {
         setCurrentPage(1);
     }, [debouncedSearch]);
 
-    // Filter
     const filteredPages = useMemo(() => {
         if (!Array.isArray(initialPages)) return [];
         if (!debouncedSearch.trim()) return initialPages;
-
         const value = debouncedSearch.toLowerCase();
         return initialPages.filter((q) =>
-            q?.slug?.toLowerCase()?.includes(value) || q?.id?.toString().includes(value) ||
+            q?.slug?.toLowerCase()?.includes(value) ||
+            q?.id?.toString().includes(value) ||
             q?.meta_title?.toLowerCase()?.includes(value)
         );
     }, [debouncedSearch, initialPages]);
 
-    // Pagination slice
     const totalPages = Math.ceil(filteredPages.length / ITEMS_PER_PAGE);
-
-    // FIX 3: currentPage out of range hone par bhi guard karo
     const safePage = Math.min(currentPage, Math.max(totalPages, 1));
-
     const paginatedPages = useMemo(() => {
         const start = (safePage - 1) * ITEMS_PER_PAGE;
         return filteredPages.slice(start, start + ITEMS_PER_PAGE);
@@ -53,17 +45,12 @@ export default function PageSectionsTable({
 
     return (
         <div className="w-full">
-
             {/* Top Header */}
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
                 <div>
                     <h2 className="text-2xl font-semibold text-gray-800">Page Sections</h2>
-                    <p className="text-sm text-gray-400 mt-1">
-                        {filteredPages.length} Pages
-                    </p>
+                    <p className="text-sm text-gray-400 mt-1">{filteredPages.length} Pages</p>
                 </div>
-
-                {/* Search */}
                 <div className="relative w-full lg:w-[360px]">
                     <input
                         type="text"
@@ -78,10 +65,7 @@ export default function PageSectionsTable({
                         </svg>
                     </div>
                     {search && (
-                        <button
-                            onClick={() => setSearch("")}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gray-500 transition"
-                        >
+                        <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gray-500 transition">
                             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
@@ -90,10 +74,8 @@ export default function PageSectionsTable({
                 </div>
             </div>
 
-            {/* Table Wrapper */}
+            {/* Table */}
             <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
-
-                {/* Desktop Header */}
                 <div className="hidden md:grid grid-cols-12 gap-4 border-b border-gray-100 bg-gray-50 px-6 py-4">
                     {[
                         { label: "ID", span: "col-span-1" },
@@ -108,7 +90,6 @@ export default function PageSectionsTable({
                     ))}
                 </div>
 
-                {/* Empty State */}
                 {paginatedPages.length === 0 && (
                     <div className="flex flex-col items-center justify-center py-16 gap-3">
                         <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} className="text-gray-200">
@@ -118,9 +99,7 @@ export default function PageSectionsTable({
                             {search ? `"${search}" se koi result nahi mila` : "No pages added yet"}
                         </p>
                         {search && (
-                            <button onClick={() => setSearch("")} className="text-xs text-[#c9a96e] hover:underline">
-                                Clear search
-                            </button>
+                            <button onClick={() => setSearch("")} className="text-xs text-[#c9a96e] hover:underline">Clear search</button>
                         )}
                     </div>
                 )}
@@ -144,15 +123,18 @@ export default function PageSectionsTable({
                                 </span>
                             </div>
                             <div className="col-span-2 flex items-center justify-end gap-2">
-                                <ActionButton color="blue" title="View" icon={<EyeIcon />} onClick={() => { }} />
-                                <ActionButton color="yellow" title="Edit" icon={<EditIcon />} onClick={() => { router.push(`/admin/pages/edit/${q.id}`) }} />
+                                <ActionButton color="blue" title="View Sections" icon={<EyeIcon />}
+                                    onClick={() => router.push(`/admin/pages/edit/${q.id}/sections`)} />
+                                {/* ✅ Pencil → sections page */}
+                                <ActionButton color="yellow" title="Manage Sections" icon={<EditIcon />}
+                                    onClick={() => router.push(`/admin/pages/edit/${q.id}/sections`)} />
                                 <ActionButton color="red" title="Delete" icon={<DeleteIcon />} onClick={() => { }} />
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* FIX 1: Mobile bhi paginatedPages use kare — filteredPages nahi */}
+                {/* Mobile Rows */}
                 <div className="block md:hidden divide-y divide-gray-50">
                     {paginatedPages.map((q) => (
                         <div key={q.id} className="p-4">
@@ -169,8 +151,10 @@ export default function PageSectionsTable({
                                 </span>
                             </div>
                             <div className="mt-3 flex items-center gap-2">
-                                <ActionButton color="blue" title="View" icon={<EyeIcon />} onClick={() => { }} />
-                                <ActionButton color="yellow" title="Edit" icon={<EditIcon />} onClick={() => { }} />
+                                <ActionButton color="blue" title="View Sections" icon={<EyeIcon />}
+                                    onClick={() => router.push(`/admin/pages/edit/${q.id}/sections`)} />
+                                <ActionButton color="yellow" title="Manage Sections" icon={<EditIcon />}
+                                    onClick={() => router.push(`/admin/pages/edit/${q.id}/sections`)} />
                                 <ActionButton color="red" title="Delete" icon={<DeleteIcon />} onClick={() => { }} />
                             </div>
                         </div>
@@ -178,7 +162,6 @@ export default function PageSectionsTable({
                 </div>
             </div>
 
-            {/* Pagination */}
             <Pagination
                 currentPage={safePage}
                 totalPages={totalPages}
@@ -190,11 +173,10 @@ export default function PageSectionsTable({
     );
 }
 
-// ─── Action Button ────────────────────────────────────────────────────────────
 const COLOR_MAP = {
-    blue: "border-blue-100   text-blue-500   hover:bg-blue-50",
+    blue: "border-blue-100 text-blue-500 hover:bg-blue-50",
     yellow: "border-yellow-100 text-yellow-500 hover:bg-yellow-50",
-    red: "border-red-100    text-red-500    hover:bg-red-50",
+    red: "border-red-100 text-red-500 hover:bg-red-50",
 };
 
 function ActionButton({ color, icon, title, onClick }: {
@@ -205,14 +187,12 @@ function ActionButton({ color, icon, title, onClick }: {
 }) {
     return (
         <button title={title} onClick={onClick}
-            className={`flex h-9 w-9 items-center justify-center rounded-lg border transition ${COLOR_MAP[color]}`}
-        >
+            className={`flex h-9 w-9 items-center justify-center rounded-lg border transition ${COLOR_MAP[color]}`}>
             {icon}
         </button>
     );
 }
 
-// ─── Icons ────────────────────────────────────────────────────────────────────
 const EyeIcon = () => (
     <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12s3.75-7.5 9.75-7.5 9.75 7.5 9.75 7.5-3.75 7.5-9.75 7.5S2.25 12 2.25 12z" />

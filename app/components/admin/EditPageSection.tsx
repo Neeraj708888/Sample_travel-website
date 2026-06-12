@@ -10,6 +10,7 @@ import TextInput from "./page-editor/TextInput";
 import TextareaField from "./page-editor/TextAreaField";
 import EventPlanningProcessEditor from "./page-editor/EventPlanningProcessEditor";
 import WhyChooseUsEditor from "./page-editor/WhyChooseUsEditor";
+import SectionsManager from "./page-editor/SectionManagerEditor";
 
 // interface PageData {
 //     id: string;
@@ -122,6 +123,11 @@ export default function EditPageSection({ page }: { page: PageType }) {
             planningProcess: { heading: "", subheading: "", steps: [] },  // 🆕
         },
     });
+
+    const content =
+        typeof page.content === "string"
+            ? JSON.parse(page.content)
+            : page.content ?? {}
 
     const [errors, setErrors] = useState<FieldError>({});
     const [saving, setSaving] = useState(false);
@@ -430,16 +436,22 @@ export default function EditPageSection({ page }: { page: PageType }) {
                             />
 
                             {/* 🆕 Yeh do add karo */}
-                            <WhyChooseUsEditor
+                            {/* <WhyChooseUsEditor
                                 form={form}
                                 setForm={setForm}
                                 pageTitle={page.meta_title || form.slug}  // page ka title AI ko jaega
-                            />
+                            /> */}
 
-                            <EventPlanningProcessEditor
+                            {/* <EventPlanningProcessEditor
                                 form={form}
                                 setForm={setForm}
                                 pageTitle={page.meta_title || form.slug}
+                            /> */}
+                            <SectionsManager
+                                pageId={String(page.id)}
+                                pageTitle={page.meta_title || page.slug}
+                                pageSlug={page.slug}
+                                initialContent={content}
                             />
 
                         </div>

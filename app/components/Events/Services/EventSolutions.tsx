@@ -80,7 +80,7 @@ export default function EventSolutions({ page }: { page?: any }) {
           </h2>
 
           {/* ✅ DB se shortDesc */}
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-400 mt-4 max-w-5xl mx-auto">
             {sectionDesc}
           </p>
         </div>
