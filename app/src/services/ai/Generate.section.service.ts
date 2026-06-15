@@ -37,15 +37,16 @@ const PROMPTS: Record<SectionKey, (title: string) => string> = {
             "heading": "Our [Service] Planning Process",
             "subheading": "one line — simple and reassuring",
             "steps": [
-                { "step": 1, "title": "step name max 3 words", "desc": "one clear sentence what happens in this step" }
+                { "step": 1, "emoji": "title": "step name max 3 words", "desc": "one clear sentence what happens in this step" }
             ]
         }
         
         Rules:
         - Exactly 5 steps
+        - Icons must be relevant emojis (🎭 🎯 ✅ ⚡ 💼 🏆 etc)
         - Steps must be in logical chronological order
         - Each step title should be action-oriented (verb first)
-        - desc must be specific to this type of event/service atleast 200 - 250 words
+        - desc must be specific to this type of event/service atleast 50 - 80 words
         - heading must reference the specific service
     `,
 
