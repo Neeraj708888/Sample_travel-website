@@ -127,7 +127,8 @@
 // `
 // }
 
-import { PageTypeKey } from "@/app/types/page.types"
+
+import { PageTypeKey } from "@/types/page.types"
 
 interface PromptParams {
   pageType: PageTypeKey

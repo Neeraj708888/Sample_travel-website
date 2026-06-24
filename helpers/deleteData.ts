@@ -1,4 +1,3 @@
-import { error } from "console"
 
 interface DeleteProps {
     endpoint: string,

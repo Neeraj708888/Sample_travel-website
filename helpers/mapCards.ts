@@ -1,5 +1,7 @@
 // import { Card } from "@/app/types/page.types"
 
+import { Card } from "@/types/page.types"
+
 // type BaseItem = {
 //     title: string
 //     slug: string
@@ -86,7 +88,7 @@
 //     })
 // }
 
-import { Card } from "@/app/types/page.types"
+
 
 type BaseItem = {
     title: string

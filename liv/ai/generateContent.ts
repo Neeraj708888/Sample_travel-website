@@ -87,8 +87,9 @@
 // }
 
 import OpenAI from "openai"
-import { PageContent, FAQ, PageTypeKey } from "@/app/types/page.types"
+
 import { buildPrompt, buildCardsPrompt } from "./promptBuilder"
+import { FAQ, PageContent, PageTypeKey } from "@/types/page.types"
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY!,
