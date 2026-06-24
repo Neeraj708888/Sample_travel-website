@@ -1,4 +1,5 @@
-import { services } from "./data/services"
+
+import { services } from "@/data/services";
 import { MetadataRoute } from "next"
 
 const domain =

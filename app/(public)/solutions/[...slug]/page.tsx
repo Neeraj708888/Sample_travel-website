@@ -1,19 +1,12 @@
+import Schema from "@/components/Common/Schema"
+import { ContactCTA } from "@/components/Events/ContactCTA"
+import EventCategories from "@/components/Events/EventCategories"
+import FAQ from "@/components/Events/FAQ"
+import { EventSearch } from "@/components/Events/Hero"
+import { getPageData } from "@/helpers/pageData"
+import { findSolutionPath } from "@/helpers/solutionSlugFinder"
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/liv/seo/schema"
 import { notFound } from "next/navigation"
-import { solutions, ServiceNode } from "@/app/data/solution"
-
-import {
-  breadcrumbSchema,
-  serviceSchema,
-  faqSchema,
-} from "@/app/liv/seo/schema"
-import Schema from "@/app/components/Common/Schema"
-import { getPageData } from "@/app/helpers/pageData"
-
-import { EventSearch } from "@/app/components/Events/Hero"
-import EventCategories from "@/app/components/Events/EventCategories"
-import { ContactCTA } from "@/app/components/Events/ContactCTA"
-import FAQ from "@/app/components/Events/FAQ"
-import { findSolutionPath } from "@/app/helpers/solutionSlugFinder"
 
 type PageProps = {
   params: Promise<{

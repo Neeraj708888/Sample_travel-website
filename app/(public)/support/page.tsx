@@ -2,7 +2,8 @@
 import Script from "next/script";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import { useState } from "react";
-import { submitQuery } from "@/app/helpers/submitQuery";
+import { submitQuery } from "@/helpers/submitQuery";
+
 // export { metadata } from "./metadata";
 
 export default function SupportPage() {

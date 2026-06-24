@@ -1,6 +1,6 @@
-import { solutions } from "@/app/data/solution"
-import type { ServiceNode } from "@/app/data/solution"
-import { generateSeo } from "@/app/liv/seo/seo"
+
+import { ServiceNode, solutions } from "@/data/solution";
+import { generateSeo } from "@/liv/seo/seo";
 
 /* ---------------------------------- */
 /* ✅ Solutions tree traversal         */
