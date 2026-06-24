@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { cities } from "@/app/data/india-locations";
+import { cities } from "@/data/india-locations";
 
 export default function DestinationSlider() {
     const [query, setQuery] = useState("");
