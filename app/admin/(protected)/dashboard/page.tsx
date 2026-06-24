@@ -1,6 +1,7 @@
 // app/admin/(protected)/dashboard/page.tsx
-import { dbConnect } from "@/app/src/config/db";
-import { verifyToken } from "@/app/src/utils/jwt";
+
+import { dbConnect } from "@/src/config/db";
+import { verifyToken } from "@/src/utils/jwt";
 import { cookies } from "next/headers";
 
 export default async function DashboardPage() {

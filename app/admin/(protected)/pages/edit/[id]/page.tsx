@@ -1,6 +1,7 @@
 // app/admin/(protected)/pages/edit/[id]/page.tsx
-import EditPageSection from "@/app/components/admin/EditPageSection";
-import { dbConnect } from "@/app/src/config/db";
+
+import EditPageSection from "@/components/admin/EditPageSection";
+import { dbConnect } from "@/src/config/db";
 import { notFound } from "next/navigation";
 
 interface Props {

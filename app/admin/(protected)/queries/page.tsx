@@ -2,9 +2,9 @@
 
 "use client";
 
-import ConfirmModal from "@/app/components/admin/modals/ConfirmModal";
-import MessageModal from "@/app/components/admin/modals/MessageModal";
-import { deleteData } from "@/app/helpers/deleteData";
+import ConfirmModal from "@/components/admin/modals/ConfirmModal";
+import MessageModal from "@/components/admin/modals/MessageModal";
+import { deleteData } from "@/helpers/deleteData";
 import { useEffect, useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 

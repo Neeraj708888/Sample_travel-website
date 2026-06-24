@@ -1,7 +1,9 @@
 // app/admin/(protected)/pages/page.tsx
 
-import PageSectionsTable from "@/app/components/admin/PageSectionTable";
-import { dbConnect } from "@/app/src/config/db";
+import PageSectionsTable from "@/components/admin/PageSectionTable";
+import { dbConnect } from "@/src/config/db";
+
+
 
 
 export default async function PagesAdminPage() {
