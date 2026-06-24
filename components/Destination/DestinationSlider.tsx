@@ -2,8 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { cities } from "@/app/data/india-locations";
 import { Mic, Search } from "lucide-react";
+import { cities } from "@/data/india-locations";
 
 export default function PremiumDestinationSearch() {
     const [query, setQuery] = useState("");
