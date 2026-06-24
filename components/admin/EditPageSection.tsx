@@ -5,11 +5,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import DynamicCardsEditor from "./page-editor/DynamicCardEditor";
 import HeroSectionEditor from "./page-editor/HeroSectionEditor";
-import { PageType } from "@/app/types/page.types";
 import TextInput from "./page-editor/TextInput";
 import TextareaField from "./page-editor/TextAreaField";
-import SectionsManager from "./page-editor/SectionManagerEditor";
 import SectionEditor from "./page-editor/SectionManagerEditor";
+import { PageType } from "@/types/page.types";
 
 // interface PageData {
 //     id: string;
