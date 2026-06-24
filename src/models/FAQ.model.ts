@@ -1,5 +1,6 @@
-import { FAQ } from "@/app/types/page.types"
+import { FAQ } from "@/types/page.types"
 import { dbConnect } from "../config/db"
+
 
 
 export const FaqModel = {
