@@ -1,5 +1,5 @@
+import { CreatePage, PageType } from "@/types/page.types"
 import { dbConnect } from "../config/db"
-import { CreatePage, PageType } from "@/app/types/page.types"
 
 export const PageModel = {
 
