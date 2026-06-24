@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { FAQ as FAQType } from "@/app/types/page.types";
+import { FAQ as FAQType } from "@/types/page.types";
 
 
 interface FAQProps {

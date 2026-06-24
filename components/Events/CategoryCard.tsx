@@ -3,8 +3,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
-import { ServiceNode } from "@/app/data/services"
 import { FaCalendarAlt } from "react-icons/fa"
+import { ServiceNode } from "@/data/services"
 
 interface PageData {
     meta_description?: string
