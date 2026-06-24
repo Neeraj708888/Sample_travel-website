@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Request, Response } from "express"
 import { PageModel } from "../models/Page.model"
-import { CreatePage, PageContent, FAQ } from "@/app/types/page.types"
 import { pageService } from "../services/page.service";
+import { CreatePage, PageContent } from "@/types/page.types";
 
 // Create Page
 export const createPage = async (req: Request, res: Response) => {

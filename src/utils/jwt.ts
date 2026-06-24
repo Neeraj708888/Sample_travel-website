@@ -11,7 +11,7 @@
 
 // src/utils/jwt.ts
 // Aapka existing generateToken — isme sirf verifyToken add kiya hai
-import { JwtPayload } from "@/app/types/admin.types";
+import { JwtPayload } from "@/types/admin.types";
 import jwt from "jsonwebtoken";
 
 

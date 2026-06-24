@@ -2,7 +2,7 @@
 // Aapka existing service — exactly same rakha, sirf import fix kiya
 import bcrypt from "bcryptjs";
 import { dbConnect } from "../config/db";
-import { AdminUser } from "@/app/types/admin.types";
+import { AdminUser } from "@/types/admin.types";
 
 
 export async function findAdminByEmail(email: string): Promise<AdminUser | null> {
