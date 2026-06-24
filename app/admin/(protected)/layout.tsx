@@ -18,8 +18,8 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { AdminShell } from "./AdminShell";
 import { verifyToken } from "@/src/utils/jwt";
+import { AdminShell } from "@/components/admin/AdminShell";
 
 export default async function ProtectedAdminLayout({
     children,
