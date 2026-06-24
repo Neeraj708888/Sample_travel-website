@@ -1,9 +1,7 @@
 // src/components/admin/AdminHeader.tsx
 "use client";
 
-import { AdminRole } from "@/app/types/admin.types";
-
-
+import { AdminRole } from "@/types/admin.types";
 
 const ROLE_BADGE: Record<AdminRole, { label: string; cls: string }> = {
     super_admin: { label: "Super Admin", cls: "bg-[#c9a96e]/15 text-[#c9a96e] border border-[#c9a96e]/30" },

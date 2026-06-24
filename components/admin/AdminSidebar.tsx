@@ -1,7 +1,8 @@
 // src/components/admin/AdminSidebar.tsx
 "use client";
 
-import { AdminRole, NAV_ITEMS } from "@/app/types/admin.types";
+
+import { AdminRole, NAV_ITEMS } from "@/types/admin.types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

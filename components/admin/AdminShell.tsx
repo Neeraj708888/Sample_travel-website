@@ -1,10 +1,10 @@
 // app/admin/(protected)/AdminShell.tsx
 "use client";
 
-import AdminHeader from "@/app/components/admin/AdminHeader";
-import AdminSidebar from "@/app/components/admin/AdminSidebar";
-import { AdminRole } from "@/app/types/admin.types";
+import { AdminRole } from "@/types/admin.types";
 import { useState } from "react";
+import AdminSidebar from "./AdminSidebar";
+import AdminHeader from "./AdminHeader";
 
 
 interface Props {
