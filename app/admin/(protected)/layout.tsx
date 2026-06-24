@@ -19,7 +19,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 import { AdminShell } from "./AdminShell";
-import { verifyToken } from "@/app/src/utils/jwt";
+import { verifyToken } from "@/src/utils/jwt";
 
 export default async function ProtectedAdminLayout({
     children,
