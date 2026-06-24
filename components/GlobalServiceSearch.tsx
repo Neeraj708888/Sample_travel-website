@@ -104,8 +104,7 @@
 import { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
-import { useGlobalServiceSearch } from "@/app/hooks/useGlobalServiceSearch";
-
+import { useGlobalServiceSearch } from "@/hooks/useGlobalServiceSearch";
 export default function GlobalServiceSearch() {
     const router = useRouter();
     const dropdownRef = useRef<HTMLDivElement>(null);

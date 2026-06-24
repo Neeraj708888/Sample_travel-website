@@ -5689,14 +5689,70 @@ export const services: ServiceNode[] = [
                         title: "Performing Actors",
                         titleSuffix: "Management Company in Delhi",
                         slug: "perform-actor",
-                        children: []
+                        children: [
+                            {
+                                id: "theatrical-actors",
+                                title: "Theatrical Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "theatrical-actors",
+                            },
+                            {
+                                id: "film-and-tv-actors",
+                                title: "Film and TV Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "film-and-tv-actors",
+                            },
+                            {
+                                id: "voice-actors",
+                                title: "Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "voice-actors",
+                            },
+                            {
+                                id: "commercial-and-commercial-print-models",
+                                title: "Commercial and Commercial Print Models",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "commercial-prnt-models",
+                            },
+                        ]
                     },
                     {
                         id: "musicians-and-singers",
                         title: "Musicians and Singers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "music-singer",
-                        children: []
+                        children: [
+                            {
+                                id: "solo-musicians",
+                                title: "Solo Musicians",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "solo-musicians",
+                            },
+                            {
+                                id: "bands-and-ensembles",
+                                title: "Bands and Ensembles",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "bands-and-ensembles",
+                            },
+                            {
+                                id: "opera-singers",
+                                title: "Opera Singers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "opera-singers",
+                            },
+                            {
+                                id: "theater-musicians",
+                                title: "Theater Musicians",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "theater-musicians",
+                            },
+                            {
+                                id: "djs-and-electronic-musicians",
+                                title: "DJs and Electronic Musicians",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "djs-and-ele-musicians",
+                            },
+                        ]
                     },
                     {
                         id: "dancers",
@@ -5715,70 +5771,202 @@ export const services: ServiceNode[] = [
                                         title: "Classical Ballet Dancers",
                                         slug: "clas-ball-danc",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "principals",
+                                                title: "Principals",
+                                                slug: "principals",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "soloists",
+                                                title: "Soloists",
+                                                slug: "soloists",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "corps-de-ballet",
+                                                title: "Corps de Ballet",
+                                                slug: "corps-de-ballet",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "coryphees",
+                                                title: "Coryphées",
+                                                slug: "coryphees",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+
+                                        ]
                                     },
                                     {
                                         id: "neoclassical-ballet-dancers",
                                         title: "Neoclassical Ballet Dancers",
                                         slug: "neo-ball-danc",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "lead-dancers",
+                                                title: "Lead Dancers",
+                                                slug: "lead-dancers",
+                                                titleSuffix: "Management Company in Delhi",
+                                            }
+                                        ]
                                     },
                                     {
                                         id: "contemporary-ballet-dancers",
                                         title: "Contemporary Ballet Dancers",
                                         slug: "cont-ball-danc",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "lead-contmry-dan",
+                                                title: "Lead Contemporary Dancers",
+                                                slug: "lead-contmry-dan",
+                                                titleSuffix: "Management Company in Delhi",
+                                            }
+                                        ]
                                     },
                                     {
                                         id: "character-dancers",
                                         title: "Character Dancers",
                                         slug: "char-danc",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "male-char-dancer",
+                                                title: "Male Character Dancer",
+                                                slug: "male-char-dancer",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "female-char-dancer",
+                                                title: "Female Character Dancer",
+                                                slug: "female-char-dancer",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "male-ballet-dancers",
                                         title: "Male Ballet Dancers",
                                         slug: "male-ball-danc",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "principal-dancer",
+                                                title: "Principal Dancer",
+                                                slug: "principal-dancer",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "pas-de-deux",
+                                                title: "Pas de Deux Partner",
+                                                slug: "pas-de-deux",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+
+                                        ]
                                     },
                                     {
                                         id: "female-ballet-dancers",
                                         title: "Female Ballet Dancers",
                                         slug: "fem-ball-danc",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "prim-ballerina",
+                                                title: "Prima Ballerina",
+                                                slug: "prim-ballerina",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "first-soloist",
+                                                title: "First Soloist",
+                                                slug: "first-soloist",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "ballet-dancers-specializing-in-pointe-work",
                                         title: "Ballet Dancers Specializing in Pointe Work",
                                         slug: "ball-danc-sp-work",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "prima-ballerina-asslta",
+                                                title: "Prima Ballerina Assoluta",
+                                                slug: "prima-ballerina-asslta",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "ballet-dancers-specializing-in-pas-de-deux",
                                         title: "Ballet Dancers Specializing in Pas de Deux",
                                         slug: "ball-dsp-deux",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "lead-maule-partner",
+                                                title: "Lead Male Partner",
+                                                slug: "lead-male-partner",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "female-lead",
+                                                title: "Lead Female Partner",
+                                                slug: "female-lead",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "ballet-dancers-in-ballet-companies",
                                         title: "Ballet Dancers in Ballet Companies",
                                         slug: "ball-dib-comp",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "artistic-director",
+                                                title: "Artistic Director",
+                                                slug: "artistic-director",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "demi-soloists",
+                                                title: "Demi-Soloists",
+                                                slug: "demi-soloists",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "apprentices",
+                                                title: "Apprentices",
+                                                slug: "apprentices",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "ballet-dancers-in-modern-experimental-ballet",
                                         title: "Ballet Dancers in Modern & Experimental Ballet",
                                         slug: "ball-dme-ball",
                                         titleSuffix: "Management Company in Delhi",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "exp-mental-dancers",
+                                                title: "Experimental Ballet Dancers",
+                                                slug: "exp-mental-dancers",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                            {
+                                                id: "collaborative-dancers",
+                                                title: "Collaborative Dancers",
+                                                slug: "collaborative-dancers",
+                                                titleSuffix: "Management Company in Delhi",
+                                            },
+                                        ]
                                     },
                                 ]
                             },
@@ -5793,63 +5981,223 @@ export const services: ServiceNode[] = [
                                         title: "Modern Dance",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "modern-dance",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "graham-technique",
+                                                title: "Graham Technique",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "graham-technique",
+                                            },
+                                            {
+                                                id: "cunningham-technique",
+                                                title: "Cunningham Technique",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "cunnin-technique",
+                                            },
+                                            {
+                                                id: "limon-technique",
+                                                title: "Limon Technique",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "cunnin-technique",
+                                            },
+                                            {
+                                                id: "horton-technique",
+                                                title: "Horton Technique",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "horton-technique"
+                                            },
+
+                                        ]
                                     },
                                     {
                                         id: "release-technique",
                                         title: "Release Technique",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "relea-tech",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "alexander-technique",
+                                                title: "Alexander Technique",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "alex-technique",
+                                            },
+                                            {
+                                                id: "feldenkraise-technique",
+                                                title: "Feldenkrais Method",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "feld-technique",
+                                            },
+                                            {
+                                                id: "bart-funcamental",
+                                                title: "Bartenieff Fundamentals",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "bart-fundamental",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "improvisation",
                                         title: "Improvisation",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "impro",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "cont-improvisation",
+                                                title: "Contact Improvisation",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "cont-improvisation",
+                                            },
+                                            {
+                                                id: "structured-improvisation",
+                                                title: "Structured Improvisation",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "struct-improvisation",
+                                            },
+                                            {
+                                                id: "free-improvisation",
+                                                title: "Free Improvisation",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "free-improvisation",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "jazz-inspired-contemporary",
                                         title: "Jazz-Inspired Contemporary",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "jazz-ins-conte",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "lyrical-contemporary",
+                                                title: "Lyrical Contemporary",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "lyrical-contemporary",
+                                            },
+                                            {
+                                                id: "jazz-funk",
+                                                title: "Jazz-Funk",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "jazz-funk",
+                                            },
+                                            {
+                                                id: "contemporary-jazz",
+                                                title: "Contemporary Jazz",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "contemporary-jazz",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "floorwork",
                                         title: "Floorwork",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "floor-work",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "floor-work-contemp",
+                                                title: "Floor Work in Contemporary",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "floor-work-contemp",
+                                            },
+                                            {
+                                                id: "contact-work",
+                                                title: "Contact Work",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "contact-work",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "release-and-suspension",
                                         title: "Release and Suspension",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "relea-susp",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "weight-sharing",
+                                                title: "Weight Sharing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "weight-sharing",
+                                            },
+                                            {
+                                                id: "suspended-movement",
+                                                title: "Suspended Movement",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "suspended-movement",
+                                            },
+                                            {
+                                                id: "release-and-fall",
+                                                title: "Release and Fall",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "release-and-fall",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "fusion-styles",
                                         title: "Fusion Styles",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "fusi-style",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "hip-hop-contmry-fus",
+                                                title: "Hip-Hop Contemporary Fusion",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "hip-hop-contmry-fus",
+                                            },
+                                            {
+                                                id: "contmry-flamenco",
+                                                title: "Contemporary Flamenco",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "contmry-flamenco",
+                                            },
+                                            {
+                                                id: "indian-contmry-fus",
+                                                title: "Indian Contemporary Fusion",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "indian-contmry-fus",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "urban-contemporary",
                                         title: "Urban Contemporary",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "urbn-conte",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "contmpry-hip-hop",
+                                                title: "Contemporary Hip-Hop",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "contmpry-hip-hop",
+                                            },
+                                            {
+                                                id: "street-contmry",
+                                                title: "Street Contemporary",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "street-contmry",
+                                            },
+                                        ]
                                     },
                                     {
                                         id: "narrative-contemporary-dance",
                                         title: "Narrative Contemporary Dance",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "narr-conte-dance",
-                                        children: []
+                                        children: [
+                                            {
+                                                id: "physical-theater",
+                                                title: "Physical Theater",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "physical-theater",
+                                            },
+                                            {
+                                                id: "dance-theater",
+                                                title: "Dance Theater",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "dance-theater",
+                                            },
+                                        ]
                                     },
                                 ]
                             },

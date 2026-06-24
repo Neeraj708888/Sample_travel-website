@@ -1,4 +1,4 @@
-import { getPageController, updatePageController } from "@/app/src/controllers/Page.controller";
+import { getPageController, updatePageController } from "@/src/controllers/Page.controller";
 import { NextRequest } from "next/server";
 
 

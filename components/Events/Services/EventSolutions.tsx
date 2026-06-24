@@ -1,7 +1,8 @@
 "use client";
 
+import { solutions } from "@/data/solution";
 import Link from "next/link";
-import { solutions } from "@/app/data/solution";
+
 
 // ✅ Static solutions se icon lookup map — O(1) access
 const iconMap = new Map(

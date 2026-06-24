@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { services } from "@/app/data/services";
 import { solutions } from "../data/solution";
+import { services } from "@/data/services";
 
 type TreeNode = {
     title: string;

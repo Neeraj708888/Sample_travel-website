@@ -3,7 +3,7 @@
 // Body: { sectionKeys: [], slugPattern: "events/%", overwrite: false }
 
 
-import { bulkGenerateSections } from "@/app/src/controllers/Section.controller"
+import { bulkGenerateSections } from "@/src/controllers/Section.controller"
 import { NextRequest } from "next/server"
 
 export async function POST(req: NextRequest) {

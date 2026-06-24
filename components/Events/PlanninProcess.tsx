@@ -10,6 +10,7 @@ interface Step {
     step: number
     title: string
     desc: string
+    emoji: string
 }
 
 interface ProcessData {
@@ -172,6 +173,20 @@ export default function PlanningProcess({ data: initialData, pageId, pageTitle }
                                                     hover:bg-[#c9a96e] transition-all duration-300
                                                     max-w-sm ${isEven ? "lg:ml-auto" : "lg:mr-auto"}`}
                                     >
+
+                                        <div className="overflow-hidden whitespace-nowrap">
+                                            <div className="inline-block animate-marquee">
+                                                <span
+                                                    role="img"
+                                                    aria-label={step.title}
+                                                    className="inline-flex items-center justify-center text-4xl border border-amber-300 rounded-full p-2"
+                                                >
+                                                    {step.emoji}
+                                                </span>
+                                            </div>
+                                        </div>
+
+
                                         <h3 className="text-white font-semibold text-base mb-2">
                                             {step.title}
                                         </h3>

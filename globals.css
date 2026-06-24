@@ -76,7 +76,7 @@ body {
 
 /* Cards CSS */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+  width: 160px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {

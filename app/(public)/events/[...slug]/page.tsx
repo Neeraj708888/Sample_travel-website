@@ -1,19 +1,16 @@
+import Schema from "@/components/Common/Schema"
+import { ContactCTA } from "@/components/Events/ContactCTA"
+import EventCategories from "@/components/Events/EventCategories"
+import FAQ from "@/components/Events/FAQ"
+import { EventSearch } from "@/components/Events/Hero"
+import PlanningProcess from "@/components/Events/PlanninProcess"
+import EventSolutions from "@/components/Events/Services/EventSolutions"
+import Testimonials from "@/components/Events/Testimonials"
+import WhyChooseUs from "@/components/Events/WhyChoose"
+import { findEventPath } from "@/helpers/eventSlugFinder"
+import { getPageData } from "@/helpers/pageData"
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/liv/seo/schema"
 import { notFound } from "next/navigation"
-
-import { breadcrumbSchema, serviceSchema, faqSchema } from "@/app/liv/seo/schema"
-import Schema from "@/app/components/Common/Schema"
-import { getPageData } from "@/app/helpers/pageData"
-
-import { EventSearch } from "@/app/components/Events/Hero"
-import EventCategories from "@/app/components/Events/EventCategories"
-import EventSolutions from "@/app/components/Events/Services/EventSolutions"
-import { ContactCTA } from "@/app/components/Events/ContactCTA"
-import FAQ from "@/app/components/Events/FAQ"
-
-import { findEventPath } from "@/app/helpers/eventSlugFinder"
-import WhyChoose from "@/app/components/Events/WhyChoose"
-import PlanningProcess from "@/app/components/Events/PlanninProcess"
-import Testimonials from "@/app/components/Events/Testimonials"
 
 type PageProps = {
     params: Promise<{
@@ -189,7 +186,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
     // 🆕 Conditional sections — sirf ek baar define, sab depths mein reuse
     const DynamicSections = (
         <>
-            <WhyChoose
+            <WhyChooseUs
                 data={whyChoose}
                 pageId={pageId}
                 pageTitle={pageTitle}

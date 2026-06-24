@@ -3,7 +3,8 @@
 // Body: { pageId: string, sectionKey: "whyChoose"|"planningProcess"|"testimonials", pageTitle: string }
 
 
-import { generateAndSaveSection } from "@/app/src/controllers/Section.controller"
+
+import { generateAndSaveSection } from "@/src/controllers/Section.controller"
 import { NextRequest } from "next/server"
 
 export async function POST(req: NextRequest) {

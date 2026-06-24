@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Factory, ArrowBigRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { ServiceNode, services } from "@/app/data/services";
 import GlobalServiceSearch from "../GlobalServiceSearch";
+import { ServiceNode, services } from "@/data/services";
 
 interface MobileSidebarProps {
     isOpen: boolean;

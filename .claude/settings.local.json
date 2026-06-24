@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(wc -l /c/Users/Dell/Desktop/Projects/AI-Based-Content/sample_ai_test/app/**/*.tsx)"
-    ]
-  }
-}

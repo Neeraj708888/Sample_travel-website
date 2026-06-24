@@ -252,16 +252,14 @@
 //     }
 // }
 
-import { services } from "@/app/data/services"
-import { solutions } from "@/app/data/solution"
-import type { ServiceNode } from "@/app/data/solution"
-
 import { findEventPath } from "./eventSlugFinder"
 import { findSolutionPath } from "./solutionSlugFinder"
 
 import { generateAI, GenerateParams } from "../liv/ai/generateContent"
 import { mapCards } from "./mapCards"
 import { PageTypeKey } from "../types/page.types"
+import { services } from "@/data/services"
+import { ServiceNode, solutions } from "@/data/solution"
 
 /* =======================================
    🔹 DEFAULT CONTENT

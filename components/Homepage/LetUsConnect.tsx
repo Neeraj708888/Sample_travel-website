@@ -3,7 +3,8 @@
 import Script from "next/script";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
-import { submitQuery } from "@/app/helpers/submitQuery";
+import { submitQuery } from "@/helpers/submitQuery";
+
 
 // export const metadata = {
 //     title: "Contact Ananta Hospitality | Call or WhatsApp for Luxury Events & Travel",

@@ -219,11 +219,11 @@
 "use client";
 
 import Link from "next/link";
-import { services, ServiceNode } from "@/app/data/services";
 import GlobalServiceSearch from "../GlobalServiceSearch";
-import { useServicePathNavigation } from "@/app/hooks/useServicePathNavigation";
-import { findNodeFullPath } from "@/app/helpers/treeHelper";
 import { findNodeByPath } from "./servicesUtils";
+import { useServicePathNavigation } from "@/hooks/useServicePathNavigation";
+import { ServiceNode, services } from "@/data/services";
+import { findNodeFullPath } from "@/helpers/treeHelper";
 
 
 export default function ServicesMegaContent() {

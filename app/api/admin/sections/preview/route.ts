@@ -2,7 +2,7 @@
 // POST — Preview only (DB save nahi hoga)
 // Body: { sectionKey: string, pageTitle: string }
 
-import { previewSection } from "@/app/src/controllers/Section.controller"
+import { previewSection } from "@/src/controllers/Section.controller"
 import { NextRequest } from "next/server"
 
 export async function POST(req: NextRequest) {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import './globals.css'
+import '@/globals.css'
 import { Geist, Geist_Mono } from "next/font/google";
-import AuthkeyWidget from "./components/Common/WhatsappWidget";
+import AuthkeyWidget from "@/components/Common/WhatsappWidget";
 
 
 const geistSans = Geist({

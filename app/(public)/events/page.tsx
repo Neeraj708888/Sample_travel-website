@@ -1,22 +1,16 @@
-import { generateSeo } from "../../liv/seo/seo"
-import {
-    breadcrumbSchema,
-    localBusinessSchema,
-    organizationSchema,
-    faqSchema,
-} from "../../liv/seo/schema"
-import Schema from "../../components/Common/Schema"
+// /events/page.tsx
 
-import { ContactCTA } from "../../components/Events/ContactCTA"
-import { EventSearch } from "../../components/Events/Hero"
-import EventCategories from "../../components/Events/EventCategories"
-import HowWePlanEvents from "../../components/Events/HowWePlanEvents"
-// import FeaturedEvents from "../components/Events/FeaturedEvents"
-import FAQ from "../../components/Events/FAQ"
-
-import { getPageData } from "../../helpers/pageData"
-import { services } from "../../data/services"
-import PopularEvents from "../../components/Homepage/PopularDestination"
+import Schema from "@/components/Common/Schema"
+import { ContactCTA } from "@/components/Events/ContactCTA"
+import EventCategories from "@/components/Events/EventCategories"
+import FAQ from "@/components/Events/FAQ"
+import { EventSearch } from "@/components/Events/Hero"
+import HowWePlanEvents from "@/components/Events/HowWePlanEvents"
+import PopularEvents from "@/components/Homepage/PopularDestination"
+import { services } from "@/data/services"
+import { getPageData } from "@/helpers/pageData"
+import { breadcrumbSchema, faqSchema, localBusinessSchema, organizationSchema } from "@/liv/seo/schema"
+import { generateSeo } from "@/liv/seo/seo"
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"

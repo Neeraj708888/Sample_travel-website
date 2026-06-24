@@ -1,6 +1,6 @@
+import { createQueryController, getQueryController } from "@/src/controllers/Query.controller";
 import { NextRequest } from "next/server";
 
-import { createQueryController, getQueryController, } from "@/app/src/controllers/Query.controller";
 
 // ─────────────────────────────────────────────
 // POST /api/query

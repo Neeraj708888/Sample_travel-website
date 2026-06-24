@@ -1,8 +1,7 @@
 // ─────────────────────────────────────────────
 // DELETE /api/query
 
-import { deleteQueryController, getQueryByIdController } from "@/app/src/controllers/Query.controller";
-import { param } from "framer-motion/client";
+import { deleteQueryController, getQueryByIdController } from "@/src/controllers/Query.controller";
 import { NextRequest } from "next/server";
 
 interface Props {
