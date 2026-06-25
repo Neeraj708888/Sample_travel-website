@@ -9112,8 +9112,8 @@ export const services: ServiceNode[] = [
                                 ]
                             },
                             {
-                                id: "Sketch Comedians",
-                                title: "sketch-comed",
+                                id: "sketch-comed",
+                                title: "Sketch Comedians",
                                 titleSuffix: "Management Company in Delhi",
                                 slug: "sketch-comed",
                                 children: [
