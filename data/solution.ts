@@ -2900,7 +2900,7 @@ export const solutions: ServiceNode[] = [
             //     titleSuffix: "Management Company in Delhi",
             //     children: [
             //         { id: "live-bands", title: "Live Bands and Musicians", slug: "live-bands", titleSuffix: "Management Company in Delhi" },
-            { id: "djs", title: "DJs (Disc Jockeys)", slug: "djs", titleSuffix: "Management Company in Delhi" },
+            // { id: "djs", title: "DJs (Disc Jockeys)", slug: "djs", titleSuffix: "Management Company in Delhi" },
             //         { id: "comedians", title: "Comedians", slug: "comedians", titleSuffix: "Management Company in Delhi" },
             //         { id: "dancers", title: "Dancers", slug: "dancers", titleSuffix: "Management Company in Delhi" },
             //         { id: "magicians", title: "Magicians and Illusionists", slug: "magicians", titleSuffix: "Management Company in Delhi" },

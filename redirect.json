@@ -3980,6 +3980,10 @@
   {
     "source": "/events/artist-mngmt/artist-mngmt/dancer/hip-hop-dance",
     "destination": "/events/artist-mngmt/perform-artist/dancer/hip-hop-dance"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tlnt-strg-meet/tm-bld-wrks",
+    "destination": "/events/corp/corp-meet/tlnt-strg-meet/tm-bld-wrks"
   }
 ]
 

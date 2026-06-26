@@ -27,7 +27,7 @@ type AICard = {
 }
 
 /* =======================================
-   🔹 FIND SOLUTION PATH
+  🔹 FIND SOLUTION PATH
 ======================================= */
 // function findSolutionPath(slugs: string[]): {
 //   nodes: ServiceNode[]
@@ -61,7 +61,7 @@ type AICard = {
 // }
 
 /* =======================================
-   🔹 PAGE COMPONENT
+  🔹 PAGE COMPONENT
 ======================================= */
 export default async function SolutionSlugPage({ params }: PageProps) {
 
@@ -79,14 +79,14 @@ export default async function SolutionSlugPage({ params }: PageProps) {
 
   /* =========================
         ✅ Breadcrumb Nodes
-     ========================= */
+    ========================= */
   const breadcrumbNodes = slug.map((_, index) => {
     const r = findSolutionPath(slug.slice(0, index + 1))
     return r?.current
   }).filter(Boolean)
 
   /* =========================
-     ✅ ONLY CURRENT PAGE FETCH 🔥
+    ✅ ONLY CURRENT PAGE FETCH 🔥
   ========================= */
   let page: any = null
 
@@ -98,7 +98,7 @@ export default async function SolutionSlugPage({ params }: PageProps) {
   }
 
   /* =========================
-     ✅ SAFE CONTENT PARSE
+    ✅ SAFE CONTENT PARSE
   ========================= */
   let parsedContent: any = {}
 
@@ -118,7 +118,7 @@ export default async function SolutionSlugPage({ params }: PageProps) {
 
 
   /* =========================
-     ✅ AI MAP
+    ✅ AI MAP
   ========================= */
   const aiMap = new Map<string, AICard>(
     solutionCards.map((c) => [c.slug, c])
@@ -128,7 +128,7 @@ export default async function SolutionSlugPage({ params }: PageProps) {
   const childrenNodes = current.children || []
 
   /* =========================
-     ✅ FINAL CARDS (NO PREFETCH 🔥)
+    ✅ FINAL CARDS (NO PREFETCH 🔥)
   ========================= */
   const finalCards =
     childrenNodes.length > 0
@@ -150,7 +150,7 @@ export default async function SolutionSlugPage({ params }: PageProps) {
   const faqList = page?.faqs || []
 
   /* =========================
-     ✅ SCHEMA
+    ✅ SCHEMA
   ========================= */
   const schemaData = [
     serviceSchema({
@@ -175,7 +175,7 @@ export default async function SolutionSlugPage({ params }: PageProps) {
 
   /* =========================
     ✅ Breadcrumb UI
- ========================= */
+========================= */
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Solutions", href: "/solutions" },

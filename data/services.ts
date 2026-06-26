@@ -9436,7 +9436,305 @@ export const services: ServiceNode[] = [
                         title: "Magicians and Illusionists",
                         titleSuffix: "Management Company in Delhi",
                         slug: "magic-Illus",
-                        children: []
+                        children: [
+                            {
+                                id: "stage-magicians",
+                                title: "Stage Magicians",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "stage-magicians",
+                                children: [
+                                    {
+                                        id: "close-up-magicians",
+                                        title: "Close-Up Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "close-up-magicians",
+                                    },
+                                    {
+                                        id: "escape-artists",
+                                        title: "Escape Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "escape-artists",
+                                    },
+                                    {
+                                        id: "comedy-magicians",
+                                        title: "Comedy Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "comedy-magicians",
+                                    },
+                                    {
+                                        id: "illus-mental-combos",
+                                        title: "Illusionist and Mentalist Combos",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "illus-mental-combos",
+                                    },
+                                    {
+                                        id: "stg-manipulators",
+                                        title: "Stage Manipulators",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "stg-manipulators",
+                                    },
+                                    {
+                                        id: "fire-magicians",
+                                        title: "Fire Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fire-magicians",
+                                    },
+                                    {
+                                        id: "stg-illus-perf-animals",
+                                        title: "Stage Illusion Performers with Animals",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "stg-illus-perf-animals",
+                                    },
+                                    {
+                                        id: "ment-hyb-performers",
+                                        title: "Mentalism and Illusion Hybrid Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "ment-hyb-performers",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "clos-up-magicians",
+                                title: "Close-Up Magicians",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "clos-up-magicians",
+                                children: [
+                                    {
+                                        id: "coin-magicians",
+                                        title: "Coin Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "coin-magicians",
+                                    },
+                                    {
+                                        id: "street-magicians",
+                                        title: "Street Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "street-magicians",
+                                    },
+                                    {
+                                        id: "rope-magicians",
+                                        title: "Rope Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "rope-magicians",
+                                    },
+                                    {
+                                        id: "ring-magicians",
+                                        title: "Ring Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "ring-magicians",
+                                    },
+                                    {
+                                        id: "watch-jew-magicians",
+                                        title: "Watch and Jewelry Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "watch-jew-magicians",
+                                    },
+                                    {
+                                        id: "restur-magicians",
+                                        title: "Restaurant Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "restur-magicians",
+                                    },
+                                    {
+                                        id: "family-magicians",
+                                        title: "Family Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "family-magicians",
+                                    },
+                                    {
+                                        id: "corporate-magicians",
+                                        title: "Corporate Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "corporate-magicians",
+                                    },
+                                    {
+                                        id: "bar-pub-magicians",
+                                        title: "Bar and Pub Magicians",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "bar-pub-magicians",
+                                    },
+                                    {
+                                        id: "coin-manipulators",
+                                        title: "Coin and Card Manipulators (Specialized Close-Up)",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "coin-manipulators",
+                                    },
+                                    {
+                                        id: "clos-up-mentalists",
+                                        title: "Close-Up Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "clos-up-mentalists",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "illusionists",
+                                title: "Illusionists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "illusionists",
+                                children: [
+                                    {
+                                        id: "stg-illusionists",
+                                        title: "Stage Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "stg-illusionists",
+                                    },
+                                    {
+                                        id: "esc-illusionists",
+                                        title: "Escape Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "esc-illusionists",
+                                    },
+                                    {
+                                        id: "ment-illusionists",
+                                        title: "Mentalist Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "ment-illusionists",
+                                    },
+                                    {
+                                        id: "cmdy-illusionists",
+                                        title: "Comedy Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "cmdy-illusionists",
+                                    },
+                                    {
+                                        id: "tech-illusionists",
+                                        title: "Technology-Based Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "tech-illusionists",
+                                    },
+                                    {
+                                        id: "lrg-scale-performers",
+                                        title: "Large-Scale Illusion Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "lrg-scale-performers",
+                                    },
+                                    {
+                                        id: "levit-illusionists",
+                                        title: "Levitation Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "levit-illusionists",
+                                    },
+                                    {
+                                        id: "esc-hyb-performers",
+                                        title: "Escape and Illusion Hybrid Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "esc-hyb-performers",
+                                    },
+                                    {
+                                        id: "fire-illusionists",
+                                        title: "Fire Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fire-illusionists",
+                                    },
+                                    {
+                                        id: "anim-illusionists",
+                                        title: "Animal Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "anim-illusionists",
+                                    },
+                                    {
+                                        id: "illus-hyb-performers",
+                                        title: "Illusion and Mentalism Hybrid Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "illus-hyb-performers",
+                                    },
+                                    {
+                                        id: "the-illusionists",
+                                        title: "Theatrical Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "the-illusionists",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "mentalists",
+                                title: "Mentalists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mentalists",
+                                children: [
+                                    {
+                                        id: "psych-mentalists",
+                                        title: "Psychological Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "psych-mentalists",
+                                    },
+                                    {
+                                        id: "tele-mentalists",
+                                        title: "Telepathy Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "tele-mentalists",
+                                    },
+                                    {
+                                        id: "clair-mentalists",
+                                        title: "Clairvoyant Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "clair-mentalists",
+                                    },
+                                    {
+                                        id: "pred-mentalists",
+                                        title: "Prediction Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "pred-mentalists",
+                                    },
+                                    {
+                                        id: "mind-mentalists",
+                                        title: "Mind Control Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "mind-mentalistss",
+                                    },
+                                    {
+                                        id: "memory-mentalists",
+                                        title: "Memory Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "memory-mentalists",
+                                    },
+                                    {
+                                        id: "cold-mentalists",
+                                        title: "Cold Reading Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "cold-mentalists",
+                                    },
+                                    {
+                                        id: "for-mentalists",
+                                        title: "Forensic Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "for-mentalists",
+                                    },
+                                    {
+                                        id: "behav-mentalists",
+                                        title: "Behavioral Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "behav-mentalists",
+                                    },
+                                    {
+                                        id: "mind-read-mentalists",
+                                        title: "Mind Reading Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "mind-read-mentalists",
+                                    },
+                                    {
+                                        id: "intuitive-mentalists",
+                                        title: "Intuitive Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "intuitive-mentalists",
+                                    },
+                                    {
+                                        id: "choice-mentalists",
+                                        title: "Prediction and Choice Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "choice-mentalists",
+                                    },
+                                    {
+                                        id: "stage-mentalists",
+                                        title: "Stage Mentalists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "stage-mentalists",
+                                    },
+
+                                ]
+                            },
+                        ]
                     },
                     {
                         id: "circus-performers",

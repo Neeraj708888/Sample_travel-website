@@ -83,10 +83,10 @@ export function findNodePath(tree: any[], slugPath: string[]) {
         // ✅ Direct child mein dhundo pehle
         current = currentList.find(item => item.slug === slug)
 
-        if (!current) {
-            // ✅ Deep search — poore subtree mein dhundo
-            current = deepFind(currentList, slug)
-        }
+        // if (!current) {
+        //     // ✅ Deep search — poore subtree mein dhundo
+        //     current = deepFind(currentList, slug)
+        // }
 
         if (!current) return null
 
@@ -97,13 +97,13 @@ export function findNodePath(tree: any[], slugPath: string[]) {
 }
 
 // ✅ Recursive deep search — kisi bhi depth pe slug dhundo
-function deepFind(nodes: any[], slug: string): any | null {
-    for (const node of nodes) {
-        if (node.slug === slug) return node
-        if (node.children?.length) {
-            const found = deepFind(node.children, slug)
-            if (found) return found
-        }
-    }
-    return null
-}
+// function deepFind(nodes: any[], slug: string): any | null {
+//     for (const node of nodes) {
+//         if (node.slug === slug) return node
+//         if (node.children?.length) {
+//             const found = deepFind(node.children, slug)
+//             if (found) return found
+//         }
+//     }
+//     return null
+// }
