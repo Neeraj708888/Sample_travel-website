@@ -15,8 +15,8 @@ import FAQ from "@/components/Events/FAQ"
 import { EventSearch } from "@/components/Events/Hero"
 import { solutions } from "@/data/solution"
 import { getPageData } from "@/helpers/pageData"
-import { breadcrumbSchema, faqSchema, localBusinessSchema, organizationSchema } from "@/liv/seo/schema"
-import { generateSeo } from "@/liv/seo/seo"
+import { breadcrumbSchema, faqSchema, localBusinessSchema, organizationSchema } from "@/lib/seo/schema"
+import { generateSeo } from "@/lib/seo/seo"
 
 
 

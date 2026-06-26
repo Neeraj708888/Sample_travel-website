@@ -5,7 +5,7 @@ import FAQ from "@/components/Events/FAQ"
 import { EventSearch } from "@/components/Events/Hero"
 import { getPageData } from "@/helpers/pageData"
 import { findSolutionPath } from "@/helpers/solutionSlugFinder"
-import { breadcrumbSchema, faqSchema, serviceSchema } from "@/liv/seo/schema"
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/seo/schema"
 import { notFound } from "next/navigation"
 
 type PageProps = {

@@ -255,7 +255,7 @@
 import { findEventPath } from "./eventSlugFinder"
 import { findSolutionPath } from "./solutionSlugFinder"
 
-import { generateAI, GenerateParams } from "../liv/ai/generateContent"
+import { generateAI, GenerateParams } from "../lib/ai/generateContent"
 import { mapCards } from "./mapCards"
 import { PageTypeKey } from "../types/page.types"
 import { services } from "@/data/services"

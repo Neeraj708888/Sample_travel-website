@@ -9,8 +9,8 @@ import HowWePlanEvents from "@/components/Events/HowWePlanEvents"
 import PopularEvents from "@/components/Homepage/PopularDestination"
 import { services } from "@/data/services"
 import { getPageData } from "@/helpers/pageData"
-import { breadcrumbSchema, faqSchema, localBusinessSchema, organizationSchema } from "@/liv/seo/schema"
-import { generateSeo } from "@/liv/seo/seo"
+import { breadcrumbSchema, faqSchema, localBusinessSchema, organizationSchema } from "@/lib/seo/schema"
+import { generateSeo } from "@/lib/seo/seo"
 
 const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"

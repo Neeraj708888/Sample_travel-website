@@ -9,7 +9,7 @@ import Testimonials from "@/components/Events/Testimonials"
 import WhyChooseUs from "@/components/Events/WhyChoose"
 import { findEventPath } from "@/helpers/eventSlugFinder"
 import { getPageData } from "@/helpers/pageData"
-import { breadcrumbSchema, faqSchema, serviceSchema } from "@/liv/seo/schema"
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/seo/schema"
 import { notFound } from "next/navigation"
 
 type PageProps = {
