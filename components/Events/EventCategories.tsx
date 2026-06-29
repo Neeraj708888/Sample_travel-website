@@ -7,17 +7,13 @@ import { solutions } from "@/data/solution";
 import { ServiceNode, services } from "@/data/services";
 import { findNodeFullPath, hasChildren } from "@/helpers/treeHelper";
 
-
-
-
-/* =========================
-   TYPES
-========================= */
-
 interface PageData {
     content?: any
     description?: string
     meta_description?: string
+    display_title?: string
+    meta_title?: string
+    faqs?: any[]
 }
 
 type CardItem = {
@@ -32,10 +28,6 @@ interface Props {
     cards?: CardItem[]
 }
 
-/* =========================
-   COMPONENT
-========================= */
-
 export default function EventCategories({
     page,
     pagesMap = {},
@@ -44,24 +36,13 @@ export default function EventCategories({
 
     const params = useParams()
     const pathname = usePathname()
-
     const slug = (params?.slug ?? []) as string[]
 
-    /* =========================
-       ✅ ROUTE DETECT
-    ========================= */
-
     const isSolutions = pathname?.startsWith("/solutions")
-
     const tree = isSolutions ? solutions : services
     const baseRoute = isSolutions ? "solutions" : "events"
 
-    /* =========================
-       ✅ TREE CONTEXT (NEW 🔥)
-    ========================= */
-
     const fullPath = findNodeFullPath(tree, slug)
-
     const node = fullPath?.[fullPath.length - 1] || null
     const parentNode = fullPath?.[fullPath.length - 2] || null
 
@@ -74,44 +55,29 @@ export default function EventCategories({
                 ? node!.children
                 : parentNode?.children ?? tree
 
-    // const basePath = slug.length
-    //     ? `/${baseRoute}/${slug.join("/")}`
-    //     : `/${baseRoute}`
-
     const resolvedPath = fullPath?.map((n: any) => n.slug) || []
 
     const basePath = resolvedPath.length
         ? `/${baseRoute}/${resolvedPath.join("/")}`
         : `/${baseRoute}`
 
-    // Helper: find full node path from tree
     function getFullPathForSlug(cardSlug: string): string {
-
-        // 1. direct child
         const directChild = categories.find(c => c.slug === cardSlug)
-
         if (directChild) {
             return `/${baseRoute}/${[...resolvedPath, cardSlug].join("/")}`
         }
-
-        // 2. full path from tree
         const cardFullPath = findNodeFullPath(tree, [...resolvedPath, cardSlug])
-
         if (cardFullPath && cardFullPath.length > 0) {
             const pathSlugs = cardFullPath.map((n: any) => n.slug)
             return `/${baseRoute}/${pathSlugs.join("/")}`
         }
-
-        // 3. fallback
         return `${basePath}/${cardSlug}`
     }
 
     /* =========================
        ✅ CONTENT PARSE
     ========================= */
-
     let parsedContent: any = {}
-
     try {
         parsedContent =
             typeof page?.content === "string"
@@ -121,6 +87,13 @@ export default function EventCategories({
         parsedContent = {}
     }
 
+    // ✅ services.ts se title + titleSuffix
+    const nodeDisplayTitle = node
+        ? node.titleSuffix
+            ? `${node.title} ${node.titleSuffix}`
+            : node.title
+        : null
+
     const shortDesc =
         parsedContent?.eventType?.shortDesc ||
         parsedContent?.eventSolution?.shortDesc ||
@@ -129,25 +102,22 @@ export default function EventCategories({
     /* =========================
        ✅ LEAF UI
     ========================= */
-
     if (isLeaf && node) {
         return (
             <section className="py-16 bg-neutral-950 text-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row gap-12 items-center">
-
                         <div className="flex-1 space-y-6">
                             <h2 className="text-4xl font-bold leading-tight">
-                                {node.title}
+                                {node.title || nodeDisplayTitle}
                             </h2>
-
                             <p className="text-gray-400 text-lg leading-relaxed">
-                                {page?.description ||
+                                {parsedContent?.eventType?.shortDesc ||
+                                    parsedContent?.hero?.shortDesc ||
                                     page?.meta_description ||
                                     "Professional services tailored for exceptional experiences."}
                             </p>
                         </div>
-
                         {node.image && (
                             <div className="flex-1 w-full aspect-video relative rounded-2xl overflow-hidden">
                                 <Image
@@ -158,7 +128,6 @@ export default function EventCategories({
                                 />
                             </div>
                         )}
-
                     </div>
                 </div>
             </section>
@@ -168,42 +137,34 @@ export default function EventCategories({
     /* =========================
        ✅ GRID UI
     ========================= */
-
     return (
         <section className="py-15">
-
-            {/* HEADER */}
             <div className="mb-10 bg-neutral-950 text-white px-4 py-5 w-full">
                 <h2 className="text-4xl text-center md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-                    {node?.title
-                        ? `${node.title} Types We Manage`
-                        : isSolutions
+                    {node
+                        ? hasChildren(node)
+                            ? `${node.title} Types We Manage`  // children hain
+                            : nodeDisplayTitle                         // leaf — sirf title
+                        : (isSolutions
                             ? "Event Solutions We Provide"
-                            : "Event Types We Manage"}
+                            : "Event Types We Manage")}
                 </h2>
                 <div className="flex items-center justify-center gap-4 mb-6 mt-2">
                     <div className="w-4xl h-[2px] bg-yellow-500"></div>
                     <div className="w-5 h-5 bg-yellow-500 rounded-full"></div>
-                    <div className=" w-4xl h-[2px] bg-yellow-500"></div>
+                    <div className="w-4xl h-[2px] bg-yellow-500"></div>
                 </div>
-
                 <p className="text-gray-400 mt-2 text-md max-w-5xl mx-auto text-center">
                     {shortDesc}
                 </p>
             </div>
 
             <div className="max-w-7xl mx-auto px-6">
-                {/* GRID */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                    {/* ✅ AI CARDS */}
                     {cards?.length > 0
                         ? cards.map((card) => {
-
-                            const fullNode = categories.find(
-                                (c) => c.slug === card.slug
-                            )
-
+                            const fullNode = categories.find(c => c.slug === card.slug)
                             return (
                                 <CategoryCard
                                     key={card.slug}
@@ -214,28 +175,18 @@ export default function EventCategories({
                                             title: card.title,
                                         } as ServiceNode
                                     }
-                                    // basePath={basePath}
                                     href={getFullPathForSlug(card.slug)}
                                     description={card.desc || ""}
                                 />
                             )
                         })
-
-                        /* ✅ FALLBACK */
                         : categories.map((category) => {
-
-                            const childDbSlug = `${baseRoute}/${[
-                                ...slug,
-                                category.slug,
-                            ].join("/")}`
-
+                            const childDbSlug = `${baseRoute}/${[...slug, category.slug].join("/")}`
                             const childPage = pagesMap[childDbSlug]
-
                             return (
                                 <CategoryCard
                                     key={category.slug}
                                     category={category}
-                                    // basePath={basePath}
                                     href={getFullPathForSlug(category.slug)}
                                     page={childPage}
                                 />

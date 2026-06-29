@@ -173,7 +173,7 @@ Generate HIGH-QUALITY, SEO-optimized page content for: "${title}"
   "display_title": "${title}",
   "content": {
     "hero": {
-      "h1": "",
+      "h1": "${title}",
       "h2": "",
       "shortDesc": "",
       "image": ""
@@ -211,9 +211,9 @@ Generate HIGH-QUALITY, SEO-optimized page content for: "${title}"
 - meta_keywords: 5-10 relevant keywords
 
 ## HERO RULES:
-- h1: same as meta_title WITHOUT "| Ananta Hospitality"
+- h1: MUST be exactly "${title}" — do not modify, do not rephrase
 - h2: supporting emotional or benefit-driven line
-- shortDesc: 30-40 words
+- shortDesc: 30-50 words
 - image: /images/${title.toLowerCase().replace(/\s+/g, "-")}.jpg
 
 ## FAQ RULES:
@@ -256,7 +256,7 @@ ${items.join(", ")}
 ## RULES:
 - title: exactly same as given item name
 - slug: URL-friendly, lowercase, hyphen-separated
-- desc: 30-50 words, natural, engaging, relevant to "${context}"
+- desc: 80-100 words, natural, engaging, relevant to "${context}"
 - image: /images/slug.jpg
 `
 }

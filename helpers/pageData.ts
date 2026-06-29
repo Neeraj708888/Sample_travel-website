@@ -170,6 +170,10 @@ function normalizeContent(content: any) {
             shortDesc: content?.eventSolution?.shortDesc || "",
             cards: content?.eventSolution?.cards || [],
         },
+        // 🔥 YEH TEEN MISSING THE — ADD KARO
+        whyChoose: content?.whyChoose || null,
+        planningProcess: content?.planningProcess || null,
+        testimonials: content?.testimonials || null,
     }
 }
 
@@ -256,7 +260,8 @@ export async function getPageData(
                 } else if (cleanSlug.startsWith("solutions/")) {
                     slugPath = cleanSlug.split("/")
                 } else {
-                    slugPath = cleanSlug.split("/").slice(1)
+                    // slugPath = cleanSlug.split("/").slice(1);
+                    slugPath = cleanSlug.split("/");
                 }
 
                 console.log("Slug Array:", slugPath)
@@ -312,9 +317,13 @@ export async function getPageData(
                         "Content generated dynamically",
                     meta_keywords: aiContent?.meta_keywords || "",
                     content: safeContent,
-                    display_title: aiContent?.display_title ?? undefined,
+                    display_title: aiContent?.display_title ?? null,
                     faqs: aiContent?.faqs || [],
                 }
+
+                console.log("slugPath:", slugPath)
+                console.log("aiContent?.display_title:", aiContent?.display_title)
+                console.log("payload:", payload)
 
                 /* =========================
                    ✅ UPSERT (SAFE)

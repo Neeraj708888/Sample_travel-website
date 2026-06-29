@@ -398,7 +398,7 @@ export async function generatePageContent(slugPath: string[]) {
     /* =========================
        ✅ EVENTS ROOT
     ========================= */
-    if (slugPath.length === 0 || slugPath[0] === "events") {
+    if (slugPath.length === 0 || (slugPath.length === 1 && slugPath[0] === "events")) {
 
         const pageType: PageTypeKey = "events-root"
         const eventTitles = services.map(s => s.title)
@@ -439,14 +439,20 @@ export async function generatePageContent(slugPath: string[]) {
     ========================= */
     const pageType: PageTypeKey = "event-detail"
 
-    const data = findEventPath(slugPath)
+    // const data = findEventPath(slugPath)
+    const eventSlugPath = slugPath[0] === "events" ? slugPath.slice(1) : slugPath
+    const data = findEventPath(eventSlugPath)
     const current = data?.current
+
+    // 🔍 ADD THIS
+    console.log("eventSlugPath:", eventSlugPath)
+    console.log("found current:", current?.title, current?.titleSuffix)
 
     if (!current) {
         console.warn("⚠️ Event not found:", slugPath)
         return safeGenerateAI({
             pageType,
-            title: "Event",
+            title: "Event Comapany in Delhi",
             solutionItems: solutionTitles,
         })
     }
@@ -461,6 +467,10 @@ export async function generatePageContent(slugPath: string[]) {
         eventItems: titles,
         solutionItems: solutionTitles,
     })
+
+    const Nodedata = findEventPath(slugPath)
+    console.log("🔍 slugPath:", slugPath)
+    console.log("🔍 findEventPath result:", JSON.stringify(Nodedata, null, 2))
 
     return {
         ...aiData,

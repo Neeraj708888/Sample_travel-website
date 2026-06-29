@@ -9435,7 +9435,7 @@ export const services: ServiceNode[] = [
                         id: "magicians-and-illusionists",
                         title: "Magicians and Illusionists",
                         titleSuffix: "Management Company in Delhi",
-                        slug: "magic-Illus",
+                        slug: "magic-illus",
                         children: [
                             {
                                 id: "stage-magicians",
@@ -9741,7 +9741,1369 @@ export const services: ServiceNode[] = [
                         title: "Circus Performers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "circus-perform",
-                        children: []
+                        children: [
+                            {
+                                id: "acrobats",
+                                title: "Acrobats",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "acrobats",
+                                children: [
+                                    {
+                                        id: "e-acrobat",
+                                        title: "Aerial Acrobats",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "aerial-acrobat",
+                                        children: [
+                                            {
+                                                id: "the-flyng-trap-artists",
+                                                title: "The Flying Trapeze Artists",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "the-flyng-trap-artists",
+                                            },
+                                            {
+                                                id: "du-soleil-performers",
+                                                title: "Cirque du Soleil Performers",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "du-soleil-performers",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "trampo-acrobat",
+                                        title: "Trampoline Acrobats",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "trampo-acrobat",
+                                        children: [
+                                            {
+                                                id: "flying-trampoline-act",
+                                                title: "The Flying Trampolines Act",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flying-trampoline-act",
+                                            },
+                                            {
+                                                id: "magic-show-trampo-acts",
+                                                title: "Trampoline Acts in Magic Shows",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "magic-show-trampo-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "hand-to-hand",
+                                        title: "Hand-to-Hand Acrobats",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "hand-to-hand",
+                                        children: [
+                                            {
+                                                id: "human-pyramids",
+                                                title: "Human Pyramids",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "human-pyramids",
+                                            },
+                                            {
+                                                id: "partner-hand-balancing",
+                                                title: "Partner Hand Balancing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "partner-hand-balancing",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "contortion",
+                                        title: "Contortionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "contortion",
+                                        children: [
+                                            {
+                                                id: "contortion-escape-act",
+                                                title: "Escape Acts with Contortion",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "contortion-escape-act",
+                                            },
+                                            {
+                                                id: "magic-contortion-act",
+                                                title: "Contortion in Magic Performances",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "magic-contortion-act",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "human-cannon-acts",
+                                        title: "Human Cannonball Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "human-cannon-acts",
+                                        children: [
+                                            {
+                                                id: "human-cannon-performer",
+                                                title: "Human Cannonball Acts in Circus Performances",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "human-cannon-performer",
+                                            },
+                                            {
+                                                id: "magician-illusionist-act",
+                                                title: "Magicians and Illusionists Incorporating the Act",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "magician-illusionist-act",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "juggle-acrobats",
+                                        title: "Juggling Acrobats",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "juggle-acrobats",
+                                        children: [
+                                            {
+                                                id: "fire-juggling-act",
+                                                title: "Juggling with Fire or Other Objects",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "fire-juggling-act",
+                                            },
+                                            {
+                                                id: "multitask-illusion-act",
+                                                title: "Multitasking Illusion Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "multitask-illusion-act",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "clown-acrobat",
+                                        title: "Clown Acrobats",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "clown-acrobat",
+                                        children: [
+                                            {
+                                                id: "phys-comedy-illusion",
+                                                title: "Physical Comedy in Illusions",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "phys-comedy-illusion",
+                                            },
+                                            {
+                                                id: "humo--balance-acts",
+                                                title: "Humorous Aerial or Hand Balance Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "humo--balance-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "acrobat-illusion",
+                                        title: "Acrobatic Illusionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "acrobat-illusion",
+                                        children: [
+                                            {
+                                                id: "david-aerial-acts",
+                                                title: "David Copperfield's Aerial Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "david-aerial-acts",
+                                            },
+                                            {
+                                                id: "cirque-du-soleil",
+                                                title: "Cirque du Soleil",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "cirque-du-soleil",
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: "flying-acts",
+                                        title: "Flying Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "flying-acts",
+                                        children: [
+                                            {
+                                                id: "flying-magic-shows",
+                                                title: "Flying Aerial Acts in Magic Shows",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flying-magic-shows",
+                                            },
+                                            {
+                                                id: "flying-magic-theater",
+                                                title: "The Flying Act in Magical Theater",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flying-magic-theater",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "hum-ladder-tower-acts",
+                                        title: "Human Ladders and Tower Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "hum-ladder-tower-acts",
+                                        children: [
+                                            {
+                                                id: "human-tower-acts",
+                                                title: "Human Tower Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "human-tower-acts",
+                                            },
+                                            {
+                                                id: "balance-acts",
+                                                title: "Balance Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "balance-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "balance-acrobat",
+                                        title: "Balancing Acrobats",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "balance-acrobat",
+                                        children: [
+                                            {
+                                                id: "pole-balancing-acts",
+                                                title: "Pole Balancing Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "pole-balancing-acts",
+                                            },
+                                            {
+                                                id: "balance-escape-acts",
+                                                title: "Balance and Escape Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "balance-escape-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "human-cannonball",
+                                        title: "Human Cannonball",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "human-cannonball",
+                                        children: [
+                                            {
+                                                id: "human-cannon-acts",
+                                                title: "Human Cannonball Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "human-cannon-acts",
+                                            },
+                                            {
+                                                id: "illusion-disappearance",
+                                                title: "Illusion of Disappearance",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "illusion-disappearance",
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: "duo-acrobat-acts",
+                                        title: "Duo Acrobatic Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "duo-acrobat-acts",
+                                        children: [
+                                            {
+                                                id: "duo-hand-balancing",
+                                                title: "Duo Hand Balancing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "duo-hand-balancing",
+                                            },
+                                            {
+                                                id: "acro-partner-acts",
+                                                title: "Acrobatic Partner Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "acro-partner-acts",
+                                            },
+
+                                        ]
+                                    }
+                                ]
+                            },
+
+                            {
+                                id: "clowns",
+                                title: "Clowns",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "clowns",
+                                children: [
+                                    {
+                                        id: "whiteface-clown",
+                                        title: "Whiteface Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "whiteface-clown",
+                                        children: [
+                                            {
+                                                id: "classic-whiteface",
+                                                title: "Classic Whiteface",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "classic-whiteface",
+                                            },
+                                            {
+                                                id: "trad-cir-whiteface",
+                                                title: "Traditional Circus Whiteface",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "trad-cir-whiteface",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "auguste-clown",
+                                        title: "Auguste Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "auguste-clown",
+                                        children: [
+                                            {
+                                                id: "trad-auguste-clown",
+                                                title: "Traditional Auguste Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "trad-auguste-clown",
+                                            },
+                                            {
+                                                id: "fool-or-sidekick",
+                                                title: "The Fool or Sidekick",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "fool-or-sidekick",
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: "charcter-clown",
+                                        title: "Character Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "charcter-clown",
+                                        children: [
+                                            {
+                                                id: "hobo-clown",
+                                                title: "Hobo Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "hobo-clown",
+                                            },
+                                            {
+                                                id: "business-clown",
+                                                title: "Business Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "business-clown",
+                                            },
+                                            {
+                                                id: "animal-clown",
+                                                title: "Animal Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "animal-clown",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "tramp-clown",
+                                        title: "Tramp Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "tramp-clown",
+                                        children: [
+                                            {
+                                                id: "charlie-chaplin-clown",
+                                                title: "Charlie Chaplin-like Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "charlie-chaplin-clown",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "slap-bozo-clown",
+                                        title: "Slapstick or Bozo Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "slap-bozo-clown",
+                                        children: [
+                                            {
+                                                id: "bozo-the-clown",
+                                                title: "Bozo the Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "bozo-the-clown",
+                                            },
+                                            {
+                                                id: "pie-face-clown",
+                                                title: "Pie-in-the-Face Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "pie-face-clown",
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: "sad-clown",
+                                        title: "Sad Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "sad-clown",
+                                        children: [
+                                            {
+                                                id: "the-tragic-clown",
+                                                title: "The Tragic Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "the-tragic-clown",
+                                            },
+                                            {
+                                                id: "sad-comic",
+                                                title: "Sad Comic",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "sad-comic",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "ringmaster-clown",
+                                        title: "Ringmaster Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "ringmaster-clown",
+                                        children: [
+                                            {
+                                                id: "clown-ringmaster",
+                                                title: "Clown Ringmaster",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "clown-ringmaster",
+                                            },
+                                            {
+                                                id: "comedic-mc",
+                                                title: "Comedic MC",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "comedic-mc",
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: "fool-clown",
+                                        title: "Fool or Buffoon Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fool-clown",
+                                        children: [
+                                            {
+                                                id: "the-buffoon",
+                                                title: "The Buffoon",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "the-buffoon",
+                                            },
+                                            {
+                                                id: "the-jester",
+                                                title: "The Jester",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "the-jester",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "acrobatic-clown",
+                                        title: "Acrobatic or Athletic Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "acrobatic-clown",
+                                        children: [
+                                            {
+                                                id: "clown-acrobat",
+                                                title: "Clown Acrobat",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "clown-acrobat",
+                                            },
+                                            {
+                                                id: "juggling-clown",
+                                                title: "Juggling Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "juggling-clown",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "invisible-clown",
+                                        title: "Invisible Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "invisible-clown",
+                                        children: [
+                                            {
+                                                id: "invisible-box-clown",
+                                                title: "Invisible Box Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "invisible-box-clown",
+                                            },
+                                            {
+                                                id: "mimed-clown-acts",
+                                                title: "Mimed Clown Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "mimed-clown-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "mime-clown",
+                                        title: "Mime Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "mime-clown",
+                                        children: [
+                                            {
+                                                id: "silent-comic",
+                                                title: "Silent Comic",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "silent-comic",
+                                            },
+                                            {
+                                                id: "pantomime-clown",
+                                                title: "Pantomime Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "pantomime-clown",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "family-clown",
+                                        title: "Family Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "family-clown",
+                                        children: [
+                                            {
+                                                id: "bdy-party-clowns",
+                                                title: "Birthday Party Clowns",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "bday-party-clowns",
+                                            },
+                                            {
+                                                id: "child-circus-clowns",
+                                                title: "Children's Circus Clowns",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "child-circus-clowns",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "geek-clown",
+                                        title: "Geek Clowns",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "geek-clown",
+                                        children: [
+                                            {
+                                                id: "strange-clown",
+                                                title: "Strange and Eccentric Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "strange-clown",
+                                            },
+                                            {
+                                                id: "bizarre-act-clown",
+                                                title: "Bizarre Act Clown",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "bizarre-act-clown",
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+
+                            {
+                                id: "trapeze-artists",
+                                title: "Trapeze Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "trapeze-artists",
+                                children: [
+                                    {
+                                        id: "high-flying-artist",
+                                        title: "High-Flying Trapeze Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "high-flying-artist",
+                                        children: [
+                                            {
+                                                id: "catchers-and-flyers",
+                                                title: "Catchers and Flyers",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "catchers-and-flyers",
+                                            },
+                                            {
+                                                id: "solo-flying-acts",
+                                                title: "Solo High-Flying Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "solo-flying-acts",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "double-trap-artist",
+                                        title: "Double Trapeze Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "double-trap-artist",
+                                        children: [
+                                            {
+                                                id: "aerial-duo",
+                                                title: "Aerial Duo",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "aerial-duo",
+                                            },
+                                            {
+                                                id: "partner-swings",
+                                                title: "Partner Swings",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "partner-swings",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "flying-trap-artist",
+                                        title: "Flying Trapeze Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "flying-trap-artist",
+                                        children: [
+                                            {
+                                                id: "flying-through-air",
+                                                title: "Flying through the Air",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flying-through-air",
+                                            },
+                                            {
+                                                id: "flying-through-air",
+                                                title: "Flying through the Air",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flying-through-air",
+                                            },
+                                            {
+                                                id: "single-multi-catches",
+                                                title: "Single or Multiple Catches",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "single-multi-catches",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "swing-trap-artist",
+                                        title: "Swinging Trapeze Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "swing-trap-artist",
+                                        children: [
+                                            {
+                                                id: "solo-swinging-act",
+                                                title: "Solo Swinging Act",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "solo-swinging-act",
+                                            },
+                                            {
+                                                id: "aerial-dismounts",
+                                                title: "Aerial Dismounts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "aerial-dismounts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "static-trap-artist",
+                                        title: "Static Trapeze Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "static-trap-artist",
+                                        children: [
+                                            {
+                                                id: "aerial-static-trapeze",
+                                                title: "Aerial Silks and Static Trapeze",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "aerial-static-trapeze",
+                                            },
+                                            {
+                                                id: "strength-flexi-acts",
+                                                title: "Strength and Flexibility Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "strength-flexi-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "trap-ontortionist",
+                                        title: "Trapeze Contortionists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "trap-ontortionist",
+                                        children: [
+                                            {
+                                                id: "contorted-poses",
+                                                title: "Contorted Aerial Poses",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "contorted-poses",
+                                            },
+                                            {
+                                                id: "flexible-hold",
+                                                title: "Flexible Holds",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flexible-hold",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "hand-trap-artist",
+                                        title: "Hand-to-Hand Trapeze Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "hand-trap-artist",
+                                        children: [
+                                            {
+                                                id: "partner-lift-balance",
+                                                title: "Partner Lifts and Balances",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "partner-lift-balance",
+                                            },
+                                            {
+                                                id: "acro-lift-acts",
+                                                title: "Acrobatic Lifting Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "acro-lift-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "aerial-trap-prop",
+                                        title: "Aerial Trapeze Artists with Props",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "aerial-trap-prop",
+                                        children: [
+                                            {
+                                                id: "fire-trap-acts",
+                                                title: "Fire and Trapeze Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "fire-trap-acts",
+                                            },
+                                            {
+                                                id: "hoop-combination",
+                                                title: "Hoop and Trapeze Combinations",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "hoop-combination",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "solo-trap-artist",
+                                        title: "Solo Trapeze Artists",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "solo-trap-artist",
+                                        children: [
+                                            {
+                                                id: "single-perfor-swing",
+                                                title: "Single Performer Swings",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "single-perfor-swing",
+                                            },
+                                            {
+                                                id: "solo-flight",
+                                                title: "Solo Flight",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "solo-flight",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "aerial-duo-acts",
+                                        title: "Aerial Duo Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "aerial-duo-acts",
+                                        children: [
+                                            {
+                                                id: "aerial-tra-syncing",
+                                                title: "Aerial Trapeze Syncing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "aerial-tra-syncing",
+                                            },
+                                            {
+                                                id: "aerial-switches",
+                                                title: "Aerial Dismounts and Partner Switches",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "aerial-tra-syncing",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "trap-acrobatic",
+                                        title: "Trapeze Aerialists with Acrobatics",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "trap-acrobatic",
+                                        children: [
+                                            {
+                                                id: "aerial-twists",
+                                                title: "Aerial Somersaults and Twists",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "aerial-twists",
+                                            },
+                                            {
+                                                id: "flipping-catches",
+                                                title: "Flipping Catches",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flipping-catches",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "trap-flying-rope",
+                                        title: "Trapeze Performers with Flying Ropes",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "trap-flying-rope",
+                                        children: [
+                                            {
+                                                id: "flying-rope-act",
+                                                title: "Flying Rope Act",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flying-rope-act",
+                                            },
+                                            {
+                                                id: "rope-coordination",
+                                                title: "Rope and Trapeze Coordination",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "rope-coordination",
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                id: "animal-performer",
+                                title: "Animal Trainers and Performers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "animal-performer",
+                                children: [
+                                    {
+                                        id: "big-cat-performer",
+                                        title: "Big Cat Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "big-cat-performer",
+                                        children: [
+                                            {
+                                                id: "lion-tiger-acts",
+                                                title: "Lion and Tiger Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "lion-tiger-acts",
+                                            },
+                                            {
+                                                id: "wild-cat-show",
+                                                title: "Wild Cat Shows",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "wild-cat-show",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "element-performer",
+                                        title: "Elephant Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "element-performer",
+                                        children: [
+                                            {
+                                                id: "elephant-acrobatic",
+                                                title: "Elephant Acrobatics",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "elephant-acrobatics",
+                                            },
+                                            {
+                                                id: "elephant-shows",
+                                                title: "Elephant Shows",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "elephant-shows",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "horse-performer",
+                                        title: "Horse Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "horse-performer",
+                                        children: [
+                                            {
+                                                id: "horseback-acrobatic",
+                                                title: "Horseback Acrobatics",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "horseback-acrobatic",
+                                            },
+                                            {
+                                                id: "liber-horse-acts",
+                                                title: "Liberty Horse Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "liber-horse-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "dog-train-performer",
+                                        title: "Dog Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "dog-train-performer",
+                                        children: [
+                                            {
+                                                id: "canine-agil-routine",
+                                                title: "Canine Agility Routines",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "canine-agil-routine",
+                                            },
+                                            {
+                                                id: "dog-handler-acts",
+                                                title: "Dog and Handler Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "dog-handler-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "bird-train-performer",
+                                        title: "Birds Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "bird-train-performer",
+                                        children: [
+                                            {
+                                                id: "falconry-acts",
+                                                title: "Falconry Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "falconry-acts",
+                                            },
+                                            {
+                                                id: "parrot-bird-acts",
+                                                title: "Parrot and Exotic Bird Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "parrot-bird-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "monkey-perdormer",
+                                        title: "Monkey Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "monkey-perdormer",
+                                        children: [
+                                            {
+                                                id: "chimpanzee-acts",
+                                                title: "Chimpanzee Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "chimpanzee-acts",
+                                            },
+                                            {
+                                                id: "ape-acrobatics",
+                                                title: "Ape Acrobatics",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "ape-acrobatics",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "seal-train-perform",
+                                        title: "Seal and Sea Lion Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "seal-train-perform",
+                                        children: [
+                                            {
+                                                id: "sea-lion-acts",
+                                                title: "Sea Lion Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "sea-lion-acts",
+                                            },
+                                            {
+                                                id: "seal-performances",
+                                                title: "Seal Performances",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "seal-performances",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "camel-train-performer",
+                                        title: "Camel Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "camel-train-performer",
+                                        children: [
+                                            {
+                                                id: "camel-parades",
+                                                title: "Camel Parades",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "camel-parades",
+                                            },
+                                            {
+                                                id: "camel-trick-acts",
+                                                title: "Camel Trick Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "camel-trick-acts",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "exotic-performer",
+                                        title: "Exotic Animal Trainers and Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "exotic-performer",
+                                        children: [
+                                            {
+                                                id: "zebra-acts",
+                                                title: "Zebra Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "zebra-acts",
+                                            },
+                                            {
+                                                id: "reptile-shows",
+                                                title: "Reptile Shows",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "reptile-shows",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "train-animal-acts",
+                                        title: "Trained Animal Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "train-animal-acts",
+                                        children: [
+                                            {
+                                                id: "exotic-performer",
+                                                title: "multi-animal-acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "exotic-performer",
+                                            },
+                                            {
+                                                id: "animal-circus-acts",
+                                                title: "Animal Circus Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "animal-circus-acts",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "aerial-animal-acts",
+                                        title: "Aerial Animal Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "aerial-animal-acts",
+                                        children: [
+                                            {
+                                                id: "aerial-bird-acts",
+                                                title: "Aerial Bird Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "aerial-bird-acts",
+                                            },
+                                            {
+                                                id: "monkey-flying-acts",
+                                                title: "Monkey Flying Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "monkey-flying-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "human-coll-acts",
+                                        title: "Human-Animal Collaboration Acts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "human-coll-acts",
+                                        children: [
+                                            {
+                                                id: "animal-trainer-skits",
+                                                title: "Animal and Trainer Skits",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "animal-trainer-skits",
+                                            },
+                                            {
+                                                id: "animal-ballets",
+                                                title: "Animal Ballets",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "animal-ballets",
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                id: "juggle-fire-eater",
+                                title: "Jugglers and Fire-Eaters",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "juggle-fire-eater",
+                                children: [
+                                    {
+                                        id: "ball-juggle",
+                                        title: "Ball Jugglers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "ball-juggle",
+                                        children: [
+                                            {
+                                                id: "solo-ball-juggle",
+                                                title: "Solo Ball Juggling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "solo-ball-juggle",
+                                            },
+                                            {
+                                                id: "multi-ball-juggling",
+                                                title: "Multiple Ball Juggling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "multi-ball-juggling",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "ring-jugglers",
+                                        title: "Ring Jugglers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "ring-jugglers",
+                                        children: [
+                                            {
+                                                id: "ring-juggle-routine",
+                                                title: "Ring Juggling Routines",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "ring-juggle-routine",
+                                            },
+                                            {
+                                                id: "double-ring-juggling",
+                                                title: "Double Ring Juggling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "double-ring-juggling",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "club-jugglers",
+                                        title: "Club Jugglers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "club-jugglers",
+                                        children: [
+                                            {
+                                                id: "solo-club-juggling",
+                                                title: "Solo Club Juggling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "solo-club-juggling",
+                                            },
+                                            {
+                                                id: "passing-clubs",
+                                                title: "Passing Clubs",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "passing-clubs",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "knife-jugglers",
+                                        title: "Knife Jugglers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "knife-jugglers",
+                                        children: [
+                                            {
+                                                id: "knife-precision",
+                                                title: "Knife Juggling with Precision",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "knife-precision",
+                                            },
+                                            {
+                                                id: "knife-passing-acts",
+                                                title: "Knife Passing Acts",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "knife-passing-acts",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "fire-jugglers",
+                                        title: "Fire Jugglers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fire-jugglers",
+                                        children: [
+                                            {
+                                                id: "flaming-juggling",
+                                                title: "Flaming Torch Juggling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flaming-juggling",
+                                            },
+                                            {
+                                                id: "multi-fire-props",
+                                                title: "Multiple Fire Props",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "multi-fire-props",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "fire-eater",
+                                        title: "Fire Eaters",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fire-eater",
+                                        children: [
+                                            {
+                                                id: "trad-fire-eating",
+                                                title: "Traditional Fire Eating",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "trad-fire-eating",
+                                            },
+                                            {
+                                                id: "fire-breathing",
+                                                title: "Fire Breathing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "fire-breathing",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "fire-juggling",
+                                        title: "Fire Juggling",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fire-juggling",
+                                        children: [
+                                            {
+                                                id: "fire-poi-juggling",
+                                                title: "Fire Poi Juggling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "fire-poi-juggling",
+                                            },
+                                            {
+                                                id: "flame-staff-juggling",
+                                                title: "Flame Staff Juggling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flame-staff-juggling",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "obj-mani-diabolo",
+                                        title: "Object Manipulation and Diabolo",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "obj-mani-diabolo",
+                                        children: [
+                                            {
+                                                id: "diabolo-chinese-yoyo",
+                                                title: "Diabolo (Chinese Yo-Yo)",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "diabolo-chinese-yoyo",
+                                            },
+                                            {
+                                                id: "hoop-manipulation",
+                                                title: "Hoop Manipulation",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "hoop-manipulation",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "cont-juggling",
+                                        title: "Contact Juggling",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "cont-juggling",
+                                        children: [
+                                            {
+                                                id: "crystal-manipulation",
+                                                title: "Crystal Ball Manipulation",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "crystal-manipulation",
+                                            },
+                                            {
+                                                id: "body-rolling",
+                                                title: "Body Rolling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "body-rolling",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "baton-twirlers",
+                                        title: "Baton Twirlers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "baton-twirlers",
+                                        children: [
+                                            {
+                                                id: "baton-spinning",
+                                                title: "Baton Spinning",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "baton-spinning",
+                                            },
+                                            {
+                                                id: "synch-baton-passing",
+                                                title: "Synchronized Baton Passing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "synch-baton-passing",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "umbrella-jugglers",
+                                        title: "Umbrella Jugglers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "umbrella-jugglers",
+                                        children: [
+                                            {
+                                                id: "umbrella-tossing",
+                                                title: "Umbrella Tossing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "umbrella-tossing",
+                                            },
+                                            {
+                                                id: "balance-and-spin",
+                                                title: "Balance and Spin",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "balance-and-spin",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "cigar-box-juggling",
+                                        title: "Cigar Box Juggling",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "cigar-box-juggling",
+                                        children: [
+                                            {
+                                                id: "cigar-manipulation",
+                                                title: "Cigar Box Manipulation",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "cigar-manipulation",
+                                            },
+                                            {
+                                                id: "box-passing",
+                                                title: "Box Passing",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "box-passing",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "spin-twir-performer",
+                                        title: "Spinning and Twirling Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "spin-twir-performer",
+                                        children: [
+                                            {
+                                                id: "plate-spinning",
+                                                title: "Plate Spinning",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "plate-spinning",
+                                            },
+                                            {
+                                                id: "ribbon-twirling",
+                                                title: "Ribbon Twirling",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "ribbon-twirling",
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        id: "fire-poi-performer",
+                                        title: "Fire Poi Performers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fire-poi-performer",
+                                        children: [
+                                            {
+                                                id: "fire-poi-circles",
+                                                title: "Fire Poi Circles",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "fire-poi-circles",
+                                            },
+                                            {
+                                                id: "fire-poi-weaving",
+                                                title: "Fire Poi Weaving",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "fire-poi-weaving",
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        id: "cont-fire-juggling",
+                                        title: "Contact Fire Juggling",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "cont-fire-juggling",
+                                        children: [
+                                            {
+                                                id: "flame-manipulation",
+                                                title: "Flame Staff Manipulation",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flame-manipulation",
+                                            },
+                                            {
+                                                id: "flame-poi-contact",
+                                                title: "Flame Poi Contact",
+                                                titleSuffix: "Management Company in Delhi",
+                                                slug: "flame-poi-contact",
+                                            },
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         id: "performance-artists",

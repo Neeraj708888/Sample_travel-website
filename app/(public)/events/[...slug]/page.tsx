@@ -171,7 +171,11 @@ export default async function DynamicServicePage({ params }: PageProps) {
         <>
             <EventSearch
                 breadcrumbItems={breadcrumbItems}
-                title={page?.display_title || hero?.h1 || current.title}
+                title={
+                    page?.display_title ||
+                    hero?.h1 ||
+                    `${current.title}${current.titleSuffix ? ' ' + current.titleSuffix : ''}`
+                }
                 h2={hero?.h2 || ""}
                 shortDesc={hero?.shortDesc || ""}
             />
