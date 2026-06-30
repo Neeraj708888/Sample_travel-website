@@ -5337,7 +5337,6 @@ export const services: ServiceNode[] = [
                         titleSuffix: "Management Company in Delhi",
                         slug: "coa",
                         children: [
-                            { id: "opera-singers", title: "Opera Singers", slug: "ope-sin", titleSuffix: "Management Company in Delhi" },
                             { id: "classical-instrumentalists", title: "Classical Instrumentalists", slug: "cla-ins", titleSuffix: "Management Company in Delhi" },
                             { id: "conductors", title: "Conductors", slug: "cond", titleSuffix: "Management Company in Delhi" },
                             { id: "chamber-musicians", title: "Chamber Musicians", slug: "cha-mus", titleSuffix: "Management Company in Delhi" }
@@ -5369,6 +5368,7 @@ export const services: ServiceNode[] = [
                     }
                 ]
             },
+
             {
                 id: "visual-artists",
                 title: "Visual Artists",
@@ -5678,6 +5678,7 @@ export const services: ServiceNode[] = [
                     },
                 ],
             },
+
             {
                 id: "performing-artists",
                 title: "Performing Artists",
@@ -10012,7 +10013,6 @@ export const services: ServiceNode[] = [
                                     }
                                 ]
                             },
-
                             {
                                 id: "clowns",
                                 title: "Clowns",
@@ -10283,7 +10283,6 @@ export const services: ServiceNode[] = [
                                     }
                                 ]
                             },
-
                             {
                                 id: "trapeze-artists",
                                 title: "Trapeze Artists",
@@ -11110,46 +11109,173 @@ export const services: ServiceNode[] = [
                         title: "Performance Artists",
                         titleSuffix: "Management Company in Delhi",
                         slug: "perform-artist",
-                        children: []
+                        children: [
+                            {
+                                id: "theater-perf-artist",
+                                title: "Theater Performance Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "theater-perf-artist",
+                            },
+                            {
+                                id: "live-art-performer",
+                                title: "Live Art Performers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "live-art-performer",
+                            },
+                            {
+                                id: "inter-artist",
+                                title: "Interdisciplinary Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "inter-artist",
+                            },
+                        ]
                     },
                     {
                         id: "speakers-and-hosts",
                         title: "Speakers and Hosts",
                         titleSuffix: "Management Company in Delhi",
                         slug: "speak-hosts",
-                        children: []
+                        children: [
+                            {
+                                id: "motivational-speaker",
+                                title: "Motivational Speakers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "motivational-speaker",
+                            },
+                            {
+                                id: "corporate-speaker",
+                                title: "Corporate Speakers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "corporate-speakers",
+                            },
+                            {
+                                id: "event-hosts",
+                                title: "Event Hosts",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "event-hosts",
+                            },
+                            {
+                                id: "talk-show-host",
+                                title: "Talk Show Hosts",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "talk-show-host",
+                            },
+                        ]
                     },
                     {
                         id: "opera-performers",
                         title: "Opera Performers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "opera-perform",
-                        children: []
+                        children: [
+                            {
+                                id: "opera-conductor",
+                                title: "Opera Conductor",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "opera-perform",
+                            },
+                            {
+                                id: "opera-orchestras",
+                                title: "Opera Orchestras",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "opera-orchestras",
+                            },
+                        ]
                     },
                     {
                         id: "musical-theater-artists",
                         title: "Musical Theater Artists",
                         titleSuffix: "Management Company in Delhi",
                         slug: "music-the-artist",
-                        children: []
+                        children: [
+                            {
+                                id: "broadway-performer",
+                                title: "Broadway Performers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "broadway-performer",
+                            },
+                            {
+                                id: "west-end-performer",
+                                title: "West End Performers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "west-end-performer",
+                            },
+                            {
+                                id: "touring-casts",
+                                title: "Touring Casts",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "touring-casts",
+                            },
+                            {
+                                id: "choreographers",
+                                title: "Choreographers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "choreographers",
+                            },
+                        ]
                     },
                     {
                         id: "street-performers",
                         title: "Street Performers (Buskers)",
                         titleSuffix: "Management Company in Delhi",
                         slug: "street-perform",
-                        children: []
+                        children: [
+                            {
+                                id: "musical-busker",
+                                title: "Musical Buskers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "musical-busker",
+                            },
+                            {
+                                id: "pantomime-artist",
+                                title: "Pantomime Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "pantomime-artist",
+                            },
+                            {
+                                id: "living-statues",
+                                title: "Living Statues",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "living-statues",
+                            },
+                            {
+                                id: "juggler-and-acrobat",
+                                title: "Jugglers and Acrobats",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "juggler-and-acrobat",
+                            },
+                        ]
                     },
                     {
                         id: "Voice Performers",
                         title: "Voice Performers (Spoken Word & Poetry)",
                         titleSuffix: "Management Company in Delhi",
                         slug: "voice-perform",
-                        children: []
+                        children: [
+                            {
+                                id: "spoken-word-artist",
+                                title: "Spoken Word Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "spoken-word-artist",
+                            },
+                            {
+                                id: "storytellers",
+                                title: "Storytellers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "storytellers",
+                            },
+                            {
+                                id: "poetry-slam-performer",
+                                title: "Poetry Slam Performers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "poetry-slam-performer",
+                            },
+                        ]
                     },
 
                 ]
             },
+
             {
                 id: "writers-and-authors",
                 title: "Writers and Authors",
@@ -11242,6 +11368,7 @@ export const services: ServiceNode[] = [
                     },
                 ]
             },
+
             {
                 id: "fashion-designers",
                 title: "Fashion Designers",
@@ -11376,6 +11503,7 @@ export const services: ServiceNode[] = [
                     },
                 ]
             },
+
             {
                 id: "film-and-television-artists",
                 title: "Film and Television Artists",
