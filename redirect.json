@@ -4024,6 +4024,35 @@
   {
     "source": "/solutions/corp/trd-shw-exh/ind-expos/ren-es-expos",
     "destination": "/events/corp/trd-shw-exh/ind-expos/ren-es-expos"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/stkhldr-meet/sust-csr-meet",
+    "destination": "/events/corp/corp-meet/stkhldr-meet/sust-csr-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/cris-man-meet",
+    "destination": "/events/corp/corp-meet/cris-man-meet"
+  },
+  {
+    "source": "/solutions/exhbn/trd-exh/mpt-exh",
+    "destination": "/events/exhbn/trd-exh/mpt-exh"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/prd-dmo/liv-prd-dmo",
+    "destination": "/events/corp/prd-lan/virt-lan-evt/vrt-pro-lan-prty"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/parichakali-lakshadweep",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/parichakali-lakshadweep"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/exc-lan-evt/inf-clb-lan-evt",
+    "destination": "/events/corp/prd-lan/exc-lan-evt/inf-clb-lan-evt"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kolattam-tamil-nadu",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kolattam-tamil-nadu"
   }
+
 ]
 
