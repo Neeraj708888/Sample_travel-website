@@ -3992,6 +3992,38 @@
   {
     "source": "/solutions/bp/ple/isp-lau-eve",
     "destination": "/events/bp/ple/isp-lau-eve"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/inv-conf-call",
+    "destination": "/events/corp/corp-meet/invst-meet/inv-conf-call"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/folk-trd-dance/ind-fat-dance/burra-katha",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/burra-katha"
+  },
+  {
+    "source": "/events/corp/corp-meet/tlnt-strg-meet/ldr-shp-dev-wrks",
+    "destination": "/events/corp/web-vir-evt/onl-trn-work/lea-mt-work"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/cgb-trd-shw/toy-g-expo",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/cgb-trd-shw/toy-g-expo"
+  },
+  {
+    "source": "/solutions/wedd-plan/dest-wed/bea-wed/bor-wed",
+    "destination": "/events/wedd-plan/dest-wed/bea-wed/bor-wed"
+  },
+  {
+    "source": "/solutions/corp/prd-lan/virt-lan-evt/vrt-pro-lan-prty",
+    "destination": "/events/corp/prd-lan/virt-lan-evt/vrt-pro-lan-prty"
+  },
+  {
+    "source": "/solutions/corp/sem-work/cre-work/vis-stor-work",
+    "destination": "/events/corp/sem-work/cre-work/vis-stor-work"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/ind-expos/ren-es-expos",
+    "destination": "/events/corp/trd-shw-exh/ind-expos/ren-es-expos"
   }
 ]
 
