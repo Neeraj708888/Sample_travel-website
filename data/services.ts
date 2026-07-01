@@ -11172,7 +11172,7 @@ export const services: ServiceNode[] = [
                                 id: "opera-conductor",
                                 title: "Opera Conductor",
                                 titleSuffix: "Management Company in Delhi",
-                                slug: "opera-perform",
+                                slug: "opera-conductor",
                             },
                             {
                                 id: "opera-orchestras",

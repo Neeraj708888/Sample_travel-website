@@ -4052,7 +4052,14 @@
   {
     "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kolattam-tamil-nadu",
     "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kolattam-tamil-nadu"
+  },
+  {
+    "source": "/events/artist-mngmt/artist-mngmt/dancer/folk-trd-dance/ind-fat-dance/oggu-katha",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/oggu-katha"
+  },
+  {
+    "source": "/events/artist-mngmt/artist-mngmt/opera-perform",
+    "destination": "/events/artist-mngmt/perform-artist/opera-perform"
   }
-
 ]
 
