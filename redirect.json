@@ -3984,6 +3984,14 @@
   {
     "source": "/solutions/corp/corp-meet/tlnt-strg-meet/tm-bld-wrks",
     "destination": "/events/corp/corp-meet/tlnt-strg-meet/tm-bld-wrks"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/dappu-dance",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/dappu-dance"
+  },
+  {
+    "source": "/solutions/bp/ple/isp-lau-eve",
+    "destination": "/events/bp/ple/isp-lau-eve"
   }
 ]
 

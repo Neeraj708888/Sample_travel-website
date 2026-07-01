@@ -88,7 +88,7 @@ import { Card } from "@/types/page.types"
 //     })
 // }
 
-
+// mapCards.ts
 
 type BaseItem = {
     title: string

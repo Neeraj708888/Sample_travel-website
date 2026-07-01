@@ -1,3 +1,38 @@
+// 3rd Approach
+export function findNodePath(tree: any[], slugPath: string[]) {
+    let currentList = tree
+    let current = null
+
+    for (const slug of slugPath) {
+        // ✅ Direct child mein dhundo pehle
+        current = currentList.find(item => item.slug === slug)
+
+        // if (!current) {
+        //     // ✅ Deep search — poore subtree mein dhundo
+        //     current = deepFind(currentList, slug)
+        // }
+
+        if (!current) return null
+
+        currentList = current.children || []
+    }
+
+    return { current }
+}
+
+// ✅ Recursive deep search — kisi bhi depth pe slug dhundo
+// function deepFind(nodes: any[], slug: string): any | null {
+//     for (const node of nodes) {
+//         if (node.slug === slug) return node
+//         if (node.children?.length) {
+//             const found = deepFind(node.children, slug)
+//             if (found) return found
+//         }
+//     }
+//     return null
+// }
+
+
 // import { services, ServiceNode } from "../data/services"
 
 // export function findEventPath(slugs: string[]) {
@@ -32,7 +67,7 @@
 //     return found ? path : null
 // }
 
-// 2dn Approach 
+// 2dn Approach
 // ✅ services ko argument me allow kar rahe hain
 // findEventPath.ts
 
@@ -74,36 +109,3 @@
 // }
 
 
-// 3rd Approach
-export function findNodePath(tree: any[], slugPath: string[]) {
-    let currentList = tree
-    let current = null
-
-    for (const slug of slugPath) {
-        // ✅ Direct child mein dhundo pehle
-        current = currentList.find(item => item.slug === slug)
-
-        // if (!current) {
-        //     // ✅ Deep search — poore subtree mein dhundo
-        //     current = deepFind(currentList, slug)
-        // }
-
-        if (!current) return null
-
-        currentList = current.children || []
-    }
-
-    return { current }
-}
-
-// ✅ Recursive deep search — kisi bhi depth pe slug dhundo
-// function deepFind(nodes: any[], slug: string): any | null {
-//     for (const node of nodes) {
-//         if (node.slug === slug) return node
-//         if (node.children?.length) {
-//             const found = deepFind(node.children, slug)
-//             if (found) return found
-//         }
-//     }
-//     return null
-// }
