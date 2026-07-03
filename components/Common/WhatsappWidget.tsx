@@ -2,15 +2,6 @@
 
 // export default function AuthkeyWidget() {
 //     return (
-//         // <Script
-//         //     src="https://console.authkey.io/js/main.js"
-//         //     id="authkey-chat-widget"
-//         //     strategy="lazyOnload"
-//         //     widget-id="552aef89-ff19-4ddb-8209-2ff77a51301c"
-//         //     onLoad={() => {
-//         //         console.log("Authkey widget loaded");
-//         //     }}
-//         // />
 //         <script src="https://console.authkey.io/js/main.js" id="authkey-chat-widget" widget-id="02de703e-7ff8-47c4-a62f-afe57f3a7996" defer></script>
 //     );
 // }
@@ -28,17 +19,28 @@ export default function AuthkeyWidget() {
     }
 
     return (
-        <Script
+        <script
             src="https://console.authkey.io/js/main.js"
             id="authkey-chat-widget"
-            strategy="lazyOnload"
             widget-id={AUTHKEY_WIDGET_ID}
-            onLoad={() => {
-                console.log("Authkey widget loaded");
-            }}
-            onError={(e) => {
-                console.error("Authkey widget failed to load:", e);
-            }}
+            defer
         />
     );
 }
+
+// "use client";
+
+// import Script from "next/script";
+
+// const AUTHKEY_WIDGET_ID = "02de703e-7ff8-47c4-a62f-afe57f3a7996";
+
+// export default function AuthkeyWidget() {
+//     return (
+//         <script
+//             src="https://console.authkey.io/js/main.js"
+//             id="authkey-chat-widget"
+//             widget-id="02de703e-7ff8-47c4-a62f-afe57f3a7996"
+//             defer
+//         />
+//     );
+// }
