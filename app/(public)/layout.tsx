@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import AuthkeyWidget from "@/components/Common/WhatsappWidget";
 import CallWidget from "@/components/Common/CallWidget";
+import SocialWidget from "@/components/Common/SocialWidget";
 
 
 const geistSans = Geist({
@@ -59,6 +60,7 @@ export default function RootLayout({
                 <Footer />
                 <AuthkeyWidget />
                 <CallWidget />
+                <SocialWidget />
             </body>
         </html>
     );
