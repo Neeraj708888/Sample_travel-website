@@ -5368,7 +5368,6 @@ export const services: ServiceNode[] = [
                     }
                 ]
             },
-
             {
                 id: "visual-artists",
                 title: "Visual Artists",
@@ -5678,7 +5677,6 @@ export const services: ServiceNode[] = [
                     },
                 ],
             },
-
             {
                 id: "performing-artists",
                 title: "Performing Artists",
@@ -11275,7 +11273,6 @@ export const services: ServiceNode[] = [
 
                 ]
             },
-
             {
                 id: "writers-and-authors",
                 title: "Writers and Authors",
@@ -12469,7 +12466,6 @@ export const services: ServiceNode[] = [
                     },
                 ]
             },
-
             {
                 id: "fashion-designers",
                 title: "Fashion Designers",
@@ -12481,7 +12477,68 @@ export const services: ServiceNode[] = [
                         title: "Haute Couture Designers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "haut-cout-dsigner",
-                        children: []
+                        children: [
+                            {
+                                id: "lux-haute-cout-desi",
+                                title: "Luxury Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "lux-haute-cout-desi",
+                            },
+                            {
+                                id: "avant-garde-haut-cout-desi",
+                                title: "Avant-Garde Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "avant-garde-haut-cout-desi",
+                            },
+                            {
+                                id: "trad-haut-cout-desi",
+                                title: "Traditional Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "trad-haut-cout-desi",
+                            },
+                            {
+                                id: "rtw-haut-cout-desi",
+                                title: "Ready-to-Wear Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "rtw-haut-cout-desi",
+                            },
+                            {
+                                id: "eco-haut-cout-desi",
+                                title: "Sustainable Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "eco-haut-cout-desi",
+                            },
+                            {
+                                id: "haute-cout-access-desi",
+                                title: "Haute Couture Accessory Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "haute-cout-access-desi",
+                            },
+                            {
+                                id: "haute-cout-house",
+                                title: "Haute Couture Fashion Houses",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "haute-cout-house",
+                            },
+                            {
+                                id: "cultural-theme-haut-cout-desi",
+                                title: "Cultural and Thematic Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "cultural-theme-haut-cout-desi",
+                            },
+                            {
+                                id: "collab-haut-cout-desi",
+                                title: "Collaborative Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "collab-haut-cout-desi",
+                            },
+                            {
+                                id: "future-haut-cout-desi",
+                                title: "Futuristic Haute Couture Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "future-haut-cout-desi",
+                            },
+                        ]
                     },
                     {
                         id: "ready-to-wear-designers",
@@ -12494,7 +12551,68 @@ export const services: ServiceNode[] = [
                         title: "Sportswear Designers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "sprt-wear-dsigner",
-                        children: []
+                        children: [
+                            {
+                                id: "activewear-designers",
+                                title: "Activewear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "activewear-dsigner",
+                            },
+                            {
+                                id: "casual-sport-designers",
+                                title: "Casual Sportswear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "casual-sport-dsigner",
+                            },
+                            {
+                                id: "footwear-designers-sportswear",
+                                title: "Footwear Designers (Sportswear)",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "footwear-desig-sportswear",
+                            },
+                            {
+                                id: "sport-outer-designers",
+                                title: "Sports Outerwear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "sport-outer-dsigner",
+                            },
+                            {
+                                id: "swimwear-designers",
+                                title: "Swimwear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "swimwear-dsigner",
+                            },
+                            {
+                                id: "yoga-pilates-apar-desi",
+                                title: "Yoga and Pilates Apparel Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "yoga-pilates-apar-desi",
+                            },
+                            {
+                                id: "winter-sport-designers",
+                                title: "Winter Sportswear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "winter-sport-designer",
+                            },
+                            {
+                                id: "sport-uniform-designers",
+                                title: "Sports Uniform Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "sport-uniform-designer",
+                            },
+                            {
+                                id: "sustainable-sportswear-designers",
+                                title: "Sustainable Sportswear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "sust-sport-dsigner",
+                            },
+                            {
+                                id: "adaptive-sport-designers",
+                                title: "Adaptive Sportswear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "adaptive-sport-dsigner",
+                            },
+                        ]
                     },
                     {
                         id: "footwear-designers",
@@ -12507,7 +12625,80 @@ export const services: ServiceNode[] = [
                         title: "Accessory Designers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "access-dsigner",
-                        children: []
+                        children: [
+                            {
+                                id: "jewelry-designers",
+                                title: "Jewelry Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "jewelry-dsigner",
+                            },
+                            {
+                                id: "handbag-and-bag-designers",
+                                title: "Handbag and Bag Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "handbag-bag-dsigner",
+                            },
+                            {
+                                id: "footwear-designers",
+                                title: "Footwear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "foot-wear-dsigner",
+                            },
+                            {
+                                id: "headwear-designers",
+                                title: "Headwear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "head-wear-dsigner",
+                            },
+                            {
+                                id: "scarf-and-shawl-designers",
+                                title: "Scarf and Shawl Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "scarf-shawl-dsigner",
+                            },
+                            {
+                                id: "belt-and-buckle-designers",
+                                title: "Belt and Buckle Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "belt-buckle-dsigner",
+                            },
+                            {
+                                id: "belt-and-buckle-designers",
+                                title: "Eyewear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "belt-buckle-dsigner",
+                            },
+                            {
+                                id: "glove-designers",
+                                title: "Glove Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "glove-dsigner",
+                            },
+                            {
+                                id: "tech-func-acc-designers",
+                                title: "Tech and Functional Accessory Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "tech-func-acc-designer",
+                            },
+                            {
+                                id: "sustainable-or-eco-friendly-accessory-designers",
+                                title: "Sustainable and Eco-Friendly Accessory Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "sust-eff-acc-designer",
+                            },
+                            {
+                                id: "bridal-and-special-occasion-accessory-designers",
+                                title: "Bridal and Special Occasion Accessory Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "brd-spc-acc-designer",
+                            },
+                            {
+                                id: "creative-and-experimental-accessory-designers",
+                                title: "Creative and Experimental Accessory Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "cre-exp-acc-designer",
+                            },
+                        ]
                     },
                     {
                         id: "textile-designers",
@@ -12568,21 +12759,234 @@ export const services: ServiceNode[] = [
                         title: "Costume and Fashion Designers for Theme Parks",
                         titleSuffix: "Management Company in Delhi",
                         slug: "cost-fdft-park",
-                        children: []
+                        children: [
+                            {
+                                id: "character-costume-designers",
+                                title: "Character Costume Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "char-cost-dsigner",
+                            },
+                            {
+                                id: "theme-park-parade-and-show-costume-designers",
+                                title: "Theme Park Parade and Show Costume Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "theme-parade-costume-designer",
+                            },
+                            {
+                                id: "attraction-costume-designers",
+                                title: "Attraction Costume Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "attraction-costume-designer",
+                            },
+                            {
+                                id: "specialty-costume-designers",
+                                title: "Specialty Costume Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "specialty-costume-designer",
+                            },
+                            {
+                                id: "interactive-roleplay-and-entertainment-costume-designers",
+                                title: "Interactive Roleplay and Entertainment Costume Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "roleplay-entert-designer",
+                            },
+                            {
+                                id: "employee-uniform-designers",
+                                title: "Employee Uniform Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "employee-uniform-designer",
+                            },
+                            {
+                                id: "high-concept-costume-designers",
+                                title: "High-Concept Costume Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "high-concept-dsigner",
+                            },
+                            {
+                                id: "immersive-cost-designers",
+                                title: "Costume Designers for Immersive Experiences",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "immersive-cost-dsigner",
+                            },
+                            {
+                                id: "costume-designers-for-special-effects",
+                                title: "Costume Designers for Special Effects",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "costume-dsigner-effect",
+                            },
+                            {
+                                id: "luxury-vip-exp-designers",
+                                title: "Luxury and VIP Experience Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "luxury-vip-exp-dsigner",
+                            },
+                            {
+                                id: "family-kid-fri-cost-designers",
+                                title: "Family and Kid-Friendly Costume Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "family-kid-cost-dsigner",
+                            },
+                        ]
                     },
                     {
                         id: "maternity-wear-designers",
                         title: "Maternity Wear Designers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "matr-wr-dsigner",
-                        children: []
+                        children: [
+                            {
+                                id: "casual-mat-wear-designers",
+                                title: "Casual Maternity Wear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "casual-mat-wear-dsigner",
+                            },
+                            {
+                                id: "professional-mat-wear-designers",
+                                title: "Professional Maternity Wear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "professional-mat-dsigner",
+                            },
+                            {
+                                id: "evening-formal-mat-wear-designers",
+                                title: "Evening and Formal Maternity Wear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "evening-mat-dsigner",
+                            },
+                            {
+                                id: "luxe-and-couture-mat-wear-designers",
+                                title: "Luxe and Couture Maternity Wear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "luxe-mat-dsigner",
+                            },
+                            {
+                                id: "maternity-lingerie-designers",
+                                title: "Maternity Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-lingerie-dsigner",
+                            },
+                            {
+                                id: "maternity-swimwear-designers",
+                                title: "Maternity Swimwear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-swim-dsigner",
+                            },
+                            {
+                                id: "maternity-outerwear-designers",
+                                title: "Maternity Outerwear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-outer-dsigner",
+                            },
+                            {
+                                id: "mat-bridal-wear-designers",
+                                title: "Maternity Bridal Wear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-bridal-dsigner",
+                            },
+                            {
+                                id: "sustainable-and-ethical-maternity-wear-designers",
+                                title: "Sustainable and Ethical Maternity Wear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "sust-eth-mat-dsigner",
+                            },
+                            {
+                                id: "maternity-wear-for-special-occasions-designers",
+                                title: "Maternity Wear for Special Occasions Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-occasions-dsigner",
+                            },
+                            {
+                                id: "maternity-active-and-fitness-wear-designers",
+                                title: "Maternity Active and Fitness Wear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-active-dsigner",
+                            },
+                            {
+                                id: "maternity-wear-for-multiple-pregnancies-designers",
+                                title: "Maternity Wear for Multiple Pregnancies Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-multi-preg-dsigner",
+                            },
+                            {
+                                id: "maternity-accessories-designers",
+                                title: "Maternity Accessories Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-accessory-dsigner",
+                            },
+                        ]
                     },
                     {
                         id: "lingerie-and-underwear-designers",
                         title: "Lingerie and Underwear Designers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "ling-undr-dsigner",
-                        children: []
+                        children: [
+                            {
+                                id: "luxury-lingerie-designers",
+                                title: "Luxury Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "lux-ling-dsigner",
+                            },
+                            {
+                                id: "everyday-lingerie-designers",
+                                title: "Everyday Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "everyday-ling-dsigner",
+                            },
+                            {
+                                id: "maternity-postpartum-lingerie-designers",
+                                title: "Maternity and Postpartum Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "mat-post-ling-dsigner",
+                            },
+                            {
+                                id: "plus-size-lingerie-designers",
+                                title: "Plus-Size Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "plus-size-ling-dsigner",
+                            },
+                            {
+                                id: "corsetry-designers",
+                                title: "Corsetry Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "corsetry-dsigner",
+                            },
+                            {
+                                id: "swim-lingerie-hybrid-designers",
+                                title: "Swimwear and Lingerie Hybrid Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "swim-hybrid-dsigner",
+                            },
+                            {
+                                id: "ethical-sustainable-lingerie-designers",
+                                title: "Ethical and Sustainable Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "ethical-sustain-dsigner",
+                            },
+                            {
+                                id: "fashion-forward-lingerie-designers",
+                                title: "Fashion-Forward Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "fashion-forward-dsigner",
+                            },
+                            {
+                                id: "lingerie-accessories-designers",
+                                title: "Lingerie Accessories Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "ling-accessory-dsigner",
+                            },
+                            {
+                                id: "men-s-lingerie-underwear-designers",
+                                title: "Men’s Lingerie and Underwear Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "men-underwear-dsigner",
+                            },
+                            {
+                                id: "bridal-lingerie-designers",
+                                title: "Bridal Lingerie Designers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "bridal-lingerie-dsigner",
+                            },
+                        ]
                     },
                     {
                         id: "plus-size-fashion-designers",
@@ -12604,7 +13008,6 @@ export const services: ServiceNode[] = [
                     },
                 ]
             },
-
             {
                 id: "film-and-television-artists",
                 title: "Film and Television Artists",
@@ -12682,7 +13085,7 @@ export const services: ServiceNode[] = [
                         slug: "choreo-grapher",
                     },
                     {
-                        id: "casting-sirectors",
+                        id: "casting-directors",
                         title: "Casting Directors",
                         titleSuffix: "Management Company in Delhi",
                         slug: "casting-director",

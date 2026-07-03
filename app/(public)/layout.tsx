@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import EnquiryPopup from "@/components/EnquiryFormPopup";
 import Footer from "@/components/Footer";
 import { Geist, Geist_Mono } from "next/font/google";
+import AuthkeyWidget from "@/components/Common/WhatsappWidget";
 
 
 const geistSans = Geist({
@@ -55,6 +56,7 @@ export default function RootLayout({
                 </main>
                 {/* Footer Added */}
                 <Footer />
+                <AuthkeyWidget />
             </body>
         </html>
     );

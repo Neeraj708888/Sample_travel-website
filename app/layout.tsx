@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import '@/globals.css'
 import { Geist, Geist_Mono } from "next/font/google";
-import AuthkeyWidget from "@/components/Common/WhatsappWidget";
 
 
 const geistSans = Geist({
@@ -53,7 +52,6 @@ export default function RootLayout({
             strategy="afterInteractive"
             widget-id="552aef89-ff19-4ddb-8209-2ff77a51301c"
           /> */}
-          <AuthkeyWidget />
         </main>
 
       </body>
