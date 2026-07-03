@@ -65,6 +65,11 @@ export default function Navbar() {
                             </div>
                         </div>
 
+                        <Link href="/solutions" className="relative group">
+                            Solutions
+                            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>
+                        </Link>
+
                         <Link href="/gallery" className="relative group">
                             Gallery
                             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all group-hover:w-full"></span>

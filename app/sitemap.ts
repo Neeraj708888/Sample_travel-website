@@ -56,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "monthly",
             priority: 0.5,
         },
+        {
+            url: `${domain}/solutions`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.5,
+        },
 
         // ✅ Events & Solutions Sitemap Index Links
         // Yeh links Google ko batate hain ki aur sitemaps bhi hain

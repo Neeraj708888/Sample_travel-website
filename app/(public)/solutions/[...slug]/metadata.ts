@@ -1,4 +1,4 @@
-
+// soultioins/[...slug]/metadata.ts
 import { ServiceNode, solutions } from "@/data/solution";
 import { generateSeo } from "@/lib/seo/seo";
 

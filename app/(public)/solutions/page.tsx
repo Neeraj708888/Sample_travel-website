@@ -1,13 +1,4 @@
-// import Schema from "@/app/components/Common/Schema"
-// import { ContactCTA } from "@/app/components/Events/ContactCTA"
-// import EventCategories from "@/app/components/Events/EventCategories"
-// import FAQ from "@/app/components/Events/FAQ"
-// import { EventSearch } from "@/app/components/Events/Hero"
-// import { solutions } from "@/app/data/solution"
-// import { getPageData } from "@/app/helpers/pageData"
-// import { breadcrumbSchema, faqSchema, localBusinessSchema, organizationSchema } from "@/app/liv/seo/schema"
-// import { generateSeo } from "@/app/liv/seo/seo"
-
+// solution/page.tsx
 import Schema from "@/components/Common/Schema"
 import { ContactCTA } from "@/components/Events/ContactCTA"
 import EventCategories from "@/components/Events/EventCategories"

@@ -6,6 +6,8 @@ import { MetadataRoute } from "next"
 const domain =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com" || "http://localhost:3000"
 export default function sitemap(): MetadataRoute.Sitemap {
+    console.log("Solutions root slugs:");
+    console.log(solutions.map((x) => x.slug));
     return [
 
         {
@@ -17,3 +19,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...flattenRoutes(solutions, "solutions")
     ]
 }
+
