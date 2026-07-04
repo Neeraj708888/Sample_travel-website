@@ -7,30 +7,30 @@ import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "reac
 
 const socialLinks = [
     {
-        href: "https://instagram.com/yourusername",
+        href: "https://www.instagram.com/corbettnainitalofficial",
         icon: <FaInstagram size={20} />,
         label: "Instagram",
     },
     {
-        href: "https://facebook.com/yourusername",
+        href: "https://www.facebook.com/profile.php?id=61590430782552",
         icon: <FaFacebook size={20} />,
         label: "Facebook",
     },
-    {
-        href: "https://youtube.com/@yourchannel",
-        icon: <FaYoutube size={20} />,
-        label: "YouTube",
-    },
+    // {
+    //     href: "https://youtube.com/@yourchannel",
+    //     icon: <FaYoutube size={20} />,
+    //     label: "YouTube",
+    // },
     // {
     //     href: "https://twitter.com/yourusername",
     //     icon: <FaTwitter size={20} />,
     //     label: "Twitter",
     // },
-    // {
-    //     href: "https://pinterest.com/yourusername",
-    //     icon: <FaPinterest size={20} />,
-    //     label: "Pinterest",
-    // },
+    {
+        href: "https://www.pinterest.com/corbettnainital/_profile",
+        icon: <FaPinterest size={20} />,
+        label: "Pinterest",
+    },
 ];
 
 export default function SocialWidget() {
