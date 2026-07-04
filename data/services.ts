@@ -6215,7 +6215,7 @@ export const services: ServiceNode[] = [
                                     },
                                     {
                                         id: "popping",
-                                        title: "popping",
+                                        title: "Popping",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "popping",
                                         children: []
@@ -6229,7 +6229,7 @@ export const services: ServiceNode[] = [
                                     },
                                     {
                                         id: "krumping",
-                                        title: "krumping",
+                                        title: "Krumping",
                                         titleSuffix: "Management Company in Delhi",
                                         slug: "krumping",
                                         children: []

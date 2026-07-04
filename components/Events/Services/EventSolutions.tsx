@@ -34,16 +34,19 @@ export default function EventSolutions({ page }: { page?: any }) {
   const dbCards: SolutionCard[] =
     parsedContent?.eventSolution?.cards || []
 
+  const validSolutionSlugs = new Set(solutions.map(s => s.slug))
   // ✅ STEP 3: DB cards + static icon merge karo
   //    Priority: DB title/desc > static fallback
   const solutionCards =
     dbCards.length > 0
-      ? dbCards.map((card) => ({
-        title: card.title,
-        desc: card.desc || "",
-        slug: card.slug,
-        icon: iconMap.get(card.slug) || null,  // ✅ static se icon attach
-      }))
+      ? dbCards
+        .filter((card) => validSolutionSlugs.has(card.slug))
+        .map((card) => ({
+          title: card.title,
+          desc: card.desc || "",
+          slug: card.slug,
+          icon: iconMap.get(card.slug) || null,  // ✅ static se icon attach
+        }))
       : solutions.map((s) => ({              // ✅ fallback: DB nahi toh static
         title: s.title,
         desc: "",

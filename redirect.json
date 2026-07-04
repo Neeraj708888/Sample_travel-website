@@ -4060,6 +4060,134 @@
   {
     "source": "/events/artist-mngmt/artist-mngmt/opera-perform",
     "destination": "/events/artist-mngmt/perform-artist/opera-perform"
+  },
+  {
+    "source": "/events/corp/corp-prt-cel/thm-prt/mas-ball",
+    "destination": "/events/tp/mas-ball"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/saila-dance-madhya-pradesh",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/saila-dance-madhya-pradesh"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/twb-trd-shw/ret-sc-expo",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/twb-trd-shw/ret-sc-expo"
+  },
+  {
+    "source": "/events/corp/web-vir-evt/vir-conf/netw-conf",
+    "destination": "/events/corp/conf/ind-conf/netw-conf"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/danda-nacha-chhattisgarh",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/danda-nacha-chhattisgarh"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/mib-trd-shw/che-m-show",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/mib-trd-shw/che-m-show"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/banjara-dance-rajasthan",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/banjara-dance-rajasthan"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kathakali-kerala",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kathakali-kerala"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/hip-hop-dance/turfing",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/hip-hop-dance/turfing"
+  },
+  {
+    "source": "/solutions/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/krumping",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/hip-hop-dance/krumping"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/clnt-meet/sts-upd-meet",
+    "destination": "/events/corp/corp-meet/tm-meet/sts-upd-meet"
+  },
+  {
+    "source": "/events/artist-mngmt/artist-mngmt/dancer/hip-hop-dance/popping",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/hip-hop-dance/popping"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/foc-grps/brd-per-foc-grps",
+    "destination": "/events/corp/corp-meet/foc-grps/brd-per-foc-grps"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/gee-dance-himachal-pradesh",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/gee-dance-himachal-pradesh"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/gee-dance-himachal-pradesh",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/gee-dance-himachal-pradesh"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/wanchuwa-dance-tripura",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/wanchuwa-dance-tripura"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/nati-himachal-pradesh",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/nati-himachal-pradesh"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/cont-dancer/narr-conte-dance/physical-theater",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/cont-dancer/narr-conte-dance/physical-theater"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/exe-com-meet/mer-acq-ma-meet",
+    "destination": "/events/corp/corp-meet/exe-com-meet/mer-acq-ma-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tlnt-strg-meet/cul-comp-wrks",
+    "destination": "/events/corp/corp-meet/tlnt-strg-meet/cul-comp-wrks"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/sales-meet/sles-inc-meet",
+    "destination": "/events/corp/corp-meet/sales-meet/sles-inc-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/deb-bon-inv-meet",
+    "destination": "/events/corp/corp-meet/invst-meet/deb-bon-inv-meet"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/tra-meet/ment-coch-tra",
+    "destination": "/events/corp/corp-meet/tra-meet/ment-coch-tra"
+  },
+  {
+    "source": "/events/art-evt/musi-art/edma/liv-perf",
+    "destination": "/events/artist-mngmt/musi-art/edma/liv-perf"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/clnt-meet/prt-co-mrk-meet",
+    "destination": "/events/corp/corp-meet/clnt-meet/prt-co-mrk-meet"
+  },
+  {
+    "source": "/solutions/corp/trd-shw-exh/b-to-b/tih-trd-shw/cru-at-expo",
+    "destination": "/events/corp/trd-shw-exh/b-to-b/tih-trd-shw/cru-at-expo"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/staff-emp-meet/all-hnds-meet",
+    "destination": "/events/corp/corp-meet/staff-emp-meet/all-hnds-meet"
+  },
+  {
+    "source": "/solutions/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kathyawadi-dance-maharashtra",
+    "destination": "/events/artist-mngmt/perform-artist/dancer/folk-trd-dance/ind-fat-dance/kathyawadi-dance-maharashtra"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/stkhldr-meet/chnge-mgmt-meet",
+    "destination": "/events/corp/corp-meet/stkhldr-meet/chnge-mgmt-meet"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal/vir-esc-rom-chll",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal/vir-esc-rom-chll"
+  },
+  {
+    "source": "/solutions/corp/tm-bld-evt/esc-rom-chal/vir-esc-rom-chll",
+    "destination": "/events/corp/tm-bld-evt/esc-rom-chal/vir-esc-rom-chll"
+  },
+  {
+    "source": "/solutions/corp/corp-meet/invst-meet/deb-bon-inv-meet",
+    "destination": "/events/corp/corp-meet/invst-meet/deb-bon-inv-meet"
   }
 ]
 

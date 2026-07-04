@@ -199,7 +199,13 @@ export default async function SolutionSlugPage({ params }: PageProps) {
       />
 
       <EventCategories
-        page={page}
+        page={{
+          ...page,
+          content: {
+            ...parsedContent,
+            eventType: null,
+          }
+        }}
         cards={finalCards} // 🔥 fixed
       />
 

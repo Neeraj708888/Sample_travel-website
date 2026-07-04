@@ -339,6 +339,7 @@ export async function generatePageContent(slugPath: string[]) {
             display_title: displayTitle,
             content: {
                 ...(aiData.content || defaultContent),
+                eventType: null, // 🔥 FIX: No eventType cards on solutions root
                 eventSolution: {
                     ...(aiData.content?.eventSolution || {}),
                     cards: mapCards(
@@ -384,6 +385,7 @@ export async function generatePageContent(slugPath: string[]) {
             display_title: displayTitle,
             content: {
                 ...(aiData.content || defaultContent),
+                eventType: null, // 🔥 FIX: No eventType cards on solution detail
                 eventSolution: {
                     ...(aiData.content?.eventSolution || {}),
                     cards: mapCards(
