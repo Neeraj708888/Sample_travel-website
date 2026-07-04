@@ -1,19 +1,15 @@
-// sitemap.ts
 import { MetadataRoute } from "next"
 
-const domain =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com"
+const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com" || "http://localhost:3000"
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
-        // ✅ Homepage
         {
             url: domain,
             lastModified: new Date(),
-            priority: 1,
+            changeFrequency: "weekly",
+            priority: 1.0,
         },
-
-        // ✅ Static Pages
         {
             url: `${domain}/about-us`,
             lastModified: new Date(),
@@ -59,23 +55,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${domain}/solutions`,
             lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.5,
-        },
-
-        // ✅ Events & Solutions Sitemap Index Links
-        // Yeh links Google ko batate hain ki aur sitemaps bhi hain
-        {
-            url: `${domain}/events/sitemap.xml`,
-            lastModified: new Date(),
             changeFrequency: "weekly",
             priority: 0.9,
         },
         {
-            url: `${domain}/solutions/sitemap.xml`,
+            url: `${domain}/events`,
             lastModified: new Date(),
             changeFrequency: "weekly",
-            priority: 0.9,
+            priority: 1.0,
         },
     ]
 }

@@ -5,6 +5,7 @@ import { flattenRoutes } from "@/lib/sitemap-utils"
 import { MetadataRoute } from "next"
 const domain =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com" || "http://localhost:3000";
+
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         // ✅ Pehle /events khud add karo
@@ -17,3 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...flattenRoutes(services, "events")
     ]
 }
+
+// import { services } from "@/data/services"
+// import { flattenRoutes } from "@/lib/sitemap-utils"
+// import { MetadataRoute } from "next"
+
+// const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://www.anantahospitality.com"
+
+// export default function sitemap(): MetadataRoute.Sitemap {
+//     return flattenRoutes(services, "events")
+// }
