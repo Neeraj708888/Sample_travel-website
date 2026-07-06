@@ -5430,12 +5430,64 @@ export const services: ServiceNode[] = [
                                 title: "Fine Art Photographers",
                                 slug: "fine-art-photo",
                                 titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "conceptual-photographers",
+                                        title: "Conceptual Photographers",
+                                        slug: "conceptual-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "landscape-photographers",
+                                        title: "Landscape Photographers",
+                                        slug: "landscape-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "black-and-white-photographers",
+                                        title: "Black and White Photographers",
+                                        slug: "black-white-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "abstract-photographers",
+                                        title: "Abstract Photographers",
+                                        slug: "abstract-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
                             },
                             {
                                 id: "commercial-photographers",
                                 title: "Commercial Photographers",
                                 slug: "comm-photo",
                                 titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "product-photographers",
+                                        title: "Product Photographers",
+                                        slug: "product-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "food-photographers",
+                                        title: "Food Photographers",
+                                        slug: "food-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "real-estate-photographers",
+                                        title: "Real Estate Photographers",
+                                        slug: "real-estate-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "architectural-photographers",
+                                        title: "Architectural Photographers",
+                                        slug: "architectural-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
                             },
                             {
                                 id: "documentary-photographers",
@@ -5444,10 +5496,194 @@ export const services: ServiceNode[] = [
                                 titleSuffix: "Management Company in Delhi",
                             },
                             {
+                                id: "stock-photographers",
+                                title: "Stock Photographers",
+                                slug: "stock-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                            },
+                            {
+                                id: "virtual-digital-photographers",
+                                title: "Virtual and Digital Photographers",
+                                slug: "digital-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "3d-virtual-photographers",
+                                        title: "3D and Virtual Photographers",
+                                        slug: "3d-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "360-degree-photographers",
+                                        title: "360-Degree Photographers",
+                                        slug: "360-degree-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "aerial-photographers",
+                                title: "Aerial Photographers",
+                                slug: "aerial-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "drone-photographers",
+                                        title: "Drone Photographers",
+                                        slug: "drone-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "aerial-mapping-surveying-photographers",
+                                        title: "Aerial Mapping and Surveying Photographers",
+                                        slug: "aerial-map-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "pet-photographers",
+                                title: "Pet Photographers",
+                                slug: "pet-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "pet-portrait-photographers",
+                                        title: "Pet Portrait Photographers",
+                                        slug: "pet-port-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "animal-behavior-photographers",
+                                        title: "Animal Behavior Photographers",
+                                        slug: "animal-behave-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "commercial-fashion-advertising-photographers",
+                                title: "Commercial Fashion and Advertising Photographers",
+                                slug: "comm-advertise-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "editorial-fashion-photographers",
+                                        title: "Editorial Fashion Photographers",
+                                        slug: "edit-fashion-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "advertising-commercial-product-photographers",
+                                        title: "Advertising and Commercial Product Photographers",
+                                        slug: "comm-product-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "cosmetic-photographers",
+                                        title: "Cosmetic Photographers",
+                                        slug: "cosmetic-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "photographer-for-social-media-influencers",
+                                title: "Photographers for Social Media and Influencers",
+                                slug: "social-media-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "influencer-photographers",
+                                        title: "Influencer Photographers",
+                                        slug: "influencer-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "lifestyle-influencer-photographers",
+                                        title: "Lifestyle Influencer Photographers",
+                                        slug: "lifestyle-influe-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "product-photography-for-influencers",
+                                        title: "Product Photography for Influencers",
+                                        slug: "product-photography",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "nature-wildlife-photographers",
+                                title: "Nature and Wildlife Photographers",
+                                slug: "nature-wild-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "wildlife-photographers",
+                                        title: "Wildlife Photographers",
+                                        slug: "wildlife-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "nature-photographers",
+                                        title: "Nature Photographers",
+                                        slug: "nature-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "underwater-photographers",
+                                        title: "Underwater Photographers",
+                                        slug: "underwater-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "sports-photographers",
+                                title: "Sports Photographers",
+                                slug: "sports-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "action-sports-photographers",
+                                        title: "Action Sports Photographers",
+                                        slug: "action-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "studio-sports-photographers",
+                                        title: "Studio Sports Photographers",
+                                        slug: "std-sports-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "sports-journalism-photographers",
+                                        title: "Sports Journalism Photographers",
+                                        slug: "journalism-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
                                 id: "fashion-photographers",
                                 title: "Fashion Photographers",
                                 slug: "fash-photo",
                                 titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "runway-fashion-photographers",
+                                        title: "Runway Fashion Photographers",
+                                        slug: "runway-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "commercial-fashion-photographers",
+                                        title: "Commercial Fashion Photographers",
+                                        slug: "commercial-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
                             },
                             {
                                 id: "nature-and-landscape-photographers",
@@ -5455,6 +5691,102 @@ export const services: ServiceNode[] = [
                                 slug: "nat-land-photo",
                                 titleSuffix: "Management Company in Delhi",
                             },
+                            {
+                                id: "portrait-photographers",
+                                title: "Portrait Photographers",
+                                slug: "portrait-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "studio-portrait-photographers",
+                                        title: "Studio Portrait Photographers",
+                                        slug: "studio-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "environmental-portrait-photographers",
+                                        title: "Environmental Portrait Photographers",
+                                        slug: "environmental-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "lifestyle-portrait-photographers",
+                                        title: "Lifestyle Portrait Photographers",
+                                        slug: "lifestyle-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "celebrity-portrait-photographers",
+                                        title: "Celebrity Portrait Photographers",
+                                        slug: "cele-portra-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "event-photographers",
+                                title: "Event Photographers",
+                                slug: "event-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "wedding-photographers",
+                                        title: "Wedding Photographers",
+                                        slug: "wedding-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "corporate-event-photographers",
+                                        title: "Corporate Event Photographers",
+                                        slug: "corporate-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "concert-music-photographers",
+                                        title: "Concert and Music Photographers",
+                                        slug: "concert-music-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "party-social-event-photographers",
+                                        title: "Party and Social Event Photographers",
+                                        slug: "social-event-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "engagement-photographers",
+                                        title: "Wedding and Engagement Photographers",
+                                        slug: "engagement-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "documentary-photojournalism-photographers",
+                                title: "Documentary and Photojournalism Photographers",
+                                slug: "documentary-photographer",
+                                titleSuffix: "Management Company in Delhi",
+                                children: [
+                                    {
+                                        id: "news-photographers",
+                                        title: "News Photographers",
+                                        slug: "news-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "war-conflict-photographers",
+                                        title: "War and Conflict Photographers",
+                                        slug: "war-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                    {
+                                        id: "travel-photographers",
+                                        title: "Travel Photographers",
+                                        slug: "travel-photographer",
+                                        titleSuffix: "Management Company in Delhi",
+                                    },
+                                ]
+                            }
                         ]
                     },
                     {
@@ -13019,7 +13351,26 @@ export const services: ServiceNode[] = [
                         title: "Film Actors",
                         titleSuffix: "Management Company in Delhi",
                         slug: "film-actor",
-                        children: []
+                        children: [
+                            {
+                                id: "lead-actor",
+                                title: "Lead Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "lead-actor",
+                            },
+                            {
+                                id: "supporting-actor",
+                                title: "Supporting Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "supporting-actor",
+                            },
+                            {
+                                id: "character-actor",
+                                title: "Character Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "character-actor",
+                            },
+                        ]
                     },
                     {
                         id: "film-directors",
@@ -13032,21 +13383,79 @@ export const services: ServiceNode[] = [
                         title: "Film Producers",
                         titleSuffix: "Management Company in Delhi",
                         slug: "film-producer",
-                        children: []
+                        children: [
+                            {
+                                id: "film-producers",
+                                title: "Film Producers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "film-producer",
+                                children: [
+                                    {
+                                        id: "executive-producers",
+                                        title: "Executive Producers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "executive-producer",
+                                    },
+                                    {
+                                        id: "line-producers",
+                                        title: "Line Producers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "line-producer",
+                                    },
+                                    {
+                                        id: "co-producers",
+                                        title: "Co-Producers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "co-producer",
+                                    },
+
+                                ]
+                            }
+                        ]
                     },
                     {
                         id: "film-screenwriters",
                         title: "Film Screenwriter",
                         titleSuffix: "Management Company in Delhi",
                         slug: "film-scr-writer",
-                        children: []
+                        children: [
+                            {
+                                id: "original-screenwriters",
+                                title: "Original Screenwriters",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "original-scr-writer",
+                            },
+                            {
+                                id: "adaptation-writers",
+                                title: "Adaptation Writers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "adaptation-writer",
+                            },
+                            {
+                                id: "television-writers",
+                                title: "Television Writers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "television-writer",
+                            },
+                        ]
                     },
                     {
                         id: "cinematographers",
                         title: "Cinematographers (Directors of Photography)",
                         titleSuffix: "Management Company in Delhi",
                         slug: "cinema-grapher",
-                        children: []
+                    },
+                    {
+                        id: "film-editors",
+                        title: "Film Editors",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "film-editor",
+                    },
+                    {
+                        id: "television-editors",
+                        title: "Television Editors",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "television-editor",
                     },
                     {
                         id: "production-designers",
@@ -13134,6 +13543,849 @@ export const services: ServiceNode[] = [
                     },
                 ]
             },
+            {
+                id: "celebrity-artists",
+                title: "Celebrity Artists",
+                titleSuffix: "Management Company in Delhi",
+                slug: "celebrity-artist",
+                children: [
+                    {
+                        id: "musicians-singers",
+                        title: "Musicians and Singers",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "musician-singer",
+                        children: [
+                            {
+                                id: "bands",
+                                title: "Bands",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "band",
+                            }
+                        ]
+                    },
+                    {
+                        id: "actors-and-actresses",
+                        title: "Actors and Actresses",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "actor-actress",
+                    },
+                    {
+                        id: "athletes",
+                        title: "Athletes",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "athlete",
+                        children: [
+                            {
+                                id: "professional-athletes",
+                                title: "Professional Athletes",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "professional-athlete",
+                            },
+                            {
+                                id: "olympic-athletes",
+                                title: "Olympic Athletes",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "olympic-athlete",
+                            },
+                        ]
+                    },
+                    {
+                        id: "fashion-icons",
+                        title: "Fashion Icons",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "fashion-icon",
+                        children: [
+                            {
+                                id: "fashion-models",
+                                title: "Fashion Models",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "fashion-model",
+                            },
+                            {
+                                id: "style-influencers",
+                                title: "Style Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "style-influencer",
+                            },
+                        ]
+                    },
+                    {
+                        id: "authors-and-writers",
+                        title: "Authors and Writers",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "author-writer",
+                        children: [
+                            {
+                                id: "nonfiction-writers",
+                                title: "Nonfiction Writers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "nonfiction-writer",
+                            }
+                        ]
+                    },
+                    {
+                        id: "directors-and-producers",
+                        title: "Directors and Producers",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "director-producer",
+                        children: [
+                            {
+                                id: "producers",
+                                title: "Producers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "producer",
+                            }
+                        ]
+                    },
+                    {
+                        id: "reality-tv-stars",
+                        title: "Reality TV Stars",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "reality-tv-star",
+                        children: [
+                            {
+                                id: "contestants",
+                                title: "Contestants",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "contestant",
+                            },
+                            {
+                                id: "hosts",
+                                title: "Hosts",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "host",
+                            },
+                        ]
+                    },
+                    {
+                        id: "youTubers-content-creators",
+                        title: "YouTubers or Content Creators",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "youtuber-content-creator",
+                        children: [
+                            {
+                                id: "vloggers",
+                                title: "Vloggers or Bloggers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "vlogger",
+                                children: [
+                                    {
+                                        id: "fashion-bloggers",
+                                        title: "Fashion Bloggers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fashion-blogger",
+                                    },
+                                    {
+                                        id: "food-bloggers",
+                                        title: "Food Bloggers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "food-blogger",
+                                    },
+                                    {
+                                        id: "travel-bloggers",
+                                        title: "Travel Bloggers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "travel-blogger",
+                                    },
+                                    {
+                                        id: "health-and-wellness-bloggers",
+                                        title: "Health and Wellness Bloggers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "health-well-blogger",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "content-creators",
+                                title: "Content Creators",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "content-creator",
+                            },
+                        ]
+                    },
+                    {
+                        id: "social-entrepreneurs",
+                        title: "Social Entrepreneurs",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "social-entrepreneur",
+                        children: [
+                            {
+                                id: "philanthropists",
+                                title: "Philanthropists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "philanthropist",
+                            },
+                            {
+                                id: "activists",
+                                title: "Activists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "activist",
+                            },
+                        ]
+                    },
+                    {
+                        id: "voiceover-artists",
+                        title: "Voiceover Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "voiceover-artist",
+                        children: [
+                            {
+                                id: "animated-film-voice-actors",
+                                title: "Animated Film Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "animated-voice-actor",
+                            },
+                            {
+                                id: "video-game-voice-actors",
+                                title: "Video Game Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "video-game-voice-actor",
+                            },
+                            {
+                                id: "commercial-voiceover-artists",
+                                title: "Commercial Voiceover Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "commer-voiceover-artist",
+                            },
+                        ]
+                    },
+                    {
+                        id: "photographers-and-visual-artists",
+                        title: "Photographers and Visual Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "photographer-vis-artist",
+                        children: [
+                            {
+                                id: "celebrity-photographers",
+                                title: "Celebrity Photographers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "celebrity-photographer",
+                            }
+                        ]
+                    },
+                    {
+                        id: "chefs-and-culinary-artists",
+                        title: "Chefs and Culinary Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "chef-culinary-artist",
+                        children: [
+                            {
+                                id: "celebrity-chefs",
+                                title: "Celebrity Chefs",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "celebrity-chef",
+                            },
+                            {
+                                id: "culinary-personalities",
+                                title: "Culinary Personalities",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "culinary-personality",
+                            },
+
+                        ]
+                    },
+                    {
+                        id: "spiritual-leaders-or-healers",
+                        title: "Spiritual Leaders or Healers",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "spirit-leader-healer",
+                        children: [
+                            {
+                                id: "motivational-speakers",
+                                title: "Motivational Speakers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "motivational-speaker",
+                            },
+                            {
+                                id: "life-coaches",
+                                title: "Life Coaches",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "life-coach",
+                            },
+                        ]
+                    },
+                    {
+                        id: "fashion-designers-and-entrepreneurs",
+                        title: "Fashion Designers and Entrepreneurs",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "fashion-designer-entrepreneur",
+                        children: [
+                            {
+                                id: "fashion-entrepreneurs",
+                                title: "Fashion Entrepreneurs",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "fashion-entrepreneur",
+                            },
+                            {
+                                id: "beauty-and-lifestyle-brand-owners",
+                                title: "Beauty and Lifestyle Brand Owners",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "beauty-lifestyle-owner",
+                            },
+
+                        ]
+                    },
+                    {
+                        id: "podcasters",
+                        title: "Podcasters",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "podcaster",
+                        children: [
+                            {
+                                id: "niche-prodcasters",
+                                title: "Niche Podcasters",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "niche-podcaster",
+                            },
+                            {
+                                id: "entertainment-podcasters",
+                                title: "Entertainment Podcasters",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "entertainment-podcaster",
+                            },
+                            {
+                                id: "social-issues-podcasters",
+                                title: "Social Issues Podcasters",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "social-issues-podcaster",
+                            },
+                        ]
+                    },
+                    {
+                        id: "twitch-streamers",
+                        title: "Twitch Streamers",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "twitch-streamer",
+                        children: [
+                            {
+                                id: "gaming-streamers",
+                                title: "Gaming Streamers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "gaming-streamer",
+                            },
+                            {
+                                id: "creative-streamers",
+                                title: "Creative Streamers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "creative-streamer",
+                            },
+                            {
+                                id: "irl-streamers",
+                                title: "IRL (In Real Life) Streamers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "irl-streamer",
+                            },
+
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "influencers",
+                title: "Influencers",
+                titleSuffix: "Management Company in Delhi",
+                slug: "influencer",
+                children: [
+                    {
+                        id: "social-media-influencers",
+                        title: "Social Media Influencers",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "social-media-influencer",
+                        children: [
+                            {
+                                id: "instagram-influencers",
+                                title: "Instagram Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "instagram-influencer",
+                                children: [
+                                    {
+                                        id: "macro-influencers",
+                                        title: "Macro Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "macro-influencer",
+                                    },
+                                    {
+                                        id: "micro-influencers",
+                                        title: "Micro-Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "micro-influencer",
+                                    },
+                                    {
+                                        id: "nano-influencers",
+                                        title: "Nano-Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "nano-influencer",
+                                    },
+                                    {
+                                        id: "instagram-models",
+                                        title: "Instagram Models",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "instagram-model",
+                                    },
+                                    {
+                                        id: "instagram-business-influencers",
+                                        title: "Instagram Business Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "insta-busi-influencer",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "youtube-influencers",
+                                title: "YouTube Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "youtube-influencer",
+                                children: [
+                                    {
+                                        id: "beauty-and-makeup-influencers",
+                                        title: "Beauty and Makeup Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "beauty-makeup-influencer",
+                                    },
+                                    {
+                                        id: "gaming-influencers",
+                                        title: "Gaming Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "gaming-influencer",
+                                    },
+                                    {
+                                        id: "tech-influencers",
+                                        title: "Tech Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "tech-influencer",
+                                    },
+                                    {
+                                        id: "diy-and-craft-influencers",
+                                        title: "DIY and Craft Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "diy-craft-influencer",
+                                    },
+                                    {
+                                        id: "fitness-influencers",
+                                        title: "Fitness Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "fitness-influencer",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "twitter-influencers",
+                                title: "Twitter Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "twitter-influencer",
+                                children: [
+                                    {
+                                        id: "political-news-influencers",
+                                        title: "Political and News Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "political-news-influencer",
+                                    },
+                                    {
+                                        id: "celebrity-influencers",
+                                        title: "Celebrity Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "celebrity-influencer",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "facebook-influencers",
+                                title: "Facebook Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "facebook-influencer",
+                                children: [
+                                    {
+                                        id: "community-leaders",
+                                        title: "Community Leaders",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "community-leader",
+                                    },
+                                    {
+                                        id: "brand-ambassadors",
+                                        title: "Brand Ambassadors",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "brand-ambassador",
+                                    },
+                                    {
+                                        id: "live-streamers",
+                                        title: "Live Streamers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "live-streamer",
+                                    },
+                                ]
+                            },
+                            {
+                                id: "linkedin-influencers",
+                                title: "LinkedIn Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "linkedin-influencer",
+                                children: [
+                                    {
+                                        id: "business-leaders-entrepreneurs",
+                                        title: "Business Leaders and Entrepreneurs",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "business-lead-influencer",
+                                    },
+                                    {
+                                        id: "industry-experts",
+                                        title: "Industry Experts",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "industry-expert",
+                                    },
+
+                                ]
+                            },
+                            {
+                                id: "clubhouse-influencers",
+                                title: "Clubhouse Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "clubhouse-influencer",
+                                children: [
+                                    {
+                                        id: "thought-leaders",
+                                        title: "Thought Leaders",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "thought-leader",
+                                    }
+                                ]
+                            },
+                            {
+                                id: "virtual-influencers",
+                                title: "Virtual Influencers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "virtual-influencer",
+                                children: [
+                                    {
+                                        id: "digital-avatars",
+                                        title: "Digital Avatars",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "digital-avatar",
+                                    },
+                                    {
+                                        id: "ai-powered-influencers",
+                                        title: "AI Powered Influencers",
+                                        titleSuffix: "Management Company in Delhi",
+                                        slug: "ai-influencer",
+                                    },
+
+                                ]
+                            },
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "voice-artists",
+                title: "Voice Artists",
+                titleSuffix: "Management Company in Delhi",
+                slug: "voice-artist",
+                children: [
+                    {
+                        id: "animation-voice-artists",
+                        title: "Animation Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "animation-voice-artist",
+                        children: [
+                            {
+                                id: "character-voice-actors",
+                                title: "Character Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "character-voice-artist",
+                            },
+                            {
+                                id: "creature-voice-actors",
+                                title: "Creature Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "creature-voice-actor",
+                            },
+
+                        ]
+                    },
+                    {
+                        id: "voiceover-artists-commercial",
+                        title: "Voiceover Artists (Commercials)",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "voiceover-artist-commerce",
+                        children: [
+                            {
+                                id: "infomercial-voiceover-artists",
+                                title: "Infomercial Voiceover Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "info-voiceover-artist",
+                            },
+                            {
+                                id: "promo-voiceover-artists",
+                                title: "Promo Voiceover Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "promo-voice-artist",
+                            },
+
+                        ]
+                    },
+                    {
+                        id: "dubbing-localization-voice-artists",
+                        title: "Dubbing and Localization Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "dubbing-voice-artist",
+                        children: [
+                            {
+                                id: "dubbing-actors",
+                                title: "Dubbing Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "dubbing-actors",
+                            },
+                            {
+                                id: "subtitling-and-narration-artists",
+                                title: "Subtitling and Narration Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "subtitling-artist",
+                            },
+                            {
+                                id: "foreign-language-dubbing-artists",
+                                title: "Foreign Language Dubbing Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "foreign-language-artist",
+                            },
+
+                        ]
+                    },
+                    {
+                        id: "audiobook-narrators",
+                        title: "Audiobook Narrators",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "audiobook-narrator",
+                        children: [
+                            {
+                                id: "narrators",
+                                title: "Narrators",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "narrator",
+                            },
+                            {
+                                id: "character-voices",
+                                title: "Character Voices",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "character-voice",
+                            },
+                            {
+                                id: "audio-drama-voice-actors",
+                                title: "Audio Drama Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "audio-drama-voice-actor",
+                            },
+                        ]
+                    },
+                    {
+                        id: "documentary-educational-voice-artists",
+                        title: "Documentary and Educational Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "documentary-voice-artist",
+                        children: [
+                            {
+                                id: "instructional-voiceover-artists",
+                                title: "Instructional Voiceover Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "instru-voiceover-artist",
+                            }
+                        ]
+                    },
+                    {
+                        id: "podcast-voice-artists",
+                        title: "Podcast Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "podcast-voice-artist",
+                        children: [
+                            {
+                                id: "podcast-hosts",
+                                title: "Podcast Hosts",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "podcast-host",
+                            },
+                            {
+                                id: "narrative-podcasters",
+                                title: "Narrative Podcasters",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "narrative-podcaster",
+                            }
+                        ]
+                    },
+                    {
+                        id: "television-and-film-narrators",
+                        title: "Television and Film Narrators",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "television-film-narrator",
+                        children: [
+                            {
+                                id: "narrators-for-documentaries-series",
+                                title: "Narrators for Documentaries or Series",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "narrator-for-series",
+                            },
+                            {
+                                id: "tv-show-announcers",
+                                title: "TV Show Announcers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "tv-show-announcer",
+                            }
+                        ]
+                    },
+                    {
+                        id: "live-event-voice-artists",
+                        title: "Live Event Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "live-event-voice-artist",
+                        children: [
+                            {
+                                id: "event-announcers",
+                                title: "Event Announcers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "event-announcer",
+                            },
+                            {
+                                id: "stage-announcers",
+                                title: "Stage Announcers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "stage-announcer",
+                            }
+                        ]
+                    },
+                    {
+                        id: "ivr-systems",
+                        title: "Voice Artists for IVR (Interactive Voice Response) Systems",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "ivr-system",
+                        children: [
+                            {
+                                id: "ivr-voice-artists",
+                                title: "IVR Voice Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "ivr-voice-artist",
+                            },
+                        ]
+                    },
+                    {
+                        id: "video-game-voice-artists",
+                        title: "Video Game Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "video-game-voice-artist",
+                        children: [
+                            {
+                                id: "main-character-voice-actors",
+                                title: "Main Character Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "main-char-voice-actor",
+                            },
+                            {
+                                id: "supporting-character-voice-actors",
+                                title: "Supporting Character Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "supporting-voice-actor",
+                            },
+                            {
+                                id: "npc-voice-actors",
+                                title: "Non-playable Character (NPC) Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "npc-voice-actor",
+                            },
+                        ]
+                    },
+                    {
+                        id: "impressionists-and-sound-alike-voice-artists",
+                        title: "Impressionists and Sound-Alike Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "impression-sound-artist",
+                        children: [
+                            {
+                                id: "celebrity-impersonators",
+                                title: "Celebrity Impersonators",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "celebrity-impersonator",
+                            },
+                            {
+                                id: "sound-alike-artists",
+                                title: "Sound-Alike Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "sound-alike-artist",
+                            },
+                        ]
+                    },
+                    {
+                        id: "pa-voice-artists",
+                        title: "Public Announcement (PA) Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "pa-voice-artist",
+                        children: [
+                            {
+                                id: "transportation-announcement-voices",
+                                title: "Transportation Announcement Voices",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "transport-announce-voice",
+                            },
+                            {
+                                id: "public-event-announcers",
+                                title: "Public Event Announcers",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "public-event-announcer",
+                            },
+                        ]
+                    },
+                    {
+                        id: "virtual-assistant-ai-voice-artists",
+                        title: "Virtual Assistant and AI Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "ai-voice-artist",
+                        children: [
+                            {
+                                id: "ai-voice-actors",
+                                title: "AI Voice Actors",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "ai-voice-actor",
+                            },
+                            {
+                                id: "chatbot-voice-artists",
+                                title: "Chatbot Voice Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "chatbot-voice-artist",
+                            },
+                        ]
+                    },
+                    {
+                        id: "corporate-and-brand-voice-artists",
+                        title: "Corporate and Brand Voice Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "corpo-brand-voice-artist",
+                        children: [
+                            {
+                                id: "corporate-narrators",
+                                title: "Corporate Narrators",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "corporate-narrator",
+                            },
+                            {
+                                id: "brand-voice-artists",
+                                title: "Brand Voice Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "brand-voice-artist",
+                            },
+                        ]
+                    },
+                    {
+                        id: "sound-design-and-foley-artists",
+                        title: "Sound Design and Foley Artists",
+                        titleSuffix: "Management Company in Delhi",
+                        slug: "sound-design-foley-artist",
+                        children: [
+                            {
+                                id: "foley-artists",
+                                title: "Foley Artists",
+                                titleSuffix: "Management Company in Delhi",
+                                slug: "foley-artist",
+                            },
+                        ]
+                    },
+
+                ]
+            }
         ]
     },
 

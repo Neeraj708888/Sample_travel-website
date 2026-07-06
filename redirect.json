@@ -4188,6 +4188,10 @@
   {
     "source": "/solutions/corp/corp-meet/invst-meet/deb-bon-inv-meet",
     "destination": "/events/corp/corp-meet/invst-meet/deb-bon-inv-meet"
+  },
+  {
+    "source": "/events/artist-mngmt/perform-artist/perform-actor/voice-actor",
+    "destination": "/events/artist-mngmt/perform-artist/perform-actor/voice-actors"
   }
 ]
 
