@@ -4192,6 +4192,10 @@
   {
     "source": "/events/artist-mngmt/perform-artist/perform-actor/voice-actor",
     "destination": "/events/artist-mngmt/perform-artist/perform-actor/voice-actors"
+  },
+  {
+    "source": "/events/cm",
+    "destination": "/events/conference"
   }
 ]
 
