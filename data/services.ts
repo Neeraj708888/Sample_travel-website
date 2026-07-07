@@ -14385,6 +14385,344 @@ export const services: ServiceNode[] = [
                     },
 
                 ]
+            },
+            {
+                id: "emcee",
+                title: "Emcee (Master of Ceremonies)",
+                titleSuffix: "Company in Delhi",
+                slug: "emcee",
+                children: [
+                    {
+                        id: "corporate-event-emcee",
+                        title: "Corporate Event Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "corporate-event-emcee",
+                        children: [
+                            {
+                                id: "conference-emcee",
+                                title: "Conference Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "conference-emcee",
+                            },
+                            {
+                                id: "award-ceremony-emcee",
+                                title: "Award Ceremony Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "award-ceremony-emcee",
+                            },
+                            {
+                                id: "team-building-event-emcee",
+                                title: "Team-building Event Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "team-building-event-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "wedding-emcee",
+                        title: "Wedding Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "wedding-emcee",
+                        children: [
+                            {
+                                id: "traditional-wedding-emcee",
+                                title: "Traditional Wedding Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "traditional-wedding-emcee",
+                            },
+                            {
+                                id: "casual-wedding-emcee",
+                                title: "Casual Wedding Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "casual-wedding-emcee",
+                            },
+                            {
+                                id: "destination-wedding-emcee",
+                                title: "Destination Wedding Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "destination-wedding-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "entertainment-event-emcee",
+                        title: "Entertainment or Event Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "entertainment-event-emcee",
+                        children: [
+                            {
+                                id: "music-festival-emcee",
+                                title: "Music Festival Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "music-festival-emcee",
+                            },
+                            {
+                                id: "comedy-show-emcee",
+                                title: "Comedy Show Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "comedy-show-emcee",
+                            },
+                            {
+                                id: "dance-theatre-emcee",
+                                title: "Dance or Theatre Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "dance-theatre-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "charity-event-emcee",
+                        title: "Charity Event Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "charity-event-emcee",
+                        children: [
+                            {
+                                id: "fundraising-gala-emcee",
+                                title: "Fundraising Gala Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "fundraising-gala-emcee",
+                            },
+                            {
+                                id: "charity-auction-emcee",
+                                title: "Charity Auction Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "charity-auction-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "sports-event-emcee",
+                        title: "Sports Event Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "sports-event-emcee",
+                        children: [
+                            {
+                                id: "tournament-emcee",
+                                title: "Tournament Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "tournament-emcee",
+                            },
+                            {
+                                id: "award-presentation-emcee",
+                                title: "Award Presentation Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "award-presentation-emcee",
+                            },
+                            {
+                                id: "marathon-race-emcee",
+                                title: "Marathon or Race Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "marathon-race-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "festival-conference-emcee",
+                        title: "Festival or Conference Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "festival-conference-emcee",
+                        children: [
+                            {
+                                id: "cultural-festival-emcee",
+                                title: "Cultural Festival Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "cultural-festival-emcee",
+                            },
+                            {
+                                id: "food-festival-emcee",
+                                title: "Food Festival Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "food-festival-emcee",
+                            },
+                            {
+                                id: "exposition-trade-show-emcee",
+                                title: "Exposition/Trade Show Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "exposition-trade-show-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "tv-radio-host-emcee",
+                        title: "TV or Radio Host Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "tv-radio-host-emcee",
+                        children: [
+                            {
+                                id: "talk-show-emcee",
+                                title: "Talk Show Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "talk-show-emcee",
+                            },
+                            {
+                                id: "radio-show-emcee",
+                                title: "Radio Show Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "radio-show-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "conference-panel-discussion-emcee",
+                        title: "Conference/Panel Discussion Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "conference-discussion-emcee",
+                        children: [
+                            {
+                                id: "panel-moderator",
+                                title: "Panel Moderator",
+                                titleSuffix: "Company in Delhi",
+                                slug: "panel-moderator",
+                            },
+                            {
+                                id: "workshop-emcee",
+                                title: "Workshop Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "workshop-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "interactive-workshop-emcee",
+                        title: "Interactive or Workshop Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "interactive-workshop-emcee",
+                        children: [
+                            {
+                                id: "team-building-workshop-emcee",
+                                title: "Team-building Workshop Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "team-workshop-emcee",
+                            },
+                            {
+                                id: "learning-session-emcee",
+                                title: "Learning Session Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "learning-session-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "product-launch-emcee",
+                        title: "Product Launch Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "product-launch-emcee",
+                        children: [
+                            {
+                                id: "tech-product-launch-emcee",
+                                title: "Tech Product Launch Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "tech-product-emcee",
+                            },
+                            {
+                                id: "fashion-product-showcase-emcee",
+                                title: "Fashion or Product Showcase Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "fashion-showcase-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "virtual-event-emcee",
+                        title: "Virtual Event Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "virtual-event-emcee",
+                        children: [
+                            {
+                                id: "webinar-emcee",
+                                title: "Webinar Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "webinar-emcee",
+                            },
+                            {
+                                id: "virtual-conference-emcee",
+                                title: "Virtual Conference Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "virtual-conference-emcee",
+                            },
+                            {
+                                id: "live-streaming-emcee",
+                                title: "Live Streaming Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "live-streaming-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "cultural-religious-emcee",
+                        title: "Cultural or Religious Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "cultural-religious-emcee",
+                        children: [
+                            {
+                                id: "religious-ceremony-emcee",
+                                title: "Religious Ceremony Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "religious-ceremony-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "celebrity-entertainment-emcee",
+                        title: "Celebrity/Entertainment Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "celebrity-emcee",
+                        children: [
+                            {
+                                id: "award-show-emcee",
+                                title: "Award Show Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "award-show-emcee",
+                            },
+                            {
+                                id: "celebrity-gala-emcee",
+                                title: "Celebrity Gala Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "celebrity-gala-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "community-event-emcee",
+                        title: "Community Event Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "community-event-emcee",
+                        children: [
+                            {
+                                id: "charity-run-emcee",
+                                title: "Charity Run Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "charity-run-emcee",
+                            },
+                            {
+                                id: "community-festival-emcee",
+                                title: "Community Festival Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "community-festival-emcee",
+                            },
+                        ]
+                    },
+                    {
+                        id: "humorous-emcee",
+                        title: "Humorous Emcee",
+                        titleSuffix: "Company in Delhi",
+                        slug: "humorous-emcee",
+                        children: [
+                            {
+                                id: "comedy-emcee",
+                                title: "Comedy Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "comedy-emcee",
+                            },
+                            {
+                                id: "lighthearted-wedding-emcee",
+                                title: "Lighthearted Wedding Emcee",
+                                titleSuffix: "Company in Delhi",
+                                slug: "lighthearted-wedding-emcee",
+                            },
+                        ]
+                    }
+                ]
             }
         ]
     },
